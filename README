@@ -1,0 +1,21 @@
+Linus Tech Tips Storage Ranking Script
+
+
+
+generate-ltt-rankings.pl will  generate the BB code  for the
+storage rankings list, including whitespace for formatting.
+
+
+
+USAGE:
+
+- Make sure  all entries  in the  %MASTER_RECORD are  up  to
+  date.
+- Run generate-ltt-rankings.pl, pipe output into file.
+- Copy  file content  into the forum  post with  the ranking
+  list. It is important that the post be edited in rich text
+  mode  (not  raw  BBCode mode)  in  order  to preserve  the
+  whitespace for the table layout. Editing in raw mode, then
+  saving post, will remove all whitespace padding.
+- Select entire post, set font to Courier.
+- Save post.
