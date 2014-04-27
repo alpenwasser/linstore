@@ -132,6 +132,7 @@ my %MASTER_RECORD = (
     "system_42" => { "post" =>"277145"  , "username" => "Hellboy"      , "capacity" =>  "10.0", "os" => "Windows 7"                , "storage_sys" => "JBOD"                     , "notes" => undef},
     "system_43" => { "post" =>"277922"  , "username" => "MG2R"         , "capacity" =>  "8.0" , "os" => "Debian"                   , "storage_sys" => "RAID5 w/ mdadm"           , "notes" => "[b]K'Nex[/b] Build, BotW"},
     "system_44" => { "post" =>"303666"  , "username" => "cushy91"      , "capacity" =>  "2.0",  "os" => "UnRAID"                   , "storage_sys" => "RAID5"                    , "notes" => "HP Proliant Microserver"},
+    "system_45" => { "post" =>"1933949" , "username" => "Galxy"        , "capacity" =>  "23.0", "os" => "Windows Server 2012"      , "storage_sys" => "FlexRAID"                 , "notes" => undef},
 );
 
 
