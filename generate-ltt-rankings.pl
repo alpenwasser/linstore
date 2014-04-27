@@ -145,7 +145,12 @@ my %MASTER_RECORD = (
 
 
 
-my $TABLE_TITLE  = "LTT 10TB+ Storage Showoff Topic Ranking List";
+my $CAPACITY_THRESHOLD = 10;
+
+my $TABLE_TITLE = "[b][size=6]LTT " 
+                  . $CAPACITY_THRESHOLD 
+                  . " TB+ Storage Rankings[/size][/b]"
+                  . "\n[hr]";
 
 my $FOOTER = "Sorting priority: First by capacity descending, then by post date, ascending."
             . " Last updated: ";
@@ -181,10 +186,11 @@ sub get_field_length
  
 
     # The source array might contain undef values because of
-    # the  < 10  TB systems  which do  not have  any ranking
-    # numbers assigned  to them. In  those cases, we  map to
-    # 0. However, the end result will  be the same, since we
-    # want the maximum only.
+    # the  systems which  are below  the capacity  threshold
+    # required for  being ranked  and therefore do  not have
+    # any ranking numbers assigned  to them. In those cases,
+    # we map to 0. However, the end result will be the same,
+    # since we want the maximum only.
 
     return $_[1] + max(map { ($_) ? length($_) : 0 } @{ $_[0] });
 }
@@ -212,11 +218,12 @@ sub get_ranks
                         == length(scalar(keys(%{ $_[0] }))));
 
 
-                    # For builds with capacities < 10 TB, we
-                    # do  not assign  any ranks,  since they
-                    # will be in a separate, unranked list.
+                    # For builds  with capacities  below the
+                    # capacity threshold,  we do  not assign
+                    # any  ranks, since  they will  be in  a
+                    # separate, unranked list.
  
-                    $_ => ($_[1]->{$_} < 10) ? undef: $rank
+                    $_ => ($_[1]->{$_} < $CAPACITY_THRESHOLD) ? undef: $rank
                 }
 
                 # Sort  first  by   storage  capacity,  then
@@ -260,12 +267,12 @@ sub pad_fields
     return { map 
                {
                    # The elements to be  padded can be empty
-                   # because of  the systems with  less than
-                   # 10  TB storage  capacity, which  do not
-                   # get  assigned ranking  numbers. In that
-                   # case, we just pad an empty string until
-                   # it's of  sufficient length to  fill the
-                   # field.
+                   # because of the  systems with capacities
+                   # below the capacity threshold,  which do
+                   # not  get  assigned ranking  numbers. In
+                   # that case, we just  pad an empty string
+                   # until it's of sufficient length to fill
+                   # the field.
                    my $padded = (${ $_[0] }{$_}) ? ${ $_[0] }{$_} : "";
 
 
@@ -308,7 +315,7 @@ sub calculate_total_capacity
     my $capacity_ref = $_[0];
 
     my @capacities_which_count 
-    = map { ($_ < 10 ) ? 0 : $_ } values %{ $capacity_ref };
+    = map { ($_ < $CAPACITY_THRESHOLD ) ? 0 : $_ } values %{ $capacity_ref };
 
     return sum(@capacities_which_count);
 }
@@ -366,9 +373,9 @@ sub generate_rows
                 . ((${ $notes_ref }{$sys_id}) ? ${ $notes_ref }{$sys_id} : "");
 
 
-        # Systems with  <10 TB storage capacity  go into the
-        # unranked list (their ranks will be pure whitespace
-        # strings):
+        # Systems   with  capacities   below  the   capacity
+        # threshold go  into the unranked list  (their ranks
+        # will be pure whitespace strings):
         if (${ ${ $formatted_cols_ref }[1] }{$sys_id} =~ /^ *$/)
         {
             push (@{ $unranked_rows_ref }, $row);
@@ -420,9 +427,7 @@ sub print_list
         \@unranked_rows);
 
 
-    my $time = Time::Piece->new();
-    say "[b][size=6]LTT 10 TB+ Storage Rankings[/size][/b]"
-        . "\n[hr]";
+    say $TABLE_TITLE;
 
 
     #NOTE: We  sort  by  rank   here  as  determined  by
@@ -432,6 +437,8 @@ sub print_list
 
     say $ranked_rows{$_} for sort {$a <=> $b} keys %ranked_rows;
 
+
+    my $time = Time::Piece->new();
     say "\n[hr][b][size=5]Total Storage Capacity: " 
         . calculate_total_capacity($capacity_ref)
         . " TB[/size][/b]"
@@ -441,11 +448,14 @@ sub print_list
 
 
 
-    # If there are  entries with <10 TB, print  those into a
-    # separate list, otherwise skip this.
+    # If  there  are  entries   with  capacities  below  the
+    # capacity threshold, print those  into a separate list,
+    # otherwise skip this.
     if (@unranked_rows)
     {
-        say "\n\n\n[size=5]Noteworthy Systems w/ <10 TB storage," 
+        say "\n\n\n[size=5]Noteworthy Systems w/ <"
+            . $CAPACITY_THRESHOLD
+            . " TB storage," 
             ."[/size] unranked, unsorted\n[hr]";
 
         say for @unranked_rows;
