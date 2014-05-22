@@ -115,7 +115,7 @@ my %MASTER_RECORD = (
     "system_25" => { "post" =>"570970"  , "username" => "mb2k"         , "capacity" =>  "18.0", "os" => "Windows Home Server 2011" , "storage_sys" => "JBOD"                     , "notes" => undef},
     "system_26" => { "post" =>"420901"  , "username" => "Eric1024"     , "capacity" =>  "18.0", "os" => "Linux Mint"               , "storage_sys" => "RAID 6"                   , "notes" => undef},
     "system_27" => { "post" =>"302388"  , "username" => "cushy91"      , "capacity" =>  "18.0", "os" => "unRAID"                   , "storage_sys" => "RAID 4"                   , "notes" => undef},
-    "system_28" => { "post" =>"368180"  , "username" => "alpenwasser"  , "capacity" =>  "4.25", "os" => "Arch Linux"               , "storage_sys" => "ZFS"                      , "notes" => "BotW"},
+    "system_28" => { "post" =>"368180"  , "username" => "alpenwasser"  , "capacity" =>  "4.3" , "os" => "Arch Linux"               , "storage_sys" => "ZFS"                      , "notes" => "BotW"},
     "system_29" => { "post" =>"1561286" , "username" => "Hoppa"        , "capacity" =>  "16.0", "os" => "FreeNAS"                  , "storage_sys" => "RAID 10"                  , "notes" => undef},
     "system_30" => { "post" =>"1625820" , "username" => "Chris230291"  , "capacity" =>  "16.0", "os" => "FreeNAS"                  , "storage_sys" => "RAID 5"                   , "notes" => undef},
     "system_31" => { "post" =>"339263"  , "username" => "swizzle90"    , "capacity" =>  "16.0", "os" => "unRAID"                   , "storage_sys" => "RAID 4"                   , "notes" => undef},
@@ -134,6 +134,7 @@ my %MASTER_RECORD = (
     "system_44" => { "post" =>"303666"  , "username" => "cushy91"      , "capacity" =>  "2.0",  "os" => "unRAID"                   , "storage_sys" => "RAID 4"                   , "notes" => "HP Proliant Microserver"},
     "system_45" => { "post" =>"1933949" , "username" => "Galxy"        , "capacity" =>  "23.0", "os" => "Windows Server 2012"      , "storage_sys" => "FlexRAID"                 , "notes" => undef},
     "system_46" => { "post" =>"2009510" , "username" => "alpenwasser"  , "capacity" =>  "29.0", "os" => "Arch Linux"               , "storage_sys" => "ZFS"                      , "notes" => undef},
+    "system_47" => { "post" =>"2074049" , "username" => "MoonSpot"     , "capacity" =>  "10.0", "os" => "Drobo"                    , "storage_sys" => "Drobo BeyondRAID"         , "notes" => undef},
 );
 
 
