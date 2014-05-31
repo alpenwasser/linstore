@@ -135,6 +135,7 @@ my %MASTER_RECORD = (
     "system_45" => { "post" =>"1933949" , "username" => "Galxy"        , "capacity" =>  "23.0", "os" => "Windows Server 2012"      , "storage_sys" => "FlexRAID"                 , "notes" => undef},
     "system_46" => { "post" =>"2009510" , "username" => "alpenwasser"  , "capacity" =>  "29.0", "os" => "Arch Linux"               , "storage_sys" => "ZFS"                      , "notes" => undef},
     "system_47" => { "post" =>"2074049" , "username" => "MoonSpot"     , "capacity" =>  "10.0", "os" => "Drobo"                    , "storage_sys" => "Drobo BeyondRAID"         , "notes" => undef},
+    "system_48" => { "post" =>"2126468" , "username" => "Gronnie"      , "capacity" =>  "24.0", "os" => "Windows 7"                , "storage_sys" => "Flexraid"                 , "notes" => undef},
 );
 
 
@@ -245,7 +246,7 @@ sub pad_capacities
 {
     # $_[0]: reference to %CAPACITIES
 
-    # TODO: Merge with pad_fields?
+    # Adds padding before text.
 
     return { map
                {
@@ -265,6 +266,7 @@ sub pad_fields
     #        values will be padded
     # $_[1]: number of padding chars for longest element
 
+    # Adds padding after text.
 
     return { map 
                {
@@ -473,12 +475,12 @@ sub format_list
     # $_[3]: reference to %STORAGE_SYS:     system_id => storage system
     # $_[3]: reference to %POSTS            system_id => post number
 
-    my $ranks_ref             = get_ranks($_[4],$_[1]);
-    my $padded_ranks_ref      = pad_fields($ranks_ref, 2 );
+    my $ranks_ref             = get_ranks($_[4], $_[1]);
+    my $padded_ranks_ref      = pad_fields($ranks_ref, 2);
     my $padded_usernames_ref  = pad_fields($_[0], 4);
-    my $pure_paddings_ref     = reduce_to_padding($_[0],$padded_usernames_ref);
+    my $pure_paddings_ref     = reduce_to_padding($_[0], $padded_usernames_ref);
     my $padded_capacities_ref = pad_capacities($_[1]);
-    my $padded_os_ref         = pad_fields($_[2],4);
+    my $padded_os_ref         = pad_fields($_[2], 4);
     my $padded_storage_ref    = pad_fields($_[3], 4);
 
     return ( 
