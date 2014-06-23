@@ -139,6 +139,7 @@ my %MASTER_RECORD = (
     "system_49" => { "post" =>"2195738" , "username" => "2sysel2"      , "capacity" =>  "9.0",  "os" => "Windows 8"                , "storage_sys" => "JBOD"                     , "notes" => undef},
     "system_50" => { "post" =>"2210666" , "username" => "overflowsc"   , "capacity" =>  "24.5", "os" => "Linux Mint"               , "storage_sys" => "mdadm"                    , "notes" => undef},
     "system_51" => { "post" =>"2210718" , "username" => "electrostatic", "capacity" =>  "21.0", "os" => "FreeNAS"                  , "storage_sys" => "ZFS"                      , "notes" => undef},
+    "system_52" => { "post" =>"2261402" , "username" => "Graveworm"    , "capacity" =>  "16.0", "os" => "Windows Server 2012"      , "storage_sys" => "RAID (LSI)"               , "notes" => undef},
 );
 
 
