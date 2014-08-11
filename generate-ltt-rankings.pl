@@ -144,6 +144,9 @@ my %MASTER_RECORD = (
     "system_54" => { "post" =>"2304876" , "username" => "Dr_Frankenstein" , "capacity" =>  "12.0", "os" => "Synology"                 , "storage_sys" => "Synology"                 , "notes" => undef},
     "system_55" => { "post" =>"2386836" , "username" => "kev507"          , "capacity" =>  "32.0", "os" => "Windows 7 Pro"            , "storage_sys" => "RAID6"                    , "notes" => undef},
     "system_56" => { "post" =>"2392499" , "username" => "Danny91"         , "capacity" =>  "22.0", "os" => "Windows 7"                , "storage_sys" => "FlexRAID"                 , "notes" => undef},
+    "system_57" => { "post" =>"2536977" , "username" => "Woodypc"         , "capacity" =>  "10.0", "os" => "Windows 7"                , "storage_sys" => "StableBit DrivePool"      , "notes" => undef},
+    "system_58" => { "post" =>"2635265" , "username" => "lekro"           , "capacity" =>  "16.0", "os" => "FreeNAS"                  , "storage_sys" => "ZFS"                      , "notes" => undef},
+    "system_59" => { "post" =>"2654107" , "username" => "PhantomWarz"     , "capacity" =>  "28.0", "os" => "NAS4Free"                 , "storage_sys" => "ZFS"                      , "notes" => undef},
 );
 
 
