@@ -88,65 +88,66 @@ use List::Util qw(max sum);
 
 
 my %MASTER_RECORD = (
-    "system_1"  => { "post" =>"1230802" , "username" => "dangerous1"      , "capacity" =>  "89.5", "os" => "Windows 7"                , "storage_sys" => "JBOD"                     , "notes" => undef},
-    "system_2"  => { "post" =>"1009417" , "username" => "madcow"          , "capacity" =>  "70.0", "os" => "Gentoo"                   , "storage_sys" => "RAID 6 and RAIDZ2"        , "notes" => undef},
-    "system_3"  => { "post" =>"1653057" , "username" => "Ssoele"          , "capacity" =>  "64.0", "os" => "Windows Server 2012R2"    , "storage_sys" => "RAID 50"                  , "notes" => undef},
-    "system_4"  => { "post" =>"344524"  , "username" => "raphaex"         , "capacity" =>  "60.0", "os" => "Windows 7"                , "storage_sys" => "RAID 5&6 / JBOD"          , "notes" => undef},
-    "system_5"  => { "post" =>"277353"  , "username" => "Rudde"           , "capacity" =>  "50.0", "os" => "Debian"                   , "storage_sys" => "mdadm"                    , "notes" => undef},
-    "system_6"  => { "post" =>"273858"  , "username" => "RandomNOOB"      , "capacity" =>  "48.0", "os" => "Ubuntu"                   , "storage_sys" => "mdadm"                    , "notes" => undef},
-    "system_7"  => { "post" =>"821520"  , "username" => "Alexdaman"       , "capacity" =>  "64.0", "os" => "Windows 7"                , "storage_sys" => "RAID 5 / JBOD"            , "notes" => "[post=1694520]Update 1[/post]"},
-    "system_8"  => { "post" =>"300520"  , "username" => "Whaler_99"       , "capacity" =>  "44.0", "os" => "unRAID"                   , "storage_sys" => "RAID 4"                   , "notes" => undef},
-    "system_9"  => { "post" =>"1390757" , "username" => "Hellboy"         , "capacity" =>  "38.0", "os" => "Windows Server 2008R2"    , "storage_sys" => "RAID 5"                   , "notes" => undef},
-    "system_10" => { "post" =>"273427"  , "username" => "looney"          , "capacity" =>  "48.0", "os" => "Windows Server 2012"      , "storage_sys" => "FlexRAID RAID 6"          , "notes" => "[post=2655227]Update 1[/post]"},
-    "system_11" => { "post" =>"896406"  , "username" => "Benjamin"        , "capacity" =>  "28.0", "os" => "FreeNAS"                  , "storage_sys" => "RAID 5&6"                 , "notes" => undef},
-    "system_12" => { "post" =>"492994"  , "username" => "MrSmoke"         , "capacity" =>  "28.0", "os" => "Ubuntu"                   , "storage_sys" => "mdadm"                    , "notes" => undef},
-    "system_13" => { "post" =>"414401"  , "username" => "Ramaddil"        , "capacity" =>  "45.0", "os" => "Windows 7"                , "storage_sys" => "RAID6"                    , "notes" => "[post=1883660]Update 1[/post], [post=2418935]2[/post]"},
-    "system_14" => { "post" =>"357732"  , "username" => "d33g33"          , "capacity" =>  "26.0", "os" => "Synology NAS"             , "storage_sys" => "RAID 5"                   , "notes" => undef},
-    "system_15" => { "post" =>"639745"  , "username" => "Hobobo"          , "capacity" =>  "24.0", "os" => "FreeNAS"                  , "storage_sys" => "RAID 6"                   , "notes" => undef},
-    "system_16" => { "post" =>"1004232" , "username" => "stevv"           , "capacity" =>  "24.0", "os" => "Windows 7"                , "storage_sys" => "RAID 6 (Areca 1880i)"     , "notes" => "[post=1829858]Update 1[/post]"},
-    "system_17" => { "post" =>"1839515" , "username" => "MrBucket101"     , "capacity" =>  "24.0", "os" => "Ubuntu"                   , "storage_sys" => "RAID 6"                   , "notes" => undef},
-    "system_18" => { "post" =>"715292"  , "username" => "Jarsky"          , "capacity" =>  "23.0", "os" => "Windows Server 2012"      , "storage_sys" => "RAID 5"                   , "notes" => undef},
-    "system_19" => { "post" =>"1175253" , "username" => "unknownkwita"    , "capacity" =>  "22.0", "os" => "Windows 8.1"              , "storage_sys" => "Storage Spaces"           , "notes" => undef},
-    "system_20" => { "post" =>"813545"  , "username" => "bobert"          , "capacity" =>  "21.0", "os" => "Windows 7"                , "storage_sys" => "FlexRAID RAID 6"          , "notes" => undef},
-    "system_21" => { "post" =>"1012708" , "username" => "atv127"          , "capacity" =>  "20.5", "os" => "Windows 7"                , "storage_sys" => "JBOD"                     , "notes" => undef},
-    "system_22" => { "post" =>"1135228" , "username" => "falsedell"       , "capacity" =>  "20.0", "os" => "Windows 8.1"              , "storage_sys" => "JBOD"                     , "notes" => undef},
-    "system_23" => { "post" =>"283688"  , "username" => "VictorB"         , "capacity" =>  "19.0", "os" => "ZFSGuru"                  , "storage_sys" => "RAID 6"                   , "notes" => undef},
-    "system_24" => { "post" =>"579418"  , "username" => "andi1455"        , "capacity" =>  "18.0", "os" => "Windows Server 2008R2"    , "storage_sys" => "RAID 6 (LSI)"             , "notes" => undef},
-    "system_25" => { "post" =>"570970"  , "username" => "mb2k"            , "capacity" =>  "18.0", "os" => "Windows Home Server 2011" , "storage_sys" => "JBOD"                     , "notes" => undef},
-    "system_26" => { "post" =>"420901"  , "username" => "Eric1024"        , "capacity" =>  "18.0", "os" => "Linux Mint"               , "storage_sys" => "RAID 6"                   , "notes" => undef},
-    "system_27" => { "post" =>"302388"  , "username" => "cushy91"         , "capacity" =>  "18.0", "os" => "unRAID"                   , "storage_sys" => "RAID 4"                   , "notes" => undef},
-    "system_28" => { "post" =>"368180"  , "username" => "alpenwasser"     , "capacity" =>  "4.3" , "os" => "Arch Linux"               , "storage_sys" => "ZFS"                      , "notes" => "BotW"},
-    "system_29" => { "post" =>"1561286" , "username" => "Hoppa"           , "capacity" =>  "16.0", "os" => "FreeNAS"                  , "storage_sys" => "RAID 10"                  , "notes" => undef},
-    "system_30" => { "post" =>"1625820" , "username" => "Chris230291"     , "capacity" =>  "16.0", "os" => "FreeNAS"                  , "storage_sys" => "RAID 5"                   , "notes" => undef},
-    "system_31" => { "post" =>"339263"  , "username" => "swizzle90"       , "capacity" =>  "16.0", "os" => "unRAID"                   , "storage_sys" => "RAID 4"                   , "notes" => undef},
-    "system_32" => { "post" =>"1022882" , "username" => "Appleby"         , "capacity" =>  "15.0", "os" => "Windows Server 2012"      , "storage_sys" => "RAID5 & 0"                , "notes" => undef},
-    "system_33" => { "post" =>"602093"  , "username" => "Jimstah87"       , "capacity" =>  "15.0", "os" => "Windows 8"                , "storage_sys" => "RAID 5, BotW"             , "notes" => undef},
-    "system_34" => { "post" =>"379664"  , "username" => "AntarticCrash"   , "capacity" =>  "15.0", "os" => "Windows 7"                , "storage_sys" => "JBOD"                     , "notes" => undef},
-    "system_35" => { "post" =>"279789"  , "username" => "Algoat"          , "capacity" =>  "15.0", "os" => "FreeNAS 8.3"              , "storage_sys" => "RAID 5"                   , "notes" => undef},
-    "system_36" => { "post" =>"277145"  , "username" => "Hellboy"         , "capacity" =>  "15.0", "os" => "Windows 7"                , "storage_sys" => "JBOD"                     , "notes" => undef},
-    "system_37" => { "post" =>"1838389" , "username" => "X1XNobleX1X"     , "capacity" =>  "15.0", "os" => "Synology NAS"             , "storage_sys" => "Synology Hybrid RAID"     , "notes" => undef},
-    "system_38" => { "post" =>"657061"  , "username" => "tycheleto"       , "capacity" =>  "14.0", "os" => "Windows 8"                , "storage_sys" => "FlexRAID"                 , "notes" => "[post=1852990]Update 1[/post]"},
-    "system_39" => { "post" =>"1404053" , "username" => "Patrick3D"       , "capacity" =>  "12.0", "os" => "Ubuntu 13.10"             , "storage_sys" => "lvm2"                     , "notes" => undef},
-    "system_40" => { "post" =>"1059401" , "username" => "dalekphalm"      , "capacity" =>  "12.0", "os" => "Windows Home Server 2011" , "storage_sys" => "FlexRAID RAID 5"          , "notes" => undef},
-    "system_41" => { "post" =>"559082"  , "username" => "5lay3r"          , "capacity" =>  "10.0", "os" => "Windows 8"                , "storage_sys" => "Storage Spaces"           , "notes" => undef},
-    "system_42" => { "post" =>"277145"  , "username" => "Hellboy"         , "capacity" =>  "10.0", "os" => "Windows 7"                , "storage_sys" => "JBOD"                     , "notes" => undef},
-    "system_43" => { "post" =>"277922"  , "username" => "MG2R"            , "capacity" =>  "8.0" , "os" => "Debian"                   , "storage_sys" => "RAID5 w/ mdadm"           , "notes" => "[b]K'Nex[/b] Build, BotW"},
-    "system_44" => { "post" =>"303666"  , "username" => "cushy91"         , "capacity" =>  "2.0" , "os" => "unRAID"                   , "storage_sys" => "RAID 4"                   , "notes" => "HP Proliant Microserver"},
-    "system_45" => { "post" =>"1933949" , "username" => "Galxy"           , "capacity" =>  "23.0", "os" => "Windows Server 2012"      , "storage_sys" => "FlexRAID"                 , "notes" => undef},
-    "system_46" => { "post" =>"2009510" , "username" => "alpenwasser"     , "capacity" =>  "29.0", "os" => "Arch Linux"               , "storage_sys" => "ZFS"                      , "notes" => undef},
-    "system_47" => { "post" =>"2074049" , "username" => "MoonSpot"        , "capacity" =>  "10.0", "os" => "Drobo"                    , "storage_sys" => "Drobo BeyondRAID"         , "notes" => undef},
-    "system_48" => { "post" =>"2126468" , "username" => "Gronnie"         , "capacity" =>  "24.0", "os" => "Windows 7"                , "storage_sys" => "Flexraid"                 , "notes" => undef},
-    "system_49" => { "post" =>"2195738" , "username" => "2sysel2"         , "capacity" =>  "9.0" , "os" => "Windows 8"                , "storage_sys" => "JBOD"                     , "notes" => undef},
-    "system_50" => { "post" =>"2210666" , "username" => "overflowsc"      , "capacity" =>  "24.5", "os" => "Linux Mint"               , "storage_sys" => "mdadm"                    , "notes" => undef},
-    "system_51" => { "post" =>"2210718" , "username" => "electrostatic"   , "capacity" =>  "21.0", "os" => "FreeNAS"                  , "storage_sys" => "ZFS"                      , "notes" => undef},
-    "system_52" => { "post" =>"2261402" , "username" => "Graveworm"       , "capacity" =>  "16.0", "os" => "Windows Server 2012"      , "storage_sys" => "RAID (LSI)"               , "notes" => undef},
-    "system_53" => { "post" =>"2298428" , "username" => "Zerreth"         , "capacity" =>  "11.5", "os" => "Windows 8.1"              , "storage_sys" => "JBOD"                     , "notes" => "K'nex"},
-    "system_54" => { "post" =>"2304876" , "username" => "Dr_Frankenstein" , "capacity" =>  "12.0", "os" => "Synology"                 , "storage_sys" => "Synology"                 , "notes" => undef},
-    "system_55" => { "post" =>"2386836" , "username" => "kev507"          , "capacity" =>  "32.0", "os" => "Windows 7 Pro"            , "storage_sys" => "RAID6"                    , "notes" => undef},
-    "system_56" => { "post" =>"2392499" , "username" => "Danny91"         , "capacity" =>  "22.0", "os" => "Windows 7"                , "storage_sys" => "FlexRAID"                 , "notes" => undef},
-    "system_57" => { "post" =>"2536977" , "username" => "Woodypc"         , "capacity" =>  "10.0", "os" => "Windows 7"                , "storage_sys" => "StableBit DrivePool"      , "notes" => undef},
-    "system_58" => { "post" =>"2635265" , "username" => "lekro"           , "capacity" =>  "16.0", "os" => "FreeNAS"                  , "storage_sys" => "ZFS"                      , "notes" => undef},
-    "system_59" => { "post" =>"2654107" , "username" => "PhantomWarz"     , "capacity" =>  "28.0", "os" => "NAS4Free"                 , "storage_sys" => "ZFS"                      , "notes" => undef},
+    "system_1"  => { "post" =>"1230802" , "username" => "dangerous1"      , "capacity" =>  "89.5" , "case" => "Lian Li PC-A70F"                , "os" => "Win 7"      , "storage_sys" => "JBOD"       , "notes" => undef},
+    "system_2"  => { "post" =>"1009417" , "username" => "madcow"          , "capacity" =>  "70.0" , "case" => "Supermicro SC846BE26-R920B"     , "os" => "Gentoo"     , "storage_sys" => "mdadm, ZFS" , "notes" => undef},
+    "system_3"  => { "post" =>"1653057" , "username" => "Ssoele"          , "capacity" =>  "64.0" , "case" => "Norcotek RPC4216"               , "os" => "WS 2012R2"  , "storage_sys" => "HWRD"       , "notes" => undef},
+    "system_4"  => { "post" =>"344524"  , "username" => "raphaex"         , "capacity" =>  "60.0" , "case" => "Norco RPC-4224 4U"              , "os" => "Win 7"      , "storage_sys" => "HWRD, JBOD" , "notes" => undef},
+    "system_5"  => { "post" =>"277353"  , "username" => "Rudde"           , "capacity" =>  "50.0" , "case" => "Supermicro SC846TQ-R1200B"      , "os" => "Debian"     , "storage_sys" => "mdadm"      , "notes" => undef},
+    "system_6"  => { "post" =>"273858"  , "username" => "RandomNOOB"      , "capacity" =>  "48.0" , "case" => "NorcoTek RPC-4224"              , "os" => "Ubuntu"     , "storage_sys" => "mdadm"      , "notes" => undef},
+    "system_7"  => { "post" =>"821520"  , "username" => "Alexdaman"       , "capacity" =>  "64.0" , "case" => "Chieftec Arena 2000-B"          , "os" => "Win 7"      , "storage_sys" => "HWRD, JBOD" , "notes" => "[post=1694520]Upd 1[/post]"},
+    "system_8"  => { "post" =>"300520"  , "username" => "Whaler_99"       , "capacity" =>  "44.0" , "case" => "Antec 1200 v3"                  , "os" => "unRAID"     , "storage_sys" => "unRAID"     , "notes" => undef},
+    "system_9"  => { "post" =>"1390757" , "username" => "Hellboy"         , "capacity" =>  "38.0" , "case" => "Fractal Design Array R2"        , "os" => "WS 2008R2"  , "storage_sys" => "RD"         , "notes" => undef},
+    "system_10" => { "post" =>"273427"  , "username" => "looney"          , "capacity" =>  "48.0" , "case" => "Norcotek RPC4220"               , "os" => "WS 2012"    , "storage_sys" => "FlexRAID"   , "notes" => "[post=2655227]Upd 1[/post]"},
+    "system_11" => { "post" =>"896406"  , "username" => "Benjamin"        , "capacity" =>  "28.0" , "case" => "Fractal Design R4"              , "os" => "FreeNAS"    , "storage_sys" => "ZFS"        , "notes" => undef},
+    "system_12" => { "post" =>"492994"  , "username" => "MrSmoke"         , "capacity" =>  "28.0" , "case" => "Norcotek RPC4224"               , "os" => "Ubuntu"     , "storage_sys" => "mdadm"      , "notes" => undef},
+    "system_13" => { "post" =>"414401"  , "username" => "Ramaddil"        , "capacity" =>  "45.0" , "case" => "Lian Li 343B"                   , "os" => "Win 7"      , "storage_sys" => "HWRD"       , "notes" => "[post=1883660]Upd 1[/post], [post=2418935]2[/post]"},
+    "system_14" => { "post" =>"357732"  , "username" => "d33g33"          , "capacity" =>  "26.0" , "case" => "Synology DS1511+, DX510"        , "os" => "Synology"   , "storage_sys" => "SHR"        , "notes" => undef},
+    "system_15" => { "post" =>"639745"  , "username" => "Hobobo"          , "capacity" =>  "24.0" , "case" => "Fractal Design Define Mini"     , "os" => "FreeNAS"    , "storage_sys" => "ZFS"        , "notes" => undef},
+    "system_16" => { "post" =>"1004232" , "username" => "stevv"           , "capacity" =>  "24.0" , "case" => "LIAN LI PC-V700X"               , "os" => "Win 7"      , "storage_sys" => "HWRD"       , "notes" => "[post=1829858]Upd 1[/post]"},
+    "system_17" => { "post" =>"1839515" , "username" => "MrBucket101"     , "capacity" =>  "24.0" , "case" => "Fractal Design Arc Midi"        , "os" => "Ubuntu"     , "storage_sys" => "HWRD"       , "notes" => undef},
+    "system_18" => { "post" =>"715292"  , "username" => "Jarsky"          , "capacity" =>  "23.0" , "case" => "Silverstone Lascala LC17B HTPC" , "os" => "WS 2012"    , "storage_sys" => "HWRD, JBOD" , "notes" => undef},
+    "system_19" => { "post" =>"1175253" , "username" => "unknownkwita"    , "capacity" =>  "22.0" , "case" => "Silverstone GD08"               , "os" => "Win 8.1"    , "storage_sys" => "StSp"       , "notes" => undef},
+    "system_20" => { "post" =>"813545"  , "username" => "bobert"          , "capacity" =>  "21.0" , "case" => "Bitfenix Shinobi"               , "os" => "Win 7"      , "storage_sys" => "FlRD"       , "notes" => undef},
+    "system_21" => { "post" =>"1012708" , "username" => "atv127"          , "capacity" =>  "20.5" , "case" => "CM Storm Trooper"               , "os" => "Win 7"      , "storage_sys" => "JBOD"       , "notes" => undef},
+    "system_22" => { "post" =>"1135228" , "username" => "falsedell"       , "capacity" =>  "20.0" , "case" => "Cooler Master Cosmos II"        , "os" => "Win 8.1"    , "storage_sys" => "JBOD"       , "notes" => undef},
+    "system_23" => { "post" =>"283688"  , "username" => "VictorB"         , "capacity" =>  "19.0" , "case" => "Fractal Design ARC Midi"        , "os" => "ZFSGuru"    , "storage_sys" => "ZFS"        , "notes" => undef},
+    "system_24" => { "post" =>"579418"  , "username" => "andi1455"        , "capacity" =>  "18.0" , "case" => "Fractal Define R4"              , "os" => "WS 2008R2"  , "storage_sys" => "HWRD"       , "notes" => undef},
+    "system_25" => { "post" =>"570970"  , "username" => "mb2k"            , "capacity" =>  "18.0" , "case" => "Cooler Master CM 690"           , "os" => "WHS 2011"   , "storage_sys" => "JBOD"       , "notes" => undef},
+    "system_26" => { "post" =>"420901"  , "username" => "Eric1024"        , "capacity" =>  "18.0" , "case" => "Supermicro CSE-822T-400LPB"     , "os" => "Linux Mint" , "storage_sys" => "ZFS"        , "notes" => undef},
+    "system_27" => { "post" =>"302388"  , "username" => "cushy91"         , "capacity" =>  "18.0" , "case" => "XClio Nighthawk"                , "os" => "unRAID"     , "storage_sys" => "unRAID"     , "notes" => undef},
+    "system_28" => { "post" =>"368180"  , "username" => "alpenwasser"     , "capacity" =>   "4.3" , "case" => "Fractal Design R4 (custom)"     , "os" => "Arch Linux" , "storage_sys" => "ZFS"        , "notes" => "BotW"},
+    "system_29" => { "post" =>"1561286" , "username" => "Hoppa"           , "capacity" =>  "16.0" , "case" => "Bitfenix Phenom M"              , "os" => "FreeNAS"    , "storage_sys" => "ZFS?"       , "notes" => undef},
+    "system_30" => { "post" =>"1625820" , "username" => "Chris230291"     , "capacity" =>  "16.0" , "case" => "unknown"                        , "os" => "FreeNAS"    , "storage_sys" => "ZFS"        , "notes" => undef},
+    "system_31" => { "post" =>"339263"  , "username" => "swizzle90"       , "capacity" =>  "16.0" , "case" => "NZXT Source 210 Elite"          , "os" => "unRAID"     , "storage_sys" => "unRAID"     , "notes" => undef},
+    "system_32" => { "post" =>"1022882" , "username" => "Appleby"         , "capacity" =>  "15.0" , "case" => "Norco RPC4220"                  , "os" => "WS 2012"    , "storage_sys" => "HWRD"       , "notes" => undef},
+    "system_33" => { "post" =>"602093"  , "username" => "Jimstah87"       , "capacity" =>  "15.0" , "case" => "Bitfenix Prodigy"               , "os" => "Win 8"      , "storage_sys" => "HWRD"       , "notes" => "BotW"},
+    "system_34" => { "post" =>"379664"  , "username" => "AntarticCrash"   , "capacity" =>  "15.0" , "case" => "NZXT Phantom"                   , "os" => "Win 7"      , "storage_sys" => "JBOD"       , "notes" => undef},
+    "system_35" => { "post" =>"279789"  , "username" => "Algoat"          , "capacity" =>  "15.0" , "case" => "Silverstone Precision PS08"     , "os" => "FreeNAS"    , "storage_sys" => "ZFS"        , "notes" => undef},
+    "system_36" => { "post" =>"277145"  , "username" => "Hellboy"         , "capacity" =>  "15.0" , "case" => "Coolermaster HAF-X"             , "os" => "Win 7"      , "storage_sys" => "JBOD"       , "notes" => undef},
+    "system_37" => { "post" =>"1838389" , "username" => "X1XNobleX1X"     , "capacity" =>  "15.0" , "case" => "Synology DS1513+"               , "os" => "Synology"   , "storage_sys" => "SHR"        , "notes" => undef},
+    "system_38" => { "post" =>"657061"  , "username" => "tycheleto"       , "capacity" =>  "14.0" , "case" => "Fractal Design Define Mini"     , "os" => "Win 8"      , "storage_sys" => "FlexRAID"   , "notes" => "[post=1852990]Upd 1[/post]"},
+    "system_39" => { "post" =>"1404053" , "username" => "Patrick3D"       , "capacity" =>  "12.0" , "case" => "Raidmax Seiran"                 , "os" => "Ubuntu"     , "storage_sys" => "lvm2"       , "notes" => undef},
+    "system_40" => { "post" =>"1059401" , "username" => "dalekphalm"      , "capacity" =>  "12.0" , "case" => "Lian Li + SAS Expander Case"    , "os" => "WHS 2011"   , "storage_sys" => "FlexRAID"   , "notes" => undef},
+    "system_41" => { "post" =>"559082"  , "username" => "5lay3r"          , "capacity" =>  "10.0" , "case" => "Midi Tower"                     , "os" => "Win 8"      , "storage_sys" => "StSp"       , "notes" => undef},
+    "system_42" => { "post" =>"277145"  , "username" => "Hellboy"         , "capacity" =>  "10.0" , "case" => "unknown"                        , "os" => "Win 7"      , "storage_sys" => "JBOD"       , "notes" => undef},
+    "system_43" => { "post" =>"277922"  , "username" => "MG2R"            , "capacity" =>   "8.0" , "case" => "K'nex Custom Case"              , "os" => "Debian"     , "storage_sys" => "mdadm"      , "notes" => "[b]K'Nex[/b] Build, BotW"},
+    "system_44" => { "post" =>"303666"  , "username" => "cushy91"         , "capacity" =>   "2.0" , "case" => "HP Proliant MicroServer N40L"   , "os" => "unRAID"     , "storage_sys" => "unRAID"     , "notes" => "HP Proliant Microserver"},
+    "system_45" => { "post" =>"1933949" , "username" => "Galxy"           , "capacity" =>  "23.0" , "case" => "Antec 1200"                     , "os" => "WS 2012"    , "storage_sys" => "FlexRAID"   , "notes" => undef},
+    "system_46" => { "post" =>"2009510" , "username" => "alpenwasser"     , "capacity" =>  "29.0" , "case" => "InWin PP689 (Custom HDD Rack)"  , "os" => "Arch"       , "storage_sys" => "ZFS"        , "notes" => undef},
+    "system_47" => { "post" =>"2074049" , "username" => "MoonSpot"        , "capacity" =>  "10.0" , "case" => "Drobo"                          , "os" => "Drobo"      , "storage_sys" => "Drobo"      , "notes" => undef},
+    "system_48" => { "post" =>"2126468" , "username" => "Gronnie"         , "capacity" =>  "24.0" , "case" => "Corsair 500R"                   , "os" => "Win 7"      , "storage_sys" => "FlexRAID"   , "notes" => undef},
+    "system_49" => { "post" =>"2195738" , "username" => "2sysel2"         , "capacity" =>   "9.0" , "case" => "Bitfenix Prodigy mITX"          , "os" => "Win 8"      , "storage_sys" => "JBOD"       , "notes" => undef},
+    "system_50" => { "post" =>"2210666" , "username" => "overflowsc"      , "capacity" =>  "24.5" , "case" => "Fractal Design Node 804"        , "os" => "Linux Mint" , "storage_sys" => "mdadm"      , "notes" => undef},
+    "system_51" => { "post" =>"2210718" , "username" => "electrostatic"   , "capacity" =>  "21.0" , "case" => "Cooler Master HAF 912"          , "os" => "FreeNAS"    , "storage_sys" => "ZFS"        , "notes" => undef},
+    "system_52" => { "post" =>"2261402" , "username" => "Graveworm"       , "capacity" =>  "16.0" , "case" => "Lian Li PC-Q35"                 , "os" => "WS 2012"    , "storage_sys" => "HWRD"       , "notes" => undef},
+    "system_53" => { "post" =>"2298428" , "username" => "Zerreth"         , "capacity" =>  "11.5" , "case" => "K'nex Custom Case"              , "os" => "Win 8.1"    , "storage_sys" => "JBOD"       , "notes" => "K'nex"},
+    "system_54" => { "post" =>"2304876" , "username" => "Dr_Frankenstein" , "capacity" =>  "12.0" , "case" => "Synology DS412+"                , "os" => "Synology"   , "storage_sys" => "SHR"        , "notes" => undef},
+    "system_55" => { "post" =>"2386836" , "username" => "kev507"          , "capacity" =>  "32.0" , "case" => "Corsair 750D"                   , "os" => "Win 7"      , "storage_sys" => "HWRD"       , "notes" => undef},
+    "system_56" => { "post" =>"2392499" , "username" => "Danny91"         , "capacity" =>  "22.0" , "case" => "Logic Case SC-4324"             , "os" => "Win 7"      , "storage_sys" => "FlexRAID"   , "notes" => undef},
+    "system_57" => { "post" =>"2536977" , "username" => "Woodypc"         , "capacity" =>  "10.0" , "case" => "Antec One Hundred"              , "os" => "Win 7"      , "storage_sys" => "StableBit"  , "notes" => undef},
+    "system_58" => { "post" =>"2635265" , "username" => "lekro"           , "capacity" =>  "16.0" , "case" => "Fractal Design Arc Midi R2"     , "os" => "FreeNAS"    , "storage_sys" => "ZFS"        , "notes" => undef},
+    "system_59" => { "post" =>"2654107" , "username" => "PhantomWarz"     , "capacity" =>  "28.0" , "case" => "Acer R380F2 + Chembro 24 Bay"   , "os" => "NAS4Free"   , "storage_sys" => "ZFS"        , "notes" => undef},
+    "system_60" => { "post" =>"829426"  , "username" => "STUdog"          , "capacity" =>  "83.5" , "case" => "Coolermaster Cosmos 2 + Norco"  , "os" => "Win"        , "storage_sys" => "unknown"    , "notes" => undef},
 );
 
 
@@ -166,6 +167,16 @@ my $TABLE_TITLE = "[b][size=6]LTT "
                   . " TB+ Storage Rankings[/size][/b]"
                   . "\n[hr]";
 
+my $ABBR_KEY = "\n\n[size=5]Abbreviations Key[/size]"
+             . "[hr]\n"
+             . "[b]WS[/b]     Windows Server\n"
+             . "[b]WHS[/b]    Windows Home Server\n"
+             . "[b]SHR[/b]    Synology Hybrid RAID\n"
+             . "[b]StSp[/b]   Storage Spaces\n"
+             . "[b]RD[/b]     RAID (unspecified if hardware or software)\n"
+             . "[b]HWRD[/b]   Hardware RAID\n"
+             . "[b]FlRD[/b]   FlexRAID";
+
 my $FOOTER = "Sorting priority: First by capacity descending, then by post date, ascending."
             . " Last updated: ";
 
@@ -177,6 +188,8 @@ my $URL_OPN = "[post=";
 my $URL_MID = "]";
 my $URL_END = "[/post]";
 
+my $CAPACITY_PADDING_AFTER = "  ";
+
 
 my %POSTS       = ();
 my %USERNAMES   = ();
@@ -184,6 +197,7 @@ my %CAPACITIES  = ();
 my %OS          = ();
 my %STORAGE_SYS = ();
 my %NOTES       = ();
+my %CASES       = ();
 
 
 
@@ -382,7 +396,8 @@ sub generate_rows
                 . ${ ${ $formatted_cols_ref }[3] }{$sys_id} 
                 . "[b]" 
                 . ${ ${ $formatted_cols_ref }[4] }{$sys_id}  
-                . " TB[/b]    " 
+                . " TB[/b]" 
+                . $CAPACITY_PADDING_AFTER
                 . ${ ${ $formatted_cols_ref }[5] }{$sys_id} 
                 . ${ ${ $formatted_cols_ref }[6] }{$sys_id} 
                 . ((${ $notes_ref }{$sys_id}) ? ${ $notes_ref }{$sys_id} : "");
@@ -475,6 +490,8 @@ sub print_list
 
         say for @unranked_rows;
     }
+
+    say $ABBR_KEY;
 }
 
 
@@ -484,15 +501,20 @@ sub format_list
     # $_[1]: reference to %CAPACITIES:      system_id => capacity
     # $_[2]: reference to %OS:              system_id => OS
     # $_[3]: reference to %STORAGE_SYS:     system_id => storage system
-    # $_[3]: reference to %POSTS            system_id => post number
+    # $_[4]: reference to %CASES            system_id => case
+    # $_[5]: reference to %POSTS            system_id => post number
 
-    my $ranks_ref             = get_ranks($_[4], $_[1]);
+    my $ranks_ref             = get_ranks($_[5], $_[1]);
     my $padded_ranks_ref      = pad_fields($ranks_ref, 2);
-    my $padded_usernames_ref  = pad_fields($_[0], 4);
+    my $padded_usernames_ref  = pad_fields($_[0], 2);
     my $pure_paddings_ref     = reduce_to_padding($_[0], $padded_usernames_ref);
     my $padded_capacities_ref = pad_capacities($_[1]);
-    my $padded_os_ref         = pad_fields($_[2], 4);
-    my $padded_storage_ref    = pad_fields($_[3], 4);
+
+    my $concat_os_storage_ref = { map { 
+        $_ => ${$_[2]}{$_} . " (". ${$_[3]}{$_} . ")" } keys %{ $_[2] } };
+
+    my $padded_concat_os_storage_ref = pad_fields($concat_os_storage_ref, 2);
+    my $padded_cases_ref       = pad_fields($_[4], 2);
 
     return ( 
         $ranks_ref,
@@ -500,8 +522,8 @@ sub format_list
         $padded_usernames_ref,
         $pure_paddings_ref,
         $padded_capacities_ref,
-        $padded_os_ref,
-        $padded_storage_ref);
+        $padded_cases_ref,
+        $padded_concat_os_storage_ref);
 }
 
 
@@ -513,7 +535,8 @@ sub extract_info
     # $_[3]: reference to %CAPACITIES:      system_id => capacity
     # $_[4]: reference to %OS:              system_id => OS
     # $_[5]: reference to %STORAGE_SYS:     system_id => storage system
-    # $_[6]: reference to %NOTES:           system_id => notes
+    # $_[6]: reference to %CASES            system_id => case
+    # $_[7]: reference to %NOTES:           system_id => notes
 
     # Extracts info from %MASTER_RECORD into separate hashes
     # for easier processing.
@@ -523,7 +546,8 @@ sub extract_info
     %{ $_[3] } = map { $_ => ${ ${ $_[0]}{$_} }{capacity}    } keys %{ $_[0] };
     %{ $_[4] } = map { $_ => ${ ${ $_[0]}{$_} }{os}          } keys %{ $_[0] };
     %{ $_[5] } = map { $_ => ${ ${ $_[0]}{$_} }{storage_sys} } keys %{ $_[0] };
-    %{ $_[6] } = map { $_ => ${ ${ $_[0]}{$_} }{notes}       } keys %{ $_[0] };
+    %{ $_[6] } = map { $_ => ${ ${ $_[0]}{$_} }{case}        } keys %{ $_[0] };
+    %{ $_[7] } = map { $_ => ${ ${ $_[0]}{$_} }{notes}       } keys %{ $_[0] };
 }
 
 
@@ -539,6 +563,7 @@ extract_info(
     \%CAPACITIES,
     \%OS,
     \%STORAGE_SYS,
+    \%CASES,
     \%NOTES);
 
 
@@ -547,6 +572,7 @@ my @formatted_cols = format_list(
     \%CAPACITIES,
     \%OS,
     \%STORAGE_SYS,
+    \%CASES,
     \%POSTS);
 
 
