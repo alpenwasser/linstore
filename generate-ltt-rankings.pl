@@ -97,7 +97,7 @@ my %MASTER_RECORD = (
     "system_7"  => { "post" =>"821520"  , "username" => "Alexdaman"       , "capacity" =>  "64.0", "os" => "Windows 7"                , "storage_sys" => "RAID 5 / JBOD"            , "notes" => "[post=1694520]Update 1[/post]"},
     "system_8"  => { "post" =>"300520"  , "username" => "Whaler_99"       , "capacity" =>  "44.0", "os" => "unRAID"                   , "storage_sys" => "RAID 4"                   , "notes" => undef},
     "system_9"  => { "post" =>"1390757" , "username" => "Hellboy"         , "capacity" =>  "38.0", "os" => "Windows Server 2008R2"    , "storage_sys" => "RAID 5"                   , "notes" => undef},
-    "system_10" => { "post" =>"273427"  , "username" => "looney"          , "capacity" =>  "37.0", "os" => "Windows Server 2012"      , "storage_sys" => "FlexRAID RAID 6"          , "notes" => undef},
+    "system_10" => { "post" =>"273427"  , "username" => "looney"          , "capacity" =>  "48.0", "os" => "Windows Server 2012"      , "storage_sys" => "FlexRAID RAID 6"          , "notes" => "[post=2655227]Update 1[/post]"},
     "system_11" => { "post" =>"896406"  , "username" => "Benjamin"        , "capacity" =>  "28.0", "os" => "FreeNAS"                  , "storage_sys" => "RAID 5&6"                 , "notes" => undef},
     "system_12" => { "post" =>"492994"  , "username" => "MrSmoke"         , "capacity" =>  "28.0", "os" => "Ubuntu"                   , "storage_sys" => "mdadm"                    , "notes" => undef},
     "system_13" => { "post" =>"414401"  , "username" => "Ramaddil"        , "capacity" =>  "45.0", "os" => "Windows 7"                , "storage_sys" => "RAID6"                    , "notes" => "[post=1883660]Update 1[/post], [post=2418935]2[/post]"},
