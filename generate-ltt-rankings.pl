@@ -151,6 +151,20 @@ my %MASTER_RECORD = (
 );
 
 
+    # %CAPACITY_GROUPS must be adjusted accordingly when the
+    # capacity  of the  highest  ranked  system exceeds  the
+    # highest entry in %CAPACITY_GROUPS.
+
+my %CAPACITY_GROUPS = (
+    "10 TB ≤ capacity < 20 TB" => 20,
+    "20 TB ≤ capacity < 30 TB" => 30,
+    "30 TB ≤ capacity < 40 TB" => 40,
+    "40 TB ≤ capacity < 50 TB" => 50,
+    "50 TB ≤ capacity < 60 TB" => 60,
+    "60 TB ≤ capacity < 70 TB" => 70,
+    "70 TB ≤ capacity < 80 TB" => 80,
+    "80 TB ≤ capacity < 90 TB" => 90,
+);
 
     
     # Don't change anything below  this line unless you know
@@ -404,6 +418,29 @@ sub get_median
 }
 
 
+sub get_grouped_stats
+{
+    # $_[0]: reference to @capacities_which_count
+    # $_[1]: reference to %stats
+
+    my $valid_caps_ref = $_[0];
+    my $stats_ref      = $_[1];
+
+    ${ $stats_ref }{grouped_stats} = \%CAPACITY_GROUPS;
+
+
+    for my $range (keys %{ ${ $stats_ref }{grouped_stats} })
+    {
+        my $upper_limit = ${ $stats_ref }{grouped_stats}{$range};
+
+        my @capacities_in_range = grep { 
+            $_ >= $upper_limit -10 && $_ < $upper_limit } @{ $valid_caps_ref };
+ 
+        ${ $stats_ref }{grouped_stats}{$range} = scalar(@capacities_in_range);
+    }
+}
+
+
 sub get_statistics
 {
     # $_[0]: reference to @capacities_which_count
@@ -416,8 +453,23 @@ sub get_statistics
         = get_arithm_mean($valid_caps_ref,${ $stats }{total_capacity});
     ${ $stats }{median_cap}
         = get_median($valid_caps_ref);
+    get_grouped_stats($valid_caps_ref,$stats);
 
     return $stats;
+}
+
+
+sub print_grouped_stats
+{
+    # $_[0]: reference to grouped statistics
+
+    my $grouped_stats_ref = pad_capacities($_[0]);
+
+    say "\n\n[b]Grouped Distribution[/b]";
+    say $_ 
+        . "     " 
+        . ${ $grouped_stats_ref }{$_} 
+        . " systems" for sort { $a cmp $b } keys %{ $grouped_stats_ref };
 }
 
 
@@ -545,6 +597,7 @@ sub print_list
     my $stats_ref = get_statistics($capacities_which_count_ref);
 
 
+    # Main List
     say "\n[hr][b][size=5]Total Storage Capacity: " 
         . ${ $stats_ref }{total_capacity}
         . " TB[/size][/b]"
@@ -552,18 +605,18 @@ sub print_list
         . $FOOTER
         . $time->year() . '-' . uc($time->monname()) . '-' . $time->mday();
 
+
+    # Statistics
     print "\n\n[size=5]Statistics[/size]"
         . "[hr]\n"
         . "Arithmetic Mean Capacity:    ";
-
     printf("%.1f", ${ $stats_ref }{arith_mean_cap});
-
     print " TB\n"
         . "Median Capacity:             ";
-
     printf("%.1f", ${ $stats_ref }{median_cap});
-
     print " TB";
+
+    print_grouped_stats(${ $stats_ref }{grouped_stats});
 
 
     # If  there  are  entries   with  capacities  below  the
