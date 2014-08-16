@@ -339,14 +339,85 @@ sub reduce_to_padding
 }
 
 
-sub calculate_total_capacity
+sub get_valid_capacities
 {
+    # return val: reference to @capacities_which_count
+
     my $capacity_ref = $_[0];
 
-    my @capacities_which_count 
-    = map { ($_ < $CAPACITY_THRESHOLD ) ? 0 : $_ } values %{ $capacity_ref };
+    return [ grep { $_ >= 10 } values %{ $capacity_ref }];
+}
 
-    return sum(@capacities_which_count);
+
+sub calculate_total_capacity
+{
+    # my $capacity_ref = $_[0];
+    my $valid_caps_ref = $_[0];
+
+    return sum(@{ $valid_caps_ref });
+}
+
+
+sub get_arithm_mean
+{
+    # $_[0]: reference to @capacities_which_count
+    # $_[1]: total capacity based on valid capacities
+    
+    my $valid_caps_ref    = $_[0];
+    my $total_capacity    = $_[1];
+
+    my $number_of_entries = scalar(@{ $valid_caps_ref });
+    return $total_capacity / $number_of_entries;
+}
+
+
+sub get_median
+{
+    # $_[0]: reference to @capacities_which_count
+
+    my $valid_caps_ref = $_[0];
+    my $median;
+
+    my $number_of_entries = scalar(@{ $valid_caps_ref});
+    my @sorted_capacities = sort { $a <=> $b } @{ $valid_caps_ref };
+
+    if ($number_of_entries % 2 == 1)
+    {
+        # Odd number of elements => central element is median.
+
+        use integer;
+        my $median_index = $number_of_entries / 2;
+        return $sorted_capacities[$median_index];
+
+    } else {
+        # Even number of elements => arithmetic mean between
+        # two central elements is median.
+
+        # Need to adjust because index of array starts at 0,
+        # naturally.
+        my $lower_median_index = $number_of_entries / 2 - 1;
+        my $upper_median_index = $lower_median_index + 1;
+
+        return ($sorted_capacities[$lower_median_index]
+            + $sorted_capacities[$upper_median_index]) / 2;
+    }
+}
+
+
+sub get_statistics
+{
+    # $_[0]: reference to @capacities_which_count
+
+    my $valid_caps_ref = $_[0];
+    my $stats = {};
+
+    ${ $stats }{total_capacity} = calculate_total_capacity($valid_caps_ref);
+    ${ $stats }{arith_mean_cap} 
+        = get_arithm_mean($valid_caps_ref,${ $stats }{total_capacity});
+    ${ $stats }{median_cap}
+        = get_median($valid_caps_ref);
+
+    return $stats;
 }
 
 
@@ -469,13 +540,30 @@ sub print_list
 
 
     my $time = Time::Piece->new();
+
+    my $capacities_which_count_ref = get_valid_capacities($capacity_ref);
+    my $stats_ref = get_statistics($capacities_which_count_ref);
+
+
     say "\n[hr][b][size=5]Total Storage Capacity: " 
-        . calculate_total_capacity($capacity_ref)
+        . ${ $stats_ref }{total_capacity}
         . " TB[/size][/b]"
         . "[hr]\n"
         . $FOOTER
         . $time->year() . '-' . uc($time->monname()) . '-' . $time->mday();
 
+    print "\n\n[size=5]Statistics[/size]"
+        . "[hr]\n"
+        . "Arithmetic Mean Capacity:    ";
+
+    printf("%.1f", ${ $stats_ref }{arith_mean_cap});
+
+    print " TB\n"
+        . "Median Capacity:             ";
+
+    printf("%.1f", ${ $stats_ref }{median_cap});
+
+    print " TB";
 
 
     # If  there  are  entries   with  capacities  below  the
