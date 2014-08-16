@@ -166,6 +166,8 @@ my %CAPACITY_GROUPS = (
     "80 TB ≤ capacity < 90 TB" => 90,
 );
 
+my $GROUPING_INTERVAL = 10;
+
     
     # Don't change anything below  this line unless you know
     # what you're doing!
@@ -434,7 +436,8 @@ sub get_grouped_stats
         my $upper_limit = ${ $stats_ref }{grouped_stats}{$range};
 
         my @capacities_in_range = grep { 
-            $_ >= $upper_limit -10 && $_ < $upper_limit } @{ $valid_caps_ref };
+            $_ >= $upper_limit - $GROUPING_INTERVAL && $_ < $upper_limit } 
+            @{ $valid_caps_ref };
  
         ${ $stats_ref }{grouped_stats}{$range} = scalar(@capacities_in_range);
     }
