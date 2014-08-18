@@ -844,6 +844,14 @@ sub get_vendor_stats
 }
 
 
+sub get_system_count
+{
+    # Must be executed after remove_small_systems() to yield
+    # desired result.
+    return scalar(keys %HDD_RECORD);
+}
+
+
 sub get_drive_stats
 {
     # $_[0]: reference to %drive_stats;
@@ -872,6 +880,8 @@ sub get_drive_stats
     (${ $drive_stats_ref }{vendor_stats}, 
         ${ $drive_stats_ref }{vendor_capacities})
         = get_vendor_stats($drive_stats_ref);
+
+    ${ $drive_stats_ref }{system_count} = get_system_count();
 }
 
 
@@ -886,7 +896,10 @@ sub print_drive_stats
     print "Total Number of Drives                 " 
         . $drive_stats{total_drive_count}
         . "\n"
-        . "Total Combined Capacity      ";
+        . "Average Drives per System           ";
+    printf("% 6.0f\n", $drive_stats{total_drive_count} 
+        / $drive_stats{system_count});
+    print "Total Combined Capacity      ";
     printf("% 10.1f", $drive_stats{combined_capacity});
     print " TB\nAverage Drive Capacity           ";
     printf("% 6.1f TB\n", $drive_stats{average_drive_cap});
