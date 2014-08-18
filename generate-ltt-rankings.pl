@@ -104,8 +104,8 @@ my %MASTER_RECORD = (
     "system_14" => { "post" =>"357732"  , "username" => "d33g33"          , "capacity" =>  "26.0" , "case" => "Synology DS1511+, DX510"        , "os" => "Synology"   , "storage_sys" => "SHR"        , "notes" => undef},
     "system_15" => { "post" =>"639745"  , "username" => "Hobobo"          , "capacity" =>  "24.0" , "case" => "Fractal Design Define Mini"     , "os" => "FreeNAS"    , "storage_sys" => "ZFS"        , "notes" => undef},
     "system_16" => { "post" =>"1004232" , "username" => "stevv"           , "capacity" =>  "24.0" , "case" => "LIAN LI PC-V700X"               , "os" => "Win 7"      , "storage_sys" => "HWRD"       , "notes" => "[post=1829858]Upd 1[/post]"},
-    "system_17" => { "post" =>"1839515" , "username" => "MrBucket101"     , "capacity" =>  "24.0" , "case" => "Fractal Design Arc Midi"        , "os" => "Ubuntu"     , "storage_sys" => "HWRD"       , "notes" => undef},
-    "system_18" => { "post" =>"715292"  , "username" => "Jarsky"          , "capacity" =>  "23.0" , "case" => "Silverstone Lascala LC17B HTPC" , "os" => "WS 2012"    , "storage_sys" => "HWRD, JBOD" , "notes" => undef},
+    "system_17" => { "post" =>"1839515" , "username" => "MrBucket101"     , "capacity" =>  "26.0" , "case" => "Fractal Design Arc Midi"        , "os" => "Ubuntu"     , "storage_sys" => "HWRD"       , "notes" => undef},
+    "system_18" => { "post" =>"715292"  , "username" => "Jarsky"          , "capacity" =>  "24.0" , "case" => "Silverstone Lascala LC17B HTPC" , "os" => "WS 2012"    , "storage_sys" => "HWRD, JBOD" , "notes" => undef},
     "system_19" => { "post" =>"1175253" , "username" => "unknownkwita"    , "capacity" =>  "22.0" , "case" => "Silverstone GD08"               , "os" => "Win 8.1"    , "storage_sys" => "StSp"       , "notes" => undef},
     "system_20" => { "post" =>"813545"  , "username" => "bobert"          , "capacity" =>  "21.0" , "case" => "Bitfenix Shinobi"               , "os" => "Win 7"      , "storage_sys" => "FlRD"       , "notes" => undef},
     "system_21" => { "post" =>"1012708" , "username" => "atv127"          , "capacity" =>  "20.5" , "case" => "CM Storm Trooper"               , "os" => "Win 7"      , "storage_sys" => "JBOD"       , "notes" => undef},
@@ -129,7 +129,7 @@ my %MASTER_RECORD = (
     "system_39" => { "post" =>"1404053" , "username" => "Patrick3D"       , "capacity" =>  "12.0" , "case" => "Raidmax Seiran"                 , "os" => "Ubuntu"     , "storage_sys" => "lvm2"       , "notes" => undef},
     "system_40" => { "post" =>"1059401" , "username" => "dalekphalm"      , "capacity" =>  "12.0" , "case" => "Lian Li + SAS Expander Case"    , "os" => "WHS 2011"   , "storage_sys" => "FlexRAID"   , "notes" => undef},
     "system_41" => { "post" =>"559082"  , "username" => "5lay3r"          , "capacity" =>  "10.0" , "case" => "Midi Tower"                     , "os" => "Win 8"      , "storage_sys" => "StSp"       , "notes" => undef},
-    "system_42" => { "post" =>"277145"  , "username" => "Hellboy"         , "capacity" =>  "10.0" , "case" => "unknown"                        , "os" => "Win 7"      , "storage_sys" => "JBOD"       , "notes" => undef},
+    "system_42" => { "post" =>"277145"  , "username" => "Hellboy"         , "capacity" =>  "12.0" , "case" => "unknown"                        , "os" => "Win 7"      , "storage_sys" => "JBOD"       , "notes" => undef},
     "system_43" => { "post" =>"277922"  , "username" => "MG2R"            , "capacity" =>   "8.0" , "case" => "K'nex Custom Case"              , "os" => "Debian"     , "storage_sys" => "mdadm"      , "notes" => "[b]K'Nex[/b] Build, BotW"},
     "system_44" => { "post" =>"303666"  , "username" => "cushy91"         , "capacity" =>   "2.0" , "case" => "HP Proliant MicroServer N40L"   , "os" => "unRAID"     , "storage_sys" => "unRAID"     , "notes" => "HP Proliant Microserver"},
     "system_45" => { "post" =>"1933949" , "username" => "Galxy"           , "capacity" =>  "23.0" , "case" => "Antec 1200"                     , "os" => "WS 2012"    , "storage_sys" => "FlexRAID"   , "notes" => undef},
@@ -148,6 +148,168 @@ my %MASTER_RECORD = (
     "system_58" => { "post" =>"2635265" , "username" => "lekro"           , "capacity" =>  "16.0" , "case" => "Fractal Design Arc Midi R2"     , "os" => "FreeNAS"    , "storage_sys" => "ZFS"        , "notes" => undef},
     "system_59" => { "post" =>"2654107" , "username" => "PhantomWarz"     , "capacity" =>  "28.0" , "case" => "Acer R380F2 + Chembro 24 Bay"   , "os" => "NAS4Free"   , "storage_sys" => "ZFS"        , "notes" => undef},
     "system_60" => { "post" =>"829426"  , "username" => "STUdog"          , "capacity" =>  "83.5" , "case" => "Coolermaster Cosmos 2 + Norco"  , "os" => "Win"        , "storage_sys" => "unknown"    , "notes" => undef},
+);
+
+
+    # To  keep   things  a   bit  more  readable,   the  HDD
+    # configuration of  each system is stored  in a separate
+    # hash %HDD_RECORD.  Furthermore,  each HDD's vendor and
+    # size are stored in hash %HDD_TYPES (see below).
+    # The key to each HDD type in %HDD_RECORD corresponds to
+    # the key according to  %HDD_TYPES. The amount of drives
+    # for  each vendor  and  capacity  is the  corresponding
+    # value.  We do not  differentiate between different HDD
+    # models for a single vendor, only capacity.
+    # 
+    # Vendor abbreviations:
+    # WD => Western Digital Company
+    # SG => Seagate
+    # HT => Hitachi
+    # TS => Toshiba
+    # SS => Samsung
+    # US => unspecified
+
+my %HDD_RECORD = (
+    "system_1"  => { "WD0400" =>  "2", "SG0400" =>  "5", "WD0300" =>  "15", "WD0200" =>  "6", "SG0200" =>  "1", "SS0200" =>  "1", "SG0050" =>  "1" },
+    "system_2"  => { "SG0400" => "10", "HT0300" =>  "6", "SG0300" =>  "4" },
+    "system_3"  => { "WD0400" => "16" },
+    "system_4"  => { "SG0300" => "12", "SG0200" => "12" },
+    "system_5"  => { "SS0200" => "10", "SG0300" => "10" }, 
+    "system_6"  => { "WD0200" => "24"},
+    "system_7"  => { "WD0400" =>  "5", "WD0200" => "14", "SS0200" =>  "5", "SG0300" =>  "2" },
+    "system_8"  => { "US0200" => "20", "HT0200" =>  "2" },
+    "system_9"  => { "WD0300" =>  "2", "SG0400" =>  "8" },
+    "system_10" => { "SG0200" => "11", "HT0200" =>  "5", "SG0400" =>  "4" },
+    "system_11" => { "WD0300" =>  "6", "SS0200" =>  "4", "WD0200" =>  "1" },
+    "system_12" => { "TS0300" =>  "4", "SS0200" =>  "6", "SG0200" =>  "2" },
+    "system_13" => { "WD0200" => "21", "WD0300" =>  "1" },
+    "system_14" => { "WD0200" =>  "5", "WD0300" =>  "4", "WD0400" =>  "1" },
+    "system_15" => { "SG0400" =>  "6" },
+    "system_16" => { "WD0400" =>  "6" },
+    "system_17" => { "SG0300" =>  "8", "WD0200" =>  "1" },
+    "system_18" => { "WD0200" =>  "9", "WD0300" =>  "2" },
+    "system_19" => { "SG0400" =>  "1", "WD0300" =>  "4", "WD0200" =>  "3" },
+    "system_20" => { "SG0300" =>  "3", "TS0300" =>  "4" },
+    "system_21" => { "WD0300" =>  "1", "WD0200" =>  "6", "HT0200" =>  "1", "WD0100" =>  "2", "SG0075" =>  "2" },
+    "system_22" => { "SG0300" =>  "4", "WD0200" =>  "1", "SG0200" =>  "1", "SG0150" =>  "2", "SG0100" =>  "1"},
+    "system_23" => { "WD0300" =>  "6", "SS0050" =>  "2" },
+    "system_24" => { "SG0300" =>  "6" },
+    "system_25" => { "SG0300" =>  "1", "SG0200" =>  "4", "WD0200" =>  "2", "WD0100" =>  "1", "SG0100" =>  "2" },
+    "system_26" => { "WD0300" =>  "6" },
+    "system_27" => { "SG0300" =>  "1", "WD0200" =>  "3", "SG0200" =>  "1", "SG0150" =>  "2", "WD0150" =>  "2", "SS0100" =>  "1" },
+    "system_28" => { "WD0025" =>  "1", "SS0025" =>  "1", "SS0075" =>  "1", "WD0300" =>  "1" },
+    "system_29" => { "WD0400" =>  "4" },
+    "system_30" => { "WD0200" =>  "8" },
+    "system_31" => { "WD0200" =>  "6", "SG0200" =>  "2" },
+    "system_32" => { "SG0200" =>  "5", "WD0100" =>  "5" },
+    "system_33" => { "WD0300" =>  "5" },
+    "system_34" => { "US0200" =>  "6", "US0100" =>  "3" },
+    "system_35" => { "WD0300" =>  "5" },
+    "system_36" => { "US0200" =>  "3", "US0300" =>  "3" },
+    "system_37" => { "WD0300" =>  "5" },
+    "system_38" => { "SG0200" =>  "1", "WD0300" =>  "3", "SG0300" =>  "1" },
+    "system_39" => { "WD0300" =>  "1", "WD0200" =>  "1", "WD0100" =>  "1", "SG0400" =>  "1", "SG0200" =>  "1" },
+    "system_40" => { "SG0300" =>  "2", "WD0300" =>  "1", "SG0200" =>  "1", "HT0050" =>  "2" },
+    "system_41" => { "WD0300" =>  "1", "WD0200" =>  "2", "SG0200" =>  "1", "SS0100" =>  "1" },
+    "system_42" => { "US0300" =>  "2", "US0200" =>  "3" },
+    "system_43" => { "WD0200" =>  "3", "SG0200" =>  "1" },
+    "system_44" => { "WD0050" =>  "1", "SG0050" =>  "1", "SG0100" =>  "1" },
+    "system_45" => { "WD0400" =>  "3", "SG0400" =>  "2", "WD0200" =>  "1", "WD0050" =>  "2" },
+    "system_46" => { "SS0100" =>  "3", "WD0200" =>  "4", "WD0300" =>  "6" },
+    "system_47" => { "WD0200" =>  "5" },
+    "system_48" => { "SG0400" =>  "6", "WD0200" =>  "2" },
+    "system_49" => { "WD0300" =>  "3" },
+    "system_50" => { "SG0400" =>  "5", "SS0200" =>  "1", "WD0200" =>  "1", "SS0050" =>  "1" },
+    "system_51" => { "WD0200" =>  "4", "WD0300" =>  "3", "WD0100" =>  "4" },
+    "system_52" => { "WD0400" =>  "4" },
+    "system_53" => { "WD0400" =>  "2", "WD0200" =>  "1", "WD0150" =>  "1" },
+    "system_54" => { "SG0300" =>  "2", "WD0300" =>  "2" },
+    "system_55" => { "HT0400" =>  "8" },
+    "system_56" => { "TS0300" =>  "3", "WD0300" =>  "3", "SG0200" =>  "1", "WD0200" =>  "1" },
+    "system_57" => { "WD0100" =>  "1", "WD0200" =>  "1", "SG0200" =>  "2", "SG0300" =>  "1" },
+    "system_58" => { "SG0400" =>  "4" },
+    "system_59" => { "HT0200" =>  "2", "SG0200" =>  "1", "WD0200" =>  "3", "WD0100" => "10", "SG0100" =>  "6" },
+    "system_60" => { "SG0150" =>  "8", "SG0200" =>  "3", "HT0300" => "10", "HT0200" =>  "7", "US0150" => "11", "US0300" =>  "1", "WD0100" =>  "2" },
+);
+
+
+    # %HDD_TYPES contains  all the  different types  of HDDs
+    # used  in the  systems,  differentiated  by vendor  and
+    # size.
+    #
+    # Naming scheme explanation:
+    # The  names  consist  of  a  two-letter  vendor  prefix
+    # according to this table:
+    #
+    # WD => Western Digital Company
+    # SG => Seagate
+    # HT => Hitachi
+    # TS => Toshiba
+    # SS => Samsung
+    # US => unspecified
+    #
+    # postfixed by a four-digit code indicating the capacity
+    # in  10 TB  (so an  HDD with  XX0001 would  have 10  GB
+    # capacity, an HDD  of type XX0010 has  100 GB capacity,
+    # XX0100 1 TB, XX1000 10 TB).
+    #
+    # If an HDD type is not (correctly) in %HDD_TYPES but is
+    # used in  %HDD_RECORD above,  the script will  throw an
+    # error  and die,  which will  give user  the chance  to
+    # amend %HDD_TYPES accordingly.
+    #
+    # It is possible to define HDD types in %HDD_TYPES which
+    # are not  actually used in %HDD_RECORD. This  will have
+    # no influence on the script output.
+
+
+my %HDD_TYPES = (
+    "WD0025" => { "vendor" => "WD", "size" => "0.25" },
+    "WD0050" => { "vendor" => "WD", "size" => "0.5" },
+    "WD0100" => { "vendor" => "WD", "size" => "1.0" },
+    "WD0150" => { "vendor" => "WD", "size" => "1.5" },
+    "WD0200" => { "vendor" => "WD", "size" => "2.0" },
+    "WD0300" => { "vendor" => "WD", "size" => "3.0" },
+    "WD0400" => { "vendor" => "WD", "size" => "4.0" },
+    "WD0500" => { "vendor" => "WD", "size" => "5.0" },
+    "WD0600" => { "vendor" => "WD", "size" => "6.0" },
+    "SG0050" => { "vendor" => "Seagate", "size" => "0.5" },
+    "SG0075" => { "vendor" => "Seagate", "size" => "0.75" },
+    "SG0100" => { "vendor" => "Seagate", "size" => "1.0" },
+    "SG0150" => { "vendor" => "Seagate", "size" => "1.5" },
+    "SG0200" => { "vendor" => "Seagate", "size" => "2.0" },
+    "SG0300" => { "vendor" => "Seagate", "size" => "3.0" },
+    "SG0400" => { "vendor" => "Seagate", "size" => "4.0" },
+    "SG0500" => { "vendor" => "Seagate", "size" => "5.0" },
+    "SG0600" => { "vendor" => "Seagate", "size" => "6.0" },
+    "HT0050" => { "vendor" => "HGST", "size" => "0.5" },
+    "HT0100" => { "vendor" => "HGST", "size" => "1.0" },
+    "HT0150" => { "vendor" => "HGST", "size" => "1.5" },
+    "HT0200" => { "vendor" => "HGST", "size" => "2.0" },
+    "HT0300" => { "vendor" => "HGST", "size" => "3.0" },
+    "HT0400" => { "vendor" => "HGST", "size" => "4.0" },
+    "HT0500" => { "vendor" => "HGST", "size" => "5.0" },
+    "HT0600" => { "vendor" => "HGST", "size" => "6.0" },
+    "TS0050" => { "vendor" => "Toshiba", "size" => "0.5" },
+    "TS0100" => { "vendor" => "Toshiba", "size" => "1.0" },
+    "TS0150" => { "vendor" => "Toshiba", "size" => "1.5" },
+    "TS0200" => { "vendor" => "Toshiba", "size" => "2.0" },
+    "TS0300" => { "vendor" => "Toshiba", "size" => "3.0" },
+    "TS0400" => { "vendor" => "Toshiba", "size" => "4.0" },
+    "TS0500" => { "vendor" => "Toshiba", "size" => "5.0" },
+    "TS0600" => { "vendor" => "Toshiba", "size" => "6.0" },
+    "SS0025" => { "vendor" => "Samsung", "size" => "0.25" },
+    "SS0050" => { "vendor" => "Samsung", "size" => "0.5" },
+    "SS0075" => { "vendor" => "Samsung", "size" => "0.75" },
+    "SS0100" => { "vendor" => "Samsung", "size" => "1.0" },
+    "SS0150" => { "vendor" => "Samsung", "size" => "1.5" },
+    "SS0200" => { "vendor" => "Samsung", "size" => "2.0" },
+    "SS0300" => { "vendor" => "Samsung", "size" => "3.0" },
+    "US0050" => { "vendor" => "unspecified", "size" => "0.5" },
+    "US0100" => { "vendor" => "unspecified", "size" => "1.0" },
+    "US0150" => { "vendor" => "unspecified", "size" => "1.5" },
+    "US0200" => { "vendor" => "unspecified", "size" => "2.0" },
+    "US0300" => { "vendor" => "unspecified", "size" => "3.0" },
 );
 
 
@@ -472,6 +634,309 @@ sub get_grouped_stats
 }
 
 
+sub get_total_drives
+{
+    # $_[0]: reference to %drive_stats
+    
+    my $drive_stats_ref = $_[0];
+    my $drive_count;
+
+    # Summate total drive count.
+    for my $system_ref (keys %HDD_RECORD)
+    {
+        $drive_count += $_ for (values $HDD_RECORD{$system_ref});
+    }
+
+    return $drive_count;
+}
+
+
+sub validate_hdd_types
+{
+    # Makes  sure that  all  HDD types  used in  %HDD_RECORD
+    # are  actually  present   and  correctly  specified  in
+    # %HDD_TYPES.  We die if this  is not the case and throw
+    # an error message.
+
+    for my $system_ref (keys %HDD_RECORD)
+    {
+        for (keys $HDD_RECORD{$system_ref})
+        {
+            if (!$HDD_TYPES{$_}{size} || !$HDD_TYPES{$_}{vendor})
+            {
+                say "ERROR: the following HDD model has not been defined"
+                    . "\ncorrectly  in   %HDD_TYPES.  Please   fill  in  its"
+                    . "\nspecifications in order to proceed:\n"
+                    . "\n$_\n";
+                die;
+            }
+        }
+    }
+}
+
+
+sub get_system_capacity
+{
+    # $_[0]: reference to system hash
+
+    my $system_ref = $_[0];
+
+    my $system_capacity;
+
+    for (keys %{ $system_ref })
+    {
+        $system_capacity += $HDD_TYPES{$_}{size} 
+            * ${ $system_ref }{$_};
+    }
+    return $system_capacity;
+}
+
+
+sub remove_small_systems
+{
+    for my $system (keys %HDD_RECORD)
+    {
+        if (get_system_capacity($HDD_RECORD{$system}) < $CAPACITY_THRESHOLD)
+        {
+            delete $HDD_RECORD{$system};
+        }
+    }
+}
+
+
+sub get_combined_capacity
+{
+    # $_[0]: reference to %drive_stats
+    
+    my $drive_stats_ref = $_[0];
+    my $combined_capacity;
+
+
+    for my $system_ref (keys %HDD_RECORD)
+    {
+        for (keys $HDD_RECORD{$system_ref})
+        {
+            # Size per HDD times drive count per system.
+            $combined_capacity += $HDD_TYPES{$_}{size} 
+                * $HDD_RECORD{$system_ref}{$_};
+        }
+    }
+
+    return $combined_capacity;
+}
+
+
+sub get_avg_drive_cap
+{
+    # $_[0]: reference to %drive_stats
+
+    my $drive_stats_ref = $_[0];
+
+    return ${ $drive_stats_ref }{combined_capacity} 
+        / ${ $drive_stats_ref }{total_drive_count};
+}
+
+
+sub generate_drive_cap_list
+{
+    # Compiles array of HDD  capacity for every single drive
+    # (including  redundancies for  several  drives of  same
+    # capacity).
+
+    # $_[0]: reference to %drive_stats
+
+    my $drive_stats_ref = $_[0];
+
+    my @unordered_caps;
+
+
+    for my $system_ref (keys %HDD_RECORD)
+    {
+        for my $hdd_type (keys $HDD_RECORD{$system_ref})
+        {
+            # Create  one  entry on  list  for  each HDD  in
+            # every system,  value of  entry is  the drive's
+            # capacity.
+
+            for (1 .. $HDD_RECORD{$system_ref}{$hdd_type})
+            {
+                push @unordered_caps, $HDD_TYPES{$hdd_type}{size};
+            }
+        }
+    }
+
+    return sort { $a <=> $b } @unordered_caps;
+}
+
+
+sub get_median_drive_cap
+{
+    # $_[0]: reference to %drive_stats
+    # $_[1]: reference to @drive_cap_list
+
+    my $drive_stats_ref    = $_[0];
+    my $drive_cap_list_ref = $_[1];
+
+
+    if (${ $drive_stats_ref }{total_drive_count} % 2 == 1)
+    {
+        # Odd number of elements => central element is median.
+
+        use integer;
+        my $median_index = ${ $drive_stats_ref }{total_drive_count} / 2;
+        return ${ $drive_cap_list_ref }[$median_index];
+
+    } else {
+        # Even number of elements => arithmetic mean between
+        # two central elements is median.
+
+        # Need to adjust because index of array starts at 0,
+        # naturally.
+        my $lower_median_index 
+            = ${ $drive_stats_ref }{total_drive_count} / 2 - 1;
+        my $upper_median_index = $lower_median_index + 1;
+
+        return (${ $drive_cap_list_ref }[$lower_median_index]
+            + ${ $drive_cap_list_ref }[$upper_median_index]) / 2;
+    }
+}
+
+
+sub get_cap_stats
+{
+    # $_[0]: reference to %drive_stats
+    # $_[1]: reference to @drive_cap_list
+
+    my $drive_stats_ref    = $_[0];
+    my $drive_cap_list_ref = $_[1];
+
+    my %cap_stats;
+
+    $cap_stats{$_}++ for @{ $drive_cap_list_ref };
+
+    return \%cap_stats;
+}
+
+
+sub get_vendor_stats
+{
+    # $_[0]: reference to %drive_stats;
+
+    my $drive_stats_ref = $_[0];
+    my %vendor_stats;
+    my %vendor_capacities;
+
+    
+    for my $system_ref (keys %HDD_RECORD)
+    {
+        for my $hdd_type (keys $HDD_RECORD{$system_ref})
+        {
+            for (1 .. $HDD_RECORD{$system_ref}{$hdd_type})
+            {
+                $vendor_capacities{ $HDD_TYPES{$hdd_type}{vendor} }
+                    += $HDD_TYPES{$hdd_type}{size};
+                $vendor_stats{ $HDD_TYPES{$hdd_type}{vendor} }++;
+            }
+        }
+    }
+
+    return \%vendor_stats, \%vendor_capacities;
+}
+
+
+sub get_drive_stats
+{
+    # $_[0]: reference to %drive_stats;
+
+    my $drive_stats_ref = $_[0];
+
+    ${ $drive_stats_ref }{total_drive_count} 
+        = get_total_drives($drive_stats_ref);
+
+    ${ $drive_stats_ref }{combined_capacity}
+        = get_combined_capacity($drive_stats_ref);
+
+    ${ $drive_stats_ref }{average_drive_cap}
+        = get_avg_drive_cap($drive_stats_ref);
+
+
+    # @drive_cap_list is ordered.
+    my @drive_cap_list = generate_drive_cap_list($drive_stats_ref);
+
+    ${ $drive_stats_ref }{median_drive_cap}
+        = get_median_drive_cap($drive_stats_ref,\@drive_cap_list);
+
+    ${ $drive_stats_ref }{cap_stats}
+        = get_cap_stats($drive_stats_ref,\@drive_cap_list);
+
+    (${ $drive_stats_ref }{vendor_stats}, 
+        ${ $drive_stats_ref }{vendor_capacities})
+        = get_vendor_stats($drive_stats_ref);
+}
+
+
+sub print_drive_stats
+{
+    my %drive_stats;
+
+    get_drive_stats(\%drive_stats);
+
+    say "\n[b]HDD Statistics[/b]";
+
+    print "Total Number of Drives                 " 
+        . $drive_stats{total_drive_count}
+        . "\n"
+        . "Total Combined Capacity      ";
+    printf("% 10.1f", $drive_stats{combined_capacity});
+    print " TB\nAverage Drive Capacity           ";
+    printf("% 6.1f TB\n", $drive_stats{average_drive_cap});
+    print "Median Drive Capacity            ";
+    printf("% 6.1f TB\n", $drive_stats{median_drive_cap});
+
+
+    say "\n[b]HDD Statistics, by Size[/b]";
+    say "Vendor                 Count           "
+        . "Sum        Percentage of Total";
+    printf(
+        "%.2f TB          "
+        . "%4d drives     "
+        . "% 6.1f TB                    "
+        . "% 6.2f%%\n",
+        $_, 
+        $drive_stats{cap_stats}{$_}, 
+        $_ * $drive_stats{cap_stats}{$_}, 
+        $_ * $drive_stats{cap_stats}{$_} / $drive_stats{combined_capacity}*100) 
+        for sort { $a cmp $b } keys %{ $drive_stats{cap_stats} };
+
+    printf("[b]TOTAL            %4d drives    % 6.1f TB[/b]\n",
+        $drive_stats{total_drive_count},
+        $drive_stats{combined_capacity});
+
+
+    say "\n[b]HDD Statistics, by Vendor[/b]";
+    say "Vendor                 Count           "
+        . "Sum     Percentage of Total\n"
+        . "                                               "
+        . "Drive Count       Capacity";
+    printf("%-15s % 5s drives     "
+        . "% 6.1f TB         "
+        . "% 6.2f%%        "
+        . "% 6.2f%%\n",
+        $_,
+        $drive_stats{vendor_stats}{$_},
+        $drive_stats{vendor_capacities}{$_},
+        $drive_stats{vendor_stats}{$_} / $drive_stats{total_drive_count} * 100,
+        $drive_stats{vendor_capacities}{$_}/$drive_stats{combined_capacity}*100)
+        for sort { 
+            $drive_stats{vendor_stats}{$b} <=> $drive_stats{vendor_stats}{$a} }
+            keys %{ $drive_stats{vendor_stats} };
+
+    printf("[b]TOTAL            %4d drives    % 6.1f TB[/b]\n",
+        $drive_stats{total_drive_count},
+        $drive_stats{combined_capacity});
+}
+
+
 sub get_statistics
 {
     # $_[0]: reference to @capacities_which_count
@@ -633,7 +1098,7 @@ sub print_list
 
 
     # Main List
-    say "\n[hr][b][size=5]Total Storage Capacity: " 
+    say "\n[hr][b][size=5]Total Storage Capacity  " 
         . ${ $stats_ref }{total_capacity}
         . " TB[/size][/b]"
         . "[hr]\n"
@@ -644,10 +1109,11 @@ sub print_list
     # Statistics
     print "\n\n[size=5]Statistics[/size]"
         . "[hr]\n"
-        . "Arithmetic Mean Capacity:                   ";
+        . "[b]System Statistics[/b]\n"
+        . "Arithmetic Mean Capacity                    ";
     printf("%.1f", ${ $stats_ref }{arith_mean_cap});
     print " TB\n"
-        . "Median Capacity:                            ";
+        . "Median Capacity                             ";
     printf("%.1f", ${ $stats_ref }{median_cap});
     print " TB\n";
 
@@ -662,24 +1128,30 @@ sub print_list
     # There may be more than one mode:
     if (scalar(keys %{ ${ $stats_ref }{mode} }) == 1)
     {
-        print "Mode (most common capacity):                ";
+        print "Mode (most common capacity)                 ";
         print $_ . " TB" for keys %{ ${ $stats_ref }{mode} };
         print " (number of occurrences: " 
             . $number_of_occurrences 
             . ")\n";
     } else {
-        print "Modes (most common capacities):             ";
+        print "Modes (most common capacities)              ";
         my $modes = join(" TB, ", keys %{ ${ $stats_ref }{mode} });
         print $modes 
             . " TB (number of occurrences: " 
             . $number_of_occurrences 
             . ")\n";
     }
-    say "Number of Unique Capacities:                " 
+    say "Number of Unique Capacities                 " 
         . $number_of_unique_capacities;
 
 
     print_grouped_stats(${ $stats_ref }{grouped_stats});
+
+
+    # HDD Statistics
+    validate_hdd_types();
+    remove_small_systems();
+    print_drive_stats();
 
 
     # If  there  are  entries   with  capacities  below  the
