@@ -420,6 +420,34 @@ sub get_median
 }
 
 
+sub get_mode
+{
+    # $_[0]: reference to @capacities_which_count
+
+    my $valid_caps_ref = $_[0];
+    my %counts; 
+    my $highest_count;
+    my %result;
+
+
+    # Count each capacity's number of occurrences
+    $counts{$_}++ for @{ $valid_caps_ref };
+    $highest_count = max(values %counts);
+
+    # Reduce to mode(s), the mode need not be unique,
+    # hence a hash instead of a single value.
+    # Form of %result: capacity => number of occurrences.
+
+    %result = map { $_ => $counts{$_} } 
+        grep { $counts{$_} == $highest_count } keys %counts;
+    
+    $result{number_of_unique_capacities} = scalar(keys %counts);
+    $result{number_of_occurrences} = $highest_count;
+
+    return \%result;
+}
+
+
 sub get_grouped_stats
 {
     # $_[0]: reference to @capacities_which_count
@@ -451,11 +479,15 @@ sub get_statistics
     my $valid_caps_ref = $_[0];
     my $stats = {};
 
-    ${ $stats }{total_capacity} = calculate_total_capacity($valid_caps_ref);
+    ${ $stats }{total_capacity} 
+        = calculate_total_capacity($valid_caps_ref);
     ${ $stats }{arith_mean_cap} 
         = get_arithm_mean($valid_caps_ref,${ $stats }{total_capacity});
     ${ $stats }{median_cap}
         = get_median($valid_caps_ref);
+    ${ $stats }{mode}
+        = get_mode($valid_caps_ref);
+
     get_grouped_stats($valid_caps_ref,$stats);
 
     return $stats;
@@ -468,7 +500,7 @@ sub print_grouped_stats
 
     my $grouped_stats_ref = pad_capacities($_[0]);
 
-    say "\n\n[b]Grouped Distribution[/b]";
+    say "\n[b]Grouped Distribution[/b]";
     say $_ 
         . "     " 
         . ${ $grouped_stats_ref }{$_} 
@@ -612,12 +644,40 @@ sub print_list
     # Statistics
     print "\n\n[size=5]Statistics[/size]"
         . "[hr]\n"
-        . "Arithmetic Mean Capacity:    ";
+        . "Arithmetic Mean Capacity:                   ";
     printf("%.1f", ${ $stats_ref }{arith_mean_cap});
     print " TB\n"
-        . "Median Capacity:             ";
+        . "Median Capacity:                            ";
     printf("%.1f", ${ $stats_ref }{median_cap});
-    print " TB";
+    print " TB\n";
+
+    my $number_of_unique_capacities 
+        = ${ $stats_ref }{mode}{number_of_unique_capacities};
+    delete ${ $stats_ref }{mode}{number_of_unique_capacities};
+
+    my $number_of_occurrences 
+        = ${ $stats_ref }{mode}{number_of_occurrences};
+    delete ${ $stats_ref }{mode}{number_of_occurrences};
+
+    # There may be more than one mode:
+    if (scalar(keys %{ ${ $stats_ref }{mode} }) == 1)
+    {
+        print "Mode (most common capacity):                ";
+        print $_ . " TB" for keys %{ ${ $stats_ref }{mode} };
+        print " (number of occurrences: " 
+            . $number_of_occurrences 
+            . ")\n";
+    } else {
+        print "Modes (most common capacities):             ";
+        my $modes = join(" TB, ", keys %{ ${ $stats_ref }{mode} });
+        print $modes 
+            . " TB (number of occurrences: " 
+            . $number_of_occurrences 
+            . ")\n";
+    }
+    say "Number of Unique Capacities:                " 
+        . $number_of_unique_capacities;
+
 
     print_grouped_stats(${ $stats_ref }{grouped_stats});
 
