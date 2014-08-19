@@ -95,7 +95,7 @@ my %MASTER_RECORD = (
     "system_5"  => { "post" =>"277353"  , "username" => "Rudde"           , "capacity" =>  "50.0" , "case" => "Supermicro SC846TQ-R1200B"      , "os" => "Debian"     , "storage_sys" => "mdadm"      , "notes" => undef},
     "system_6"  => { "post" =>"273858"  , "username" => "RandomNOOB"      , "capacity" =>  "48.0" , "case" => "NorcoTek RPC-4224"              , "os" => "Ubuntu"     , "storage_sys" => "mdadm"      , "notes" => undef},
     "system_7"  => { "post" =>"821520"  , "username" => "Alexdaman"       , "capacity" =>  "64.0" , "case" => "Chieftec Arena 2000-B"          , "os" => "Win 7"      , "storage_sys" => "HWRD, JBOD" , "notes" => "[post=1694520]Upd 1[/post]"},
-    "system_8"  => { "post" =>"300520"  , "username" => "Whaler_99"       , "capacity" =>  "44.0" , "case" => "Antec 1200 v3"                  , "os" => "unRAID"     , "storage_sys" => "unRAID"     , "notes" => undef},
+    "system_8"  => { "post" =>"300520"  , "username" => "Whaler_99"       , "capacity" =>  "48.6" , "case" => "Antec 1200 v3"                  , "os" => "unRAID"     , "storage_sys" => "unRAID"     , "notes" => undef},
     "system_9"  => { "post" =>"1390757" , "username" => "Hellboy"         , "capacity" =>  "38.0" , "case" => "Fractal Design Array R2"        , "os" => "WS 2008R2"  , "storage_sys" => "RD"         , "notes" => undef},
     "system_10" => { "post" =>"273427"  , "username" => "looney"          , "capacity" =>  "48.0" , "case" => "Norcotek RPC4220"               , "os" => "WS 2012"    , "storage_sys" => "FlexRAID"   , "notes" => "[post=2655227]Upd 1[/post]"},
     "system_11" => { "post" =>"896406"  , "username" => "Benjamin"        , "capacity" =>  "28.0" , "case" => "Fractal Design R4"              , "os" => "FreeNAS"    , "storage_sys" => "ZFS"        , "notes" => undef},
@@ -177,7 +177,7 @@ my %HDD_RECORD = (
     "system_5"  => { "SS0200" => "10", "SG0300" => "10" }, 
     "system_6"  => { "WD0200" => "24"},
     "system_7"  => { "WD0400" =>  "5", "WD0200" => "14", "SS0200" =>  "5", "SG0300" =>  "2" },
-    "system_8"  => { "US0200" => "20", "HT0200" =>  "2" },
+    "system_8"  => { "WD0300" =>  "1", "WD0200" => "14", "WD0100" =>  "2", "HT0200" =>  "2", "SG0100" =>  "5", "SG0150" =>  "1", "WD0050" =>  "3", "WD0064" =>  "1", "SS0050" =>  "1", "SG0050" =>  "5" },
     "system_9"  => { "WD0300" =>  "2", "SG0400" =>  "8" },
     "system_10" => { "SG0200" => "11", "HT0200" =>  "5", "SG0400" =>  "4" },
     "system_11" => { "WD0300" =>  "6", "SS0200" =>  "4", "WD0200" =>  "1" },
@@ -266,6 +266,7 @@ my %HDD_RECORD = (
 my %HDD_TYPES = (
     "WD0025" => { "vendor" => "WD", "size" => "0.25" },
     "WD0050" => { "vendor" => "WD", "size" => "0.5" },
+    "WD0064" => { "vendor" => "WD", "size" => "0.64" },
     "WD0100" => { "vendor" => "WD", "size" => "1.0" },
     "WD0150" => { "vendor" => "WD", "size" => "1.5" },
     "WD0200" => { "vendor" => "WD", "size" => "2.0" },
@@ -908,7 +909,7 @@ sub print_drive_stats
 
 
     say "\n[b]HDD Statistics, by Size[/b]";
-    say "Vendor                 Count           "
+    say "Capacity               Count           "
         . "Sum        Percentage of Total";
     printf(
         "%.2f TB          "
@@ -918,7 +919,7 @@ sub print_drive_stats
         $_, 
         $drive_stats{cap_stats}{$_}, 
         $_ * $drive_stats{cap_stats}{$_}, 
-        $_ * $drive_stats{cap_stats}{$_} / $drive_stats{combined_capacity}*100) 
+        $_ * $drive_stats{cap_stats}{$_} / $drive_stats{combined_capacity}*100)
         for sort { $a cmp $b } keys %{ $drive_stats{cap_stats} };
 
     printf("[b]TOTAL            %4d drives    % 6.1f TB[/b]\n",
@@ -1080,6 +1081,9 @@ sub print_list
     my %ranked_rows;
     my @unranked_rows;
 
+    # Make  sure  all  HDD  types used  in  %HDD_RECORD  are
+    # properly defined in %HDD_TYPES.
+    validate_hdd_types();
 
     generate_rows(
         $formatted_cols_ref,
@@ -1162,7 +1166,6 @@ sub print_list
 
 
     # HDD Statistics
-    validate_hdd_types();
     remove_small_systems();
     print_drive_stats();
 
@@ -1237,6 +1240,18 @@ sub extract_info
     %{ $_[5] } = map { $_ => ${ ${ $_[0]}{$_} }{storage_sys} } keys %{ $_[0] };
     %{ $_[6] } = map { $_ => ${ ${ $_[0]}{$_} }{case}        } keys %{ $_[0] };
     %{ $_[7] } = map { $_ => ${ ${ $_[0]}{$_} }{notes}       } keys %{ $_[0] };
+
+
+    # NOTE: It would be more  elegant to calculate the total
+    # capacity for each system  automatically from its HDDs,
+    # but that will require  some work on the pad_capacities
+    # algorithm  as well  as  the final  output  to get  the
+    # formatting correct again, so for now we shall leave it
+    # as-is and do it manually.
+    # pad_capacities will probably  be superfluous and might
+    # be replaced by a simple sprintf or similar.
+    #%{ $_[3] } = map{$_=>get_system_capacity($HDD_RECORD{$_})} keys %{ $_[0] };
+
 }
 
 
