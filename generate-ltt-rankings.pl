@@ -148,6 +148,8 @@ my %MASTER_RECORD = (
     "system_58" => { "post" =>"2635265" , "username" => "lekro"           , "capacity" =>  "16.0" , "case" => "Fractal Design Arc Midi R2"     , "os" => "FreeNAS"    , "storage_sys" => "ZFS"        , "notes" => undef},
     "system_59" => { "post" =>"2654107" , "username" => "PhantomWarz"     , "capacity" =>  "28.0" , "case" => "Acer R380F2 + Chembro 24 Bay"   , "os" => "NAS4Free"   , "storage_sys" => "ZFS"        , "notes" => undef},
     "system_60" => { "post" =>"829426"  , "username" => "STUdog"          , "capacity" =>  "83.5" , "case" => "Coolermaster Cosmos 2 + Norco"  , "os" => "Win"        , "storage_sys" => "unknown"    , "notes" => undef},
+    "system_61" => { "post" =>"595065"  , "username" => "dzintars"        , "capacity" =>   "1.0" , "case" => "Open Air"                       , "os" => "Ubuntu Srv" , "storage_sys" => "JBOD"       , "notes" => "Open air, no case"},
+	"system_62" => { "post" =>"2736033" , "username" => "Blade of Grass"  , "capacity" =>   "7.0" , "case" => "Corsair C70"                    , "os" => "Debian"     , "storage_sys" => "ZFS"        , "notes" => undef},
 );
 
 
@@ -230,6 +232,8 @@ my %HDD_RECORD = (
     "system_58" => { "SG0400" =>  "4" },
     "system_59" => { "HT0200" =>  "2", "SG0200" =>  "1", "WD0200" =>  "3", "WD0100" => "10", "SG0100" =>  "6" },
     "system_60" => { "SG0150" =>  "8", "SG0200" =>  "3", "HT0300" => "10", "HT0200" =>  "7", "US0150" => "11", "US0300" =>  "1", "WD0100" =>  "2" },
+    "system_61" => { "SS0100" =>  "1" },
+	"system_62" => { "SG0300" =>  "2", "WD0100" => "1" },
 );
 
 
@@ -524,7 +528,8 @@ sub get_valid_capacities
 
     my $capacity_ref = $_[0];
 
-    return [ grep { $_ >= 10 } values %{ $capacity_ref }];
+    return [ grep { $_ >= $CAPACITY_THRESHOLD }
+        values %{ $capacity_ref }];
 }
 
 
