@@ -1,0 +1,190 @@
+{
+   "TS0100" : {
+      "size" : "1.0",
+      "vendor" : "Toshiba"
+   },
+   "WD0200" : {
+      "vendor" : "WD",
+      "size" : "2.0"
+   },
+   "TS0150" : {
+      "size" : "1.5",
+      "vendor" : "Toshiba"
+   },
+   "HT0300" : {
+      "size" : "3.0",
+      "vendor" : "HGST"
+   },
+   "US0150" : {
+      "size" : "1.5",
+      "vendor" : "unspecified"
+   },
+   "TS0400" : {
+      "vendor" : "Toshiba",
+      "size" : "4.0"
+   },
+   "SS0300" : {
+      "size" : "3.0",
+      "vendor" : "Samsung"
+   },
+   "WD0025" : {
+      "vendor" : "WD",
+      "size" : "0.25"
+   },
+   "HT0100" : {
+      "vendor" : "HGST",
+      "size" : "1.0"
+   },
+   "WD0100" : {
+      "vendor" : "WD",
+      "size" : "1.0"
+   },
+   "SG0400" : {
+      "size" : "4.0",
+      "vendor" : "Seagate"
+   },
+   "SS0200" : {
+      "size" : "2.0",
+      "vendor" : "Samsung"
+   },
+   "SG0150" : {
+      "size" : "1.5",
+      "vendor" : "Seagate"
+   },
+   "US0100" : {
+      "size" : "1.0",
+      "vendor" : "unspecified"
+   },
+   "TS0300" : {
+      "size" : "3.0",
+      "vendor" : "Toshiba"
+   },
+   "TS0600" : {
+      "vendor" : "Toshiba",
+      "size" : "6.0"
+   },
+   "HT0500" : {
+      "vendor" : "HGST",
+      "size" : "5.0"
+   },
+   "TS0500" : {
+      "size" : "5.0",
+      "vendor" : "Toshiba"
+   },
+   "HT0050" : {
+      "vendor" : "HGST",
+      "size" : "0.5"
+   },
+   "US0300" : {
+      "vendor" : "unspecified",
+      "size" : "3.0"
+   },
+   "SG0050" : {
+      "vendor" : "Seagate",
+      "size" : "0.5"
+   },
+   "SS0075" : {
+      "vendor" : "Samsung",
+      "size" : "0.75"
+   },
+   "WD0400" : {
+      "size" : "4.0",
+      "vendor" : "WD"
+   },
+   "SS0050" : {
+      "vendor" : "Samsung",
+      "size" : "0.5"
+   },
+   "WD0300" : {
+      "size" : "3.0",
+      "vendor" : "WD"
+   },
+   "HT0400" : {
+      "vendor" : "HGST",
+      "size" : "4.0"
+   },
+   "SG0500" : {
+      "vendor" : "Seagate",
+      "size" : "5.0"
+   },
+   "WD0500" : {
+      "vendor" : "WD",
+      "size" : "5.0"
+   },
+   "SG0300" : {
+      "size" : "3.0",
+      "vendor" : "Seagate"
+   },
+   "HT0600" : {
+      "size" : "6.0",
+      "vendor" : "HGST"
+   },
+   "TS0050" : {
+      "vendor" : "Toshiba",
+      "size" : "0.5"
+   },
+   "WD0600" : {
+      "vendor" : "WD",
+      "size" : "6.0"
+   },
+   "SG0600" : {
+      "size" : "6.0",
+      "vendor" : "Seagate"
+   },
+   "SG0200" : {
+      "size" : "2.0",
+      "vendor" : "Seagate"
+   },
+   "SS0100" : {
+      "vendor" : "Samsung",
+      "size" : "1.0"
+   },
+   "HT0200" : {
+      "vendor" : "HGST",
+      "size" : "2.0"
+   },
+   "SS0150" : {
+      "size" : "1.5",
+      "vendor" : "Samsung"
+   },
+   "HT0150" : {
+      "size" : "1.5",
+      "vendor" : "HGST"
+   },
+   "SG0100" : {
+      "vendor" : "Seagate",
+      "size" : "1.0"
+   },
+   "SS0025" : {
+      "vendor" : "Samsung",
+      "size" : "0.25"
+   },
+   "WD0150" : {
+      "vendor" : "WD",
+      "size" : "1.5"
+   },
+   "US0200" : {
+      "vendor" : "unspecified",
+      "size" : "2.0"
+   },
+   "WD0050" : {
+      "size" : "0.5",
+      "vendor" : "WD"
+   },
+   "US0050" : {
+      "size" : "0.5",
+      "vendor" : "unspecified"
+   },
+   "WD0064" : {
+      "vendor" : "WD",
+      "size" : "0.64"
+   },
+   "TS0200" : {
+      "vendor" : "Toshiba",
+      "size" : "2.0"
+   },
+   "SG0075" : {
+      "vendor" : "Seagate",
+      "size" : "0.75"
+   }
+}
