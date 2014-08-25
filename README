@@ -19,3 +19,7 @@ USAGE:
   saving post, will remove all whitespace padding.
 - Select entire post, set font to Courier.
 - Save post.
+
+TODO:
+- Timeline tracking
+- graphs/plots

@@ -17,6 +17,9 @@ our @EXPORT_OK = qw(
 	format_percentage
 	get_max_elem_length
 	format_hdd_capacity
+	ltrim
+	rtrim
+	trim
 	);
 
 # These are exported by default.
@@ -28,7 +31,33 @@ our @EXPORT = qw(
 	format_percentage
 	get_max_elem_length
 	format_hdd_capacity
+	ltrim
+	rtrim
+	trim
 	);
+
+
+sub ltrim 
+{ 
+	my $s = shift; 
+	$s =~ s/^\s+//;
+	return $s
+}
+
+sub rtrim
+{
+	my $s = shift;
+	$s =~ s/\s+$//;
+	return $s
+}
+
+sub trim
+{ 
+	my $s = shift;
+	$s =~ s/^\s+|\s+$//g;
+	return $s
+}
+
 
 sub pad_left
 {

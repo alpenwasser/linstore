@@ -90,6 +90,47 @@
 		"[b]FlRD[/b]       FlexRAID"
 	],
 	"unranked_list_title_1" : "Noteworthy Builds w/ <10 TB storage,",
-	"unranked_list_title_2" : " unranked, unsorted"
-	
+	"unranked_list_title_2" : " unranked, unsorted",
+	"pie_chart_percentage_threshold" : "0.05",
+	"pie_chart_hdd_count_by_size_title" : "HDD Count Distribution by Size",
+	"pie_chart_hdd_cap_by_size_title" : "HDD Combined Capacity Distribution by Size",
+	"pie_chart_hdd_count_by_vendor_title" : "HDD Count Distribution by Vendor",
+	"pie_chart_hdd_cap_by_vendor_title" : "HDD Combined Capacity Distribution by Vendor",
+	"pie_chart_total_hdd_count_label" : "Total HDD Count: ",
+	"pie_chart_total_hdd_cap_label" : "Total Capacity: ",
+	"pie_chart_configs" : {
+		"logo_resize" : "0.2",
+		"logo_position" : "LR",
+		"t_margin" : "30",
+		"b_margin" : "50",
+		"l_margin" : "20",
+		"r_margin" : "20",
+		"3d" : "1",
+		"transparent" : "0",
+		"dclrs" : [
+			"pink", 
+			"purple",
+			"cyan",
+			"marine",
+			"lpurple",
+			"lgray",
+			"lorange",
+			"lgreen",
+			"lbrown",
+			"lyellow",
+			"lred"
+		],
+		"labelclr" : "black",
+		"textclr" : "black",
+		"axislabelclr" : "black"
+	},
+	"img_dir" : "images",
+	"logo_img" : "logo.png",
+	"hdd_cap_by_vendor_img" : "hdd_cap_by_vendor.png",
+	"hdd_count_by_vendor_img" : "hdd_count_by_vendor.png",
+	"hdd_cap_by_size_img" : "hdd_cap_by_size.png",
+	"hdd_count_by_size_img" : "hdd_count_by_size.png",
+	"pie_chart_title_size" : "32",
+	"pie_chart_value_size" : "24",
+	"pie_chart_label_size" : "28"
 }

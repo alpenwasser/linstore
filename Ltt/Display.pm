@@ -9,6 +9,7 @@ use Time::Piece;
 
 use Ltt::Strings;
 use Ltt::Statistics;
+use Ltt::Plotting;
 
 our @ISA= qw( Exporter );
 
@@ -945,40 +946,45 @@ sub generate_statistics
 	) = _prepare_system_summary_stats($systems_ref, $constants_ref);
 
 
-	_prepare_grouped_system_stats(
-		$systems_ref,
-		$constants_ref->{capacity_groups},
-		$constants_ref->{capacity_range});
+	_prepare_grouped_system_stats(	$systems_ref,
+									$constants_ref->{capacity_groups},
+									$constants_ref->{capacity_range});
 
-	my (
-		$total_drive_count,
+	my ($total_drive_count,
 		$avg_drives_per_system,
 		$avg_drive_cap,
 		$med_drive_cap,
-		$hdd_configs_ref
-	) =_prepare_hdd_summary_stats($systems_ref, $hdd_types_ref, $constants_ref);
+		$hdd_configs_ref) 
+		=	_prepare_hdd_summary_stats(	$systems_ref,
+										$hdd_types_ref, 
+										$constants_ref);
 
 
-	my (
-		$hdd_counts_by_size_ref,
+	my ($hdd_counts_by_size_ref,
 		$hdd_comb_cap_by_size_ref,
 		$hdd_perc_count_by_size_ref,
-		$hdd_perc_cap_by_size_ref
-	) = _prepare_hdd_size_stats($systems_ref, $hdd_types_ref, $hdd_configs_ref, $constants_ref);
+		$hdd_perc_cap_by_size_ref)
+		= _prepare_hdd_size_stats(	$systems_ref, 
+									$hdd_types_ref, 
+									$hdd_configs_ref, 
+									$constants_ref);
 
 
-	my (
-		$hdd_counts_by_vendor_ref,
+	my ($hdd_counts_by_vendor_ref,
 		$hdd_comb_cap_by_vendor_ref,
 		$hdd_perc_count_by_vendor_ref,
-		$hdd_perc_cap_by_vendor_ref
-	) = _prepare_hdd_vendor_stats($systems_ref, $hdd_types_ref, $hdd_configs_ref, $constants_ref);
+		$hdd_perc_cap_by_vendor_ref)
+		= _prepare_hdd_vendor_stats($systems_ref, 
+									$hdd_types_ref, 
+									$hdd_configs_ref, 
+									$constants_ref);
 
 
 	_print_system_summary_stats($mean_sys_capacity,
 								$median_sys_capacity,
 								$mode_sys_ref,
 								$constants_ref);
+
 	_print_system_grouped_stats($constants_ref);
 
 
@@ -999,6 +1005,9 @@ sub generate_statistics
 							$hdd_perc_count_by_size_ref,
 							$hdd_perc_cap_by_size_ref);
 
+	print_hdd_size_plots(	$constants_ref,
+							$hdd_counts_by_size_ref,
+							$hdd_comb_cap_by_size_ref);
 
 	_print_hdd_vendor_stats($constants_ref,
 							$hdd_counts_by_vendor_ref,
@@ -1006,6 +1015,9 @@ sub generate_statistics
 							$hdd_perc_count_by_vendor_ref,
 							$hdd_perc_cap_by_vendor_ref);
 
+	print_hdd_vendor_plots(	$constants_ref,
+							$hdd_counts_by_vendor_ref,
+							$hdd_comb_cap_by_vendor_ref);
 }
 
 
