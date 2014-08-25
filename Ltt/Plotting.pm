@@ -6,6 +6,7 @@ use Exporter;
 use List::Util qw(sum);
 use File::Spec;
 use GD::Graph::pie;
+use GD::Graph::hbars;
 
 use Ltt::Strings;
 
@@ -15,12 +16,14 @@ our @ISA= qw( Exporter );
 our @EXPORT_OK = qw( 
 	print_hdd_size_plots
 	print_hdd_vendor_plots
+	print_ranking_list_plot
 	);
 
 # These are exported by default.
 our @EXPORT = qw( 
 	print_hdd_size_plots
 	print_hdd_vendor_plots
+	print_ranking_list_plot
 	);
 
 
@@ -421,6 +424,85 @@ sub print_hdd_vendor_plots
 	binmode IMG_CAP;
 	print IMG_CAP $gd_cap_by_vendor->png;
 	close IMG_CAP;
+}
+
+
+sub print_ranking_list_plot
+{
+	my $systems_ref		= shift;
+	my $constants_ref	= shift;
+
+	my @system_data	= (
+		[	 map { $systems_ref->{$_}{username} }
+				sort { $systems_ref->{$b}{system_capacity} 
+					<=> 
+					$systems_ref->{$a}{system_capacity} }
+				grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
+				keys %{ $systems_ref } 
+		],
+		[	map { $systems_ref->{$_}{system_capacity} } 
+				sort { $systems_ref->{$b}{system_capacity} 
+					<=> 
+					$systems_ref->{$a}{system_capacity} } 
+				grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
+				keys %{ $systems_ref } 
+		],
+	);
+
+
+	my $ranking_chart = GD::Graph::hbars->new(960, 1920);
+
+	my %ranking_chart_configs 
+		= %{ $constants_ref->{hbar_graph_configs} };
+
+	$ranking_chart_configs{"logo"} 
+		= File::Spec->catfile(	$constants_ref->{img_dir},
+								$constants_ref->{logo_img});
+
+
+	$ranking_chart->set(%ranking_chart_configs)
+		or die $ranking_chart->error;
+
+
+	$ranking_chart->set_title_font( 
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{ranking_chart_title_size});
+
+	$ranking_chart->set_x_label_font( 
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{ranking_chart_text_size});
+
+	$ranking_chart->set_x_label_font( 
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{ranking_chart_label_size});
+
+	$ranking_chart->set_y_label_font( 
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{ranking_chart_label_size});
+
+	$ranking_chart->set_x_axis_font( 
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{ranking_chart_axis_size});
+
+	$ranking_chart->set_y_axis_font( 
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{ranking_chart_axis_size});
+
+	$ranking_chart->set_values_font( 
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{ranking_chart_axis_size});
+
+	my $gd_ranking_list
+		= $ranking_chart->plot(\@system_data)
+		or die $ranking_chart->error;
+
+	open(IMG, ">" 
+		. File::Spec->catfile(	$constants_ref->{img_dir},
+								$constants_ref->{ranking_chart_img}))
+		or die $!;
+	binmode IMG;
+	print IMG $gd_ranking_list->png;
+	close IMG;
 }
 
 

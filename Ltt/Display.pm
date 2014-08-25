@@ -361,6 +361,8 @@ sub generate_ranking_list
 
 	_print_title($constants_ref);
 	_print_ranking_list($systems_ref, $constants_ref);
+
+	print_ranking_list_plot($systems_ref, $constants_ref);
 }
 
 
