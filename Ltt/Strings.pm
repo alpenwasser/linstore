@@ -20,6 +20,7 @@ our @EXPORT_OK = qw(
 	ltrim
 	rtrim
 	trim
+	format_hbar_cap_value
 	);
 
 # These are exported by default.
@@ -34,6 +35,7 @@ our @EXPORT = qw(
 	ltrim
 	rtrim
 	trim
+	format_hbar_cap_value
 	);
 
 
@@ -175,4 +177,12 @@ sub format_hdd_capacity
 	$number .= "0" until ($number =~ /^[+-]?\d+\.\d\d\z/);
 
 	return $number;
+}
+
+sub format_hbar_cap_value
+{
+	# $_[0]: number
+	# NOTE: We need a magic string here unfortunately.
+
+	return format_number($_[0]) . " TB";
 }

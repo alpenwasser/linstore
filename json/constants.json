@@ -246,5 +246,5 @@
     "grouped_plot_by_contrib_title" : "System Groupings, Contributions to Total Capacity",
     "grouped_plot_by_count_label" : "Total System Count: ",
     "grouped_plot_by_contrib_label" : "Total Capacity: ",
-    "hbar_max_y_scaling_factor" : "1.1"
+    "hbar_max_y_scaling_factor" : "1.2"
 }

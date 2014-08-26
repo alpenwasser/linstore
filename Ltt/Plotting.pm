@@ -571,7 +571,7 @@ sub print_groupings_plots
 	$grouped_plot_by_contrib_configs{y_number_format} 
 		= \&format_number;
 	$grouped_plot_by_contrib_configs{values_format} 
-		= \&format_number;
+		= \&format_hbar_cap_value;
 
 
 	$grouped_plot_by_count->set_title_font(
