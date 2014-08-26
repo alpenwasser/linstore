@@ -19,6 +19,7 @@ our @EXPORT_OK = qw(
 	get_median
 	get_mode
 	get_grouped_stats
+	get_capacity_group_contributions
 	get_total_drives
 	get_avg_drives
 	get_avg_drive_cap
@@ -41,6 +42,7 @@ our @EXPORT = qw(
 	get_median
 	get_mode
 	get_grouped_stats
+	get_capacity_group_contributions
 	get_total_drives
 	get_avg_drives
 	get_avg_drive_cap
@@ -238,6 +240,37 @@ sub get_grouped_stats
  
 		$groups_ref->{$range} = scalar(@capacities_in_range);
 	}
+}
+
+
+sub get_capacity_group_contributions
+{
+	my $list_ref 		= shift; 
+	my $groups_ref		= shift;
+	my $interval_range	= shift;
+
+	my %group_contributions;
+
+	for my $range (keys %{ $groups_ref } )
+	{
+		my $upper_limit = $groups_ref->{$range};
+
+		my @capacities_in_range = grep { 
+			$_ >= $upper_limit - $interval_range && $_ < $upper_limit } 
+			@{ $list_ref };
+
+		$group_contributions{$range} = sum(@capacities_in_range);
+	}
+
+
+	return (
+		[
+			map { $_ } sort keys %group_contributions
+		],
+		[
+			map { $group_contributions{$_} } sort keys %group_contributions
+		]
+	);
 }
 
 

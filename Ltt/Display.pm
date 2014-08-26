@@ -362,7 +362,6 @@ sub generate_ranking_list
 	_print_title($constants_ref);
 	_print_ranking_list($systems_ref, $constants_ref);
 
-	print_ranking_list_plot($systems_ref, $constants_ref);
 }
 
 
@@ -1007,19 +1006,17 @@ sub generate_statistics
 							$hdd_perc_count_by_size_ref,
 							$hdd_perc_cap_by_size_ref);
 
-	print_hdd_size_plots(	$constants_ref,
-							$hdd_counts_by_size_ref,
-							$hdd_comb_cap_by_size_ref);
-
 	_print_hdd_vendor_stats($constants_ref,
 							$hdd_counts_by_vendor_ref,
 							$hdd_comb_cap_by_vendor_ref,
 							$hdd_perc_count_by_vendor_ref,
 							$hdd_perc_cap_by_vendor_ref);
 
-	print_hdd_vendor_plots(	$constants_ref,
-							$hdd_counts_by_vendor_ref,
-							$hdd_comb_cap_by_vendor_ref);
+
+	return ($hdd_counts_by_size_ref,
+            $hdd_counts_by_vendor_ref,
+            $hdd_comb_cap_by_size_ref,
+            $hdd_comb_cap_by_vendor_ref);
 }
 
 

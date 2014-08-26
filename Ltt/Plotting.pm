@@ -3,12 +3,15 @@ use strict;
 use warnings;
 use 5.10.0;
 use Exporter;
-use List::Util qw(sum);
+use List::Util qw(sum max);
+use Data::Dumper;
 use File::Spec;
 use GD::Graph::pie;
 use GD::Graph::hbars;
+use GD::Graph::bars;
 
 use Ltt::Strings;
+use Ltt::Statistics;
 
 our @ISA= qw( Exporter );
 
@@ -17,6 +20,7 @@ our @EXPORT_OK = qw(
 	print_hdd_size_plots
 	print_hdd_vendor_plots
 	print_ranking_list_plot
+	print_groupings_plots
 	);
 
 # These are exported by default.
@@ -24,6 +28,7 @@ our @EXPORT = qw(
 	print_hdd_size_plots
 	print_hdd_vendor_plots
 	print_ranking_list_plot
+	print_groupings_plots
 	);
 
 
@@ -459,6 +464,10 @@ sub print_ranking_list_plot
 		= File::Spec->catfile(	$constants_ref->{img_dir},
 								$constants_ref->{logo_img});
 
+	$ranking_chart_configs{y_max_value} 
+		= $constants_ref->{hbar_max_y_scaling_factor}
+			* max(@{ $system_data[1] });
+
 
 	$ranking_chart->set(%ranking_chart_configs)
 		or die $ranking_chart->error;
@@ -502,6 +511,154 @@ sub print_ranking_list_plot
 		or die $!;
 	binmode IMG;
 	print IMG $gd_ranking_list->png;
+	close IMG;
+}
+
+
+sub print_groupings_plots
+{
+	my $systems_ref		= shift;
+	my $constants_ref	= shift;
+
+
+	my @grouped_data_by_count = (
+		[
+			map { $_ } sort keys %{ $constants_ref->{capacity_groups} }
+		],
+		[
+			map { $constants_ref->{capacity_groups}{$_} } 
+				sort keys %{ $constants_ref->{capacity_groups} }
+		]
+	);
+
+
+	my @grouped_data_by_contrib
+		= get_capacity_group_contributions(
+			[	map { $systems_ref->{$_}{system_capacity} }
+				grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
+				keys %{ $systems_ref }
+			],
+			$constants_ref->{capacity_groups_contrib},
+			$constants_ref->{capacity_range});
+
+
+
+    my $grouped_plot_by_count	= GD::Graph::hbars->new(960, 720);
+    my $grouped_plot_by_contrib	= GD::Graph::hbars->new(960, 720);
+
+
+	my %grouped_plot_by_count_configs
+		= %{ $constants_ref->{grouped_hbar_by_count_configs} };
+	my %grouped_plot_by_contrib_configs
+		= %{ $constants_ref->{grouped_hbar_by_contrib_configs} };
+
+	$grouped_plot_by_count_configs{y_max_value} 
+		= $constants_ref->{hbar_max_y_scaling_factor}
+			* max(@{ $grouped_data_by_count[1] });
+	$grouped_plot_by_contrib_configs{y_max_value} 
+		= $constants_ref->{hbar_max_y_scaling_factor}
+			* max(@{ $grouped_data_by_contrib[1] });
+
+	$grouped_plot_by_count_configs{logo} 
+		= File::Spec->catfile(	$constants_ref->{img_dir},
+								$constants_ref->{logo_img});
+	$grouped_plot_by_contrib_configs{logo} 
+		= File::Spec->catfile(	$constants_ref->{img_dir},
+								$constants_ref->{logo_img});
+
+
+	# Format capacities for values and axes:
+	$grouped_plot_by_contrib_configs{y_number_format} 
+		= \&format_number;
+	$grouped_plot_by_contrib_configs{values_format} 
+		= \&format_number;
+
+
+	$grouped_plot_by_count->set_title_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_title_size});
+
+	$grouped_plot_by_count->set_x_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_text_size});
+
+	$grouped_plot_by_count->set_x_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_label_size});
+
+	$grouped_plot_by_count->set_y_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_label_size});
+
+	$grouped_plot_by_count->set_x_axis_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_axis_size});
+
+	$grouped_plot_by_count->set_y_axis_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_y_axis_size});
+
+	$grouped_plot_by_count->set_values_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_axis_size});
+
+
+	$grouped_plot_by_contrib->set_title_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_title_size});
+
+	$grouped_plot_by_contrib->set_x_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_text_size});
+
+	$grouped_plot_by_contrib->set_x_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_label_size});
+
+	$grouped_plot_by_contrib->set_y_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_label_size});
+
+	$grouped_plot_by_contrib->set_x_axis_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_axis_size});
+
+	$grouped_plot_by_contrib->set_y_axis_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_y_axis_size});
+
+	$grouped_plot_by_contrib->set_values_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_axis_size});
+
+
+	$grouped_plot_by_count->set(%grouped_plot_by_count_configs)
+		or die $grouped_plot_by_count->error;
+	$grouped_plot_by_contrib->set(%grouped_plot_by_contrib_configs)
+		or die $grouped_plot_by_contrib->error;
+
+
+	my $gd_grouped_plot_by_count
+		= $grouped_plot_by_count->plot(\@grouped_data_by_count)
+		or die $grouped_plot_by_count->error;
+	my $gd_grouped_plot_by_contrib
+		= $grouped_plot_by_contrib->plot(\@grouped_data_by_contrib)
+		or die $grouped_plot_by_contrib->error;
+
+	open(IMG, ">" 
+		. File::Spec->catfile(	$constants_ref->{img_dir},
+								$constants_ref->{grouped_plot_by_count_img}))
+		or die $!;
+	binmode IMG;
+	print IMG $gd_grouped_plot_by_count->png;
+	close IMG;
+
+	open(IMG, ">" 
+		. File::Spec->catfile(	$constants_ref->{img_dir},
+								$constants_ref->{grouped_plot_by_contrib_img}))
+		or die $!;
+	binmode IMG;
+	print IMG $gd_grouped_plot_by_contrib->png;
 	close IMG;
 }
 
