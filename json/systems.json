@@ -40,7 +40,7 @@
       "notes" : null,
       "os" : "WS 2012R2",
       "post" : "1653057",
-      "storage_sys" : "HWRD",
+      "storage_sys" : "HwRD",
       "username" : "Ssoele"
    },
    "system_004" : {
@@ -53,7 +53,7 @@
       "notes" : null,
       "os" : "Win 7",
       "post" : "344524",
-      "storage_sys" : "HWRD, JBOD",
+      "storage_sys" : "HwRD, JBOD",
       "username" : "raphaex"
    },
    "system_005" : {
@@ -93,7 +93,7 @@
       "notes" : "[post=1694520]Upd 1[/post]",
       "os" : "Win 7",
       "post" : "821520",
-      "storage_sys" : "HWRD, JBOD",
+      "storage_sys" : "HwRD, JBOD",
       "username" : "Alexdaman"
    },
    "system_008" : {
@@ -182,7 +182,7 @@
       "notes" : "[post=1883660]Upd 1[/post], [post=2418935]2[/post]",
       "os" : "Win 7",
       "post" : "414401",
-      "storage_sys" : "HWRD",
+      "storage_sys" : "HwRD",
       "username" : "Ramaddil"
    },
    "system_014" : {
@@ -220,7 +220,7 @@
       "notes" : "[post=1829858]Upd 1[/post]",
       "os" : "Win 7",
       "post" : "1004232",
-      "storage_sys" : "HWRD",
+      "storage_sys" : "HwRD",
       "username" : "stevv"
    },
    "system_017" : {
@@ -233,7 +233,7 @@
       "notes" : null,
       "os" : "Ubuntu",
       "post" : "1839515",
-      "storage_sys" : "HWRD",
+      "storage_sys" : "HwRD",
       "username" : "MrBucket101"
    },
    "system_018" : {
@@ -246,7 +246,7 @@
       "notes" : null,
       "os" : "WS 2012",
       "post" : "715292",
-      "storage_sys" : "HWRD, JBOD",
+      "storage_sys" : "HwRD, JBOD",
       "username" : "Jarsky"
    },
    "system_019" : {
@@ -330,7 +330,7 @@
       "notes" : null,
       "os" : "WS 2008R2",
       "post" : "579418",
-      "storage_sys" : "HWRD",
+      "storage_sys" : "HwRD",
       "username" : "andi1455"
    },
    "system_025" : {
@@ -440,7 +440,7 @@
       "notes" : null,
       "os" : "WS 2012",
       "post" : "1022882",
-      "storage_sys" : "HWRD",
+      "storage_sys" : "HwRD",
       "username" : "Appleby"
    },
    "system_033" : {
@@ -452,7 +452,7 @@
       "notes" : "BotW",
       "os" : "Win 8",
       "post" : "602093",
-      "storage_sys" : "HWRD",
+      "storage_sys" : "HwRD",
       "username" : "Jimstah87"
    },
    "system_034" : {
@@ -709,7 +709,7 @@
       "notes" : null,
       "os" : "WS 2012",
       "post" : "2261402",
-      "storage_sys" : "HWRD",
+      "storage_sys" : "HwRD",
       "username" : "Graveworm"
    },
    "system_053" : {
@@ -748,7 +748,7 @@
       "notes" : null,
       "os" : "Win 7",
       "post" : "2386836",
-      "storage_sys" : "HWRD",
+      "storage_sys" : "HwRD",
       "username" : "kev507"
    },
    "system_056" : {
@@ -851,5 +851,17 @@
 	   "os" : "Debian",
 	   "storage_sys" : "ZFS",
 	   "username" : "Blade of Grass"
+   },
+   "system_063" : {
+	   "capacity" : "24.0",
+	   "case" : "Custom Wood Case",
+	   "hdds" : {
+			"SG0300" : "8"
+	   },
+	   "notes" : null,
+	   "post" : "2777040",
+	   "os" : "OpenMediaVault",
+	   "storage_sys" : "SwRD",
+	   "username" : "{EAC} Shoot em UP"
    }
 }

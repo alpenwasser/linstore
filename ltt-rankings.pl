@@ -55,6 +55,8 @@ sub main
 	generate_unranked_list(	$systems_ref, $constants_ref);
 	generate_abbr_key(		$constants_ref);
 
+	append_img_links($constants_ref);
+
 	print_ranking_list_plot($systems_ref, $constants_ref);
 
 	print_groupings_plots($systems_ref, $constants_ref);

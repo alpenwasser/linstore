@@ -439,16 +439,37 @@ sub print_ranking_list_plot
 
 	my @system_data	= (
 		[	 map { $systems_ref->{$_}{username} }
-				sort { $systems_ref->{$b}{system_capacity} 
+				sort
+				{
+                    # Sort first  by storage  capacity, then
+                    # by post number. Systems with identical
+                    # capacities  will be  ranked higher  if
+                    # they were posted earlier.
+
+					$systems_ref->{$b}{system_capacity} 
+					<=>
+					$systems_ref->{$a}{system_capacity}
+					||
+					$systems_ref->{$a}{post} 
 					<=> 
-					$systems_ref->{$a}{system_capacity} }
+					$systems_ref->{$b}{post}
+				}
 				grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
 				keys %{ $systems_ref } 
 		],
 		[	map { $systems_ref->{$_}{system_capacity} } 
-				sort { $systems_ref->{$b}{system_capacity} 
+				sort
+				{
+                    # Same thing here, naturally.
+
+					$systems_ref->{$b}{system_capacity} 
+					<=>
+					$systems_ref->{$a}{system_capacity}
+					||
+					$systems_ref->{$a}{post} 
 					<=> 
-					$systems_ref->{$a}{system_capacity} } 
+					$systems_ref->{$b}{post}
+				}
 				grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
 				keys %{ $systems_ref } 
 		],

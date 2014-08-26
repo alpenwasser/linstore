@@ -20,6 +20,7 @@ our @EXPORT_OK = qw(
 	generate_statistics 
 	generate_abbr_key
 	generate_unranked_list
+	append_img_links
 	);
 
 # These are exported by default.
@@ -29,6 +30,7 @@ our @EXPORT = qw(
 	generate_statistics 
 	generate_abbr_key
 	generate_unranked_list
+	append_img_links
 	);
 
 
@@ -1063,6 +1065,45 @@ sub generate_unranked_list
 				$systems_ref->{$_}{rank} eq "UNRANKED" 
 			}
 			keys %{ $systems_ref };
+}
+
+
+sub append_img_links
+{
+	my $constants_ref = shift;
+
+	my @img_links = (
+		"\n[img=" 
+			. $constants_ref->{img_server} 
+			. $constants_ref->{ranking_chart_img} 
+			. "]",
+		"[img=" 
+			. $constants_ref->{img_server} 
+			. $constants_ref->{grouped_plot_by_count_img} 
+			. "]",
+		"[img=" 
+			. $constants_ref->{img_server} 
+			. $constants_ref->{grouped_plot_by_contrib_img} 
+			. "]",
+		"[img=" 
+			. $constants_ref->{img_server} 
+			. $constants_ref->{hdd_count_by_size_img} 
+			. "]",
+		"[img=" 
+			. $constants_ref->{img_server} 
+			. $constants_ref->{hdd_cap_by_size_img} 
+			. "]",
+		"[img=" 
+			. $constants_ref->{img_server} 
+			. $constants_ref->{hdd_count_by_vendor_img} 
+			. "]",
+		"[img=" 
+			. $constants_ref->{img_server} 
+			. $constants_ref->{hdd_cap_by_vendor_img} 
+			. "]",
+	);
+
+	say for @img_links;
 }
 
 1;

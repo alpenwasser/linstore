@@ -96,7 +96,8 @@
 		"[b]SHR[/b]        Synology Hybrid RAID",
 		"[b]StSp[/b]       Storage Spaces",
 		"[b]RD[/b]         RAID (unspecified if hardware or software)",
-		"[b]HWRD[/b]       Hardware RAID",
+		"[b]HwRD[/b]       Hardware RAID",
+		"[b]SwRD[/b]       Software RAID",
 		"[b]FlRD[/b]       FlexRAID"
 	],
 	"unranked_list_title_1" : "Noteworthy Builds w/ <10 TB storage,",
@@ -246,5 +247,6 @@
     "grouped_plot_by_contrib_title" : "System Groupings, Contributions to Total Capacity",
     "grouped_plot_by_count_label" : "Total System Count: ",
     "grouped_plot_by_contrib_label" : "Total Capacity: ",
-    "hbar_max_y_scaling_factor" : "1.2"
+    "hbar_max_y_scaling_factor" : "1.2",
+	"img_server" : "http://www.alpenwasser.net/images/w600/"
 }
