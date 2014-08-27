@@ -287,13 +287,14 @@ sub _print_title
 {
 	my $constants_ref = shift;
 
-	say $constants_ref->{bold_open} 
-		. $constants_ref->{font_large_open} 
-		. $constants_ref->{global_title} 
-		. $constants_ref->{font_size_close} 
-		. $constants_ref->{bold_close} 
-		. $constants_ref->{newline}
-		. $constants_ref->{horiz_separator};
+	$constants_ref->{output_data} .=  $constants_ref->{bold_open}
+									. $constants_ref->{font_large_open}
+									. $constants_ref->{global_title}
+									. $constants_ref->{font_size_close}
+									. $constants_ref->{bold_close}
+									. $constants_ref->{newline}
+									. $constants_ref->{horiz_separator}
+									. $constants_ref->{newline};
 }
 
 
@@ -302,7 +303,7 @@ sub _print_ranking_list
 	my $systems_ref		= shift;
 	my $constants_ref	= shift;
 
-	say for map
+	$constants_ref->{output_data} .= $_ . $constants_ref->{newline} for map
 			{
 				my $row 
                     # Rank has been  padded twice, hence the
@@ -383,17 +384,18 @@ sub _print_total_capacity
 		get_total_capacity($systems_ref, $constants_ref)
 	);
 
-	say $constants_ref->{newline}
-		. $constants_ref->{horiz_separator}
-		. $constants_ref->{bold_open}
-		. $constants_ref->{font_medium_open}
-		. $constants_ref->{total_capacity_note}
-		. $constants_ref->{total_combined_capacity}
-		. $constants_ref->{capacity_unit}
-		. $constants_ref->{font_size_close}
-		. $constants_ref->{bold_close}
-		. $constants_ref->{newline}
-		. $constants_ref->{horiz_separator};
+	$constants_ref->{output_data} .=  $constants_ref->{newline}
+									. $constants_ref->{horiz_separator}
+									. $constants_ref->{bold_open}
+									. $constants_ref->{font_medium_open}
+									. $constants_ref->{total_capacity_note}
+									. $constants_ref->{total_combined_capacity}
+									. $constants_ref->{capacity_unit}
+									. $constants_ref->{font_size_close}
+									. $constants_ref->{bold_close}
+									. $constants_ref->{newline}
+									. $constants_ref->{horiz_separator}
+									. $constants_ref->{newline};
 }
 
 
@@ -403,14 +405,15 @@ sub _print_timestamp_note
 
     my $time = Time::Piece->new();
 
-	say $constants_ref->{priority_note}
-		. $constants_ref->{newline}
-		. $constants_ref->{last_updated_note}
-		. $time->year() 
-		. '-' . uc($time->monname()) 
-		. '-' . $time->mday()
-		. $constants_ref->{newline}
-		. $constants_ref->{newline};
+	$constants_ref->{output_data} .=  $constants_ref->{priority_note}
+									. $constants_ref->{newline}
+									. $constants_ref->{last_updated_note}
+									. $time->year() 
+									. '-' . uc($time->monname()) 
+									. '-' . $time->mday()
+									. $constants_ref->{newline}
+									. $constants_ref->{newline}
+									. $constants_ref->{newline};
 }
 
 
@@ -635,27 +638,28 @@ sub _print_system_summary_stats
 	my @mode_capacities = keys %{ $mode_ref };
 
 
-	print $constants_ref->{font_medium_open}
-		. $constants_ref->{bold_open}
-		. $constants_ref->{stats_title}
-		. $constants_ref->{bold_close}
-		. $constants_ref->{font_size_close}
-		. $constants_ref->{newline}
-		. $constants_ref->{horiz_separator}
-		. $constants_ref->{newline}
-		. $constants_ref->{bold_open}
-		. $constants_ref->{stats_system_summary_title}
-		. $constants_ref->{bold_close}
-		. $constants_ref->{newline}
-		. $constants_ref->{mean_sys_capacity_title}
-		. $mean_capacity
-		. $constants_ref->{capacity_unit}
-		. $constants_ref->{newline}
-		. $constants_ref->{median_sys_capacity_title}
-		. $median_capacity
-		. $constants_ref->{capacity_unit}
-		. $constants_ref->{newline}
-		. $constants_ref->{mode_sys_capacity_title};
+	$constants_ref->{output_data} .=  $constants_ref->{font_medium_open}
+									. $constants_ref->{bold_open}
+									. $constants_ref->{stats_title}
+									. $constants_ref->{bold_close}
+									. $constants_ref->{font_size_close}
+									. $constants_ref->{newline}
+									. $constants_ref->{horiz_separator}
+									. $constants_ref->{newline}
+									. $constants_ref->{bold_open}
+									. $constants_ref->{stats_system_summary_title}
+									. $constants_ref->{bold_close}
+									. $constants_ref->{newline}
+									. $constants_ref->{mean_sys_capacity_title}
+									. $mean_capacity
+									. $constants_ref->{capacity_unit}
+									. $constants_ref->{newline}
+									. $constants_ref->{median_sys_capacity_title}
+									. $median_capacity
+									. $constants_ref->{capacity_unit}
+									. $constants_ref->{newline}
+									. $constants_ref->{mode_sys_capacity_title}
+									. $constants_ref->{newline};
 
 
 	my $i;
@@ -664,20 +668,22 @@ sub _print_system_summary_stats
         # If several capacities are  modes, output them all,
         # separated by comma and space.
 		$i++;
-		print format_number($_)
+		$constants_ref->{output_data} .= format_number($_)
 			. $constants_ref->{capacity_unit}
-			. (($i == scalar(@mode_capacities)) ? "" : ", ");
+			. (($i == scalar(@mode_capacities)) ? "" : ", ")
+			. $constants_ref->{newline};
 	}
 
 
-	say " ("
-		. $constants_ref->{no_of_occurrences}
-		. $number_of_occurrences
-		. ")"
-		. $constants_ref->{newline}
-		. $constants_ref->{no_of_uniq_caps}
-		. "     "	# lining up with the end of column
-		. $number_of_unique_capacities;
+	$constants_ref->{output_data} .=  " ("
+									. $constants_ref->{no_of_occurrences}
+									. $number_of_occurrences
+									. ")"
+									. $constants_ref->{newline}
+									. $constants_ref->{no_of_uniq_caps}
+									. "     " # lining up with the end of column
+									. $number_of_unique_capacities
+									. $constants_ref->{newline};
 }
 
 
@@ -688,16 +694,18 @@ sub _print_system_grouped_stats
 	my $max_group_count_length 
 		= length(max(values %{ $constants_ref->{capacity_groups} }));
 
-	say $constants_ref->{newline}
-		. $constants_ref->{bold_open}
-		. $constants_ref->{grouped_caps_title}
-		. $constants_ref->{bold_close};
+	$constants_ref->{output_data} .=  $constants_ref->{newline}
+									. $constants_ref->{bold_open}
+									. $constants_ref->{grouped_caps_title}
+									. $constants_ref->{bold_close}
+									. $constants_ref->{newline};
 
-	say $_ 
-		. pad_left(
-			$constants_ref->{capacity_groups}{$_},
-			$max_group_count_length,
-			$constants_ref->{capacity_groups_padding})
+	$constants_ref->{output_data} .= $_ 
+									. pad_left(
+									$constants_ref->{capacity_groups}{$_},
+									$max_group_count_length,
+									$constants_ref->{capacity_groups_padding})
+									. $constants_ref->{newline}
 		for sort keys %{ $constants_ref->{capacity_groups} };
 }
 
@@ -728,26 +736,27 @@ sub _print_hdd_summary_stats
 	$total_drive_count =~ s/\.\d+$//;
 
 
-	print $constants_ref->{newline}
-		. $constants_ref->{bold_open}
-		. $constants_ref->{hdd_summary_title}
-		. $constants_ref->{bold_close}
-		. $constants_ref->{newline}
-		. $constants_ref->{total_drives}
-		. $total_drive_count
-		. $constants_ref->{newline}
-		. $constants_ref->{avg_dr_per_system}
-		. $avg_drives_per_system
-		. $constants_ref->{newline}
-		. $constants_ref->{total_comb_cap}
-		. $total_combined_capacity
-		. $constants_ref->{newline}
-		. $constants_ref->{avg_dr_cap}
-		. $avg_drive_cap
-		. $constants_ref->{newline}
-		. $constants_ref->{med_dr_cap}
-		. $med_drive_cap
-		. $constants_ref->{newline};
+	$constants_ref->{output_data} .=  $constants_ref->{newline}
+									. $constants_ref->{bold_open}
+									. $constants_ref->{hdd_summary_title}
+									. $constants_ref->{bold_close}
+									. $constants_ref->{newline}
+									. $constants_ref->{total_drives}
+									. $total_drive_count
+									. $constants_ref->{newline}
+									. $constants_ref->{avg_dr_per_system}
+									. $avg_drives_per_system
+									. $constants_ref->{newline}
+									. $constants_ref->{total_comb_cap}
+									. $total_combined_capacity
+									. $constants_ref->{newline}
+									. $constants_ref->{avg_dr_cap}
+									. $avg_drive_cap
+									. $constants_ref->{newline}
+									. $constants_ref->{med_dr_cap}
+									. $med_drive_cap
+									. $constants_ref->{newline}
+									. $constants_ref->{newline};
 }
 
 
@@ -828,23 +837,28 @@ sub _print_hdd_size_stats
 		} keys %{ $hdd_counts_by_size_ref };
 
 
-	say $constants_ref->{newline}
-		. $constants_ref->{bold_open}
-		. $constants_ref->{hdd_by_size_title}
-		. $constants_ref->{bold_close}
-		. $constants_ref->{newline}
-		. $constants_ref->{by_size_size_col_title}
-		. $constants_ref->{by_size_count_col_title}
-		. $constants_ref->{by_size_sum_col_title}
-		. $constants_ref->{by_size_perc_col_title}
-		. $constants_ref->{newline}
-		. $constants_ref->{by_size_perc_count_col_title}
-		. $constants_ref->{by_size_perc_cap_col_title};
+	$constants_ref->{output_data} .=  $constants_ref->{newline}
+									. $constants_ref->{bold_open}
+									. $constants_ref->{hdd_by_size_title}
+									. $constants_ref->{bold_close}
+									. $constants_ref->{newline}
+									. $constants_ref->{by_size_size_col_title}
+									. $constants_ref->{by_size_count_col_title}
+									. $constants_ref->{by_size_sum_col_title}
+									. $constants_ref->{by_size_perc_col_title}
+									. $constants_ref->{newline}
+									. $constants_ref->{by_size_perc_count_col_title}
+									. $constants_ref->{by_size_perc_cap_col_title}
+									. $constants_ref->{newline};
 	
-	say $_ . "  " . $rows{$_} for sort keys %rows;
+	$constants_ref->{output_data} .=  $_ 
+									. "  " 
+									. $rows{$_}
+									. $constants_ref->{newline}
+		for sort keys %rows;
 
 
-	say $constants_ref->{bold_open}
+	$constants_ref->{output_data} .=  $constants_ref->{bold_open}
 		. $constants_ref->{total_table_footer_vendor}
 		. pad_left(sum(values %{ $hdd_counts_by_size_ref }),
 			$constants_ref->{total_table_footer_size_padding_col1},0)
@@ -852,7 +866,8 @@ sub _print_hdd_size_stats
 		. pad_left(sum(values %{ $hdd_comb_cap_by_size_ref }),
 			$constants_ref->{total_table_footer_size_padding_col2},0)
 		. $constants_ref->{capacity_unit}
-		. $constants_ref->{bold_close};
+		. $constants_ref->{bold_close}
+		. $constants_ref->{newline};
 }
 
 
@@ -890,27 +905,32 @@ sub _print_hdd_vendor_stats
 		} keys %{ $hdd_counts_by_vendor_ref };
 
 
-	say $constants_ref->{newline}
-		. $constants_ref->{bold_open}
-		. $constants_ref->{hdd_by_vendor_title}
-		. $constants_ref->{bold_close}
-		. $constants_ref->{newline}
-		. $constants_ref->{by_vendor_vendor_col_title}
-		. $constants_ref->{by_vendor_count_col_title}
-		. $constants_ref->{by_vendor_sum_col_title}
-		. $constants_ref->{by_vendor_perc_col_title}
-		. $constants_ref->{newline}
-		. $constants_ref->{by_vendor_perc_count_col_title}
-		. $constants_ref->{by_vendor_perc_cap_col_title};
+	$constants_ref->{output_data} .= $constants_ref->{newline}
+									. $constants_ref->{bold_open}
+									. $constants_ref->{hdd_by_vendor_title}
+									. $constants_ref->{bold_close}
+									. $constants_ref->{newline}
+									. $constants_ref->{by_vendor_vendor_col_title}
+									. $constants_ref->{by_vendor_count_col_title}
+									. $constants_ref->{by_vendor_sum_col_title}
+									. $constants_ref->{by_vendor_perc_col_title}
+									. $constants_ref->{newline}
+									. $constants_ref->{by_vendor_perc_count_col_title}
+									. $constants_ref->{by_vendor_perc_cap_col_title}
+									. $constants_ref->{newline};
 
 
-	say $_ . "  " . $rows{$_} for sort 
-	{
-		$hdd_counts_by_vendor_ref->{$b} <=> $hdd_counts_by_vendor_ref->{$a}
-	} keys %{ $hdd_counts_by_vendor_ref };
+	$constants_ref->{output_data} .=  $_ 
+									. "  " 
+									. $rows{$_} 
+									. $constants_ref->{newline}
+		for sort 
+		{
+			$hdd_counts_by_vendor_ref->{$b} <=> $hdd_counts_by_vendor_ref->{$a}
+		} keys %{ $hdd_counts_by_vendor_ref };
 
 
-	say $constants_ref->{bold_open}
+	$constants_ref->{output_data} .=  $constants_ref->{bold_open}
 		. $constants_ref->{total_table_footer_vendor}
 		. pad_left(sum(values %{ $hdd_counts_by_vendor_ref }),
 			$constants_ref->{total_table_footer_vendor_padding_col1},0)
@@ -918,7 +938,8 @@ sub _print_hdd_vendor_stats
 		. pad_left(sum(values %{ $hdd_comb_cap_by_vendor_ref }),
 			$constants_ref->{total_table_footer_vendor_padding_col2},0)
 		. $constants_ref->{capacity_unit}
-		. $constants_ref->{bold_close};
+		. $constants_ref->{bold_close}
+		. $constants_ref->{newline};
 }
 
 
@@ -926,13 +947,15 @@ sub generate_abbr_key
 {
 	my $constants_ref = shift;
 
-	say $constants_ref->{newline}
-		. $constants_ref->{font_medium_open}
-		. $constants_ref->{abbreviations_key_title}
-		. $constants_ref->{font_size_close}
-		. $constants_ref->{horiz_separator};
+	$constants_ref->{output_data} .=  $constants_ref->{newline}
+									. $constants_ref->{font_medium_open}
+									. $constants_ref->{abbreviations_key_title}
+									. $constants_ref->{font_size_close}
+									. $constants_ref->{horiz_separator}
+									. $constants_ref->{newline};
 
-	say for @{ $constants_ref->{abbreviations_key} };
+	$constants_ref->{output_data} .= $_ . $constants_ref->{newline}
+		for @{ $constants_ref->{abbreviations_key} };
 }
 
 
@@ -1027,15 +1050,16 @@ sub generate_unranked_list
 	my $systems_ref		= shift;
 	my $constants_ref	= shift;
 
-	say $constants_ref->{newline}
-		. $constants_ref->{font_medium_open}
-		. $constants_ref->{unranked_list_title_1}
-		. $constants_ref->{font_size_close}
-		. $constants_ref->{unranked_list_title_2}
-		. $constants_ref->{horiz_separator};
+	$constants_ref->{output_data} .=  $constants_ref->{newline}
+									. $constants_ref->{font_medium_open}
+									. $constants_ref->{unranked_list_title_1}
+									. $constants_ref->{font_size_close}
+									. $constants_ref->{unranked_list_title_2}
+									. $constants_ref->{horiz_separator}
+									. $constants_ref->{newline};
 
 
-	say for map
+	$constants_ref->{output_data} .= $_ . $constants_ref->{newline} for map
 			{
 				my $row 
 					= $constants_ref->{post_open}
@@ -1110,7 +1134,8 @@ sub append_img_links
 			. "]",
 	);
 
-	say for @img_links;
+	$constants_ref->{output_data} .= $_ . $constants_ref->{newline}
+		for @img_links;
 }
 
 1;

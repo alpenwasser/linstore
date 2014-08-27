@@ -14,14 +14,13 @@ use Ltt::Display;
 use Ltt::Statistics;
 use Ltt::Plotting;
 use Ltt::Upload;
+use Ltt::Writer;
+
 
 my $SYSTEMS_FILE 		= File::Spec->catfile("json","systems.json");
 my $HDD_TYPES_FILE 		= File::Spec->catfile("json","hdd_types.json");
 my $CONSTANTS_FILE 		= File::Spec->catfile("json","constants.json");
 my $CREDENTIALS_FILE	= File::Spec->catfile("json","credentials.json");
-my $OUTPUT_FILE 		= "ltt-rankings.txt";
-
-my $SYSTEMS_HASH_REF 	= {};
 
 
 sub main
@@ -29,7 +28,6 @@ sub main
 	my $systems_file_path 	= shift;
 	my $hdd_file_path		= shift;
 	my $constants_path		= shift;
-	my $output_file_path	= shift;
 	my $credentials_path	= shift;
 
 
@@ -85,7 +83,11 @@ sub main
 							$hdd_counts_by_vendor_ref,
 							$hdd_comb_cap_by_vendor_ref);
 
-	upload_images($constants_ref, $credentials_ref);
+	upload_images($constants_ref, $credentials_ref,0);
+
+
+	write_output(	$constants_ref->{output_data},
+					$constants_ref->{output_file});
 
 
 	return 0;
@@ -97,7 +99,6 @@ exit(
 		$SYSTEMS_FILE,
 		$HDD_TYPES_FILE,
 		$CONSTANTS_FILE,
-		$OUTPUT_FILE,
 		$CREDENTIALS_FILE
 	)
 );

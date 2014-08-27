@@ -23,6 +23,10 @@ sub upload_images
 {
 	my $constants_ref	= shift;
 	my $credentials_ref	= shift;
+	my $test_flag		= shift;
+
+	# When testing, do not upload files to FTP.
+	return if $test_flag;
 
 
     # DO NOT  ENTER SERVER INFORMATION AND  USER CREDENTIALS
