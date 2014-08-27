@@ -29,27 +29,32 @@ sub upload_images
 	return if $test_flag;
 
 
-    # DO NOT  ENTER SERVER INFORMATION AND  USER CREDENTIALS
-    # HERE SINCE THIS FILE IS  BEING TRACKED BY GIT AND WILL
-    # THEREFORE BE UPLOADED TO GITHUB!
+	# DO   NOT  ENTER   SERVER   INFORMATION  AND	USER
+	# CREDENTIALS HERE SINCE THIS  FILE IS BEING TRACKED
+	# BY GIT AND WILL THEREFORE BE UPLOADED TO GITHUB!
 	# USE THE DEDICATED JSON FILE INSTEAD.
-	my $ftp = Net::FTP->new($credentials_ref->{	ftp_server}, 
-												Debug => 0,
-												Passive => 1)
-		or die "Cannot connect to host: $@";
-	$ftp->login($credentials_ref->{ftp_user},
-				$credentials_ref->{ftp_pass})
-		or die "Cannot login ", $ftp->message;
+	my $ftp = Net::FTP->new(
+		$credentials_ref->{ftp_server},
+		Debug => 0,
+		Passive => 1
+	)
+	or die "Cannot connect to host: $@";
+	$ftp->login(
+		$credentials_ref->{ftp_user},
+		$credentials_ref->{ftp_pass}
+	)
+	or die "Cannot login ", $ftp->message;
 
 
-    # We need  this, otherwise the files  will get truncated
-    # during transfer and end up being corrupt.
+	# We  need  this,  otherwise   the  files  will  get
+	# truncated  during   transfer	and  end   up  being
+	# corrupt.
 	$ftp->binary;
 
 
-    # List of  images. NOTE: When more  images are  added to
-    # the program,  they will need  to be manually  added to
-    # this list as well.
+	# List of  images. NOTE: When more images  are added
+	# to  the program,  they  will need  to be  manually
+	# added to this list as well.
 	my @img_list = (
 		$constants_ref->{hdd_cap_by_vendor_img},
 		$constants_ref->{hdd_count_by_vendor_img},
@@ -61,14 +66,17 @@ sub upload_images
 	);
 
 
-    # Timestamp images (each with the same timestamp).
+	# Timestamp images (each with the same timestamp).
 	for my $img (@img_list)
 	{
 		$ftp->put(
-			File::Spec->catfile($constants_ref->{img_dir},
-								$constants_ref->{timestamp} 
-								. $img ))
-			or die "get failed ", $ftp->message;
+			File::Spec->catfile(
+				$constants_ref->{img_dir},
+				$constants_ref->{timestamp} 
+				. $img 
+			)
+		)
+		or die "get failed ", $ftp->message;
 	}
 
 	$ftp->quit;
