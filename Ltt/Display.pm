@@ -1075,30 +1075,37 @@ sub append_img_links
 	my @img_links = (
 		"\n[img=" 
 			. $constants_ref->{img_server} 
+			. $constants_ref->{timestamp}
 			. $constants_ref->{ranking_chart_img} 
 			. "]",
 		"[img=" 
 			. $constants_ref->{img_server} 
+			. $constants_ref->{timestamp}
 			. $constants_ref->{grouped_plot_by_count_img} 
 			. "]",
 		"[img=" 
 			. $constants_ref->{img_server} 
+			. $constants_ref->{timestamp}
 			. $constants_ref->{grouped_plot_by_contrib_img} 
 			. "]",
 		"[img=" 
 			. $constants_ref->{img_server} 
+			. $constants_ref->{timestamp}
 			. $constants_ref->{hdd_count_by_size_img} 
 			. "]",
 		"[img=" 
 			. $constants_ref->{img_server} 
+			. $constants_ref->{timestamp}
 			. $constants_ref->{hdd_cap_by_size_img} 
 			. "]",
 		"[img=" 
 			. $constants_ref->{img_server} 
+			. $constants_ref->{timestamp}
 			. $constants_ref->{hdd_count_by_vendor_img} 
 			. "]",
 		"[img=" 
 			. $constants_ref->{img_server} 
+			. $constants_ref->{timestamp}
 			. $constants_ref->{hdd_cap_by_vendor_img} 
 			. "]",
 	);

@@ -248,8 +248,8 @@ sub print_hdd_size_plots
 	my $total_hdd_cap	= pop @data_cap_by_size;
 
 
-	my $hdd_count_by_size_graph = GD::Graph::pie->new(1200, 900);
-	my $hdd_cap_by_size_graph = GD::Graph::pie->new(1200, 900);
+	my $hdd_count_by_size_graph = GD::Graph::pie->new(800, 600);
+	my $hdd_cap_by_size_graph = GD::Graph::pie->new(800, 600);
 
 	my %pie_chart_hdd_count_by_size_configs 
 		= %{ $constants_ref->{pie_chart_configs} };
@@ -313,7 +313,8 @@ sub print_hdd_size_plots
 
 	open(IMG_COUNT, ">" 
 		. File::Spec->catfile(	$constants_ref->{img_dir},
-								$constants_ref->{hdd_count_by_size_img}))
+								$constants_ref->{timestamp} 
+								. $constants_ref->{hdd_count_by_size_img}))
 		or die $!;
 	binmode IMG_COUNT;
 	print IMG_COUNT $gd_count_by_size->png;
@@ -321,7 +322,8 @@ sub print_hdd_size_plots
 
 	open(IMG_CAP, ">" 
 		. File::Spec->catfile(	$constants_ref->{img_dir},
-								$constants_ref->{hdd_cap_by_size_img}))
+								$constants_ref->{timestamp} 
+								. $constants_ref->{hdd_cap_by_size_img}))
 		or die $!;
 	binmode IMG_CAP;
 	print IMG_CAP $gd_cap_by_size->png;
@@ -349,8 +351,8 @@ sub print_hdd_vendor_plots
 	my $total_hdd_cap	= pop @data_cap_by_vendor;
 
 
-	my $hdd_count_by_vendor_graph = GD::Graph::pie->new(1200, 900);
-	my $hdd_cap_by_vendor_graph = GD::Graph::pie->new(1200, 900);
+	my $hdd_count_by_vendor_graph = GD::Graph::pie->new(800, 600);
+	my $hdd_cap_by_vendor_graph = GD::Graph::pie->new(800, 600);
 
 	my %pie_chart_hdd_count_by_vendor_configs 
 		= %{ $constants_ref->{pie_chart_configs} };
@@ -416,7 +418,8 @@ sub print_hdd_vendor_plots
 
 	open(IMG_COUNT, ">" 
 		. File::Spec->catfile(	$constants_ref->{img_dir},
-								$constants_ref->{hdd_count_by_vendor_img}))
+								$constants_ref->{timestamp} 
+								. $constants_ref->{hdd_count_by_vendor_img}))
 		or die $!;
 	binmode IMG_COUNT;
 	print IMG_COUNT $gd_count_by_vendor->png;
@@ -424,7 +427,8 @@ sub print_hdd_vendor_plots
 
 	open(IMG_CAP, ">" 
 		. File::Spec->catfile(	$constants_ref->{img_dir},
-								$constants_ref->{hdd_cap_by_vendor_img}))
+								$constants_ref->{timestamp} 
+								. $constants_ref->{hdd_cap_by_vendor_img}))
 		or die $!;
 	binmode IMG_CAP;
 	print IMG_CAP $gd_cap_by_vendor->png;
@@ -476,7 +480,7 @@ sub print_ranking_list_plot
 	);
 
 
-	my $ranking_chart = GD::Graph::hbars->new(960, 1920);
+	my $ranking_chart = GD::Graph::hbars->new(800, 2000);
 
 	my %ranking_chart_configs 
 		= %{ $constants_ref->{hbar_graph_configs} };
@@ -484,6 +488,9 @@ sub print_ranking_list_plot
 	$ranking_chart_configs{"logo"} 
 		= File::Spec->catfile(	$constants_ref->{img_dir},
 								$constants_ref->{logo_img});
+
+	$ranking_chart_configs{y_number_format} 
+		= \&format_number;
 
 	$ranking_chart_configs{y_max_value} 
 		= $constants_ref->{hbar_max_y_scaling_factor}
@@ -528,7 +535,8 @@ sub print_ranking_list_plot
 
 	open(IMG, ">" 
 		. File::Spec->catfile(	$constants_ref->{img_dir},
-								$constants_ref->{ranking_chart_img}))
+								$constants_ref->{timestamp} 
+								. $constants_ref->{ranking_chart_img}))
 		or die $!;
 	binmode IMG;
 	print IMG $gd_ranking_list->png;
@@ -564,8 +572,8 @@ sub print_groupings_plots
 
 
 
-    my $grouped_plot_by_count	= GD::Graph::hbars->new(960, 720);
-    my $grouped_plot_by_contrib	= GD::Graph::hbars->new(960, 720);
+    my $grouped_plot_by_count	= GD::Graph::hbars->new(800, 600);
+    my $grouped_plot_by_contrib	= GD::Graph::hbars->new(800, 600);
 
 
 	my %grouped_plot_by_count_configs
@@ -668,7 +676,8 @@ sub print_groupings_plots
 
 	open(IMG, ">" 
 		. File::Spec->catfile(	$constants_ref->{img_dir},
-								$constants_ref->{grouped_plot_by_count_img}))
+								$constants_ref->{timestamp} 
+								.$constants_ref->{grouped_plot_by_count_img}))
 		or die $!;
 	binmode IMG;
 	print IMG $gd_grouped_plot_by_count->png;
@@ -676,7 +685,8 @@ sub print_groupings_plots
 
 	open(IMG, ">" 
 		. File::Spec->catfile(	$constants_ref->{img_dir},
-								$constants_ref->{grouped_plot_by_contrib_img}))
+								$constants_ref->{timestamp} 
+								.$constants_ref->{grouped_plot_by_contrib_img}))
 		or die $!;
 	binmode IMG;
 	print IMG $gd_grouped_plot_by_contrib->png;
