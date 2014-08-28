@@ -1,25 +1,180 @@
-Linus Tech Tips Storage Ranking Script
+LINUS TECH TIPS STORAGE RANKING SCRIPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 
-generate-ltt-rankings.pl will  generate the BB code  for the
-storage rankings list, including whitespace for formatting.
+
+DESCRIPTION
+────────────────────────────────────────────────────────────
+
+Generates a text file with the BB code for the forum post as
+well as graph images for statistics. Uploads graph images to
+a server automatically if one is specified.
 
 
 
-USAGE:
 
-- Make sure  all entries  in the  %MASTER_RECORD are  up  to
-  date.
-- Run generate-ltt-rankings.pl, pipe output into file.
-- Copy  file content  into the forum  post with  the ranking
-  list. It is important that the post be edited in rich text
-  mode  (not  raw  BBCode mode)  in  order  to preserve  the
-  whitespace for the table layout. Editing in raw mode, then
-  saving post, will remove all whitespace padding.
-- Select entire post, set font to Courier.
-- Save post.
+USAGE
+────────────────────────────────────────────────────────────
 
-TODO:
-- Timeline tracking
-- graphs/plots
+•   Download all necessary files and directories:
+        ltt-rankings.pl
+        fonts/
+        images/
+        json/
+        Ltt/
+
+
+•   Enter   the   correct  system   information   into   the
+    json/systems.json file.
+
+        ┌─────────────────────┐
+    ┌───┤  json/systems.json  ├────────────────────────────┐
+    │   └─────────────────────┘                            │
+    │                                                      │
+    │         ... previous entry ...                       │
+    │},                                                    │
+    │"system_XXX" : {                                      │
+    │    "capacity" : "XX.X",                              │
+    │    "case" : "Case Model",                            │
+    │    "hdds" : {                                        │
+    │         "AAXXXX" : "X",                              │
+    │         "BBXYXX" : "Y",                              │
+    │         "CCXQXX" : "Z",                              │
+    │         "AAXXVX" : "N"                               │
+    │    },                                                │
+    │    "notes" : null,                                   │
+    │    "post" : "post number",                           │
+    │    "os" : "Operating System",                        │
+    │    "storage_sys" : "Storage System Abbreviation",    │
+    │    "username" : "Username on Forum"                  │
+    │}                                                     │
+    │                                                      │
+    └──────────────────────────────────────────────────────┘
+
+
+    NOTES: 
+        ◦   The order in which the entries (case, hdds, ...)
+            appear is not relevant.
+        ◦   The notes field may or may not be set. If it is
+            set, it will be pasted as-is into the post text,
+            so  if you  wish to use  BB formatting for that,
+            just  enter it like  you would  into  the  forum
+            post.
+        ◦   The  HDD  descriptors  must  be present  in  the
+            json/hdd_types.json  file.  See   below  for  an
+            explanation on HDD descriptors.
+        ◦   Technically  speaking,  the  capacity  field  is
+            optional  at  the  moment,  but  for  historical
+            purposes   or  potential   future  use  we  will 
+            continue to use it for now.
+        ◦   See  below for  a list of  abbreviations for the
+            storage_sys and os fields.
+        ◦   Make sure to follow JSON syntax:
+                -   double quotes,
+                -   no commas for last entry in a given data
+                    structure.
+
+
+•   Create a credentials file  json/credentials.json  of the
+    following form:
+
+        ┌──────────────────────────┐
+    ┌───┤  json/credentials.json   ├───────────────────────┐
+    │   └──────────────────────────┘                       │
+    │                                                      │
+    │{                                                     │
+    │    "ftp_user" : "YOUR_FTP_USERNAME",                 │
+    │    "ftp_pass" : "PASSWORD",                          │
+    │    "ftp_server" : "FTP_SERVER",                      │
+    │    "img_server" : "URL_WHERE_IMAGES_WILL_BE"         │
+    │}                                                     │
+    │                                                      │
+    └──────────────────────────────────────────────────────┘
+
+    Alternatively,  one can  omit the  credentials file,  in
+    which case the graph images will be merely stored in the
+    images/ directory, but will not  be uploaded to a server
+    automatically.
+
+
+•   Run ltt-rankings.pl.
+
+
+•   The output files will be:
+        ◦   ltt-rankings.txt:   The text for the forum post.
+        ◦   images/*.png:       The  image   files  for  the
+                                statistics plots.
+
+
+•   Open forum editor, switch to  rich text mode (not raw BB
+    code  editing mode). This  is necessary  because if  the
+    text is inserted in raw mode, the padding spaces for the
+    post  formatting will  be  stripped away  when the  post
+    ist  posted.   When  posting  in  rich  text  mode,  the
+    padding spaces  are preserved. Copy and paste  text from
+    ltt-rankings.txt into forum editor, save post and done.
+
+
+
+
+ABBREVIATIONS
+────────────────────────────────────────────────────────────
+
+Abbreviations as  defined by the abbreviations_key  field in
+json/constants.json:
+
+WS          Windows Server
+WHS         Windows Home Server
+SHR         Synology Hybrid RAID
+StSp        Storage Spaces
+RD          RAID (unspecified if hardware or software)
+HwRD        Hardware RAID
+SwRD        Software RAID
+FlRD        FlexRAID
+
+When  more  abbreviations  are   introduced,  make  sure  to
+enter  them   into  the   abbreviations_key  field   in  the
+json/constants.json file.
+
+
+
+
+HDD DESCRIPTORS
+────────────────────────────────────────────────────────────
+
+HDDs are  classified by vendor  and size, not  by model. The
+scheme for the HDD descriptor is:
+
+AAXXXX
+
+Where  "AA" is  a two-letter  code for  the manufacturer  as
+defined below, and  "XXXX" is a four-digit code  for the HDD
+size.
+
+The vendor codes are:
+
+HT          Hitachi
+SG          Seagate
+SS          Samsung
+TS          Toshiba
+US          unspecified vendor
+WD          Western Digital Company
+
+The size descriptor is four digits describing ten gigabytes,
+so it would look like this for example:
+
+3 TB disk           0300
+500 GB disk         0050
+1.5 TB disk         0150
+
+and so  on. So a Hitachi drive  of 2 TB capacity  would have
+the HDD descriptor of:
+
+HT0200
+
+
+If an HDD descriptor is used in json/systems.json which does
+not  occur in  json/hdd_types.json, the  scrip will  throw a
+fatal error and die, notifying the user to amend the records
+appropriately.

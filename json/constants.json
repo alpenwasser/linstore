@@ -67,6 +67,7 @@
 		"Seagate",
 		"WD",
 		"unspecified",
+        "Samsung",
 		"Toshiba"
 	],
 	"hdd_by_size_title" : "HDD Statistics, by Size",
@@ -165,8 +166,8 @@
 		"r_margin" : "20",
 		"show_values" : "1",
 		"bar_spacing" : "6",
-        "text_space" : "18",
-        "values_space" : "8",
+		"text_space" : "18",
+		"values_space" : "8",
 		"dclrs" : [ "lblue" ]
 	},
 	"hbar_hdd_cap_by_size_configs" : {
@@ -183,8 +184,8 @@
 		"r_margin" : "20",
 		"show_values" : "1",
 		"bar_spacing" : "6",
-        "text_space" : "18",
-        "values_space" : "8",
+		"text_space" : "18",
+		"values_space" : "8",
 		"dclrs" : [ "lblue" ]
 	},
 	"grouped_hbar_by_count_configs" : {
@@ -201,8 +202,8 @@
 		"r_margin" : "20",
 		"show_values" : "1",
 		"bar_spacing" : "6",
-        "text_space" : "18",
-        "values_space" : "8",
+		"text_space" : "18",
+		"values_space" : "8",
 		"dclrs" : [ "lblue" ]
 	},
 	"grouped_hbar_by_contrib_configs" : {
@@ -219,8 +220,8 @@
 		"r_margin" : "20",
 		"show_values" : "1",
 		"bar_spacing" : "6",
-        "text_space" : "18",
-        "values_space" : "8",
+	"text_space" : "18",
+	"values_space" : "8",
 		"dclrs" : [ "lblue" ]
 	},
 	"img_dir" : "images",
@@ -241,13 +242,14 @@
 	"grouped_plot_label_size" : "14",
 	"grouped_plot_axis_size" : "12",
 	"grouped_plot_y_axis_size" : "8",
-    "grouped_plot_by_count_img" : "ltt_plot_grouped_by_count.png",
-    "grouped_plot_by_contrib_img" : "ltt_plot_grouped_by_contrib.png",
-    "grouped_plot_by_count_title" : "System Groupings, by Count",
-    "grouped_plot_by_contrib_title" : "System Groupings, Contributions to Total Capacity",
-    "grouped_plot_by_count_label" : "Total System Count: ",
-    "grouped_plot_by_contrib_label" : "Total Capacity: ",
-    "hbar_max_y_scaling_factor" : "1.2",
+	"grouped_plot_by_count_img" : "ltt_plot_grouped_by_count.png",
+	"grouped_plot_by_contrib_img" : "ltt_plot_grouped_by_contrib.png",
+	"grouped_plot_by_count_title" : "System Groupings, by Count",
+	"grouped_plot_by_contrib_title" : "System Groupings, Contributions to Total Capacity",
+	"grouped_plot_by_count_label" : "Total System Count: ",
+	"grouped_plot_by_contrib_label" : "Total Capacity: ",
+	"hbar_max_y_scaling_factor" : "1.2",
 	"output_data" : null,
-	"output_file" : "ltt-rankings.txt"
+	"output_file" : "ltt-rankings.txt",
+	"img_server" : "HTTP:://WWW.YOURSERVER.COM/SOME/DIR/"
 }

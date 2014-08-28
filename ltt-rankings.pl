@@ -35,13 +35,20 @@ sub main
 	my $systems_ref		= read_json($systems_file_path);
 	my $hdd_types_ref	= read_json($hdd_file_path);
 	my $constants_ref	= read_json($constants_path);
+
+	# If there  is no credentials file,  the read_json()
+	# function will return 0.
 	my $credentials_ref	= read_json($credentials_path);
 
 
 	# Avoids  needing to  configure the  server in	more
 	# than one place, but still keeps everything related
 	# to it in the same file.
-	$constants_ref->{img_server} = $credentials_ref->{img_server};
+	# If  no  credentials  file  is  present,  we  leave
+	# the default value $constants_ref->{img_server} for
+	# later manual edit by user.
+	$constants_ref->{img_server} = $credentials_ref->{img_server}
+		if ($credentials_ref && $credentials_ref->{img_server});
 
 
 	# Generate  a timestamp  for  the plot	images. This
@@ -70,13 +77,16 @@ sub main
 
 
 	# Generate data for HDD statistics plots.
-	my (	$hdd_counts_by_size_ref,
+	my (	
+		$hdd_counts_by_size_ref,
 		$hdd_counts_by_vendor_ref,
 		$hdd_comb_cap_by_size_ref,
-		$hdd_comb_cap_by_vendor_ref)
-		= generate_statistics(	$systems_ref,
-					$constants_ref,
-					$hdd_types_ref);
+		$hdd_comb_cap_by_vendor_ref
+	    ) = generate_statistics(	
+		$systems_ref,
+		$constants_ref,
+		$hdd_types_ref
+		);
 
 
 	# The  systems	which  do  not	reach  the  capacity
@@ -112,7 +122,8 @@ sub main
 
 	# Upload   images  to	FTP  server,   specified  in
 	# json/credentials.json.
-	upload_images($constants_ref, $credentials_ref,0);
+	upload_images($constants_ref, $credentials_ref,0)
+		if($credentials_ref);
 
 
 	# Write  to output  file. This is  what needs  to be

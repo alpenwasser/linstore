@@ -60,6 +60,10 @@ sub read_json
 		# And voilà!
 		$json_decoded_ref = $json_obj->decode($json_string);
 	}
+	else
+	{
+		return 0;
+	}
 
 
 	return $json_decoded_ref unless ($debug_flag);
