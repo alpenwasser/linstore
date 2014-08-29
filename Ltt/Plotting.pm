@@ -12,6 +12,7 @@ use GD::Graph::bars;
 
 use Ltt::Strings;
 use Ltt::Statistics;
+use Ltt::Imaging;
 
 our @ISA= qw( Exporter );
 
@@ -342,6 +343,24 @@ sub print_hdd_size_plots
 		= $hdd_cap_by_size_graph->plot(\@data_cap_by_size) 
 		or die $hdd_cap_by_size_graph->error;
 
+
+	# Watermark images with system configuration hash.
+	my $gd_count_by_size_png 
+		= timestamp_img(
+			$gd_count_by_size->png,
+			substr($constants_ref->{timestamp}, 0, -2),
+			$constants_ref->{systems_digest}
+		);
+
+	my $gd_cap_by_size_png 
+		= timestamp_img(
+			$gd_cap_by_size->png,
+			substr($constants_ref->{timestamp}, 0, -2),
+			$constants_ref->{systems_digest}
+		);
+
+
+	# Write to files:
 	open(IMG_COUNT, ">" 
 		. File::Spec->catfile(
 			$constants_ref->{img_dir},
@@ -351,7 +370,7 @@ sub print_hdd_size_plots
 	)
 	or die $!;
 	binmode IMG_COUNT;
-	print IMG_COUNT $gd_count_by_size->png;
+	print IMG_COUNT $gd_count_by_size_png;
 	close IMG_COUNT;
 
 	open(IMG_CAP, ">" 
@@ -363,7 +382,7 @@ sub print_hdd_size_plots
 	)
 	or die $!;
 	binmode IMG_CAP;
-	print IMG_CAP $gd_cap_by_size->png;
+	print IMG_CAP $gd_cap_by_size_png;
 	close IMG_CAP;
 }
 
@@ -461,6 +480,24 @@ sub print_hdd_vendor_plots
 		= $hdd_cap_by_vendor_graph->plot(\@data_cap_by_vendor)
 		or die $hdd_cap_by_vendor_graph->error;
 
+
+	# Watermark images with system configuration hash.
+	my $gd_count_by_vendor_png 
+		= timestamp_img(
+			$gd_count_by_vendor->png,
+			substr($constants_ref->{timestamp}, 0, -2),
+			$constants_ref->{systems_digest}
+		);
+
+	my $gd_cap_by_vendor_png 
+		= timestamp_img(
+			$gd_cap_by_vendor->png,
+			substr($constants_ref->{timestamp}, 0, -2),
+			$constants_ref->{systems_digest}
+		);
+
+
+	# Write to files.
 	open(IMG_COUNT, ">" 
 		. File::Spec->catfile(
 			$constants_ref->{img_dir},
@@ -470,7 +507,7 @@ sub print_hdd_vendor_plots
 	)
 	or die $!;
 	binmode IMG_COUNT;
-	print IMG_COUNT $gd_count_by_vendor->png;
+	print IMG_COUNT $gd_count_by_vendor_png;
 	close IMG_COUNT;
 
 	open(IMG_CAP, ">" 
@@ -482,7 +519,7 @@ sub print_hdd_vendor_plots
 	)
 	or die $!;
 	binmode IMG_CAP;
-	print IMG_CAP $gd_cap_by_vendor->png;
+	print IMG_CAP $gd_cap_by_vendor_png;
 	close IMG_CAP;
 }
 
@@ -597,6 +634,17 @@ sub print_ranking_list_plot
 		= $ranking_chart->plot(\@system_data)
 		or die $ranking_chart->error;
 
+
+	# Watermark image with system configuration hash.
+	my $gd_ranking_list_png
+		= timestamp_img(
+			$gd_ranking_list->png,
+			substr($constants_ref->{timestamp}, 0, -2),
+			$constants_ref->{systems_digest}
+		);
+
+
+	# Write to file.
 	open(IMG, ">" 
 		. File::Spec->catfile(
 			$constants_ref->{img_dir},
@@ -606,7 +654,7 @@ sub print_ranking_list_plot
 	)
 	or die $!;
 	binmode IMG;
-	print IMG $gd_ranking_list->png;
+	print IMG $gd_ranking_list_png;
 	close IMG;
 }
 
@@ -642,8 +690,8 @@ sub print_groupings_plots
 
 
 
-    my $grouped_plot_by_count	= GD::Graph::hbars->new(800, 600);
-    my $grouped_plot_by_contrib	= GD::Graph::hbars->new(800, 600);
+	my $grouped_plot_by_count	= GD::Graph::hbars->new(800, 600);
+	my $grouped_plot_by_contrib	= GD::Graph::hbars->new(800, 600);
 
 
 	my %grouped_plot_by_count_configs
@@ -749,6 +797,24 @@ sub print_groupings_plots
 		= $grouped_plot_by_contrib->plot(\@grouped_data_by_contrib)
 		or die $grouped_plot_by_contrib->error;
 
+
+	# Watermark images with system configuration hash.
+	my $gd_grouped_plot_by_count_png 
+		= timestamp_img(
+			$gd_grouped_plot_by_count->png,
+			substr($constants_ref->{timestamp}, 0, -2),
+			$constants_ref->{systems_digest}
+		);
+
+	my $gd_grouped_plot_by_contrib_png 
+		= timestamp_img(
+			$gd_grouped_plot_by_contrib->png,
+			substr($constants_ref->{timestamp}, 0, -2),
+			$constants_ref->{systems_digest}
+		);
+
+
+	# Write to files.
 	open(IMG, ">" 
 		. File::Spec->catfile(
 			$constants_ref->{img_dir},
@@ -758,7 +824,7 @@ sub print_groupings_plots
 	)
 	or die $!;
 	binmode IMG;
-	print IMG $gd_grouped_plot_by_count->png;
+	print IMG $gd_grouped_plot_by_count_png;
 	close IMG;
 
 	open(IMG, ">" 
@@ -770,7 +836,7 @@ sub print_groupings_plots
 	)
 	or die $!;
 	binmode IMG;
-	print IMG $gd_grouped_plot_by_contrib->png;
+	print IMG $gd_grouped_plot_by_contrib_png;
 	close IMG;
 }
 

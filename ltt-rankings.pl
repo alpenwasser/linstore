@@ -15,6 +15,8 @@ use Ltt::Statistics;
 use Ltt::Plotting;
 use Ltt::Upload;
 use Ltt::Writer;
+use Ltt::Imaging;
+use Ltt::Digester;
 
 
 my $SYSTEMS_FILE	= File::Spec->catfile("json","systems.json");
@@ -57,6 +59,21 @@ sub main
 	my $time = Time::Piece->new();
 	$constants_ref->{timestamp}	= $time->ymd 
 					. "--" . $time->hms("-") . "--";
+
+
+	# Calculate  a SHA1  digest for  the current  system
+	# configuration.  This is  then watermarked onto the
+	# plot images. The purpose of this is that it can be
+	# determined  which graph  images resulted  from the
+	# same systems configuration.
+	# The order in which the  elements are stored in the
+	# systems.json file  is irrelevant,  so long  as the
+	# fundamental data structure is  the same in content
+	# (this  corresponds to  Perl's handling  of element
+	# order within	a hash, which is  not guaranteed and
+	# will vary between program runs).
+	$constants_ref->{systems_digest} 
+		= get_hash_digest($systems_ref);
 
 
 	# The  total  storage  capacity of  each  system  is
@@ -122,7 +139,7 @@ sub main
 
 	# Upload   images  to	FTP  server,   specified  in
 	# json/credentials.json.
-	upload_images($constants_ref, $credentials_ref,0)
+	upload_images($constants_ref, $credentials_ref,1)
 		if($credentials_ref);
 
 
@@ -134,6 +151,9 @@ sub main
 
 	return 0;
 }
+
+
+
 
 
 exit(

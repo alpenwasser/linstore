@@ -29,6 +29,7 @@ our @EXPORT_OK = qw(
 	separate_padding
 	concat_fields
 	format_capacities
+	sort_string
 	);
 
 # These are exported by default.
@@ -52,6 +53,7 @@ our @EXPORT = qw(
 	separate_padding
 	concat_fields
 	format_capacities
+	sort_string
 	);
 
 
@@ -363,3 +365,11 @@ sub format_hbar_cap_value
 
 	return format_number($_[0]) . " TB";
 }
+
+
+sub sort_string
+{
+	return join '', sort { $a cmp $b } split(//, $_[0]);
+}
+
+1;

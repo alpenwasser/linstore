@@ -119,10 +119,10 @@ Toshiba           11 drives          33.0 TB        1.71%        2.09%
 [size=5]Noteworthy Builds w/ <10 TB storage,[/size] unranked, unsorted[hr]
 [post=277922]MG2R[/post]              [b] 8.0 TB[/b] K'nex Custom Case               Debian, mdadm         [b]K'Nex[/b] Build, BotW
 [post=2736033]Blade of Grass[/post]    [b] 7.0 TB[/b] Corsair C70                     Debian, ZFS         
+[post=368180]alpenwasser[/post]       [b] 4.3 TB[/b] Fractal Design R4 (custom)      Arch Linux, ZFS       BotW
 [post=2195738]2sysel2[/post]           [b] 9.0 TB[/b] Bitfenix Prodigy mITX           Win 8, JBOD         
 [post=303666]cushy91[/post]           [b] 2.0 TB[/b] HP Proliant MicroServer N40L    unRAID, unRAID        HP Proliant Microserver
 [post=595065]dzintars[/post]          [b] 1.0 TB[/b] Open Air                        Ubuntu Srv, JBOD      Open air, no case
-[post=368180]alpenwasser[/post]       [b] 4.3 TB[/b] Fractal Design R4 (custom)      Arch Linux, ZFS       BotW
 
 [size=5]Abbreviations Key[/size][hr]
 [b]WS[/b]         Windows Server
@@ -134,10 +134,10 @@ Toshiba           11 drives          33.0 TB        1.71%        2.09%
 [b]SwRD[/b]       Software RAID
 [b]FlRD[/b]       FlexRAID
 
-[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--ltt_storage_rankings.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--ltt_plot_grouped_by_count.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--ltt_plot_grouped_by_contrib.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--hdd_count_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--hdd_cap_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--hdd_count_by_vendor.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--hdd_cap_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--ltt_storage_rankings.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--ltt_plot_grouped_by_count.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--ltt_plot_grouped_by_contrib.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--hdd_count_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--hdd_cap_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--hdd_count_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--hdd_cap_by_vendor.png]
