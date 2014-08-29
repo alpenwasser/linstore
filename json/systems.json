@@ -626,7 +626,8 @@
       "hdds" : {
          "SS0100" : "3",
          "WD0200" : "4",
-         "WD0300" : "6"
+         "WD0300" : "6",
+         "WD0015" : "1"
       },
       "notes" : null,
       "os" : "Arch",
@@ -863,5 +864,17 @@
 	   "os" : "OpenMediaVault",
 	   "storage_sys" : "SwRD",
 	   "username" : "{EAC} Shoot em UP"
+   },
+   "system_064" : {
+	   "capacity" : "10.0",
+	   "case" : "Bitfenix Prodigy",
+	   "hdds" : {
+			"SG0200" : "5"
+	   },
+	   "notes" : null,
+	   "post" : "2796023",
+	   "os" : "Arch Linux",
+	   "storage_sys" : "mdadm",
+	   "username" : "Pidagad"
    }
 }

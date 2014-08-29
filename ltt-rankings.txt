@@ -13,7 +13,7 @@
 11  [post=414401]Ramaddil[/post]          [b]45.0 TB[/b] Lian Li 343B                    Win 7, HwRD           [post=1883660]Upd 1[/post], [post=2418935]2[/post]
 12  [post=1390757]Hellboy[/post]           [b]38.0 TB[/b] Fractal Design Array R2         WS 2008R2, RD       
 13  [post=2386836]kev507[/post]            [b]32.0 TB[/b] Corsair 750D                    Win 7, HwRD         
-14  [post=2009510]alpenwasser[/post]       [b]29.0 TB[/b] InWin PP689 (Custom HDD Rack)   Arch, ZFS           
+14  [post=2009510]alpenwasser[/post]       [b]29.2 TB[/b] InWin PP689 (Custom HDD Rack)   Arch, ZFS           
 15  [post=492994]MrSmoke[/post]           [b]28.0 TB[/b] Norcotek RPC4224                Ubuntu, mdadm       
 16  [post=896406]Benjamin[/post]          [b]28.0 TB[/b] Fractal Design R4               FreeNAS, ZFS        
 17  [post=2126468]Gronnie[/post]           [b]28.0 TB[/b] Corsair 500R                    Win 7, FlexRAID       [post=2688726]Upd 1[/post]
@@ -57,25 +57,24 @@
 55  [post=559082]5lay3r[/post]            [b]10.0 TB[/b] Midi Tower                      Win 8, StSp         
 56  [post=2074049]MoonSpot[/post]          [b]10.0 TB[/b] Drobo                           Drobo, Drobo        
 57  [post=2536977]Woodypc[/post]           [b]10.0 TB[/b] Antec One Hundred               Win 7, StableBit    
+58  [post=2796023]Pidagad[/post]           [b]10.0 TB[/b] Bitfenix Prodigy                Arch Linux, mdadm   
 
-[hr][b][size=5]Total Storage Capacity: 1568.1 TB[/size][/b]
+[hr][b][size=5]Total Storage Capacity: 1578.3 TB[/size][/b]
 [hr]
 Sorting priority: First by capacity descending, then by post date, ascending.
-Last updated: 2014-AUG-27
+Last updated: 2014-AUG-29
 
 
 [size=5][b]Statistics[/b][/size]
 [hr]
 [b]Systems Summary[/b]
-Arithmetic Mean Capacity           27.5 TB
+Arithmetic Mean Capacity           27.2 TB
 Median Capacity                    21.0 TB
-Mode (most common capacity)        
-15.0 TB
- (number of occurrences: 6)
+Mode (most common capacity)        15.0 TB (number of occurrences: 6)
 Number of Unique Capacities             29
 
 [b]Grouped Distribution[/b]
-10 TB ≤ capacity < 20 TB                25
+10 TB ≤ capacity < 20 TB                26
 20 TB ≤ capacity < 30 TB                19
 30 TB ≤ capacity < 40 TB                 2
 40 TB ≤ capacity < 50 TB                 4
@@ -85,9 +84,9 @@ Number of Unique Capacities             29
 80 TB ≤ capacity < 90 TB                 2
 
 [b]HDD Statistics[/b]
-Total Number of Drives                 637
-Average Drives per System             11.2
-Total Combined Capacity          1568.1 TB
+Total Number of Drives                 643
+Average Drives per System             11.1
+Total Combined Capacity          1578.3 TB
 Average Drive Capacity              2.5 TB
 Median Drive Capacity               2.0 TB
 
@@ -95,34 +94,35 @@ Median Drive Capacity               2.0 TB
 [b]HDD Statistics, by Size[/b]
 Capacity              Count              Sum       Percentage of Total
                                                     Count     Capacity
-0.50 TB           17 drives           8.5 TB        2.67%        0.54%
+0.15 TB            1 drives           0.2 TB        0.16%        0.01%
+0.50 TB           17 drives           8.5 TB        2.64%        0.54%
 0.64 TB            1 drives           0.6 TB        0.16%        0.04%
 0.75 TB            2 drives           1.5 TB        0.31%        0.10%
-1.00 TB           50 drives          50.0 TB        7.85%        3.19%
-1.50 TB           27 drives          40.5 TB        4.24%        2.58%
-2.00 TB          256 drives         512.0 TB       40.19%       32.65%
-3.00 TB          181 drives         543.0 TB       28.41%       34.63%
-4.00 TB          103 drives         412.0 TB       16.17%       26.27%
-[b]TOTAL            637 drives        1568.1 TB[/b]
+1.00 TB           50 drives          50.0 TB        7.78%        3.17%
+1.50 TB           27 drives          40.5 TB        4.20%        2.57%
+2.00 TB          261 drives         522.0 TB       40.59%       33.07%
+3.00 TB          181 drives         543.0 TB       28.15%       34.40%
+4.00 TB          103 drives         412.0 TB       16.02%       26.10%
+[b]TOTAL            643 drives        1578.3 TB[/b]
 
 [b]HDD Statistics, by Vendor[/b]
 Vendor                Count              Sum       Percentage of Total
                                                     Count     Capacity
-WD               313 drives         756.6 TB       49.14%       48.25%
-Seagate          202 drives         541.0 TB       31.71%       34.50%
-HGST              43 drives         115.0 TB        6.75%        7.33%
-Samsung           36 drives          61.0 TB        5.65%        3.89%
-unspecified       32 drives          61.5 TB        5.02%        3.92%
-Toshiba           11 drives          33.0 TB        1.73%        2.10%
-[b]TOTAL            637 drives        1568.1 TB[/b]
+WD               314 drives         756.8 TB       48.83%       47.95%
+Seagate          207 drives         551.0 TB       32.19%       34.91%
+HGST              43 drives         115.0 TB        6.69%        7.29%
+Samsung           36 drives          61.0 TB        5.60%        3.86%
+unspecified       32 drives          61.5 TB        4.98%        3.90%
+Toshiba           11 drives          33.0 TB        1.71%        2.09%
+[b]TOTAL            643 drives        1578.3 TB[/b]
 
 [size=5]Noteworthy Builds w/ <10 TB storage,[/size] unranked, unsorted[hr]
-[post=2195738]2sysel2[/post]           [b] 9.0 TB[/b] Bitfenix Prodigy mITX           Win 8, JBOD         
 [post=277922]MG2R[/post]              [b] 8.0 TB[/b] K'nex Custom Case               Debian, mdadm         [b]K'Nex[/b] Build, BotW
-[post=368180]alpenwasser[/post]       [b] 4.3 TB[/b] Fractal Design R4 (custom)      Arch Linux, ZFS       BotW
-[post=595065]dzintars[/post]          [b] 1.0 TB[/b] Open Air                        Ubuntu Srv, JBOD      Open air, no case
-[post=303666]cushy91[/post]           [b] 2.0 TB[/b] HP Proliant MicroServer N40L    unRAID, unRAID        HP Proliant Microserver
 [post=2736033]Blade of Grass[/post]    [b] 7.0 TB[/b] Corsair C70                     Debian, ZFS         
+[post=2195738]2sysel2[/post]           [b] 9.0 TB[/b] Bitfenix Prodigy mITX           Win 8, JBOD         
+[post=303666]cushy91[/post]           [b] 2.0 TB[/b] HP Proliant MicroServer N40L    unRAID, unRAID        HP Proliant Microserver
+[post=595065]dzintars[/post]          [b] 1.0 TB[/b] Open Air                        Ubuntu Srv, JBOD      Open air, no case
+[post=368180]alpenwasser[/post]       [b] 4.3 TB[/b] Fractal Design R4 (custom)      Arch Linux, ZFS       BotW
 
 [size=5]Abbreviations Key[/size][hr]
 [b]WS[/b]         Windows Server
@@ -134,10 +134,10 @@ Toshiba           11 drives          33.0 TB        1.73%        2.10%
 [b]SwRD[/b]       Software RAID
 [b]FlRD[/b]       FlexRAID
 
-[img=http://www.alpenwasser.net/ltt/2014-08-27--23-49-53--ltt_storage_rankings.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-27--23-49-53--ltt_plot_grouped_by_count.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-27--23-49-53--ltt_plot_grouped_by_contrib.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-27--23-49-53--hdd_count_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-27--23-49-53--hdd_cap_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-27--23-49-53--hdd_count_by_vendor.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-27--23-49-53--hdd_cap_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--ltt_storage_rankings.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--ltt_plot_grouped_by_count.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--ltt_plot_grouped_by_contrib.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--hdd_count_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--hdd_cap_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--hdd_count_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-29--02-22-57--hdd_cap_by_vendor.png]

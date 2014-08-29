@@ -91,6 +91,10 @@
       "size" : "4.0",
       "vendor" : "WD"
    },
+   "WD0015" : {
+      "size" : "0.15",
+      "vendor" : "WD"
+   },
    "SS0050" : {
       "vendor" : "Samsung",
       "size" : "0.5"

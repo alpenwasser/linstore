@@ -589,8 +589,7 @@ sub _print_system_summary_stats
 		. $median_capacity
 		. $constants_ref->{capacity_unit}
 		. $constants_ref->{newline}
-		. $constants_ref->{mode_sys_capacity_title}
-		. $constants_ref->{newline};
+		. $constants_ref->{mode_sys_capacity_title};
 
 
 	my $i;
@@ -601,8 +600,7 @@ sub _print_system_summary_stats
 		$i++;
 		$constants_ref->{output_data} .= format_number($_)
 			. $constants_ref->{capacity_unit}
-			. (($i == scalar(@mode_capacities)) ? "" : ", ")
-			. $constants_ref->{newline};
+			. (($i == scalar(@mode_capacities)) ? "" : ", ");
 	}
 
 
