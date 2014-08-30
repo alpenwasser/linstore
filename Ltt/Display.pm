@@ -14,20 +14,20 @@ use Ltt::Plotting;
 our @ISA= qw( Exporter );
 
 # These CAN be exported.
-our @EXPORT_OK = qw( 
-	generate_ranking_list 
-	generate_list_footer 
-	generate_statistics 
+our @EXPORT_OK = qw(
+	generate_ranking_list
+	generate_list_footer
+	generate_statistics
 	generate_abbr_key
 	generate_unranked_list
 	append_img_links
 	);
 
 # These are exported by default.
-our @EXPORT = qw( 
-	generate_ranking_list 
-	generate_list_footer 
-	generate_statistics 
+our @EXPORT = qw(
+	generate_ranking_list
+	generate_list_footer
+	generate_statistics
 	generate_abbr_key
 	generate_unranked_list
 	append_img_links
@@ -63,7 +63,7 @@ sub _prepare_usernames
 	# we do  not want  to make the	padding part  of the
 	# hyperlink from [post=...]username[/post].
 
-	my $username_length 
+	my $username_length
 		= get_max_field_length($systems_ref,"username");
 
 
@@ -91,7 +91,7 @@ sub _prepare_capacities
 	# from the left for the units to line up properly.
 
 	format_capacities($systems_ref);
-	my $capacity_length 
+	my $capacity_length
 		= get_max_field_length(	$systems_ref,
 					"formatted_capacity");
 
@@ -109,7 +109,7 @@ sub _prepare_enclosures
 	my $constants_ref	= shift;
 
 
-	my $enclosure_length 
+	my $enclosure_length
 		= get_max_field_length(	$systems_ref,"case");
 
 	pad_field_right(
@@ -173,7 +173,7 @@ sub _print_ranking_list
 	my $systems_ref		= shift;
 	my $constants_ref	= shift;
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.= $_ . $constants_ref->{newline} for
 		map
 		{
@@ -196,7 +196,7 @@ sub _print_ranking_list
 			# The notes field may  or may not be
 			# defined...
 			$row .= (" " x $constants_ref->{before_notes_padding})
-				. $systems_ref->{$_}{notes} 
+				. $systems_ref->{$_}{notes}
 				if ($systems_ref->{$_}{notes});
 
 			$row
@@ -250,14 +250,14 @@ sub _print_total_capacity
 	# is already stored, don't recalculate.
 
 	$constants_ref->{total_combined_capacity} = (
-		($constants_ref->{total_combined_capacity}) 
-		? 
+		($constants_ref->{total_combined_capacity})
+		?
 		$constants_ref->{total_combined_capacity}
-		: 
+		:
 		get_total_capacity($systems_ref, $constants_ref)
 	);
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=$constants_ref->{newline}
 		. $constants_ref->{horiz_separator}
 		. $constants_ref->{bold_open}
@@ -281,14 +281,14 @@ sub _print_timestamp_note
 	# ranking list was last update.
 	my $time = Time::Piece->new();
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=$constants_ref->{priority_note}
 		. $constants_ref->{newline}
 		. $constants_ref->{last_updated_note}
-		. $time->year() 
-		. '-' 
-		. uc($time->monname()) 
-		. '-' 
+		. $time->year()
+		. '-'
+		. uc($time->monname())
+		. '-'
 		. $time->mday()
 		. $constants_ref->{newline}
 		. $constants_ref->{newline}
@@ -326,11 +326,11 @@ sub _prepare_summary_titles
 	my $max_field_length = max(@length_list);
 
 
-	%{ $titles_ref } = 	
+	%{ $titles_ref } =
 		map
-		{ 
-			$_ 
-			=> 
+		{
+			$_
+			=>
 			pad_right(	$titles_ref->{$_},
 					$max_field_length,
 					$extra_padding)
@@ -344,39 +344,39 @@ sub _prepare_system_summary_stats
 	my $constants_ref	= shift;
 
 
-	my $capacities_ref = 
+	my $capacities_ref =
 	[
 		map   { $systems_ref->{$_}{system_capacity} }
 		grep  { $systems_ref->{$_}{rank} ne "UNRANKED" }
-		keys %{ $systems_ref } 
+		keys %{ $systems_ref }
 	];
 
 
 	# Make sure keys for  %{ $titles_ref } are identical
 	# to the corresponding keys in %{ $constants_ref }.
-	my $titles_ref = 
+	my $titles_ref =
 	{
-		"mean_sys_capacity_title" 	
+		"mean_sys_capacity_title"
 		=> $constants_ref->{mean_sys_capacity_title},
 
-		"median_sys_capacity_title"	
+		"median_sys_capacity_title"
 		=> $constants_ref->{median_sys_capacity_title},
 
-		"mode_sys_capacity_title" 	
+		"mode_sys_capacity_title"
 		=> $constants_ref->{mode_sys_capacity_title},
 
-		"no_of_uniq_caps" 			
+		"no_of_uniq_caps"
 		=> $constants_ref->{no_of_uniq_caps}
 	};
 
 
 	_prepare_summary_titles(
-		$constants_ref, 
-		$titles_ref, 
+		$constants_ref,
+		$titles_ref,
 		$constants_ref->{sys_summary_extra_padding});
 
 
-	$constants_ref->{$_} = $titles_ref->{$_} 
+	$constants_ref->{$_} = $titles_ref->{$_}
 		for keys %{ $titles_ref };
 
 
@@ -414,17 +414,17 @@ sub _prepare_hdd_summary_stats
 
 	# Gather HDD configs for each system which meets the
 	# minimum capacity requirement:
-	my $hdd_configs_ref = 
+	my $hdd_configs_ref =
 	{
 		map   { $_ => $systems_ref->{$_}{hdds} }
 		grep  { $systems_ref->{$_}{rank} ne "UNRANKED" }
-		keys %{ $systems_ref } 
+		keys %{ $systems_ref }
 	};
 
 
 	# Make sure keys for  %{ $titles_ref } are identical
 	# to the corresponding keys in %{ $constants_ref }.
-	my $titles_ref = 
+	my $titles_ref =
 	{
 		"total_drives"
 		=> $constants_ref->{total_drives},
@@ -444,19 +444,19 @@ sub _prepare_hdd_summary_stats
 
 
 	_prepare_summary_titles(
-		$constants_ref, 
-		$titles_ref, 
+		$constants_ref,
+		$titles_ref,
 		$constants_ref->{hdd_summary_extra_padding});
 
 
 	# Write   prepared  summary   titles   back  to   %{
 	# $constants_ref }
-	$constants_ref->{$_} 
+	$constants_ref->{$_}
 		= $titles_ref->{$_} for keys %{ $titles_ref };
 
 
 	my $total_drives = get_total_drives($hdd_configs_ref);
-	my $avg_drives_per_system 
+	my $avg_drives_per_system
 		= get_avg_drives($systems_ref,$total_drives);
 
 
@@ -466,20 +466,20 @@ sub _prepare_hdd_summary_stats
 	# reason that  is not the case,  calculate and store
 	# it now.
 	$constants_ref->{total_combined_capacity} = (
-		($constants_ref->{total_combined_capacity}) 
-		? 
+		($constants_ref->{total_combined_capacity})
+		?
 		$constants_ref->{total_combined_capacity}
-		: 
+		:
 		get_total_capacity($systems_ref, $constants_ref)
 	);
 
-	my $avg_drive_cap 
+	my $avg_drive_cap
 		= get_avg_drive_cap(
 			$total_drives,
 			$constants_ref->{total_combined_capacity}
 		);
 
-	my $med_drive_cap 
+	my $med_drive_cap
 		= get_med_drive_cap($hdd_configs_ref, $hdd_types_ref);
 
 	return (
@@ -500,7 +500,7 @@ sub _prepare_hdd_size_stats
 	my $constants_ref	= shift;
 
 
-	my $counts_ref	
+	my $counts_ref
 		= get_hdd_counts_by_size(
 			$hdd_configs_ref,
 			$hdd_types_ref
@@ -529,7 +529,7 @@ sub _prepare_hdd_vendor_stats
 	my $constants_ref	= shift;
 
 
-	my ($counts_ref, $sums_ref)	
+	my ($counts_ref, $sums_ref)
 		= get_hdd_counts_and_caps_by_vendor(
 			$hdd_configs_ref,
 			$hdd_types_ref
@@ -540,11 +540,121 @@ sub _prepare_hdd_vendor_stats
 		$counts_ref,
 		$sums_ref,
 		get_hdd_perc_count_by_vendor($counts_ref),
-		get_hdd_perc_cap_by_vendor(	
+		get_hdd_perc_cap_by_vendor(
 			$sums_ref,
 			$constants_ref->{total_combined_capacity}
 		)
 	);
+}
+
+
+sub  _prepare_os_stats
+{
+	my $systems_ref = shift;
+	my $constants_ref = shift;
+
+
+	# Get actual statistics.
+	# The structure of the resulting hash is as follows:
+	# {
+	#	OS Name => {
+	#			"count" => number of occurr.
+	#			"percentage" => percentage
+	#	}
+	# }
+	# Unranked  systems have  already been	discarded at
+	# this point.
+	my $os_stats_ref = calculate_os_stats(
+		$systems_ref,
+		$constants_ref
+	);
+
+
+	# For padding the columns correctly:
+	$os_stats_ref->{operating_system} = {
+		"count" => "Count",
+		"percentage" => "Percentage"
+	};
+
+
+	# Format strings.
+	my $max_os_str_length
+		= get_max_elem_length( [ keys %{ $os_stats_ref } ] );
+
+	my $max_os_count_length
+		= get_max_elem_length(
+			[
+				map { $os_stats_ref->{$_}{count} }
+				keys %{ $os_stats_ref }
+			]
+		);
+
+	my $max_os_perc_length
+		= get_max_elem_length(
+			[
+				map { $os_stats_ref->{$_}{percentage} }
+				keys %{ $os_stats_ref }
+			]
+		);
+
+	$constants_ref->{os_stats_os_col_title}
+		= pad_right(
+			$constants_ref->{os_stats_os_col_title},
+			$max_os_str_length,
+			$constants_ref->{os_stats_os_col_padding}
+		);
+
+	$constants_ref->{os_stats_count_col_title}
+		= pad_left(
+			$constants_ref->{os_stats_count_col_title},
+			$max_os_count_length,
+			$constants_ref->{os_stats_count_col_padding}
+		);
+
+	$constants_ref->{os_stats_perc_col_title}
+		= pad_left(
+			$constants_ref->{os_stats_perc_col_title},
+			$max_os_perc_length,
+			$constants_ref->{os_stats_perc_col_padding}
+		);
+
+	%{ $os_stats_ref }
+		= map {
+			pad_right(
+				$_,
+				$max_os_str_length,
+				$constants_ref->{os_stats_os_col_padding}
+			)
+			=>
+			{
+			"count"      => pad_left(
+				$os_stats_ref->{$_}{count},
+				$max_os_count_length,
+				$constants_ref->{os_stats_count_col_padding}
+			),
+			"percentage"
+			=>
+			pad_left(
+				$os_stats_ref->{$_}{percentage},
+				$max_os_perc_length,
+				$constants_ref->{os_stats_perc_col_padding}
+			)
+		}
+	}
+	keys %{ $os_stats_ref };
+
+
+	# We don't need these anymore...
+	delete $os_stats_ref->{
+		pad_right(
+			"operating_system",
+			$max_os_str_length,
+			$constants_ref->{os_stats_os_col_padding}
+		)
+	};
+
+
+	return $os_stats_ref;
 }
 
 
@@ -556,9 +666,9 @@ sub _print_system_summary_stats
 	my $constants_ref		= shift;
 
 
-	my $number_of_unique_capacities 
+	my $number_of_unique_capacities
 		= $mode_ref->{number_of_unique_capacities};
-	my $number_of_occurrences 
+	my $number_of_occurrences
 		= $mode_ref->{number_of_occurrences};
 
 
@@ -568,7 +678,7 @@ sub _print_system_summary_stats
 	my @mode_capacities = keys %{ $mode_ref };
 
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=$constants_ref->{font_medium_open}
 		. $constants_ref->{bold_open}
 		. $constants_ref->{stats_title}
@@ -604,7 +714,7 @@ sub _print_system_summary_stats
 	}
 
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=" ("
 		. $constants_ref->{no_of_occurrences}
 		. $number_of_occurrences
@@ -622,7 +732,7 @@ sub _print_system_grouped_stats
 	my $constants_ref = shift;
 
 
-	my $max_group_count_length 
+	my $max_group_count_length
 		= length(
 			max(
 				values %{$constants_ref->{capacity_groups}}
@@ -630,7 +740,7 @@ sub _print_system_grouped_stats
 		);
 
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=$constants_ref->{newline}
 		. $constants_ref->{bold_open}
 		. $constants_ref->{grouped_caps_title}
@@ -638,8 +748,8 @@ sub _print_system_grouped_stats
 		. $constants_ref->{newline};
 
 
-	$constants_ref->{output_data} 
-		.= $_ 
+	$constants_ref->{output_data}
+		.= $_
 		. pad_left(
 			$constants_ref->{capacity_groups}{$_},
 			$max_group_count_length,
@@ -676,7 +786,7 @@ sub _print_hdd_summary_stats
 	$total_drive_count =~ s/\.\d+$//;
 
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=$constants_ref->{newline}
 		. $constants_ref->{bold_open}
 		. $constants_ref->{hdd_summary_title}
@@ -714,23 +824,23 @@ sub _format_columns
 	for my $hash_ref (@_)
 	{
 		my $max_length
-			= get_max_elem_length( 
-				[ values %{ $hash_ref } ] 
+			= get_max_elem_length(
+				[ values %{ $hash_ref } ]
 			);
 
 
-		$hash_ref 
-			= { 
-				map 
+		$hash_ref
+			= {
+				map
 				{
-					$_ 
-					=> 
+					$_
+					=>
 					pad_left(
 						$hash_ref->{$_},
 						$max_length,
 						$col_spacing
 					)
-				} keys %{ $hash_ref } 
+				} keys %{ $hash_ref }
 			};
 
 	}
@@ -765,7 +875,7 @@ sub _print_hdd_size_stats
 	# vendor table. Use result to pad first column of by
 	# size table to align its following columns with the
 	# by vendor table.
-	my $length_difference 
+	my $length_difference
 		= abs(
 			get_max_elem_length(
 				[ keys %{ $hdd_counts_by_size_ref } ]
@@ -779,10 +889,10 @@ sub _print_hdd_size_stats
 		);
 
 
-	%rows = map { 
-			$_ . $constants_ref->{capacity_unit} 
+	%rows = map {
+			$_ . $constants_ref->{capacity_unit}
 			. " " x $length_difference
-			=>  
+			=>
 			$hdd_counts_by_size_ref->{$_}
 			. " drives     "
 			. $hdd_comb_cap_by_size_ref->{$_}
@@ -795,7 +905,7 @@ sub _print_hdd_size_stats
 		} keys %{ $hdd_counts_by_size_ref };
 
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=$constants_ref->{newline}
 		. $constants_ref->{bold_open}
 		. $constants_ref->{hdd_by_size_title}
@@ -809,17 +919,17 @@ sub _print_hdd_size_stats
 		. $constants_ref->{by_size_perc_count_col_title}
 		. $constants_ref->{by_size_perc_cap_col_title}
 		. $constants_ref->{newline};
-	
 
-	$constants_ref->{output_data} 
-		.=$_ 
-		. "  " 
+
+	$constants_ref->{output_data}
+		.=$_
+		. "  "
 		. $rows{$_}
 		. $constants_ref->{newline}
 		for sort keys %rows;
 
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=$constants_ref->{bold_open}
 		. $constants_ref->{total_table_footer_vendor}
 
@@ -868,9 +978,9 @@ sub _print_hdd_vendor_stats
 	my %rows;
 
 
-	%rows = map { 
+	%rows = map {
 			$_
-			=>  
+			=>
 			$hdd_counts_by_vendor_ref->{$_}
 			. " drives     "
 			. $hdd_comb_cap_by_vendor_ref->{$_}
@@ -883,7 +993,7 @@ sub _print_hdd_vendor_stats
 		} keys %{ $hdd_counts_by_vendor_ref };
 
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=$constants_ref->{newline}
 		. $constants_ref->{bold_open}
 		. $constants_ref->{hdd_by_vendor_title}
@@ -899,22 +1009,22 @@ sub _print_hdd_vendor_stats
 		. $constants_ref->{newline};
 
 
-	$constants_ref->{output_data} 
-		.=$_ 
-		. "  " 
-		. $rows{$_} 
+	$constants_ref->{output_data}
+		.=$_
+		. "  "
+		. $rows{$_}
 		. $constants_ref->{newline}
 
-		for sort 
+		for sort
 		{
-			$hdd_counts_by_vendor_ref->{$b} 
+			$hdd_counts_by_vendor_ref->{$b}
 			<=>
 			$hdd_counts_by_vendor_ref->{$a}
 		} keys %{ $hdd_counts_by_vendor_ref };
 
 
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=$constants_ref->{bold_open}
 		. $constants_ref->{total_table_footer_vendor}
 		. pad_left(
@@ -941,11 +1051,41 @@ sub _print_hdd_vendor_stats
 }
 
 
+sub _print_os_stats
+{
+	my $constants_ref = shift;
+	my $os_stats_ref  = shift;
+
+
+	$constants_ref->{output_data}
+		.=$constants_ref->{newline}
+		. $constants_ref->{bold_open}
+		. $constants_ref->{os_stats_title}
+		. $constants_ref->{bold_close}
+		. $constants_ref->{newline}
+		. $constants_ref->{os_stats_os_col_title}
+		. $constants_ref->{os_stats_count_col_title}
+		. $constants_ref->{os_stats_perc_col_title}
+		. $constants_ref->{newline};
+
+	$constants_ref->{output_data}
+		.= $_
+		.  $os_stats_ref->{$_}{count}
+		.  $os_stats_ref->{$_}{percentage}
+		.  $constants_ref->{newline}
+		for sort { $os_stats_ref->{$b}{count} <=> $os_stats_ref->{$a}{count} } keys %{ $os_stats_ref };
+
+	$constants_ref->{output_data}
+		.= $constants_ref->{newline}
+		.  $constants_ref->{newline};
+}
+
+
 sub generate_abbr_key
 {
 	my $constants_ref = shift;
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=$constants_ref->{newline}
 		. $constants_ref->{font_medium_open}
 		. $constants_ref->{abbreviations_key_title}
@@ -954,8 +1094,8 @@ sub generate_abbr_key
 		. $constants_ref->{newline};
 
 
-	$constants_ref->{output_data} 
-		.=$_ 
+	$constants_ref->{output_data}
+		.=$_
 		. $constants_ref->{newline}
 		for @{ $constants_ref->{abbreviations_key} };
 }
@@ -992,7 +1132,7 @@ sub generate_statistics
 		$hdd_configs_ref
 	) = _prepare_hdd_summary_stats(
 		$systems_ref,
-		$hdd_types_ref, 
+		$hdd_types_ref,
 		$constants_ref
 	);
 
@@ -1002,10 +1142,10 @@ sub generate_statistics
 		$hdd_comb_cap_by_size_ref,
 		$hdd_perc_count_by_size_ref,
 		$hdd_perc_cap_by_size_ref
-	) = _prepare_hdd_size_stats(	
-		$systems_ref, 
-		$hdd_types_ref, 
-		$hdd_configs_ref, 
+	) = _prepare_hdd_size_stats(
+		$systems_ref,
+		$hdd_types_ref,
+		$hdd_configs_ref,
 		$constants_ref
 	);
 
@@ -1016,12 +1156,16 @@ sub generate_statistics
 		$hdd_perc_count_by_vendor_ref,
 		$hdd_perc_cap_by_vendor_ref
 	) = _prepare_hdd_vendor_stats(
-		$systems_ref, 
-		$hdd_types_ref, 
-		$hdd_configs_ref, 
+		$systems_ref,
+		$hdd_types_ref,
+		$hdd_configs_ref,
 		$constants_ref
 	);
 
+	my $os_stats_ref = _prepare_os_stats(
+		$systems_ref,
+		$constants_ref
+	);
 
 	_print_system_summary_stats(
 		$mean_sys_capacity,
@@ -1037,16 +1181,16 @@ sub generate_statistics
 	# formatting purposes.
 	_print_hdd_summary_stats(
 		$constants_ref,
-		$total_drive_count, 
+		$total_drive_count,
 		$avg_drives_per_system,
-		$constants_ref->{total_combined_capacity} 
+		$constants_ref->{total_combined_capacity}
 			. $constants_ref->{capacity_unit},
 		$avg_drive_cap . $constants_ref->{capacity_unit},
 		$med_drive_cap . $constants_ref->{capacity_unit}
 	);
 
 
-	_print_hdd_size_stats(	
+	_print_hdd_size_stats(
 		$constants_ref,
 		$hdd_counts_by_size_ref,
 		$hdd_comb_cap_by_size_ref,
@@ -1062,6 +1206,10 @@ sub generate_statistics
 		$hdd_perc_cap_by_vendor_ref
 	);
 
+	_print_os_stats(
+		$constants_ref,
+		$os_stats_ref
+	);
 
 	return (
 		$hdd_counts_by_size_ref,
@@ -1077,7 +1225,7 @@ sub generate_unranked_list
 	my $systems_ref		= shift;
 	my $constants_ref	= shift;
 
-	$constants_ref->{output_data} 
+	$constants_ref->{output_data}
 		.=$constants_ref->{newline}
 		. $constants_ref->{font_medium_open}
 		. $constants_ref->{unranked_list_title_1}
@@ -1087,9 +1235,9 @@ sub generate_unranked_list
 		. $constants_ref->{newline};
 
 
-	$constants_ref->{output_data} 
-		.= $_ . $constants_ref->{newline} for 
-		map 
+	$constants_ref->{output_data}
+		.= $_ . $constants_ref->{newline} for
+		map
 		{
 			my $row = $constants_ref->{post_open}
 				. $systems_ref->{$_}{post}
@@ -1108,14 +1256,14 @@ sub generate_unranked_list
 			# The notes field may  or may not be
 			# defined...
 			$row .= (" " x $constants_ref->{before_notes_padding})
-				. $systems_ref->{$_}{notes} 
+				. $systems_ref->{$_}{notes}
 				if ($systems_ref->{$_}{notes});
 
 			$row
 		}
 		grep
-		{	# Omit unranked systems: 
-			$systems_ref->{$_}{rank} eq "UNRANKED" 
+		{	# Omit unranked systems:
+			$systems_ref->{$_}{rank} eq "UNRANKED"
 		}
 		keys %{ $systems_ref };
 }
@@ -1126,45 +1274,45 @@ sub append_img_links
 	my $constants_ref = shift;
 
 	my @img_links = (
-		"\n[img=" 
+		"\n[img="
 		. $constants_ref->{img_server}
 		. $constants_ref->{timestamp}
 		. $constants_ref->{ranking_chart_img}
 		. "]",
-		"[img=" 
-		. $constants_ref->{img_server} 
+		"[img="
+		. $constants_ref->{img_server}
 		. $constants_ref->{timestamp}
 		. $constants_ref->{grouped_plot_by_count_img}
 		. "]",
-		"[img=" 
-		. $constants_ref->{img_server} 
+		"[img="
+		. $constants_ref->{img_server}
 		. $constants_ref->{timestamp}
 		. $constants_ref->{grouped_plot_by_contrib_img}
 		. "]",
-		"[img=" 
+		"[img="
 		. $constants_ref->{img_server}
 		. $constants_ref->{timestamp}
 		. $constants_ref->{hdd_count_by_size_img}
 		. "]",
-		"[img=" 
+		"[img="
 		. $constants_ref->{img_server}
 		. $constants_ref->{timestamp}
 		. $constants_ref->{hdd_cap_by_size_img}
 		. "]",
-		"[img=" 
+		"[img="
 		. $constants_ref->{img_server}
 		. $constants_ref->{timestamp}
 		. $constants_ref->{hdd_count_by_vendor_img}
 		. "]",
-		"[img=" 
+		"[img="
 		. $constants_ref->{img_server}
 		. $constants_ref->{timestamp}
 		. $constants_ref->{hdd_cap_by_vendor_img}
 		. "]",
 	);
 
-	$constants_ref->{output_data} 
-		.=$_ 
+	$constants_ref->{output_data}
+		.=$_
 		. $constants_ref->{newline}
 		for @img_links;
 }

@@ -57,7 +57,7 @@ sub main
 	# prevents us from  overwriting existing plot images
 	# on the server with the newer ones.
 	my $time = Time::Piece->new();
-	$constants_ref->{timestamp}	= $time->ymd 
+	$constants_ref->{timestamp}	= $time->ymd
 					. "--" . $time->hms("-") . "--";
 
 
@@ -72,7 +72,7 @@ sub main
 	# (this  corresponds to  Perl's handling  of element
 	# order within	a hash, which is  not guaranteed and
 	# will vary between program runs).
-	$constants_ref->{systems_digest} 
+	$constants_ref->{systems_digest}
 		= get_hash_digest($systems_ref);
 
 
@@ -94,12 +94,12 @@ sub main
 
 
 	# Generate data for HDD statistics plots.
-	my (	
+	my (
 		$hdd_counts_by_size_ref,
 		$hdd_counts_by_vendor_ref,
 		$hdd_comb_cap_by_size_ref,
 		$hdd_comb_cap_by_vendor_ref
-	    ) = generate_statistics(	
+	    ) = generate_statistics(
 		$systems_ref,
 		$constants_ref,
 		$hdd_types_ref

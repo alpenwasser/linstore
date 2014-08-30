@@ -23,14 +23,15 @@ our @EXPORT = qw(
 sub get_hash_digest
 {
 	# Returns  the	SHA1  digest of  a  multidimensional
-	# hash's contents.  Since the order of hash elements
-	# varies between  runs, and  therefore the  order of
-	# its  contents as  well, we  go about	this in  the
+	# hash.   Since the  order of  hash elements  varies
+	# between  runs,  and  therefore the  order  of  its
+	# contents  as	well,  we   go	about  this  in  the
 	# following fashion:
 	# The  hash and  its  descendants  are traversed  by
 	# recursive calls  of this function, and  any actual
 	# content (i.e. elements which are not references to
-	# hashes) have their SHA1 hash calculated.
+	# hashes) have their SHA1 hash calculated, prepended
+	# by their respective key.
 	# All	of  these   SHA1  hashes   are	concatenated
 	# into	one  string.   This string  is	then  sorted
 	# alphanumerically, and of  that sorted concatenated

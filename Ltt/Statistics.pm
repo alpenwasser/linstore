@@ -31,6 +31,7 @@ our @EXPORT_OK = qw(
 	get_hdd_counts_and_caps_by_vendor
 	get_hdd_perc_count_by_vendor
 	get_hdd_perc_cap_by_vendor
+	calculate_os_stats
 	);
 
 # These are exported by default.
@@ -54,6 +55,7 @@ our @EXPORT = qw(
 	get_hdd_counts_and_caps_by_vendor
 	get_hdd_perc_count_by_vendor
 	get_hdd_perc_cap_by_vendor
+	calculate_os_stats
 	);
 
 
@@ -68,7 +70,7 @@ sub _calculate_hdd_type_contribution
 	# Capacity per HDD times number of HDDs of this type
 	# in system:
 
-	return $hdd_types_ref->{$hdd}{size} 
+	return $hdd_types_ref->{$hdd}{size}
 	* $systems_ref->{$system_id}{hdds}{$hdd};
 }
 
@@ -125,16 +127,16 @@ sub get_total_capacity
 		# If,  for   whatever  reason,	 the  system
 		# capacity has	not yet been  calculated, do
 		# so now.
-		calculate_system_capacity($_,$systems_ref, $hdd_types_ref) 
+		calculate_system_capacity($_,$systems_ref, $hdd_types_ref)
 			unless ($systems_ref->{$_}{system_capacity});
 
 		# Only	count  those systems  towards  total
 		# capacity which have more than the required
 		# amount of storage capacity.
-		$total_capacity += $systems_ref->{$_}{system_capacity} 
+		$total_capacity += $systems_ref->{$_}{system_capacity}
 			unless (
-				$systems_ref->{$_}{system_capacity} 
-				< 
+				$systems_ref->{$_}{system_capacity}
+				<
 				$constants_ref->{capacity_threshold}
 			);
 	}
@@ -210,9 +212,9 @@ sub get_mode
 	# hence a hash	instead of a single  value.  Form of
 	# %result: capacity => number of occurrences.
 
-	%result = map { $_ => $counts{$_} } 
+	%result = map { $_ => $counts{$_} }
 		grep  { $counts{$_} == $highest_count } keys %counts;
-	
+
 
 	# Two special values. When outputting the mode hash,
 	# may need to be extracted and deleted first.
@@ -227,7 +229,7 @@ sub get_grouped_stats
 {
 	# Reference  to  list  of  values which  are  to  be
 	# grouped.
-	my $list_ref 		= shift; 
+	my $list_ref 		= shift;
 
 	# Reference to hash of form: "X ≤ value < Y" => "20"
 	my $groups_ref		= shift;
@@ -240,18 +242,18 @@ sub get_grouped_stats
 	{
 		my $upper_limit = $groups_ref->{$range};
 
-		my @capacities_in_range 
-			= grep { 
-				$_ 
-				>= 
-				$upper_limit - $interval_range 
-				&& 
+		my @capacities_in_range
+			= grep {
+				$_
+				>=
+				$upper_limit - $interval_range
+				&&
 				$_
 				<
-				$upper_limit 
+				$upper_limit
 			}
 			@{ $list_ref };
- 
+
 		$groups_ref->{$range} = scalar(@capacities_in_range);
 	}
 }
@@ -259,7 +261,7 @@ sub get_grouped_stats
 
 sub get_capacity_group_contributions
 {
-	my $list_ref 		= shift; 
+	my $list_ref 		= shift;
 	my $groups_ref		= shift;
 	my $interval_range	= shift;
 
@@ -269,14 +271,14 @@ sub get_capacity_group_contributions
 	{
 		my $upper_limit = $groups_ref->{$range};
 
-		my @capacities_in_range 
-			= grep { 
-				$_ 
-				>= $upper_limit - $interval_range 
-				&& 
+		my @capacities_in_range
+			= grep {
+				$_
+				>= $upper_limit - $interval_range
+				&&
 				$_
 				<
-				$upper_limit 
+				$upper_limit
 			}
 			@{ $list_ref };
 
@@ -289,7 +291,7 @@ sub get_capacity_group_contributions
 			map { $_ } sort keys %group_contributions
 		],
 		[
-			map { $group_contributions{$_} } 
+			map { $group_contributions{$_} }
 				sort keys %group_contributions
 		]
 	);
@@ -299,10 +301,10 @@ sub get_capacity_group_contributions
 sub get_total_drives
 {
 	my $hdd_configs_ref = shift;
-	# %{ $hdd_configs_ref }: 
-	# { 
+	# %{ $hdd_configs_ref }:
+	# {
 	#     system_1 => { hdd_type_1 => count, hdd_type_2 => count ... },
-	#     system_2 => { hdd_type_1 => count, hdd_type_2 => count ... } 
+	#     system_2 => { hdd_type_1 => count, hdd_type_2 => count ... }
 	#     ...
 	# }
 
@@ -310,8 +312,8 @@ sub get_total_drives
 
 	for my $system_id (keys %{ $hdd_configs_ref })
 	{
-		$total_drive_count 
-			+= $hdd_configs_ref->{$system_id}{$_} 
+		$total_drive_count
+			+= $hdd_configs_ref->{$system_id}{$_}
 			for (keys %{ $hdd_configs_ref->{$system_id} });
 	}
 
@@ -345,10 +347,10 @@ sub get_med_drive_cap
 {
 	# Returns median drive capacity.
 	#
-	# %{ $hdd_configs_ref }: 
-	# { 
+	# %{ $hdd_configs_ref }:
+	# {
 	#     system_1 => { hdd_type_1 => count, hdd_type_2 => count ... },
-	#     system_2 => { hdd_type_1 => count, hdd_type_2 => count ... } 
+	#     system_2 => { hdd_type_1 => count, hdd_type_2 => count ... }
 	#     ...
 	# }
 
@@ -372,7 +374,7 @@ sub get_med_drive_cap
 				# @hdds_unsorted   for	each
 				# HDD	consisting  of	 its
 				# capacity.
-				push @hdds_unsorted, 
+				push @hdds_unsorted,
 					$hdd_types_ref->{$hdd_type}{size};
 			}
 		}
@@ -398,10 +400,10 @@ sub get_hdd_counts_by_size
 		{
 			for (1..$hdd_configs_ref->{$system_id}{$hdd_type})
 			{
-				$counts{ 
+				$counts{
 					format_hdd_capacity(
 					$hdd_types_ref->{ $hdd_type }{size}
-					) 
+					)
 				}++;
 			}
 		}
@@ -438,13 +440,13 @@ sub get_hdd_counts_and_caps_by_vendor
 
 	my $max_vendor_length = get_max_elem_length( [ keys %counts ] );
 
-	%counts = map 
-	{ 
-		pad_right($_,$max_vendor_length,0) => $counts{$_} 
+	%counts = map
+	{
+		pad_right($_,$max_vendor_length,0) => $counts{$_}
 	} keys %counts;
 
-	%combined_capacities = map 
-	{ 
+	%combined_capacities = map
+	{
 		pad_right($_,$max_vendor_length,0)
 		=>
 		format_number($combined_capacities{$_})
@@ -460,7 +462,7 @@ sub get_hdd_comb_cap_by_size
 	my $hdd_counts_ref = shift;
 	# size => count
 
-	return { 
+	return {
 		map { $_ => format_number($_ * $hdd_counts_ref->{$_}) }
 			keys %{ $hdd_counts_ref }
 	};
@@ -476,9 +478,9 @@ sub get_hdd_perc_count_by_size
 
 	return {
 		map {
-			$_ 
-			=> 
-			format_percentage($hdd_counts_ref->{$_} 
+			$_
+			=>
+			format_percentage($hdd_counts_ref->{$_}
 			/
 			$total_count )
 		}
@@ -496,11 +498,11 @@ sub get_hdd_perc_count_by_vendor
 
 	return {
 		map {
-			$_ 
-			=> 
+			$_
+			=>
 			format_percentage(
 				$hdd_counts_ref->{$_}
-				/ 
+				/
 				$total_count )
 		}
 		keys %{ $hdd_counts_ref }
@@ -512,17 +514,17 @@ sub get_hdd_perc_cap_by_size
 {
 	my $hdd_comb_cap_ref		= shift;
 	# size => combined capacity for size
-	
+
 	my $total_combined_capacity	= shift;
-	
+
 	return {
-		map { 
-			$_ 
-			=> 
+		map {
+			$_
+			=>
 			format_percentage(
-				$hdd_comb_cap_ref->{$_} 
-				/ 
-				$total_combined_capacity) 
+				$hdd_comb_cap_ref->{$_}
+				/
+				$total_combined_capacity)
 		}
 		keys %{ $hdd_comb_cap_ref }
 	};
@@ -533,12 +535,12 @@ sub get_hdd_perc_cap_by_vendor
 {
 	my $hdd_comb_cap_ref 		= shift;
 	# vendor => combined capacity for vendor
-	
+
 	my $total_combined_capacity = shift;
-	
+
 	return {
-		map { 
-			$_ 
+		map {
+			$_
 			=>
 			format_percentage(
 				$hdd_comb_cap_ref->{$_}
@@ -548,5 +550,57 @@ sub get_hdd_perc_cap_by_vendor
 		keys %{ $hdd_comb_cap_ref }
 	};
 }
+
+
+sub calculate_os_stats
+{
+	my $systems_ref	  = shift;
+	my $constants_ref = shift;
+
+
+	my $systems_count = scalar(
+		grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
+		keys %{ $systems_ref }
+	);
+
+	my %os_counts;
+
+	# Calculate number of occurrences  for each OS among
+	# the ranked systems.
+	$os_counts{$constants_ref->{os_abbr_key}{$systems_ref->{$_}{os}}}++ for
+		grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
+		keys %{ $systems_ref };
+
+
+	# The structure of the resulting hash is as follows:
+	# {
+	#	OS Name => {
+	#			"count" => number of occurr.
+	#			"percentage" => percentage
+	#	}
+	#}
+
+	return {
+			 map {
+				$_
+				=>
+				{
+					"count"		=> $os_counts{$_},
+					"percentage"
+					=>
+					format_percentage(
+						$os_counts{$_}
+						/
+						$systems_count
+					) . "%",
+					"family"
+					=>
+					$constants_ref->{os_families_key}{$_},
+				}
+		} keys %os_counts
+	};
+}
+
+
 
 1;

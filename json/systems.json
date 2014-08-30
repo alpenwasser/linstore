@@ -630,7 +630,7 @@
          "WD0015" : "1"
       },
       "notes" : null,
-      "os" : "Arch",
+      "os" : "Arch Linux",
       "post" : "2009510",
       "storage_sys" : "ZFS",
       "username" : "alpenwasser"

@@ -10,9 +10,9 @@ our @ISA= qw( Exporter );
 
 # These CAN be exported.
 our @EXPORT_OK = qw(
-	pad_left 
-	pad_right 
-	reduce_to_padding 
+	pad_left
+	pad_right
+	reduce_to_padding
 	format_number
 	format_percentage
 	get_max_elem_length
@@ -34,9 +34,9 @@ our @EXPORT_OK = qw(
 
 # These are exported by default.
 our @EXPORT = qw(
-	pad_left 
-	pad_right 
-	reduce_to_padding 
+	pad_left
+	pad_right
+	reduce_to_padding
 	format_number
 	format_percentage
 	get_max_elem_length
@@ -57,9 +57,9 @@ our @EXPORT = qw(
 	);
 
 
-sub ltrim 
-{ 
-	my $s = shift; 
+sub ltrim
+{
+	my $s = shift;
 	$s =~ s/^\s+//;
 	return $s
 }
@@ -72,7 +72,7 @@ sub rtrim
 }
 
 sub trim
-{ 
+{
 	my $s = shift;
 	$s =~ s/^\s+|\s+$//g;
 	return $s
@@ -85,11 +85,11 @@ sub pad_left
 	my $max_str_length	= shift;
 	my $extra_padding 	= shift;
 
-	$string = " " 
-		. $string 
+	$string = " "
+		. $string
 		until (
-			length($string) 
-			== 
+			length($string)
+			==
 			$max_str_length + $extra_padding
 		);
 
@@ -105,8 +105,8 @@ sub pad_right
 
 	$string .= " "
 		until (
-			length($string) 
-			== 
+			length($string)
+			==
 			$max_str_length + $extra_padding
 		);
 
@@ -153,7 +153,7 @@ sub pad_field_right
 	{
 		next unless $systems_ref->{$system_id}{$field};
 
-		$systems_ref->{$system_id}{"padded_" . $field} 
+		$systems_ref->{$system_id}{"padded_" . $field}
 			= pad_right(
 				$systems_ref->{$system_id}{$field},
 				$field_length,
@@ -175,7 +175,7 @@ sub pad_field_left
 	{
 		next unless $systems_ref->{$system_id}{$field};
 
-		$systems_ref->{$system_id}{"padded_" . $field} 
+		$systems_ref->{$system_id}{"padded_" . $field}
 			= pad_left(
 				$systems_ref->{$system_id}{$field},
 				$field_length,
@@ -190,12 +190,12 @@ sub get_max_field_length
 	my $systems_ref	= shift;
 	my $field	= shift;
 
-	my $longest_element =  
-		reduce { 
+	my $longest_element =
+		reduce {
 				length($systems_ref->{$a}{$field})
-				> 
+				>
 				length($systems_ref->{$b}{$field})
-			? 
+			?
 			$a : $b
 		} keys %{ $systems_ref };
 
@@ -208,7 +208,7 @@ sub separate_padding
 	my $systems_ref	= shift;
 	my $field	= shift;
 
-	$systems_ref->{$_}{$field . "_padding"} 
+	$systems_ref->{$_}{$field . "_padding"}
 		= reduce_to_padding(
 			$systems_ref->{$_}{$field},
 			$systems_ref->{$_}{"padded_" . $field}
@@ -233,13 +233,13 @@ sub concat_fields
 			# the beginning of string.
 			if ($concat_string)
 			{
-				$concat_string 
-					.= ", " 
+				$concat_string
+					.= ", "
 					. $systems_ref->{$system_id}{$_};
 			}
 			else
 			{
-				$concat_string 
+				$concat_string
 					= $systems_ref->{$system_id}{$_};
 			}
 		}
@@ -254,7 +254,7 @@ sub format_capacities
 	my $systems_ref		= shift;
 
 
-	$systems_ref->{$_}{formatted_capacity} 
+	$systems_ref->{$_}{formatted_capacity}
 		= format_number($systems_ref->{$_}{system_capacity})
 		for keys %{ $systems_ref };
 
@@ -271,7 +271,7 @@ sub pad_ranks
 	# because unranked systems should not have a ranking
 	# field printed in the	secondary systems list, they
 	# need to be omitted from this process.
-	$systems_ref->{$_}{padded_rank} 
+	$systems_ref->{$_}{padded_rank}
 		= pad_left($systems_ref->{$_}{rank},$rank_length,0)
 		for grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
 		keys %{ $systems_ref };
@@ -286,8 +286,8 @@ sub _round_number
 	# factor of  ten.  We also  make sure not to  try to
 	# divide  by zero,  and should	the integer  part of
 	# $number be zero, we return "0.0".
-	return (int(abs(10*$number*2)) == 0) 
-		? "0.0" 
+	return (int(abs(10*$number*2)) == 0)
+		? "0.0"
 		: int(10*$number + 10*$number/abs(10*$number*2)) / 10;
 }
 

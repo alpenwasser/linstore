@@ -13,7 +13,7 @@
 11  [post=414401]Ramaddil[/post]          [b]45.0 TB[/b] Lian Li 343B                    Win 7, HwRD           [post=1883660]Upd 1[/post], [post=2418935]2[/post]
 12  [post=1390757]Hellboy[/post]           [b]38.0 TB[/b] Fractal Design Array R2         WS 2008R2, RD       
 13  [post=2386836]kev507[/post]            [b]32.0 TB[/b] Corsair 750D                    Win 7, HwRD         
-14  [post=2009510]alpenwasser[/post]       [b]29.2 TB[/b] InWin PP689 (Custom HDD Rack)   Arch, ZFS           
+14  [post=2009510]alpenwasser[/post]       [b]29.2 TB[/b] InWin PP689 (Custom HDD Rack)   Arch Linux, ZFS     
 15  [post=492994]MrSmoke[/post]           [b]28.0 TB[/b] Norcotek RPC4224                Ubuntu, mdadm       
 16  [post=896406]Benjamin[/post]          [b]28.0 TB[/b] Fractal Design R4               FreeNAS, ZFS        
 17  [post=2126468]Gronnie[/post]           [b]28.0 TB[/b] Corsair 500R                    Win 7, FlexRAID       [post=2688726]Upd 1[/post]
@@ -62,7 +62,7 @@
 [hr][b][size=5]Total Storage Capacity: 1578.3 TB[/size][/b]
 [hr]
 Sorting priority: First by capacity descending, then by post date, ascending.
-Last updated: 2014-AUG-29
+Last updated: 2014-AUG-30
 
 
 [size=5][b]Statistics[/b][/size]
@@ -116,13 +116,35 @@ unspecified       32 drives          61.5 TB        4.98%        3.90%
 Toshiba           11 drives          33.0 TB        1.71%        2.09%
 [b]TOTAL            643 drives        1578.3 TB[/b]
 
+[b]Operating Systems Statistics[/b]
+Operating System                Count        Percentage
+Windows 7                          14            24.14%
+Windows Server 2012                 8            13.79%
+FreeNAS                             7            12.07%
+Windows 8                           6            10.34%
+Ubuntu Linux                        4             6.90%
+unRAID                              3             5.17%
+Synology OS                         3             5.17%
+Windows Home Server 2011            2             3.45%
+Arch Linux                          2             3.45%
+Linux Mint                          2             3.45%
+Windows (unspecified)               1             1.72%
+NAS4Free                            1             1.72%
+Debian Linux                        1             1.72%
+Drobo OS                            1             1.72%
+OpenMediaVault                      1             1.72%
+Gentoo Linux                        1             1.72%
+ZFSGuru                             1             1.72%
+
+
+
 [size=5]Noteworthy Builds w/ <10 TB storage,[/size] unranked, unsorted[hr]
-[post=277922]MG2R[/post]              [b] 8.0 TB[/b] K'nex Custom Case               Debian, mdadm         [b]K'Nex[/b] Build, BotW
 [post=2736033]Blade of Grass[/post]    [b] 7.0 TB[/b] Corsair C70                     Debian, ZFS         
-[post=368180]alpenwasser[/post]       [b] 4.3 TB[/b] Fractal Design R4 (custom)      Arch Linux, ZFS       BotW
-[post=2195738]2sysel2[/post]           [b] 9.0 TB[/b] Bitfenix Prodigy mITX           Win 8, JBOD         
 [post=303666]cushy91[/post]           [b] 2.0 TB[/b] HP Proliant MicroServer N40L    unRAID, unRAID        HP Proliant Microserver
 [post=595065]dzintars[/post]          [b] 1.0 TB[/b] Open Air                        Ubuntu Srv, JBOD      Open air, no case
+[post=368180]alpenwasser[/post]       [b] 4.3 TB[/b] Fractal Design R4 (custom)      Arch Linux, ZFS       BotW
+[post=277922]MG2R[/post]              [b] 8.0 TB[/b] K'nex Custom Case               Debian, mdadm         [b]K'Nex[/b] Build, BotW
+[post=2195738]2sysel2[/post]           [b] 9.0 TB[/b] Bitfenix Prodigy mITX           Win 8, JBOD         
 
 [size=5]Abbreviations Key[/size][hr]
 [b]WS[/b]         Windows Server
@@ -134,10 +156,10 @@ Toshiba           11 drives          33.0 TB        1.71%        2.09%
 [b]SwRD[/b]       Software RAID
 [b]FlRD[/b]       FlexRAID
 
-[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--ltt_storage_rankings.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--ltt_plot_grouped_by_count.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--ltt_plot_grouped_by_contrib.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--hdd_count_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--hdd_cap_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--hdd_count_by_vendor.png]
-[img=http://www.alpenwasser.net/ltt/2014-08-29--17-10-38--hdd_cap_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-30--23-31-29--ltt_storage_rankings.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-30--23-31-29--ltt_plot_grouped_by_count.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-30--23-31-29--ltt_plot_grouped_by_contrib.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-30--23-31-29--hdd_count_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-30--23-31-29--hdd_cap_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-30--23-31-29--hdd_count_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2014-08-30--23-31-29--hdd_cap_by_vendor.png]
