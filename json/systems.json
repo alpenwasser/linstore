@@ -876,5 +876,17 @@
 	   "os" : "Arch Linux",
 	   "storage_sys" : "mdadm",
 	   "username" : "Pidagad"
+   },
+   "system_065" : {
+	   "capacity" : "16.0",
+	   "case" : "Lian Li Q25B",
+	   "hdds" : {
+			"SG0400" : "4"
+	   },
+	   "notes" : null,
+	   "post" : "2814310",
+	   "os" : "Debian",
+	   "storage_sys" : "mdadm",
+	   "username" : "Shaqalac"
    }
 }
