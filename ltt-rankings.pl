@@ -128,9 +128,11 @@ sub main
 	# main ranking list.
 	print_ranking_list_plot($systems_ref,	$constants_ref);
 
-
 	# Plots of systems grouped by total system capacity.
 	print_groupings_plots(	$systems_ref,	$constants_ref);
+
+	# Plots of operating sytem statistics.
+	print_os_plots($constants_ref);
 
 
 	print_hdd_size_plots(	$constants_ref,
@@ -144,7 +146,7 @@ sub main
 
 	# Upload   images  to	FTP  server,   specified  in
 	# json/credentials.json.
-	upload_images($constants_ref, $credentials_ref,1)
+	upload_images($constants_ref, $credentials_ref,0)
 		if($credentials_ref);
 
 

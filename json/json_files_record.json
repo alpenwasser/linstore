@@ -10,5 +10,7 @@
 	"hbar_hdd_count_by_size_configs" : null,
 	"hbar_hdd_cap_by_size_configs" : null,
 	"grouped_hbar_by_count_configs" : null,
-	"grouped_hbar_by_contrib_configs" : null
+	"grouped_hbar_by_contrib_configs" : null,
+        "hbar_os_family_stats_configs" : null,
+        "hbar_os_stats_configs" : null
 }

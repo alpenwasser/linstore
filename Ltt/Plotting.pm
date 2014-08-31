@@ -17,19 +17,21 @@ use Ltt::Imaging;
 our @ISA= qw( Exporter );
 
 # These CAN be exported.
-our @EXPORT_OK = qw( 
+our @EXPORT_OK = qw(
 	print_hdd_size_plots
 	print_hdd_vendor_plots
 	print_ranking_list_plot
 	print_groupings_plots
+	print_os_plots
 	);
 
 # These are exported by default.
-our @EXPORT = qw( 
+our @EXPORT = qw(
 	print_hdd_size_plots
 	print_hdd_vendor_plots
 	print_ranking_list_plot
 	print_groupings_plots
+	print_os_plots
 	);
 
 
@@ -50,25 +52,25 @@ sub _prepare_hdd_count_by_size_plot
 
 	my %prepared_data = map
 	{
-		if ($hdd_counts_by_size_ref->{$_} / $total_count 
+		if ($hdd_counts_by_size_ref->{$_} / $total_count
 			>= $constants_ref->{pie_chart_percentage_threshold})
 		{
-			$_ 
+			$_
 			=>
 			trim($hdd_counts_by_size_ref->{$_})
 		}
 		else
 		{
 			$others_count	+= $hdd_counts_by_size_ref->{$_};
-			"others" 
+			"others"
 			=>
 			$others_count
 		}
 	} keys %{ $hdd_counts_by_size_ref };
 
-	my @labels = map 
-	{ 
-		$_ 
+	my @labels = map
+	{
+		$_
 		.(($_ ne "others" )?$constants_ref->{capacity_unit}:"" )
 		. $constants_ref->{newline}
 		. format_percentage($prepared_data{$_}/$total_count)."%"
@@ -105,7 +107,7 @@ sub _prepare_hdd_cap_by_size_plot
 		if ($hdd_comb_cap_by_size_ref->{$_} / $total_cap
 			>= $constants_ref->{pie_chart_percentage_threshold})
 		{
-			$_ 
+			$_
 			=>
 			trim($hdd_comb_cap_by_size_ref->{$_})
 		}
@@ -119,12 +121,12 @@ sub _prepare_hdd_cap_by_size_plot
 	} keys %{ $hdd_comb_cap_by_size_ref };
 
 
-	my @labels = map 
-	{ 
-		$_ 
+	my @labels = map
+	{
+		$_
 		.(($_ ne "others")?$constants_ref->{capacity_unit}:"")
 		. $constants_ref->{newline}
-		. format_percentage($prepared_data{$_}/$total_cap)."%" 
+		. format_percentage($prepared_data{$_}/$total_cap)."%"
 		. $constants_ref->{newline}
 		. $prepared_data{$_}
 		. $constants_ref->{capacity_unit}
@@ -171,7 +173,7 @@ sub _prepare_hdd_count_by_vendor_plot
 		}
 		elsif ($_ eq "unspecified")
 		{
-			$others_count 
+			$others_count
 				+= trim($hdd_counts_by_vendor_ref->{$_});
 			"others" => $others_count
 		}
@@ -183,9 +185,9 @@ sub _prepare_hdd_count_by_vendor_plot
 	} keys %{ $hdd_counts_by_vendor_ref };
 
 
-	my @labels = map 
-	{ 
-		$_ 
+	my @labels = map
+	{
+		$_
 		. $constants_ref->{newline}
 		. format_percentage($prepared_data{$_}/$total_count)."%"
 		. $constants_ref->{newline}
@@ -231,11 +233,11 @@ sub _prepare_hdd_cap_by_vendor_plot
 	} keys %{ $hdd_comb_cap_by_vendor_ref };
 
 
-	my @labels = map 
-	{ 
-		$_ 
+	my @labels = map
+	{
+		$_
 		. $constants_ref->{newline}
-		. format_percentage($prepared_data{$_}/$total_cap)."%" 
+		. format_percentage($prepared_data{$_}/$total_cap)."%"
 		. $constants_ref->{newline}
 		. $prepared_data{$_}
 		. $constants_ref->{capacity_unit}
@@ -256,14 +258,14 @@ sub print_hdd_size_plots
 	my $hdd_comb_cap_by_size_ref	= shift;
 
 
-	my @data_count_by_size	
+	my @data_count_by_size
 		= _prepare_hdd_count_by_size_plot(
 			$constants_ref,
 			$hdd_counts_by_size_ref
 		);
 
 
-	my @data_cap_by_size	
+	my @data_cap_by_size
 		= _prepare_hdd_cap_by_size_plot(
 			$constants_ref,
 			$hdd_comb_cap_by_size_ref
@@ -277,34 +279,34 @@ sub print_hdd_size_plots
 	my $hdd_count_by_size_graph = GD::Graph::pie->new(800, 600);
 	my $hdd_cap_by_size_graph = GD::Graph::pie->new(800, 600);
 
-	my %pie_chart_hdd_count_by_size_configs 
+	my %pie_chart_hdd_count_by_size_configs
 		= %{ $constants_ref->{pie_chart_configs} };
-	my %pie_chart_hdd_cap_by_size_configs 
+	my %pie_chart_hdd_cap_by_size_configs
 		= %{ $constants_ref->{pie_chart_configs} };
 
-	$pie_chart_hdd_count_by_size_configs{"logo"} 
+	$pie_chart_hdd_count_by_size_configs{"logo"}
 		= File::Spec->catfile(
 			$constants_ref->{img_dir},
 			$constants_ref->{logo_img}
 		);
-	$pie_chart_hdd_cap_by_size_configs{"logo"} 
+	$pie_chart_hdd_cap_by_size_configs{"logo"}
 		= File::Spec->catfile(
 			$constants_ref->{img_dir},
 			$constants_ref->{logo_img}
 		);
 
-	$pie_chart_hdd_count_by_size_configs{"title"} 
+	$pie_chart_hdd_count_by_size_configs{"title"}
 		= $constants_ref->{"pie_chart_hdd_count_by_size_title"};
-	$pie_chart_hdd_cap_by_size_configs{"title"} 
+	$pie_chart_hdd_cap_by_size_configs{"title"}
 		= $constants_ref->{"pie_chart_hdd_cap_by_size_title"};
 
 
-	$pie_chart_hdd_count_by_size_configs{"label"} 
+	$pie_chart_hdd_count_by_size_configs{"label"}
 		= $constants_ref->{newline}
 		. $constants_ref->{pie_chart_total_hdd_count_label}
-		. $total_hdd_count 
+		. $total_hdd_count
 		. " drives";
-	$pie_chart_hdd_cap_by_size_configs{"label"} 
+	$pie_chart_hdd_cap_by_size_configs{"label"}
 		= $constants_ref->{newline}
 		. $constants_ref->{pie_chart_total_hdd_cap_label}
 		. $constants_ref->{total_combined_capacity}
@@ -316,43 +318,43 @@ sub print_hdd_size_plots
 		or die $hdd_cap_by_size_graph->error;
 
 
-	$hdd_count_by_size_graph->set_title_font( 
+	$hdd_count_by_size_graph->set_title_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_title_size});
-	$hdd_count_by_size_graph->set_label_font( 
+	$hdd_count_by_size_graph->set_label_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_label_size});
 	$hdd_count_by_size_graph->set_value_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_value_size});
 
-	$hdd_cap_by_size_graph->set_title_font( 
+	$hdd_cap_by_size_graph->set_title_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_title_size});
-	$hdd_cap_by_size_graph->set_label_font( 
+	$hdd_cap_by_size_graph->set_label_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_label_size});
 	$hdd_cap_by_size_graph->set_value_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_value_size});
 
-	my $gd_count_by_size 
+	my $gd_count_by_size
 		= $hdd_count_by_size_graph->plot(\@data_count_by_size)
 		or die $hdd_count_by_size_graph->error;
-	my $gd_cap_by_size 
-		= $hdd_cap_by_size_graph->plot(\@data_cap_by_size) 
+	my $gd_cap_by_size
+		= $hdd_cap_by_size_graph->plot(\@data_cap_by_size)
 		or die $hdd_cap_by_size_graph->error;
 
 
 	# Watermark images with system configuration hash.
-	my $gd_count_by_size_png 
+	my $gd_count_by_size_png
 		= timestamp_img(
 			$gd_count_by_size->png,
 			substr($constants_ref->{timestamp}, 0, -2),
 			$constants_ref->{systems_digest}
 		);
 
-	my $gd_cap_by_size_png 
+	my $gd_cap_by_size_png
 		= timestamp_img(
 			$gd_cap_by_size->png,
 			substr($constants_ref->{timestamp}, 0, -2),
@@ -361,10 +363,10 @@ sub print_hdd_size_plots
 
 
 	# Write to files:
-	open(IMG_COUNT, ">" 
+	open(IMG_COUNT, ">"
 		. File::Spec->catfile(
 			$constants_ref->{img_dir},
-			$constants_ref->{timestamp} 
+			$constants_ref->{timestamp}
 			. $constants_ref->{hdd_count_by_size_img}
 		)
 	)
@@ -373,10 +375,10 @@ sub print_hdd_size_plots
 	print IMG_COUNT $gd_count_by_size_png;
 	close IMG_COUNT;
 
-	open(IMG_CAP, ">" 
+	open(IMG_CAP, ">"
 		. File::Spec->catfile(
 			$constants_ref->{img_dir},
-			$constants_ref->{timestamp} 
+			$constants_ref->{timestamp}
 			. $constants_ref->{hdd_cap_by_size_img}
 		)
 	)
@@ -394,13 +396,13 @@ sub print_hdd_vendor_plots
 	my $hdd_comb_cap_by_vendor_ref	= shift;
 
 
-	my @data_count_by_vendor	
+	my @data_count_by_vendor
 		= _prepare_hdd_count_by_vendor_plot(
 			$constants_ref,
 			$hdd_counts_by_vendor_ref
 		);
 
-	my @data_cap_by_vendor	
+	my @data_cap_by_vendor
 		= _prepare_hdd_cap_by_vendor_plot(
 			$constants_ref,
 			$hdd_comb_cap_by_vendor_ref
@@ -414,34 +416,34 @@ sub print_hdd_vendor_plots
 	my $hdd_count_by_vendor_graph = GD::Graph::pie->new(800, 600);
 	my $hdd_cap_by_vendor_graph = GD::Graph::pie->new(800, 600);
 
-	my %pie_chart_hdd_count_by_vendor_configs 
+	my %pie_chart_hdd_count_by_vendor_configs
 		= %{ $constants_ref->{pie_chart_configs} };
-	my %pie_chart_hdd_cap_by_vendor_configs 
+	my %pie_chart_hdd_cap_by_vendor_configs
 		= %{ $constants_ref->{pie_chart_configs} };
 
-	$pie_chart_hdd_count_by_vendor_configs{"logo"} 
+	$pie_chart_hdd_count_by_vendor_configs{"logo"}
 		= File::Spec->catfile(
 			$constants_ref->{img_dir},
 			$constants_ref->{logo_img}
 		);
-	$pie_chart_hdd_cap_by_vendor_configs{"logo"} 
-		= File::Spec->catfile(	
+	$pie_chart_hdd_cap_by_vendor_configs{"logo"}
+		= File::Spec->catfile(
 			$constants_ref->{img_dir},
 			$constants_ref->{logo_img}
 		);
 
-	$pie_chart_hdd_count_by_vendor_configs{"title"} 
+	$pie_chart_hdd_count_by_vendor_configs{"title"}
 		= $constants_ref->{"pie_chart_hdd_count_by_vendor_title"};
-	$pie_chart_hdd_cap_by_vendor_configs{"title"} 
+	$pie_chart_hdd_cap_by_vendor_configs{"title"}
 		= $constants_ref->{"pie_chart_hdd_cap_by_vendor_title"};
 
 
-	$pie_chart_hdd_count_by_vendor_configs{"label"} 
+	$pie_chart_hdd_count_by_vendor_configs{"label"}
 		= $constants_ref->{newline}
 		. $constants_ref->{pie_chart_total_hdd_count_label}
-		. $total_hdd_count 
+		. $total_hdd_count
 		. " drives";
-	$pie_chart_hdd_cap_by_vendor_configs{"label"} 
+	$pie_chart_hdd_cap_by_vendor_configs{"label"}
 		= $constants_ref->{newline}
 		. $constants_ref->{pie_chart_total_hdd_cap_label}
 		. $constants_ref->{total_combined_capacity}
@@ -453,43 +455,43 @@ sub print_hdd_vendor_plots
 		or die $hdd_cap_by_vendor_graph->error;
 
 
-	$hdd_count_by_vendor_graph->set_title_font( 
+	$hdd_count_by_vendor_graph->set_title_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_title_size});
-	$hdd_count_by_vendor_graph->set_label_font( 
+	$hdd_count_by_vendor_graph->set_label_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_label_size});
 	$hdd_count_by_vendor_graph->set_value_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_value_size});
 
-	$hdd_cap_by_vendor_graph->set_title_font( 
+	$hdd_cap_by_vendor_graph->set_title_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_title_size});
-	$hdd_cap_by_vendor_graph->set_label_font( 
+	$hdd_cap_by_vendor_graph->set_label_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_label_size});
 	$hdd_cap_by_vendor_graph->set_value_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{pie_chart_value_size});
 
-	my $gd_count_by_vendor 
+	my $gd_count_by_vendor
 		= $hdd_count_by_vendor_graph->plot(\@data_count_by_vendor)
 		or die $hdd_count_by_vendor_graph->error;
-	my $gd_cap_by_vendor 
+	my $gd_cap_by_vendor
 		= $hdd_cap_by_vendor_graph->plot(\@data_cap_by_vendor)
 		or die $hdd_cap_by_vendor_graph->error;
 
 
 	# Watermark images with system configuration hash.
-	my $gd_count_by_vendor_png 
+	my $gd_count_by_vendor_png
 		= timestamp_img(
 			$gd_count_by_vendor->png,
 			substr($constants_ref->{timestamp}, 0, -2),
 			$constants_ref->{systems_digest}
 		);
 
-	my $gd_cap_by_vendor_png 
+	my $gd_cap_by_vendor_png
 		= timestamp_img(
 			$gd_cap_by_vendor->png,
 			substr($constants_ref->{timestamp}, 0, -2),
@@ -498,10 +500,10 @@ sub print_hdd_vendor_plots
 
 
 	# Write to files.
-	open(IMG_COUNT, ">" 
+	open(IMG_COUNT, ">"
 		. File::Spec->catfile(
 			$constants_ref->{img_dir},
-			$constants_ref->{timestamp} 
+			$constants_ref->{timestamp}
 			. $constants_ref->{hdd_count_by_vendor_img}
 		)
 	)
@@ -510,10 +512,10 @@ sub print_hdd_vendor_plots
 	print IMG_COUNT $gd_count_by_vendor_png;
 	close IMG_COUNT;
 
-	open(IMG_CAP, ">" 
+	open(IMG_CAP, ">"
 		. File::Spec->catfile(
 			$constants_ref->{img_dir},
-			$constants_ref->{timestamp} 
+			$constants_ref->{timestamp}
 			. $constants_ref->{hdd_cap_by_vendor_img}
 		)
 	)
@@ -541,52 +543,52 @@ sub print_ranking_list_plot
 				# be  ranked higher  if they
 				# were posted earlier.
 
-				$systems_ref->{$b}{system_capacity} 
+				$systems_ref->{$b}{system_capacity}
 				<=>
 				$systems_ref->{$a}{system_capacity}
 				||
-				$systems_ref->{$a}{post} 
-				<=> 
+				$systems_ref->{$a}{post}
+				<=>
 				$systems_ref->{$b}{post}
 			}
 			grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
-			keys %{ $systems_ref } 
+			keys %{ $systems_ref }
 		],
-		[	
-			map { $systems_ref->{$_}{system_capacity} } 
+		[
+			map { $systems_ref->{$_}{system_capacity} }
 			sort
 			{
 				# Same thing here, naturally.
 
-				$systems_ref->{$b}{system_capacity} 
+				$systems_ref->{$b}{system_capacity}
 				<=>
 				$systems_ref->{$a}{system_capacity}
 				||
-				$systems_ref->{$a}{post} 
-				<=> 
+				$systems_ref->{$a}{post}
+				<=>
 				$systems_ref->{$b}{post}
 			}
 			grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
-			keys %{ $systems_ref } 
+			keys %{ $systems_ref }
 		],
 	);
 
 
 	my $ranking_chart = GD::Graph::hbars->new(800, 2000);
 
-	my %ranking_chart_configs 
+	my %ranking_chart_configs
 		= %{ $constants_ref->{hbar_graph_configs} };
 
-	$ranking_chart_configs{"logo"} 
-		= File::Spec->catfile(	
+	$ranking_chart_configs{"logo"}
+		= File::Spec->catfile(
 			$constants_ref->{img_dir},
 			$constants_ref->{logo_img}
 		);
 
-	$ranking_chart_configs{y_number_format} 
+	$ranking_chart_configs{y_number_format}
 		= \&format_number;
 
-	$ranking_chart_configs{y_max_value} 
+	$ranking_chart_configs{y_max_value}
 		= $constants_ref->{hbar_max_y_scaling_factor}
 		* max(@{ $system_data[1] });
 
@@ -595,37 +597,37 @@ sub print_ranking_list_plot
 		or die $ranking_chart->error;
 
 
-	$ranking_chart->set_title_font( 
+	$ranking_chart->set_title_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{ranking_chart_title_size}
 	);
 
-	$ranking_chart->set_x_label_font( 
+	$ranking_chart->set_x_label_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{ranking_chart_text_size}
 	);
 
-	$ranking_chart->set_x_label_font( 
+	$ranking_chart->set_x_label_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{ranking_chart_label_size}
 	);
 
-	$ranking_chart->set_y_label_font( 
+	$ranking_chart->set_y_label_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{ranking_chart_label_size}
 	);
 
-	$ranking_chart->set_x_axis_font( 
+	$ranking_chart->set_x_axis_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{ranking_chart_axis_size}
 	);
 
-	$ranking_chart->set_y_axis_font( 
+	$ranking_chart->set_y_axis_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{ranking_chart_axis_size}
 	);
 
-	$ranking_chart->set_values_font( 
+	$ranking_chart->set_values_font(
 		File::Spec->catfile("fonts","FreeMono.ttf"),
 		$constants_ref->{ranking_chart_axis_size}
 	);
@@ -645,10 +647,10 @@ sub print_ranking_list_plot
 
 
 	# Write to file.
-	open(IMG, ">" 
+	open(IMG, ">"
 		. File::Spec->catfile(
 			$constants_ref->{img_dir},
-			$constants_ref->{timestamp} 
+			$constants_ref->{timestamp}
 			. $constants_ref->{ranking_chart_img}
 		)
 	)
@@ -667,11 +669,11 @@ sub print_groupings_plots
 
 	my @grouped_data_by_count = (
 		[
-			map { $_ } 
+			map { $_ }
 			sort keys %{ $constants_ref->{capacity_groups} }
 		],
 		[
-			map { $constants_ref->{capacity_groups}{$_} } 
+			map { $constants_ref->{capacity_groups}{$_} }
 			sort keys %{ $constants_ref->{capacity_groups} }
 		]
 	);
@@ -679,7 +681,7 @@ sub print_groupings_plots
 
 	my @grouped_data_by_contrib
 		= get_capacity_group_contributions(
-			[	
+			[
 				map  { $systems_ref->{$_}{system_capacity} }
 				grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
 				keys %{ $systems_ref }
@@ -699,20 +701,20 @@ sub print_groupings_plots
 	my %grouped_plot_by_contrib_configs
 		= %{ $constants_ref->{grouped_hbar_by_contrib_configs} };
 
-	$grouped_plot_by_count_configs{y_max_value} 
+	$grouped_plot_by_count_configs{y_max_value}
 		= $constants_ref->{hbar_max_y_scaling_factor}
 			* max(@{ $grouped_data_by_count[1] });
-	$grouped_plot_by_contrib_configs{y_max_value} 
+	$grouped_plot_by_contrib_configs{y_max_value}
 		= $constants_ref->{hbar_max_y_scaling_factor}
 			* max(@{ $grouped_data_by_contrib[1] });
 
 
-	$grouped_plot_by_count_configs{logo} 
+	$grouped_plot_by_count_configs{logo}
 		= File::Spec->catfile(
 			$constants_ref->{img_dir},
 			$constants_ref->{logo_img}
 		);
-	$grouped_plot_by_contrib_configs{logo} 
+	$grouped_plot_by_contrib_configs{logo}
 		= File::Spec->catfile(
 			$constants_ref->{img_dir},
 			$constants_ref->{logo_img}
@@ -720,9 +722,9 @@ sub print_groupings_plots
 
 
 	# Format capacities for values and axes:
-	$grouped_plot_by_contrib_configs{y_number_format} 
+	$grouped_plot_by_contrib_configs{y_number_format}
 		= \&format_number;
-	$grouped_plot_by_contrib_configs{values_format} 
+	$grouped_plot_by_contrib_configs{values_format}
 		= \&format_hbar_cap_value;
 
 
@@ -799,14 +801,14 @@ sub print_groupings_plots
 
 
 	# Watermark images with system configuration hash.
-	my $gd_grouped_plot_by_count_png 
+	my $gd_grouped_plot_by_count_png
 		= timestamp_img(
 			$gd_grouped_plot_by_count->png,
 			substr($constants_ref->{timestamp}, 0, -2),
 			$constants_ref->{systems_digest}
 		);
 
-	my $gd_grouped_plot_by_contrib_png 
+	my $gd_grouped_plot_by_contrib_png
 		= timestamp_img(
 			$gd_grouped_plot_by_contrib->png,
 			substr($constants_ref->{timestamp}, 0, -2),
@@ -815,10 +817,10 @@ sub print_groupings_plots
 
 
 	# Write to files.
-	open(IMG, ">" 
+	open(IMG, ">"
 		. File::Spec->catfile(
 			$constants_ref->{img_dir},
-			$constants_ref->{timestamp} 
+			$constants_ref->{timestamp}
 			.$constants_ref->{grouped_plot_by_count_img}
 		)
 	)
@@ -827,16 +829,228 @@ sub print_groupings_plots
 	print IMG $gd_grouped_plot_by_count_png;
 	close IMG;
 
-	open(IMG, ">" 
+	open(IMG, ">"
 		. File::Spec->catfile(
 			$constants_ref->{img_dir},
-			$constants_ref->{timestamp} 
+			$constants_ref->{timestamp}
 			. $constants_ref->{grouped_plot_by_contrib_img}
 		)
 	)
 	or die $!;
 	binmode IMG;
 	print IMG $gd_grouped_plot_by_contrib_png;
+	close IMG;
+}
+
+
+sub print_os_plots
+{
+	my $constants_ref	= shift;
+
+        # For the statistics, we need
+	# $constants_ref->{os_stats}
+	# and
+        # $constants_ref->{os_family_stats},
+        # which are of the following structures:
+	#
+	# os_stats:
+	# {
+	#	OS abbreviation => {
+	#			"os_name" => full OS name
+	#			"count" => number of occurr.
+	#			"percentage" => percentage,
+	#			"family" => OS family
+	#	}
+	#}
+	# os_family_stats:
+	# {
+	#	OS family => {
+	#			"count" => number of occurr.
+	#			"percentage" => percentage,
+	#	}
+	#}
+
+	my @os_family_stats = (
+		[
+			map { trim($_) }
+			sort {
+				$constants_ref->{os_family_stats}{$b}{count}
+				<=>
+				$constants_ref->{os_family_stats}{$a}{count}
+			} keys %{ $constants_ref->{os_family_stats} }
+		],
+		[
+			map { trim($constants_ref->{os_family_stats}{$_}{count}) }
+			sort {
+				$constants_ref->{os_family_stats}{$b}{count}
+				<=>
+				$constants_ref->{os_family_stats}{$a}{count}
+			}keys %{ $constants_ref->{os_family_stats} }
+		]
+	);
+
+
+	my @os_stats = (
+		[
+			map { trim($_) }
+			sort {
+				$constants_ref->{os_stats}{$b}{count}
+				<=>
+				$constants_ref->{os_stats}{$a}{count}
+			} keys %{ $constants_ref->{os_stats} }
+		],
+		[
+			map { trim($constants_ref->{os_stats}{$_}{count}) }
+			sort {
+				$constants_ref->{os_stats}{$b}{count}
+				<=>
+				$constants_ref->{os_stats}{$a}{count}
+			} keys %{ $constants_ref->{os_stats} }
+		]
+	);
+
+
+
+	my $os_family_stats_plot = GD::Graph::hbars->new(800, 600);
+	my $os_stats_plot        = GD::Graph::hbars->new(800, 600);
+
+
+	my %os_family_stats_plot_configs
+		= %{ $constants_ref->{hbar_os_family_stats_configs} };
+	my %os_stats_plot_configs
+		= %{ $constants_ref->{hbar_os_stats_configs} };
+
+	$os_family_stats_plot_configs{y_max_value}
+		= $constants_ref->{hbar_max_y_scaling_factor}
+			* max(@{ $os_family_stats[1] });
+	$os_stats_plot_configs{y_max_value}
+		= $constants_ref->{hbar_max_y_scaling_factor}
+			* max(@{ $os_stats[1] });
+
+
+	$os_family_stats_plot_configs{logo}
+		= File::Spec->catfile(
+			$constants_ref->{img_dir},
+			$constants_ref->{logo_img}
+		);
+	$os_stats_plot_configs{logo}
+		= File::Spec->catfile(
+			$constants_ref->{img_dir},
+			$constants_ref->{logo_img}
+		);
+
+
+	$os_family_stats_plot->set_title_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_title_size});
+
+	$os_family_stats_plot->set_x_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_text_size});
+
+	$os_family_stats_plot->set_x_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_label_size});
+
+	$os_family_stats_plot->set_y_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_label_size});
+
+	$os_family_stats_plot->set_x_axis_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_axis_size});
+
+	$os_family_stats_plot->set_y_axis_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_y_axis_size});
+
+	$os_family_stats_plot->set_values_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_axis_size});
+
+
+	$os_stats_plot->set_title_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_title_size});
+
+	$os_stats_plot->set_x_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_text_size});
+
+	$os_stats_plot->set_x_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_label_size});
+
+	$os_stats_plot->set_y_label_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_label_size});
+
+	$os_stats_plot->set_x_axis_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_axis_size});
+
+	$os_stats_plot->set_y_axis_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_y_axis_size});
+
+	$os_stats_plot->set_values_font(
+		File::Spec->catfile("fonts","FreeMono.ttf"),
+		$constants_ref->{grouped_plot_axis_size});
+
+
+	$os_family_stats_plot->set(%os_family_stats_plot_configs)
+		or die $os_family_stats_plot->error;
+	$os_stats_plot->set(%os_stats_plot_configs)
+		or die $os_stats_plot->error;
+
+
+	my $gd_os_family_stats_plot
+		= $os_family_stats_plot->plot(\@os_family_stats)
+		or die $os_family_stats_plot->error;
+	my $gd_os_stats_plot
+		= $os_stats_plot->plot(\@os_stats)
+		or die $os_stats_plot->error;
+
+
+	# Watermark images with system configuration hash.
+	my $gd_os_family_stats_plot_png
+		= timestamp_img(
+			$gd_os_family_stats_plot->png,
+			substr($constants_ref->{timestamp}, 0, -2),
+			$constants_ref->{systems_digest}
+		);
+
+	my $gd_os_stats_plot_png
+		= timestamp_img(
+			$gd_os_stats_plot->png,
+			substr($constants_ref->{timestamp}, 0, -2),
+			$constants_ref->{systems_digest}
+		);
+
+
+	# Write to files.
+	open(IMG, ">"
+		. File::Spec->catfile(
+			$constants_ref->{img_dir},
+			$constants_ref->{timestamp}
+			.$constants_ref->{os_family_stats_img}
+		)
+	)
+	or die $!;
+	binmode IMG;
+	print IMG $gd_os_family_stats_plot_png;
+	close IMG;
+
+	open(IMG, ">"
+		. File::Spec->catfile(
+			$constants_ref->{img_dir},
+			$constants_ref->{timestamp}
+			. $constants_ref->{os_stats_img}
+		)
+	)
+	or die $!;
+	binmode IMG;
+	print IMG $gd_os_stats_plot_png;
 	close IMG;
 }
 

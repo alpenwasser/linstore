@@ -62,7 +62,9 @@ sub upload_images
 		$constants_ref->{hdd_count_by_size_img},
 		$constants_ref->{ranking_chart_img},
 		$constants_ref->{grouped_plot_by_count_img},
-		$constants_ref->{grouped_plot_by_contrib_img}
+		$constants_ref->{grouped_plot_by_contrib_img},
+		$constants_ref->{os_family_stats_img},
+		$constants_ref->{os_stats_img},
 	);
 
 
@@ -72,8 +74,8 @@ sub upload_images
 		$ftp->put(
 			File::Spec->catfile(
 				$constants_ref->{img_dir},
-				$constants_ref->{timestamp} 
-				. $img 
+				$constants_ref->{timestamp}
+				. $img
 			)
 		)
 		or die "get failed ", $ftp->message;

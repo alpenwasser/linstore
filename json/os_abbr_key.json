@@ -13,11 +13,11 @@
         },
         "Ubuntu" : {
                 "os" : "Ubuntu Linux",
-                "family" : "Linux"
+                "family" : "GNU/Linux"
         },
         "unRAID" : {
                 "os" : "unRAID",
-                "family" : "Linux"
+                "family" : "GNU/Linux"
         },
         "Win 8.1" : {
                 "os" : "Windows 8.1",
@@ -25,7 +25,7 @@
         },
         "Synology" : {
                 "os" : "Synology OS",
-                "family" : "Linux"
+                "family" : "GNU/Linux"
         },
         "Win 8" : {
                 "os" : "Windows 8",
@@ -33,7 +33,7 @@
         },
         "Linux Mint" : {
                 "os" : "Linux Mint",
-                "family" : "Linux"
+                "family" : "GNU/Linux"
         },
         "WHS 2011" : {
                 "os" : "Windows Home Server 2011",
@@ -49,7 +49,7 @@
         },
         "Drobo" : {
                 "os" : "Drobo OS",
-                "family" : "Linux"
+                "family" : "GNU/Linux"
         },
         "WS 2012R2" : {
                 "os" : "Windows Server 2012 R2",
@@ -57,7 +57,7 @@
         },
         "Arch Linux" : {
                 "os" : "Arch Linux",
-                "family" : "Windows"
+                "family" : "GNU/Linux"
         },
         "ZFSGuru" : {
                 "os" : "ZFSGuru",
@@ -65,7 +65,7 @@
         },
         "Gentoo" : {
                 "os" : "Gentoo Linux",
-                "family" : "Linux"
+                "family" : "GNU/Linux"
         },
         "Win" : {
                 "os" : "Windows (unspecified)",
@@ -73,10 +73,10 @@
         },
         "OpenMediaVault" : {
                 "os" : "OpenMediaVault",
-                "family" : "Linux"
+                "family" : "GNU/Linux"
         },
         "Debian" : {
                 "os" : "Debian Linux",
-                "family" : "Linux"
+                "family" : "GNU/Linux"
         }
 }

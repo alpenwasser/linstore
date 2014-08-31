@@ -580,6 +580,10 @@ sub  _prepare_os_stats
 		$constants_ref
 	);
 
+	# For use by the plotting module:
+	$constants_ref->{os_stats} = $os_stats_ref;
+	$constants_ref->{os_family_stats} = $os_family_stats_ref;
+
 
         # For     padding     the     columns     correctly,
         # we     need    keys     of    identical     length
@@ -1429,6 +1433,16 @@ sub append_img_links
 		. $constants_ref->{img_server}
 		. $constants_ref->{timestamp}
 		. $constants_ref->{grouped_plot_by_contrib_img}
+		. "]",
+		"[img="
+		. $constants_ref->{img_server}
+		. $constants_ref->{timestamp}
+		. $constants_ref->{os_family_stats_img}
+		. "]",
+		"[img="
+		. $constants_ref->{img_server}
+		. $constants_ref->{timestamp}
+		. $constants_ref->{os_stats_img}
 		. "]",
 		"[img="
 		. $constants_ref->{img_server}

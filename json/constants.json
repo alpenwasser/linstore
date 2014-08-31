@@ -92,6 +92,8 @@
         "hdd_count_by_vendor_img" : "hdd_count_by_vendor.png",
         "hdd_cap_by_size_img" : "hdd_cap_by_size.png",
         "hdd_count_by_size_img" : "hdd_count_by_size.png",
+        "os_family_stats_img" : "os_family_stats.png",
+        "os_stats_img" : "os_stats.png",
         "pie_chart_title_size" : "20",
         "pie_chart_value_size" : "14",
         "pie_chart_label_size" : "14",

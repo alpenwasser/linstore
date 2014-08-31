@@ -1,0 +1,18 @@
+ {
+        "y_label" : "Number of Systems",
+        "x_label" : "Operating System",
+        "title" : "Operating Systems",
+        "y_tick_number" : "5",
+        "transparent" : "0",
+        "logo_resize" : "0.1",
+        "logo_position" : "LR",
+        "t_margin" : "30",
+        "b_margin" : "50",
+        "l_margin" : "20",
+        "r_margin" : "20",
+        "show_values" : "1",
+        "bar_spacing" : "6",
+        "text_space" : "18",
+        "values_space" : "8",
+        "dclrs" : [ "lblue" ]
+}
