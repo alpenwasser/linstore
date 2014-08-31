@@ -1,0 +1,10 @@
+[
+        "[b]WS[/b]         Windows Server",
+        "[b]WHS[/b]        Windows Home Server",
+        "[b]SHR[/b]        Synology Hybrid RAID",
+        "[b]StSp[/b]       Storage Spaces",
+        "[b]RD[/b]         RAID (unspecified if hardware or software)",
+        "[b]HwRD[/b]       Hardware RAID",
+        "[b]SwRD[/b]       Software RAID",
+        "[b]FlRD[/b]       FlexRAID"
+]

@@ -1,0 +1,16 @@
+{
+        "y_label" : "System Capacity (TB)",
+        "x_label" : "Username/System",
+        "title" : "Ranking List",
+        "y_tick_number" : "4",
+        "transparent" : "0",
+        "logo_resize" : "0.16",
+        "logo_position" : "LR",
+        "t_margin" : "30",
+        "b_margin" : "50",
+        "l_margin" : "20",
+        "r_margin" : "20",
+        "show_values" : "1",
+        "bar_spacing" : "6",
+        "dclrs" : [ "lblue" ]
+}

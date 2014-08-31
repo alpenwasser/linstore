@@ -1,0 +1,14 @@
+{
+        "constants" : "constants",
+        "os_abbr_key" : null,
+        "abbreviations_key" : null,
+        "vendor_list" : null,
+        "capacity_groups"  : null,
+        "capacity_groups_contrib" : null,
+	"pie_chart_configs" : null,
+	"hbar_graph_configs" : null,
+	"hbar_hdd_count_by_size_configs" : null,
+	"hbar_hdd_cap_by_size_configs" : null,
+	"grouped_hbar_by_count_configs" : null,
+	"grouped_hbar_by_contrib_configs" : null
+}

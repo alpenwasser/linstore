@@ -19,24 +19,29 @@ use Ltt::Imaging;
 use Ltt::Digester;
 
 
+my $JSON_DIR            = "json";
+my $JSON_FILES_RECORD   = File::Spec->catfile("json","json_files_record.json");
 my $SYSTEMS_FILE	= File::Spec->catfile("json","systems.json");
 my $HDD_TYPES_FILE	= File::Spec->catfile("json","hdd_types.json");
-my $CONSTANTS_FILE	= File::Spec->catfile("json","constants.json");
 my $CREDENTIALS_FILE	= File::Spec->catfile("json","credentials.json");
 
 
 sub main
 {
-	my $systems_file_path	= shift;
-	my $hdd_file_path	= shift;
-	my $constants_path	= shift;
-	my $credentials_path	= shift;
+	my $systems_file_path      = shift;
+	my $hdd_file_path          = shift;
+	my $credentials_path       = shift;
+	my $json_files_record_path = shift;
+	my $json_dir               = shift;
 
 
 	# Grab configuration and data.
 	my $systems_ref		= read_json($systems_file_path);
 	my $hdd_types_ref	= read_json($hdd_file_path);
-	my $constants_ref	= read_json($constants_path);
+	my $constants_ref	= load_json_records(
+		$json_files_record_path,
+		$json_dir
+	);
 
 	# If there  is no credentials file,  the read_json()
 	# function will return 0.
@@ -139,7 +144,7 @@ sub main
 
 	# Upload   images  to	FTP  server,   specified  in
 	# json/credentials.json.
-	upload_images($constants_ref, $credentials_ref,0)
+	upload_images($constants_ref, $credentials_ref,1)
 		if($credentials_ref);
 
 
@@ -160,7 +165,9 @@ exit(
 	main(
 		$SYSTEMS_FILE,
 		$HDD_TYPES_FILE,
-		$CONSTANTS_FILE,
-		$CREDENTIALS_FILE
+		$CREDENTIALS_FILE,
+		$JSON_FILES_RECORD,
+		$JSON_DIR
+
 	)
 );

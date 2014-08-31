@@ -9,14 +9,16 @@ our @ISA= qw( Exporter );
 
 # These CAN be exported.
 our @EXPORT_OK = qw(
-	read_json 
+	read_json
 	write_json
+	load_json_records
 	);
 
 # These are exported by default.
 our @EXPORT = qw(
-	read_json 
+	read_json
 	write_json
+	load_json_records
 	);
 
 
@@ -106,6 +108,53 @@ sub write_json
 		or die "Could not open [$output_file_path]: $!";
 	print $fh $json_output;
 	close $fh;
+}
+
+
+sub load_json_records
+{
+	my $json_files_record_filename = shift;
+	my $json_dir                   = shift;;
+
+	# This is a hash ref.
+	my $json_files_record_ref
+		= read_json($json_files_record_filename);
+
+
+	# As is this.
+	# NOTE: We only need  this to be a  hash ref because
+	# we need to  specifically extract constants.json at
+	# first. The  remaining  json files'  contents	will
+	# then be  loaded into the resulting  hash, with one
+	# entry (hash  in a  hash) for	each json  file, but
+	# constants.json is the  mother structure into which
+	# all other files are inserted.
+
+	my $master_record_ref
+		= read_json(
+			File::Spec->catfile(
+				$json_dir,
+				$json_files_record_ref->{constants}
+					. ".json"
+			)
+		);
+
+
+	# The remaining  JSON files are named  after the key
+	# which their contents will  receive inside the data
+	# structure resulting from constants.json.
+	for (keys %{ $json_files_record_ref })
+	{
+		$master_record_ref->{$_}
+			= read_json(
+				File::Spec->catfile(
+					$json_dir,
+					$_ . ".json"
+				)
+			);
+	}
+
+	return $master_record_ref;
 }
 
 
