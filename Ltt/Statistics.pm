@@ -564,41 +564,92 @@ sub calculate_os_stats
 	);
 
 	my %os_counts;
+	my %os_family_counts;
 
-	# Calculate number of occurrences  for each OS among
-	# the ranked systems.
-	$os_counts{$constants_ref->{os_abbr_key}{$systems_ref->{$_}{os}}}++ for
+	# Count number of occurrences for each OS.
+	$os_counts{$systems_ref->{$_}{os}}++ for
+		grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
+		keys %{ $systems_ref };
+
+
+        # Count  number of  occurrences for  each OS  family
+        # (see $constant_ref->{os_abbr_key} for  why this is
+        # done this way.
+	# What's going on here:
+        # We    traverse     the    systems    (system_xxx),
+        # eliminate    those   which    are   not    ranked,
+        # then    check   the    OS    for   each    system,
+        # and   grab   the   appropriate  os   family   from
+        # $constants_ref->{os_abbr_key}, which  is basically
+        # $constants_ref->{os_abbr_key}{os_abbr}{family}.
+	$os_family_counts{
+			$constants_ref->{os_abbr_key}{
+				$systems_ref->{$_}{os}
+			}
+			{family}
+		}++ for
 		grep { $systems_ref->{$_}{rank} ne "UNRANKED" }
 		keys %{ $systems_ref };
 
 
 	# The structure of the resulting hash is as follows:
 	# {
-	#	OS Name => {
+	#	OS abbreviation => {
+	#			"os_name" => full OS name
 	#			"count" => number of occurr.
-	#			"percentage" => percentage
+	#			"percentage" => percentage,
+	#			"family" => OS family
 	#	}
 	#}
 
-	return {
-			 map {
-				$_
+	my $os_stats_ref =  {
+		 map {
+			$_
+			=>
+			{
+				"count"		=> $os_counts{$_},
+				"percentage"
 				=>
-				{
-					"count"		=> $os_counts{$_},
-					"percentage"
-					=>
-					format_percentage(
-						$os_counts{$_}
-						/
-						$systems_count
-					) . "%",
-					"family"
-					=>
-					$constants_ref->{os_families_key}{$_},
-				}
+				format_percentage(
+					$os_counts{$_}
+					/
+					$systems_count
+				) . "%",
+
+				"family"
+				=>
+				$constants_ref->{os_abbr_key}{$_}{family},
+
+				"os_name"
+				=>
+				$constants_ref->{os_abbr_key}{$_}{os},
+			}
 		} keys %os_counts
 	};
+
+
+	my $os_family_stats_ref = {
+		map {
+			$_
+			=>
+			{
+				"count"
+				=>
+				$os_family_counts{$_},
+
+				"percentage"
+				=>
+				format_percentage(
+					$os_family_counts{$_}
+					/
+					$systems_count
+				) . "%",
+
+			}
+		} keys %os_family_counts
+	};
+
+	return ($os_stats_ref,$os_family_stats_ref);
 }
 
 

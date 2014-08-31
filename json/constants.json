@@ -90,20 +90,20 @@
 	"total_table_footer_vendor_padding_col2" : "14",
 	"total_table_footer_size_padding_col1" : "5",
 	"total_table_footer_size_padding_col2" : "14",
-        "os_stats_title" : "Operating System Statistics",
+        "os_stats_title" : "Operating System Statistics, Detailed",
 	"os_stats_os_col_title" : "Operating System",
 	"os_stats_count_col_title" : "Count",
 	"os_stats_perc_col_title" : "Percentage",
         "os_stats_os_col_padding" : "0",
         "os_stats_count_col_padding" : "8",
         "os_stats_perc_col_padding" : "8",
-        "os_stats_family_title" : "Operating System Family Statistics",
-	"os_stats_family_os_col_title" : "Operating System Family",
-	"os_stats_family_count_col_title" : "Count",
-	"os_stats_family_perc_col_title" : "Percentage",
-        "os_stats_family_os_col_padding" : "0",
-        "os_stats_family_count_col_padding" : "8",
-        "os_stats_family_perc_col_padding" : "8",
+        "os_stats_os_family_title" : "Operating System Family Statistics",
+	"os_stats_os_family_col_title" : "Operating System Family",
+	"os_stats_os_family_count_col_title" : "Count",
+	"os_stats_os_family_perc_col_title" : "Percentage",
+        "os_stats_os_family_col_padding" : "0",
+        "os_stats_os_family_count_col_padding" : "8",
+        "os_stats_os_family_perc_col_padding" : "8",
 	"abbreviations_key_title" : "Abbreviations Key",
 	"abbreviations_key" : [
 		"[b]WS[/b]         Windows Server",
@@ -268,47 +268,85 @@
 	"img_server" : "HTTP:://WWW.YOURSERVER.COM/SOME/DIR/",
         "os_stats_title" : "Operating Systems Statistics",
         "os_abbr_key" : {
-                "Win 7" : "Windows 7",
-                "FreeNAS" : "FreeNAS",
-                "WS 2012" : "Windows Server 2012",
-                "Ubuntu" : "Ubuntu Linux",
-                "unRAID" : "unRAID",
-                "Win 8.1" : "Windows 8",
-                "Synology" : "Synology OS",
-                "Win 8" : "Windows 8",
-                "Linux Mint" : "Linux Mint",
-                "WHS 2011" : "Windows Home Server 2011",
-                "WS 2008R2" : "Windows Server 2012",
-                "NAS4Free" : "NAS4Free",
-                "Drobo" : "Drobo OS",
-                "WS 2012R2" : "Windows Server 2012",
-                "Arch Linux" : "Arch Linux",
-                "ZFSGuru" : "ZFSGuru",
-                "Gentoo" : "Gentoo Linux",
-                "Win" : "Windows (unspecified)",
-                "OpenMediaVault" : "OpenMediaVault",
-                "Debian" : "Debian Linux"
-        },
-        "os_families_key" : {
-               "Win 7" : "Windows",
-               "FreeNAS" : "*BSD",
-               "WS 2012" : "Windows",
-               "Ubuntu" : "Linux",
-               "unRAID" : "Linux",
-               "Win 8.1" : "Windows",
-               "Synology" : "Linux",
-               "Win 8" : "Windows",
-               "Linux Mint" : "Linux",
-               "WHS 2011" : "Windows",
-               "WS 2008R2" : "Windows",
-               "NAS4Free" : "*BSD",
-               "Drobo" : "Linux",
-               "WS 2012R2" : "Windows",
-               "Arch Linux" : "Linux",
-               "ZFSGuru" : "*BSD",
-               "Gentoo" : "Linux",
-               "Win" : "Windows",
-               "OpenMediaVault" : "Linux",
-               "Debian" : "Linux"
+                "Win 7" : { 
+                        "os" : "Windows 7",
+                        "family" : "Windows" 
+                },
+                "FreeNAS" : {
+                        "os" : "FreeNAS",
+                        "family" : "*BSD"
+                },
+                "WS 2012" : {
+                        "os" : "Windows Server 2012",
+                        "family" : "Windows"
+                },
+                "Ubuntu" : {
+                        "os" : "Ubuntu Linux",
+                        "family" : "Linux"
+                },
+                "unRAID" : {
+                        "os" : "unRAID",
+                        "family" : "Linux"
+                },
+                "Win 8.1" : {
+                        "os" : "Windows 8",
+                        "family" : "Windows"
+                },
+                "Synology" : {
+                        "os" : "Synology OS",
+                        "family" : "Linux"
+                },
+                "Win 8" : {
+                        "os" : "Windows 8",
+                        "family" : "Windows"
+                },
+                "Linux Mint" : {
+                        "os" : "Linux Mint",
+                        "family" : "Linux"
+                },
+                "WHS 2011" : {
+                        "os" : "Windows Home Server 2011",
+                        "family" : "Windows"
+                },
+                "WS 2008R2" : {
+                        "os" : "Windows Server 2012",
+                        "family" : "Windows"
+                },
+                "NAS4Free" : {
+                        "os" : "NAS4Free",
+                        "family" : "*BSD"
+                },
+                "Drobo" : {
+                        "os" : "Drobo OS",
+                        "family" : "Linux"
+                },
+                "WS 2012R2" : {
+                        "os" : "Windows Server 2012",
+                        "family" : "Windows"
+                },
+                "Arch Linux" : {
+                        "os" : "Arch Linux",
+                        "family" : "Windows"
+                },
+                "ZFSGuru" : {
+                        "os" : "ZFSGuru",
+                        "family" : "*BSD"
+                },
+                "Gentoo" : {
+                        "os" : "Gentoo Linux",
+                        "family" : "Linux"
+                },
+                "Win" : {
+                        "os" : "Windows (unspecified)",
+                        "family" : "Windows"
+                },
+                "OpenMediaVault" : {
+                        "os" : "OpenMediaVault",
+                        "family" : "Linux"
+                },
+                "Debian" : {
+                        "os" : "Debian Linux",
+                        "family" : "Linux"
+                }
         }
 }

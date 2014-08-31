@@ -139,7 +139,7 @@ sub main
 
 	# Upload   images  to	FTP  server,   specified  in
 	# json/credentials.json.
-	upload_images($constants_ref, $credentials_ref,0)
+	upload_images($constants_ref, $credentials_ref,1)
 		if($credentials_ref);
 
 

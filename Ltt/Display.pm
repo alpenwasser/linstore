@@ -550,28 +550,51 @@ sub _prepare_hdd_vendor_stats
 
 sub  _prepare_os_stats
 {
-	my $systems_ref = shift;
+	my $systems_ref   = shift;
 	my $constants_ref = shift;
 
 
 	# Get actual statistics.
 	# The structure of the resulting hash is as follows:
 	# {
-	#	OS Name => {
+	#	OS abbr => {
+	#			"os_name" => "OS Name"
+	#			"count" => number of occurr.
+	#			"percentage" => percentage
+	#			"family" => OS family
+	#	}
+	# }
+	# {
+	#	OS Family => {
 	#			"count" => number of occurr.
 	#			"percentage" => percentage
 	#	}
 	# }
 	# Unranked  systems have  already been	discarded at
 	# this point.
-	my $os_stats_ref = calculate_os_stats(
+	my (
+		$os_stats_ref,
+		$os_family_stats_ref
+	)= calculate_os_stats(
 		$systems_ref,
 		$constants_ref
 	);
 
 
-	# For padding the columns correctly:
+        # For     padding     the     columns     correctly,
+        # we     need    keys     of    identical     length
+        # to    $constants_ref->{os_abbr_key}{$_}{os}    and
+        # $const_ref->{os_abbr_key}{$_}{family}  as well  as
+        # "Count" and "Percentage". These will be the column
+        # titles,  we  need  to   make  sure  everything  is
+        # properly padded and takes them into account.
 	$os_stats_ref->{operating_system} = {
+		"count" => "Count",
+		"percentage" => "Percentage",
+		"family" => "Family",
+		"os_name" => "OS_Name",
+	};
+	$os_family_stats_ref->{operating_system_family} = {
 		"count" => "Count",
 		"percentage" => "Percentage"
 	};
@@ -579,7 +602,12 @@ sub  _prepare_os_stats
 
 	# Format strings.
 	my $max_os_str_length
-		= get_max_elem_length( [ keys %{ $os_stats_ref } ] );
+		= get_max_elem_length(
+			[
+				map { $os_stats_ref->{$_}{os_name} }
+				keys %{ $os_stats_ref }
+			]
+		);
 
 	my $max_os_count_length
 		= get_max_elem_length(
@@ -597,6 +625,31 @@ sub  _prepare_os_stats
 			]
 		);
 
+
+	# Same, for OS families:
+	my $max_os_family_str_length
+		= get_max_elem_length( [ keys %{ $os_family_stats_ref } ] );
+
+	my $max_os_family_count_length
+		= get_max_elem_length(
+			[
+				map { $os_family_stats_ref->{$_}{count} }
+				keys %{ $os_family_stats_ref }
+			]
+		);
+
+	my $max_os_family_perc_length
+		= get_max_elem_length(
+			[
+				map { $os_family_stats_ref->{$_}{percentage} }
+				keys %{ $os_family_stats_ref }
+			]
+		);
+
+
+
+
+	# Pad title elements for column layout.
 	$constants_ref->{os_stats_os_col_title}
 		= pad_right(
 			$constants_ref->{os_stats_os_col_title},
@@ -618,16 +671,43 @@ sub  _prepare_os_stats
 			$constants_ref->{os_stats_perc_col_padding}
 		);
 
+
+	$constants_ref->{os_stats_os_family_col_title}
+		= pad_right(
+			$constants_ref->{os_stats_os_family_col_title},
+			$max_os_family_str_length,
+			$constants_ref->{os_stats_os_family_col_padding}
+		);
+
+	$constants_ref->{os_stats_os_family_count_col_title}
+		= pad_left(
+			$constants_ref->{os_stats_os_family_count_col_title},
+			$max_os_family_count_length,
+			$constants_ref->{os_stats_os_family_count_col_padding}
+		);
+
+	$constants_ref->{os_stats_os_family_perc_col_title}
+		= pad_left(
+			$constants_ref->{os_stats_os_family_perc_col_title},
+			$max_os_family_perc_length,
+			$constants_ref->{os_stats_os_family_perc_col_padding}
+		);
+
+
+
+
+	# Pad actual content for tables.
 	%{ $os_stats_ref }
-		= map {
-			pad_right(
-				$_,
-				$max_os_str_length,
-				$constants_ref->{os_stats_os_col_padding}
-			)
-			=>
-			{
-			"count"      => pad_left(
+	= map {
+		pad_right(
+			$os_stats_ref->{$_}{os_name},
+			$max_os_str_length,
+			$constants_ref->{os_stats_os_col_padding}
+		)
+		=>
+		{
+			"count"
+			=> pad_left(
 				$os_stats_ref->{$_}{count},
 				$max_os_count_length,
 				$constants_ref->{os_stats_count_col_padding}
@@ -640,21 +720,51 @@ sub  _prepare_os_stats
 				$constants_ref->{os_stats_perc_col_padding}
 			)
 		}
-	}
-	keys %{ $os_stats_ref };
+	} keys %{ $os_stats_ref };
+
+
+	%{ $os_family_stats_ref }
+	= map {
+		pad_right(
+			$_,
+			$max_os_family_str_length,
+			$constants_ref->{os_stats_os_family_col_padding}
+		)
+		=>
+		{
+		"count"      => pad_left(
+			$os_family_stats_ref->{$_}{count},
+			$max_os_family_count_length,
+			$constants_ref->{os_stats_os_family_count_col_padding}
+		),
+		"percentage"
+		=>
+		pad_left(
+			$os_family_stats_ref->{$_}{percentage},
+			$max_os_family_perc_length,
+			$constants_ref->{os_stats_os_family_perc_col_padding}
+		)
+	} } keys %{ $os_family_stats_ref };
 
 
 	# We don't need these anymore...
 	delete $os_stats_ref->{
 		pad_right(
-			"operating_system",
+			"OS_Name",
 			$max_os_str_length,
 			$constants_ref->{os_stats_os_col_padding}
 		)
 	};
+	delete $os_family_stats_ref->{
+		pad_right(
+			"operating_system_family",
+			$max_os_family_str_length,
+			$constants_ref->{os_stats_os_family_col_padding}
+		)
+	};
 
 
-	return $os_stats_ref;
+	return ($os_stats_ref,$os_family_stats_ref);
 }
 
 
@@ -1053,8 +1163,32 @@ sub _print_hdd_vendor_stats
 
 sub _print_os_stats
 {
-	my $constants_ref = shift;
-	my $os_stats_ref  = shift;
+	my $constants_ref       = shift;
+	my $os_stats_ref        = shift;
+	my $os_family_stats_ref = shift;
+
+
+	$constants_ref->{output_data}
+		.=$constants_ref->{newline}
+		. $constants_ref->{bold_open}
+		. $constants_ref->{os_stats_os_family_title}
+		. $constants_ref->{bold_close}
+		. $constants_ref->{newline}
+		. $constants_ref->{os_stats_os_family_col_title}
+		. $constants_ref->{os_stats_os_family_count_col_title}
+		. $constants_ref->{os_stats_os_family_perc_col_title}
+		. $constants_ref->{newline};
+
+	$constants_ref->{output_data}
+		.= $_
+		.  $os_family_stats_ref->{$_}{count}
+		.  $os_family_stats_ref->{$_}{percentage}
+		.  $constants_ref->{newline}
+		for sort {
+			$os_family_stats_ref->{$b}{count}
+			<=>
+			$os_family_stats_ref->{$a}{count}
+		} keys %{ $os_family_stats_ref };
 
 
 	$constants_ref->{output_data}
@@ -1073,11 +1207,14 @@ sub _print_os_stats
 		.  $os_stats_ref->{$_}{count}
 		.  $os_stats_ref->{$_}{percentage}
 		.  $constants_ref->{newline}
-		for sort { $os_stats_ref->{$b}{count} <=> $os_stats_ref->{$a}{count} } keys %{ $os_stats_ref };
+		for sort {
+			$os_stats_ref->{$b}{count}
+			<=>
+			$os_stats_ref->{$a}{count}
+		} keys %{ $os_stats_ref };
 
 	$constants_ref->{output_data}
-		.= $constants_ref->{newline}
-		.  $constants_ref->{newline};
+		.= $constants_ref->{newline};
 }
 
 
@@ -1162,7 +1299,10 @@ sub generate_statistics
 		$constants_ref
 	);
 
-	my $os_stats_ref = _prepare_os_stats(
+	my (
+		$os_stats_ref,
+		$os_family_stats_ref
+	) = _prepare_os_stats(
 		$systems_ref,
 		$constants_ref
 	);
@@ -1208,7 +1348,8 @@ sub generate_statistics
 
 	_print_os_stats(
 		$constants_ref,
-		$os_stats_ref
+		$os_stats_ref,
+		$os_family_stats_ref
 	);
 
 	return (
