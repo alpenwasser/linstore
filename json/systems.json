@@ -379,13 +379,13 @@
       "username" : "cushy91"
    },
    "system_028" : {
-      "capacity" : "4.3",
+      "capacity" : "10.3",
       "case" : "Fractal Design R4 (custom)",
       "hdds" : {
          "SS0025" : "1",
          "SS0075" : "1",
          "WD0025" : "1",
-         "WD0300" : "1"
+         "WD0300" : "3"
       },
       "notes" : "BotW",
       "os" : "Arch Linux",
