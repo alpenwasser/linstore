@@ -283,6 +283,13 @@ sub get_capacity_group_contributions
 			@{ $list_ref };
 
 		$group_contributions{$range} = sum(@capacities_in_range);
+
+		# If there are no  systems in current range,
+		# set  to  zero  instead  of  letting  value
+		# default to undef (leads to issues with the
+		# plotting module).
+		$group_contributions{$range}
+			= 0 unless ($group_contributions{$range});
 	}
 
 

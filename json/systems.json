@@ -18,17 +18,15 @@
       "username" : "dangerous1"
    },
    "system_002" : {
-      "capacity" : "70.0",
+      "capacity" : "64.0",
       "case" : "Supermicro SC846BE26-R920B",
       "hdds" : {
-         "HT0300" : "6",
-         "SG0300" : "4",
-         "SG0400" : "10"
+         "SG0400" : "16"
       },
       "notes" : null,
       "os" : "Gentoo",
       "post" : "1009417",
-      "storage_sys" : "mdadm, ZFS",
+      "storage_sys" : "ZFS",
       "username" : "madcow"
    },
    "system_003" : {
@@ -888,5 +886,18 @@
 	   "os" : "Debian",
 	   "storage_sys" : "mdadm",
 	   "username" : "Shaqalac"
+   },
+   "system_066" : {
+      "capacity" : "62.0",
+      "case" : "Supermicro SC846BE26-R920B",
+      "hdds" : {
+         "SG0400" : "8",
+         "HT0300" : "10"
+      },
+      "notes" : null,
+      "os" : "Gentoo",
+      "post" : "2828078",
+      "storage_sys" : "ZFS",
+      "username" : "madcow"
    }
 }
