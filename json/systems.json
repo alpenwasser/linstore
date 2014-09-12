@@ -900,5 +900,21 @@
       "post" : "2828078",
       "storage_sys" : "ZFS",
       "username" : "madcow"
+   },
+   "system_067" : {
+      "capacity" : "20.0",
+      "case" : "Fractal Arc Midi R2",
+      "hdds" : {
+         "WD0200" : "1",
+         "HT0200" : "1",
+         "SS0200" : "2",
+         "SG0300" : "2",
+         "HT0300" : "2"
+      },
+      "notes" : null,
+      "os" : "FreeNAS",
+      "post" : "2918548",
+      "storage_sys" : "ZFS",
+      "username" : "bigross123"
    }
 }
