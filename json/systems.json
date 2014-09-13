@@ -916,5 +916,18 @@
       "post" : "2918548",
       "storage_sys" : "ZFS",
       "username" : "bigross123"
+   },
+   "system_068" : {
+      "capacity" : "15.0",
+      "case" : "Custom Case",
+      "hdds" : {
+         "SG0200" : "3",
+         "WD0300" : "3"
+      },
+      "notes" : null,
+      "os" : "WS 2012R2",
+      "post" : "2938125",
+      "storage_sys" : "SwRD",
+      "username" : "MariusJS"
    }
 }
