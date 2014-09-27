@@ -929,5 +929,17 @@
       "post" : "2938125",
       "storage_sys" : "SwRD",
       "username" : "MariusJS"
+   },
+   "system_069" : {
+      "capacity" : "24.0",
+      "case" : "Midi Tower",
+      "hdds" : {
+         "WD0400" : "6"
+      },
+      "notes" : null,
+      "os" : "FreeNAS",
+      "post" : "3060999",
+      "storage_sys" : "ZFS",
+      "username" : "untamed"
    }
 }

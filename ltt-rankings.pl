@@ -146,6 +146,8 @@ sub main
 
 	# Upload   images  to	FTP  server,   specified  in
 	# json/credentials.json.
+	# Third  flag is  no-upload  flag: if  set to  true,
+	# script will not upload files to FTP server.
 	upload_images($constants_ref, $credentials_ref,0)
 		if($credentials_ref);
 
