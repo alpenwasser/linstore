@@ -941,5 +941,17 @@
       "post" : "3060999",
       "storage_sys" : "ZFS",
       "username" : "untamed"
+   },
+   "system_070" : {
+      "capacity" : "12.0",
+      "case" : "Fractal Node 804",
+      "hdds" : {
+         "WD0300" : "4"
+      },
+      "notes" : null,
+      "os" : "WS 2012R2",
+      "post" : "3068247",
+      "storage_sys" : "HWRD",
+      "username" : "EmeraldFlame"
    }
 }
