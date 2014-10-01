@@ -953,5 +953,35 @@
       "post" : "3068247",
       "storage_sys" : "HWRD",
       "username" : "EmeraldFlame"
+   },
+   "system_071" : {
+      "capacity" : "32.0",
+      "case" : "Rosewill Blackhawk Ultra",
+      "hdds" : {
+         "TS0300" : "6",
+         "SG0300" : "2",
+         "SG0150" : "4",
+         "TS0200" : "1"
+      },
+      "notes" : null,
+      "os" : "WS 2012R2",
+      "post" : "3091775",
+      "storage_sys" : "HWRD",
+      "username" : "zyk"
+   },
+   "system_072" : {
+      "capacity" : "42.0",
+      "case" : "Synology DS1215+",
+      "hdds" : {
+         "WD0300" : "5",
+         "SG0400" : "4",
+         "SG0300" : "1",
+         "WD0400" : "2"
+      },
+      "notes" : null,
+      "os" : "Synology",
+      "post" : "3093130",
+      "storage_sys" : "SWRD",
+      "username" : "redlukas"
    }
 }
