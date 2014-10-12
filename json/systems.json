@@ -955,16 +955,14 @@
       "username" : "EmeraldFlame"
    },
    "system_071" : {
-      "capacity" : "32.0",
+      "capacity" : "42.0",
       "case" : "Rosewill Blackhawk Ultra",
       "hdds" : {
-         "TS0300" : "6",
-         "SG0300" : "2",
-         "SG0150" : "4",
-         "TS0200" : "1"
+         "TS0300" : "12",
+         "SG0300" : "2"
       },
-      "notes" : null,
-      "os" : "WS 2012R2",
+      "notes" : "[post=3157644]Upd 1[/post]",
+      "os" : "WS 2008R2",
       "post" : "3091775",
       "storage_sys" : "HWRD",
       "username" : "zyk"
@@ -983,5 +981,31 @@
       "post" : "3093130",
       "storage_sys" : "SWRD",
       "username" : "redlukas"
+   },
+   "system_073" : {
+      "capacity" : "6.0",
+      "case" : "Lian Li PC-7FN",
+      "hdds" : {
+         "SS0100" : "2",
+         "SS0200" : "2"
+      },
+      "notes" : null,
+      "os" : "WS 2008R2",
+      "post" : "3148440",
+      "storage_sys" : "JBOD",
+      "username" : "kichilron"
+   },
+   "system_074" : {
+      "capacity" : "8.0",
+      "case" : "NZXT H630",
+      "hdds" : {
+         "SG0400" : "1",
+         "SS0200" : "2"
+      },
+      "notes" : null,
+      "os" : "Win 8.1",
+      "post" : "3148440",
+      "storage_sys" : "JBOD, SWRD",
+      "username" : "kichilron"
    }
 }
