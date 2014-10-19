@@ -840,16 +840,16 @@
       "username" : "dzintars"
    },
    "system_062" : {
-	   "capacity" : "7.0",
+	   "capacity" : "13.0",
 	   "case" : "Corsair C70",
 	   "hdds" : {
-			"SG0300" : "2",
+			"SG0300" : "4",
 			"WD0100" : "1"
 	   },
-	   "notes" : null,
+	   "notes" : [post=3216353]Upd 1[/post],
 	   "post" : "2736033",
 	   "os" : "Debian",
-	   "storage_sys" : "ZFS",
+	   "storage_sys" : "mdadm lvm2",
 	   "username" : "Blade of Grass"
    },
    "system_063" : {
