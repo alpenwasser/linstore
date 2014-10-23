@@ -840,16 +840,16 @@
       "username" : "dzintars"
    },
    "system_062" : {
-	   "capacity" : "7.0",
+	   "capacity" : "13.0",
 	   "case" : "Corsair C70",
 	   "hdds" : {
-			"SG0300" : "2",
+			"SG0300" : "4",
 			"WD0100" : "1"
 	   },
-	   "notes" : null,
+	   "notes" : "[post=3216353]Upd 1[/post]",
 	   "post" : "2736033",
 	   "os" : "Debian",
-	   "storage_sys" : "ZFS",
+	   "storage_sys" : "mdadm",
 	   "username" : "Blade of Grass"
    },
    "system_063" : {
@@ -1007,5 +1007,29 @@
       "post" : "3148440",
       "storage_sys" : "JBOD, SWRD",
       "username" : "kichilron"
+   },
+   "system_075" : {
+      "capacity" : "18.0",
+      "case" : "NZXT Tempest 210",
+      "hdds" : {
+         "SG0300" : "6"
+      },
+      "notes" : null,
+      "os" : "FreeNAS",
+      "post" : "3238243",
+      "storage_sys" : "ZFS",
+      "username" : "siaran"
+   },
+   "system_076" : {
+      "capacity" : "12.0",
+      "case" : "Fractal Design Mini",
+      "hdds" : {
+         "WD0200" : "6"
+      },
+      "notes" : null,
+      "os" : "WHS 2011",
+      "post" : "3257451",
+      "storage_sys" : "JBOD",
+      "username" : "draxer03"
    }
 }
