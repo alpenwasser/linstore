@@ -476,7 +476,7 @@
       "os" : "FreeNAS",
       "post" : "279789",
       "storage_sys" : "ZFS",
-      "username" : "Algoat"
+      "username" : "algoat"
    },
    "system_036" : {
       "capacity" : "15.0",
@@ -1031,5 +1031,18 @@
       "post" : "3257451",
       "storage_sys" : "JBOD",
       "username" : "draxer03"
+   },
+   "system_077" : {
+      "capacity" : "23.0",
+      "case" : "Silverstone GD07 HTPC",
+      "hdds" : {
+         "WD0300" : "7",
+         "WD0200" : "1"
+      },
+      "notes" : null,
+      "os" : "Win 7",
+      "post" : "3274189",
+      "storage_sys" : "FlexRAID",
+      "username" : "algoat"
    }
 }
