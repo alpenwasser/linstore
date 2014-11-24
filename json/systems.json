@@ -80,15 +80,15 @@
       "username" : "RandomNOOB"
    },
    "system_007" : {
-      "capacity" : "64.0",
-      "case" : "Chieftec Arena 2000-B",
+      "capacity" : "69.0",
+      "case" : "Ri-Vier 24bay 4U Case",
       "hdds" : {
-         "SG0300" : "2",
+         "SG0300" : "1",
          "SS0200" : "5",
          "WD0200" : "14",
-         "WD0400" : "5"
+         "WD0400" : "7"
       },
-      "notes" : "[post=1694520]Upd 1[/post]",
+      "notes" : "[post=1694520]Upd 1[/post], [post=3419235]Upd 2[/post]",
       "os" : "Win 7",
       "post" : "821520",
       "storage_sys" : "HwRD, JBOD",
@@ -171,14 +171,14 @@
       "username" : "MrSmoke"
    },
    "system_013" : {
-      "capacity" : "45.0",
+      "capacity" : "47.0",
       "case" : "Lian Li 343B",
       "hdds" : {
-         "WD0200" : "21",
+         "WD0200" : "22",
          "WD0300" : "1"
       },
-      "notes" : "[post=1883660]Upd 1[/post], [post=2418935]2[/post]",
-      "os" : "Win 7",
+      "notes" : "[post=1883660]Upd 1[/post], [post=2418935]2[/post], [post=3437797]Upd 3[/post]",
+      "os" : "Win 8.1",
       "post" : "414401",
       "storage_sys" : "HwRD",
       "username" : "Ramaddil"
@@ -752,15 +752,17 @@
       "username" : "kev507"
    },
    "system_056" : {
-      "capacity" : "22.0",
+      "capacity" : "26.0",
       "case" : "Logic Case SC-4324",
       "hdds" : {
          "SG0200" : "1",
          "TS0300" : "3",
          "WD0200" : "1",
-         "WD0300" : "3"
+         "WD0300" : "3",
+         "US0300" : "1",
+         "US0100" : "1"
       },
-      "notes" : null,
+      "notes" : "[post=3395532]Upd 1[/post]",
       "os" : "Win 7",
       "post" : "2392499",
       "storage_sys" : "FlexRAID",
@@ -1044,5 +1046,17 @@
       "post" : "3274189",
       "storage_sys" : "FlexRAID",
       "username" : "algoat"
+   },
+   "system_078" : {
+      "capacity" : "15.0",
+      "case" : "Corsair 400R",
+      "hdds" : {
+         "SS0300" : "5"
+      },
+      "notes" : "ESXI Hypervisor",
+      "os" : "Win 8.1",
+      "post" : "3508064",
+      "storage_sys" : "HwRD",
+      "username" : "Night_Rider0"
    }
 }
