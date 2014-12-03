@@ -15,6 +15,10 @@
                 "os" : "Ubuntu Linux",
                 "family" : "GNU/Linux"
         },
+        "Xubuntu" : {
+                "os" : "Xubuntu Linux",
+                "family" : "GNU/Linux"
+        },
         "unRAID" : {
                 "os" : "unRAID",
                 "family" : "GNU/Linux"

@@ -1058,5 +1058,17 @@
       "post" : "3508064",
       "storage_sys" : "HwRD",
       "username" : "Night_Rider0"
+   },
+   "system_079" : {
+      "capacity" : "32.0",
+      "case" : "Rosewill RSV-L4411",
+      "hdds" : {
+         "HT0400" : "8"
+      },
+      "notes" : null,
+      "os" : "Xubuntu",
+      "post" : "3575499",
+      "storage_sys" : "ZFS",
+      "username" : "handruin"
    }
 }
