@@ -20,10 +20,14 @@ use Ltt::Digester;
 
 
 my $JSON_DIR            = "json";
-my $JSON_FILES_RECORD   = File::Spec->catfile("json","json_files_record.json");
-my $SYSTEMS_FILE	= File::Spec->catfile("json","systems.json");
-my $HDD_TYPES_FILE	= File::Spec->catfile("json","hdd_types.json");
-my $CREDENTIALS_FILE	= File::Spec->catfile("json","credentials.json");
+my $JSON_FILES_RECORD   
+	= File::Spec->catfile($JSON_DIR,"json_files_record.json");
+my $SYSTEMS_FILE	
+	= File::Spec->catfile($JSON_DIR,"systems.json");
+my $HDD_TYPES_FILE	
+	= File::Spec->catfile($JSON_DIR,"hdd_types.json");
+my $CREDENTIALS_FILE	
+	= File::Spec->catfile($JSON_DIR,"credentials.json");
 
 
 sub main
@@ -148,7 +152,7 @@ sub main
 	# json/credentials.json.
 	# Third  flag is  no-upload  flag: if  set to  true,
 	# script will not upload files to FTP server.
-	upload_images($constants_ref, $credentials_ref,0)
+	upload_images($constants_ref, $credentials_ref,1)
 		if($credentials_ref);
 
 
