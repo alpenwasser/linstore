@@ -82,5 +82,9 @@
         "Debian" : {
                 "os" : "Debian Linux",
                 "family" : "GNU/Linux"
+        },
+        "CentOS" : {
+                "os" : "CentOS",
+                "family" : "GNU/Linux"
         }
 }

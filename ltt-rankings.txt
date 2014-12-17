@@ -51,45 +51,46 @@
 49  [post=2261402]Graveworm[/post]         [b]16.0 TB[/b] Lian Li PC-Q35                  WS 2012, HwRD       
 50  [post=2635265]lekro[/post]             [b]16.0 TB[/b] Fractal Design Arc Midi R2      FreeNAS, ZFS        
 51  [post=2814310]Shaqalac[/post]          [b]16.0 TB[/b] Lian Li Q25B                    Debian, mdadm       
-52  [post=277145]Hellboy[/post]           [b]15.0 TB[/b] Coolermaster HAF-X              Win 7, JBOD         
-53  [post=279789]algoat[/post]            [b]15.0 TB[/b] Silverstone Precision PS08      FreeNAS, ZFS        
-54  [post=379664]AntarticCrash[/post]     [b]15.0 TB[/b] NZXT Phantom                    Win 7, JBOD         
-55  [post=602093]Jimstah87[/post]         [b]15.0 TB[/b] Bitfenix Prodigy                Win 8, HwRD           BotW
-56  [post=1022882]Appleby[/post]           [b]15.0 TB[/b] Norco RPC4220                   WS 2012, HwRD       
-57  [post=1838389]X1XNobleX1X[/post]       [b]15.0 TB[/b] Synology DS1513+                Synology, SHR       
-58  [post=2938125]MariusJS[/post]          [b]15.0 TB[/b] Custom Case                     WS 2012R2, SwRD     
-59  [post=3508064]Night_Rider0[/post]      [b]15.0 TB[/b] Corsair 400R                    Win 8.1, HwRD         ESXI Hypervisor
-60  [post=657061]tycheleto[/post]         [b]14.0 TB[/b] Fractal Design Define Mini      Win 8, FlexRAID       [post=1852990]Upd 1[/post]
-61  [post=2304876]Dr_Frankenstein[/post]   [b]13.0 TB[/b] Synology DS412+                 Synology, SHR       
-62  [post=2736033]Blade of Grass[/post]    [b]13.0 TB[/b] Corsair C70                     Debian, mdadm         [post=3216353]Upd 1[/post]
-63  [post=277145]Hellboy[/post]           [b]12.0 TB[/b] unknown                         Win 7, JBOD         
-64  [post=1059401]dalekphalm[/post]        [b]12.0 TB[/b] Lian Li + SAS Expander Case     WHS 2011, FlexRAID  
-65  [post=1404053]Patrick3D[/post]         [b]12.0 TB[/b] Raidmax Seiran                  Ubuntu, lvm2        
-66  [post=3068247]EmeraldFlame[/post]      [b]12.0 TB[/b] Fractal Node 804                WS 2012R2, HWRD     
-67  [post=3257451]draxer03[/post]          [b]12.0 TB[/b] Fractal Design Mini             WHS 2011, JBOD      
-68  [post=2298428]Zerreth[/post]           [b]11.5 TB[/b] K'nex Custom Case               Win 8.1, JBOD         K'nex
-69  [post=368180]alpenwasser[/post]       [b]10.3 TB[/b] Fractal Design R4 (custom)      Arch Linux, ZFS       BotW
-70  [post=559082]5lay3r[/post]            [b]10.0 TB[/b] Midi Tower                      Win 8, StSp         
-71  [post=2074049]MoonSpot[/post]          [b]10.0 TB[/b] Drobo                           Drobo, Drobo        
-72  [post=2536977]Woodypc[/post]           [b]10.0 TB[/b] Antec One Hundred               Win 7, StableBit    
-73  [post=2796023]Pidagad[/post]           [b]10.0 TB[/b] Bitfenix Prodigy                Arch Linux, mdadm   
+52  [post=3691169]unijab[/post]            [b]15.5 TB[/b] Rosewill Blackbone              CentOS, mdadm       
+53  [post=277145]Hellboy[/post]           [b]15.0 TB[/b] Coolermaster HAF-X              Win 7, JBOD         
+54  [post=279789]algoat[/post]            [b]15.0 TB[/b] Silverstone Precision PS08      FreeNAS, ZFS        
+55  [post=379664]AntarticCrash[/post]     [b]15.0 TB[/b] NZXT Phantom                    Win 7, JBOD         
+56  [post=602093]Jimstah87[/post]         [b]15.0 TB[/b] Bitfenix Prodigy                Win 8, HwRD           BotW
+57  [post=1022882]Appleby[/post]           [b]15.0 TB[/b] Norco RPC4220                   WS 2012, HwRD       
+58  [post=1838389]X1XNobleX1X[/post]       [b]15.0 TB[/b] Synology DS1513+                Synology, SHR       
+59  [post=2938125]MariusJS[/post]          [b]15.0 TB[/b] Custom Case                     WS 2012R2, SwRD     
+60  [post=3508064]Night_Rider0[/post]      [b]15.0 TB[/b] Corsair 400R                    Win 8.1, HwRD         ESXI Hypervisor
+61  [post=657061]tycheleto[/post]         [b]14.0 TB[/b] Fractal Design Define Mini      Win 8, FlexRAID       [post=1852990]Upd 1[/post]
+62  [post=2304876]Dr_Frankenstein[/post]   [b]13.0 TB[/b] Synology DS412+                 Synology, SHR       
+63  [post=2736033]Blade of Grass[/post]    [b]13.0 TB[/b] Corsair C70                     Debian, mdadm         [post=3216353]Upd 1[/post]
+64  [post=277145]Hellboy[/post]           [b]12.0 TB[/b] unknown                         Win 7, JBOD         
+65  [post=1059401]dalekphalm[/post]        [b]12.0 TB[/b] Lian Li + SAS Expander Case     WHS 2011, FlexRAID  
+66  [post=1404053]Patrick3D[/post]         [b]12.0 TB[/b] Raidmax Seiran                  Ubuntu, lvm2        
+67  [post=3068247]EmeraldFlame[/post]      [b]12.0 TB[/b] Fractal Node 804                WS 2012R2, HWRD     
+68  [post=3257451]draxer03[/post]          [b]12.0 TB[/b] Fractal Design Mini             WHS 2011, JBOD      
+69  [post=2298428]Zerreth[/post]           [b]11.5 TB[/b] K'nex Custom Case               Win 8.1, JBOD         K'nex
+70  [post=368180]alpenwasser[/post]       [b]10.3 TB[/b] Fractal Design R4 (custom)      Arch Linux, ZFS       BotW
+71  [post=559082]5lay3r[/post]            [b]10.0 TB[/b] Midi Tower                      Win 8, StSp         
+72  [post=2074049]MoonSpot[/post]          [b]10.0 TB[/b] Drobo                           Drobo, Drobo        
+73  [post=2536977]Woodypc[/post]           [b]10.0 TB[/b] Antec One Hundred               Win 7, StableBit    
+74  [post=2796023]Pidagad[/post]           [b]10.0 TB[/b] Bitfenix Prodigy                Arch Linux, mdadm   
 
-[hr][b][size=5]Total Storage Capacity: 1940.5 TB[/size][/b]
+[hr][b][size=5]Total Storage Capacity: 1956.0 TB[/size][/b]
 [hr]
 Sorting priority: First by capacity descending, then by post date, ascending.
-Last updated: 2014-DEC-3
+Last updated: 2014-DEC-17
 
 
 [size=5][b]Statistics[/b][/size]
 [hr]
 [b]Systems Summary[/b]
-Arithmetic Mean Capacity           26.6 TB
-Median Capacity                    20.5 TB
+Arithmetic Mean Capacity           26.4 TB
+Median Capacity                    20.3 TB
 Mode (most common capacity)        15.0 TB (number of occurrences: 8)
-Number of Unique Capacities             33
+Number of Unique Capacities             34
 
 [b]Grouped Distribution[/b]
-10 TB ≤ capacity < 20 TB                34
+10 TB ≤ capacity < 20 TB                35
 20 TB ≤ capacity < 30 TB                22
 30 TB ≤ capacity < 40 TB                 3
 40 TB ≤ capacity < 50 TB                 6
@@ -99,11 +100,11 @@ Number of Unique Capacities             33
 80 TB ≤ capacity < 90 TB                 2
 
 [b]HDD Statistics[/b]
-Total Number of Drives                 759
+Total Number of Drives                 770
 Average Drives per System             10.4
-Total Combined Capacity          1940.5 TB
-Average Drive Capacity              2.6 TB
-Median Drive Capacity               3.0 TB
+Total Combined Capacity          1956.0 TB
+Average Drive Capacity              2.5 TB
+Median Drive Capacity                 2 TB
 
 
 [b]HDD Statistics, by Size[/b]
@@ -111,65 +112,66 @@ Capacity              Count              Sum       Percentage of Total
                                                     Count     Capacity
 0.15 TB            1 drives           0.2 TB        0.13%        0.01%
 0.25 TB            2 drives           0.5 TB        0.26%        0.03%
-0.50 TB           17 drives           8.5 TB        2.24%        0.44%
+0.50 TB           24 drives          12.0 TB        3.12%        0.61%
 0.64 TB            1 drives           0.6 TB        0.13%        0.03%
-0.75 TB            3 drives           2.3 TB        0.40%        0.12%
-1.00 TB           52 drives          52.0 TB        6.85%        2.68%
-1.50 TB           27 drives          40.5 TB        3.56%        2.09%
-2.00 TB          276 drives         552.0 TB       36.36%       28.45%
-3.00 TB          236 drives         708.0 TB       31.09%       36.49%
-4.00 TB          144 drives         576.0 TB       18.97%       29.68%
-[b]TOTAL            759 drives        1940.6 TB[/b]
+0.75 TB            3 drives           2.3 TB        0.39%        0.12%
+1.00 TB           52 drives          52.0 TB        6.75%        2.66%
+1.50 TB           27 drives          40.5 TB        3.51%        2.07%
+2.00 TB          276 drives         552.0 TB       35.84%       28.22%
+3.00 TB          240 drives         720.0 TB       31.17%       36.81%
+4.00 TB          144 drives         576.0 TB       18.70%       29.45%
+[b]TOTAL            770 drives        1956.1 TB[/b]
 
 [b]HDD Statistics, by Vendor[/b]
 Vendor                Count              Sum       Percentage of Total
                                                     Count     Capacity
-WD               357 drives         882.0 TB       47.04%       45.45%
-Seagate          242 drives         676.0 TB       31.88%       34.84%
-HGST              58 drives         167.0 TB        7.64%        8.61%
-Samsung           45 drives          81.0 TB        5.93%        4.17%
-unspecified       34 drives          65.5 TB        4.48%        3.38%
-Toshiba           23 drives          69.0 TB        3.03%        3.56%
-[b]TOTAL            759 drives        1940.5 TB[/b]
+WD               368 drives         897.5 TB       47.79%       45.88%
+Seagate          242 drives         676.0 TB       31.43%       34.56%
+HGST              58 drives         167.0 TB        7.53%        8.54%
+Samsung           45 drives          81.0 TB        5.84%        4.14%
+unspecified       34 drives          65.5 TB        4.42%        3.35%
+Toshiba           23 drives          69.0 TB        2.99%        3.53%
+[b]TOTAL            770 drives          1956 TB[/b]
 
 [b]Operating System Family Statistics[/b]
 Operating System Family        Count        Percentage
-Windows                           37            50.68%
-GNU/Linux                         24            32.88%
-*BSD                              12            16.44%
+Windows                           37            50.00%
+GNU/Linux                         25            33.78%
+*BSD                              12            16.22%
 
 [b]Operating Systems Statistics[/b]
 Operating System                Count        Percentage
-Windows 7                          14            19.18%
-FreeNAS                            10            13.70%
-Windows Server 2012                 5             6.85%
-Windows 8.1                         5             6.85%
-Synology OS                         4             5.48%
-Ubuntu Linux                        4             5.48%
-Windows Server 2012 R2              3             4.11%
-Windows Home Server 2011            3             4.11%
-Arch Linux                          3             4.11%
-unRAID                              3             4.11%
-Windows 8                           3             4.11%
-Debian Linux                        3             4.11%
-Windows Server 2008 R2              3             4.11%
-Gentoo Linux                        2             2.74%
-Linux Mint                          2             2.74%
-Windows (unspecified)               1             1.37%
-OpenMediaVault                      1             1.37%
-Xubuntu Linux                       1             1.37%
-ZFSGuru                             1             1.37%
-NAS4Free                            1             1.37%
-Drobo OS                            1             1.37%
+Windows 7                          14            18.92%
+FreeNAS                            10            13.51%
+Windows Server 2012                 5             6.76%
+Windows 8.1                         5             6.76%
+Ubuntu Linux                        4             5.41%
+Synology OS                         4             5.41%
+Windows Home Server 2011            3             4.05%
+Arch Linux                          3             4.05%
+Windows 8                           3             4.05%
+Debian Linux                        3             4.05%
+Windows Server 2008 R2              3             4.05%
+Windows Server 2012 R2              3             4.05%
+unRAID                              3             4.05%
+Gentoo Linux                        2             2.70%
+Linux Mint                          2             2.70%
+NAS4Free                            1             1.35%
+ZFSGuru                             1             1.35%
+CentOS                              1             1.35%
+OpenMediaVault                      1             1.35%
+Drobo OS                            1             1.35%
+Windows (unspecified)               1             1.35%
+Xubuntu Linux                       1             1.35%
 
 
 [size=5]Noteworthy Builds w/ <10 TB storage,[/size] unranked, unsorted[hr]
-[post=277922]MG2R[/post]              [b] 8.0 TB[/b] K'nex Custom Case               Debian, mdadm         [b]K'Nex[/b] Build, BotW
-[post=303666]cushy91[/post]           [b] 2.0 TB[/b] HP Proliant MicroServer N40L    unRAID, unRAID        HP Proliant Microserver
-[post=2195738]2sysel2[/post]           [b] 9.0 TB[/b] Bitfenix Prodigy mITX           Win 8, JBOD         
 [post=3148440]kichilron[/post]         [b] 6.0 TB[/b] Lian Li PC-7FN                  WS 2008R2, JBOD     
 [post=595065]dzintars[/post]          [b] 1.0 TB[/b] Open Air                        Ubuntu Srv, JBOD      Open air, no case
+[post=2195738]2sysel2[/post]           [b] 9.0 TB[/b] Bitfenix Prodigy mITX           Win 8, JBOD         
+[post=303666]cushy91[/post]           [b] 2.0 TB[/b] HP Proliant MicroServer N40L    unRAID, unRAID        HP Proliant Microserver
 [post=3148440]kichilron[/post]         [b] 8.0 TB[/b] NZXT H630                       Win 8.1, JBOD, SWRD 
+[post=277922]MG2R[/post]              [b] 8.0 TB[/b] K'nex Custom Case               Debian, mdadm         [b]K'Nex[/b] Build, BotW
 
 [size=5]Abbreviations Key[/size][hr]
 [b]WS[/b]         Windows Server
@@ -181,12 +183,12 @@ Drobo OS                            1             1.37%
 [b]SwRD[/b]       Software RAID
 [b]FlRD[/b]       FlexRAID
 
-[img=http://www.alpenwasser.net/ltt/2014-12-03--21-12-01--ltt_storage_rankings.png]
-[img=http://www.alpenwasser.net/ltt/2014-12-03--21-12-01--ltt_plot_grouped_by_count.png]
-[img=http://www.alpenwasser.net/ltt/2014-12-03--21-12-01--ltt_plot_grouped_by_contrib.png]
-[img=http://www.alpenwasser.net/ltt/2014-12-03--21-12-01--os_family_stats.png]
-[img=http://www.alpenwasser.net/ltt/2014-12-03--21-12-01--os_stats.png]
-[img=http://www.alpenwasser.net/ltt/2014-12-03--21-12-01--hdd_count_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2014-12-03--21-12-01--hdd_cap_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2014-12-03--21-12-01--hdd_count_by_vendor.png]
-[img=http://www.alpenwasser.net/ltt/2014-12-03--21-12-01--hdd_cap_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2014-12-17--22-55-08--ltt_storage_rankings.png]
+[img=http://www.alpenwasser.net/ltt/2014-12-17--22-55-08--ltt_plot_grouped_by_count.png]
+[img=http://www.alpenwasser.net/ltt/2014-12-17--22-55-08--ltt_plot_grouped_by_contrib.png]
+[img=http://www.alpenwasser.net/ltt/2014-12-17--22-55-08--os_family_stats.png]
+[img=http://www.alpenwasser.net/ltt/2014-12-17--22-55-08--os_stats.png]
+[img=http://www.alpenwasser.net/ltt/2014-12-17--22-55-08--hdd_count_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2014-12-17--22-55-08--hdd_cap_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2014-12-17--22-55-08--hdd_count_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2014-12-17--22-55-08--hdd_cap_by_vendor.png]

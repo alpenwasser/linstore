@@ -1070,5 +1070,18 @@
       "post" : "3575499",
       "storage_sys" : "ZFS",
       "username" : "handruin"
+   },
+   "system_080" : {
+      "capacity" : "15.5",
+      "case" : "Rosewill Blackbone",
+      "hdds" : {
+         "WD0300" : "4",
+         "WD0050" : "7"
+      },
+      "notes" : null,
+      "os" : "CentOS",
+      "post" : "3691169",
+      "storage_sys" : "mdadm",
+      "username" : "unijab"
    }
 }
