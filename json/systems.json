@@ -1,17 +1,19 @@
 {
    "system_001" : {
-      "capacity" : "89.5",
+      "capacity" : "103.5",
       "case" : "Lian Li PC-A70F",
       "hdds" : {
-         "SG0050" : "1",
-         "SG0200" : "1",
+         "WD0600" : "1",
+         "SG0500" : "2",
+         "WD0400" : "2",
          "SG0400" : "5",
-         "SS0200" : "1",
-         "WD0200" : "6",
          "WD0300" : "15",
-         "WD0400" : "2"
+         "WD0200" : "5",
+         "SS0200" : "1",
+         "SG0200" : "1",
+         "SG0050" : "1"
       },
-      "notes" : null,
+      "notes" : "[post=3749961]Upd[/post]",
       "os" : "Win 7",
       "post" : "1230802",
       "storage_sys" : "JBOD",
@@ -1083,5 +1085,20 @@
       "post" : "3691169",
       "storage_sys" : "mdadm",
       "username" : "unijab"
+   },
+   "system_081" : {
+      "capacity" : "32.0",
+      "case" : "Norco RP4020",
+      "hdds" : {
+         "SG0400" : "4",
+         "WD0200" : "5",
+         "HT0200" : "4",
+         "SG0200" : "2"
+      },
+      "notes" : null,
+      "os" : "unRAID",
+      "post" : "3750390",
+      "storage_sys" : "unRAID",
+      "username" : "Jonathan Yonke"
    }
 }

@@ -11,7 +11,7 @@
         "before_enclosure_padding" : "3",
         "before_notes_padding" : "2",
         "after_os_stor_padding" : "0",
-        "before_capacity_padding" : "0",
+        "before_capacity_padding" : "1",
         "bold_open" : "[b]",
         "bold_close" : "[/b]",
         "total_capacity_note" : "Total Storage Capacity: ",
