@@ -1100,5 +1100,18 @@
       "post" : "3750390",
       "storage_sys" : "unRAID",
       "username" : "Jonathan Yonke"
+   },
+   "system_082" : {
+      "capacity" : "24.0",
+      "case" : "Sharkoon T9 Value",
+      "hdds" : {
+         "SG0200" : "8",
+         "SS0200" : "4"
+      },
+      "notes" : null,
+      "os" : "OpenIndiana",
+      "post" : "3812735",
+      "storage_sys" : "ZFS",
+      "username" : "TJStamp"
    }
 }
