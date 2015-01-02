@@ -1113,5 +1113,17 @@
       "post" : "3812735",
       "storage_sys" : "ZFS",
       "username" : "TJStamp"
+   },
+   "system_083" : {
+      "capacity" : "16.0",
+      "case" : "Fractal Node 304",
+      "hdds" : {
+         "WD0400" : "4"
+      },
+      "notes" : null,
+      "os" : "WHS 2011",
+      "post" : "3835678",
+      "storage_sys" : "HwRD",
+      "username" : "Green_man_5"
    }
 }
