@@ -1125,5 +1125,29 @@
       "post" : "3835678",
       "storage_sys" : "HwRD",
       "username" : "Green_man_5"
+   },
+   "system_084" : {
+      "capacity" : "24.0",
+      "case" : "Supermicro 846E1-R900B",
+      "hdds" : {
+         "WD0600" : "4"
+      },
+      "notes" : null,
+      "os" : "Debian",
+      "post" : "3852866",
+      "storage_sys" : "HwRD",
+      "username" : "Saku"
+   },
+   "system_085" : {
+      "capacity" : "18.0",
+      "case" : "Norco 2U Case",
+      "hdds" : {
+         "WD0300" : "6"
+      },
+      "notes" : null,
+      "os" : "Win 8.1",
+      "post" : "3852866",
+      "storage_sys" : "HwRD",
+      "username" : "Saku"
    }
 }
