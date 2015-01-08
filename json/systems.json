@@ -224,13 +224,15 @@
       "username" : "stevv"
    },
    "system_017" : {
-      "capacity" : "26.0",
-      "case" : "Fractal Design Arc Midi",
+      "capacity" : "29.4",
+      "case" : "Norco RPC-4224",
       "hdds" : {
-         "SG0300" : "8",
-         "WD0200" : "1"
+         "SG0300" : "9",
+         "WD0200" : "1",
+         "WD0032" : "1",
+         "HT0012" : "1"
       },
-      "notes" : null,
+      "notes" : "[post=3875801]Upd 1[/post]",
       "os" : "Ubuntu",
       "post" : "1839515",
       "storage_sys" : "HwRD",
@@ -323,7 +325,7 @@
    },
    "system_024" : {
       "capacity" : "18.0",
-      "case" : "Fractal Define R4",
+      "case" : "Fractal Design R4",
       "hdds" : {
          "SG0300" : "6"
       },
@@ -1149,5 +1151,43 @@
       "post" : "3852866",
       "storage_sys" : "HwRD",
       "username" : "Saku"
+   },
+   "system_086" : {
+      "capacity" : "10.0",
+      "case" : "Antec 900",
+      "hdds" : {
+         "WD0100" : "1",
+         "WD0300" : "3"
+      },
+      "notes" : null,
+      "os" : "Win 7",
+      "post" : "3860943",
+      "storage_sys" : "JBOD",
+      "username" : "NWArkGuy"
+   },
+   "system_087" : {
+      "capacity" : "51.0",
+      "case" : "Fractal Design R4",
+      "hdds" : {
+         "WD0600" : "8",
+         "WD0300" : "1"
+      },
+      "notes" : null,
+      "os" : "Debian",
+      "post" : "3874978",
+      "storage_sys" : "HwRD",
+      "username" : "aznmonk"
+   },
+   "system_088" : {
+      "capacity" : "10.0",
+      "case" : "Silverstone DS380",
+      "hdds" : {
+         "WD0200" : "5"
+      },
+      "notes" : "ESXI Hypervisor",
+      "os" : "WS 2012R2",
+      "post" : "3876450",
+      "storage_sys" : "HwRD",
+      "username" : "jmannik"
    }
 }

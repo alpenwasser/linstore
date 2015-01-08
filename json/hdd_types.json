@@ -75,6 +75,10 @@
       "vendor" : "HGST",
       "size" : "0.5"
    },
+   "HT0012" : {
+      "vendor" : "HGST",
+      "size" : "0.12"
+   },
    "US0300" : {
       "vendor" : "unspecified",
       "size" : "3.0"
@@ -93,6 +97,10 @@
    },
    "WD0015" : {
       "size" : "0.15",
+      "vendor" : "WD"
+   },
+   "WD0032" : {
+      "size" : "0.32",
       "vendor" : "WD"
    },
    "SS0050" : {
