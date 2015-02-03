@@ -45,7 +45,7 @@
 43  [post=1135228]falsedell[/post]         [b]  20.0 TB[/b] Cooler Master Cosmos II             Win 8.1, JBOD       
 44  [post=2918548]bigross123[/post]        [b]  20.0 TB[/b] Fractal Arc Midi R2                 FreeNAS, ZFS        
 45  [post=283688]VictorB[/post]           [b]  19.0 TB[/b] Fractal Design ARC Midi             ZFSGuru, ZFS        
-46  [post=3691169]unijab[/post]            [b]  19.0 TB[/b] Rosewill Blackbone                  CentOS, mdadm       
+46  [post=3691169]unijab[/post]            [b]  18.5 TB[/b] Rosewill Blackbone                  CentOS, mdadm         [post=4039044]Upd[/post]
 47  [post=302388]cushy91[/post]           [b]  18.0 TB[/b] XClio Nighthawk                     unRAID, unRAID      
 48  [post=420901]Eric1024[/post]          [b]  18.0 TB[/b] Supermicro CSE-822T-400LPB          Linux Mint, ZFS     
 49  [post=570970]mb2k[/post]              [b]  18.0 TB[/b] Cooler Master CM 690                WHS 2011, JBOD      
@@ -84,7 +84,7 @@
 82  [post=3860943]NWArkGuy[/post]          [b]  10.0 TB[/b] Antec 900                           Win 7, JBOD         
 83  [post=3876450]jmannik[/post]           [b]  10.0 TB[/b] Silverstone DS380                   WS 2012R2, HwRD       ESXI Hypervisor
 
-[hr][b][size=5]Total Storage Capacity: 2300.0 TB[/size][/b]
+[hr][b][size=5]Total Storage Capacity: 2299.5 TB[/size][/b]
 [hr]
 Sorting priority: First by capacity descending, then by post date, ascending.
 Last updated: 2015-FEB-3
@@ -96,7 +96,7 @@ Last updated: 2015-FEB-3
 Arithmetic Mean Capacity           27.7 TB
 Median Capacity                    20.5 TB
 Mode (most common capacity)        15.0 TB (number of occurrences: 8)
-Number of Unique Capacities             36
+Number of Unique Capacities             37
 
 [b]Grouped Distribution[/b]
  10 TB ≤ capacity <  20 TB                39
@@ -117,7 +117,7 @@ Number of Unique Capacities             36
 [b]HDD Statistics[/b]
 Total Number of Drives                 867
 Average Drives per System             10.4
-Total Combined Capacity          2300.0 TB
+Total Combined Capacity          2299.5 TB
 Average Drive Capacity              2.7 TB
 Median Drive Capacity               3.0 TB
 
@@ -129,28 +129,28 @@ Capacity              Count              Sum       Percentage of Total
 0.15 TB            1 drives           0.2 TB        0.12%        0.01%
 0.25 TB            2 drives           0.5 TB        0.23%        0.02%
 0.32 TB            1 drives           0.3 TB        0.12%        0.01%
-0.50 TB           17 drives           8.5 TB        1.96%        0.37%
+0.50 TB           18 drives           9.0 TB        2.08%        0.39%
 0.64 TB            1 drives           0.6 TB        0.12%        0.03%
 0.75 TB            3 drives           2.3 TB        0.35%        0.10%
-1.00 TB           60 drives          60.0 TB        6.92%        2.61%
+1.00 TB           59 drives          59.0 TB        6.81%        2.57%
 1.50 TB           27 drives          40.5 TB        3.11%        1.76%
 2.00 TB          303 drives         606.0 TB       34.95%       26.35%
-3.00 TB          251 drives         753.0 TB       28.95%       32.74%
-4.00 TB          185 drives         740.0 TB       21.34%       32.17%
+3.00 TB          251 drives         753.0 TB       28.95%       32.75%
+4.00 TB          185 drives         740.0 TB       21.34%       32.18%
 5.00 TB            2 drives          10.0 TB        0.23%        0.43%
 6.00 TB           13 drives          78.0 TB        1.50%        3.39%
-[b]TOTAL            867 drives          2300 TB[/b]
+[b]TOTAL            867 drives        2299.5 TB[/b]
 
 [b]HDD Statistics, by Vendor[/b]
 Vendor                Count              Sum       Percentage of Total
                                                     Count     Capacity
-WD               406 drives         1044.4 TB       46.83%       45.41%
-Seagate          292 drives          857.0 TB       33.68%       37.26%
+WD               406 drives         1043.9 TB       46.83%       45.40%
+Seagate          292 drives          857.0 TB       33.68%       37.27%
 HGST              63 drives          175.1 TB        7.27%        7.61%
 Samsung           49 drives           89.0 TB        5.65%        3.87%
 unspecified       34 drives           65.5 TB        3.92%        2.85%
 Toshiba           23 drives           69.0 TB        2.65%        3.00%
-[b]TOTAL            867 drives          2300 TB[/b]
+[b]TOTAL            867 drives        2299.5 TB[/b]
 
 [b]Operating System Family Statistics[/b]
 Operating System Family        Count        Percentage
@@ -167,32 +167,32 @@ Windows 8.1                         6             7.23%
 Windows Server 2012 R2              5             6.02%
 Windows Server 2012                 5             6.02%
 Debian Linux                        5             6.02%
-Synology OS                         4             4.82%
-Windows Home Server 2011            4             4.82%
-Ubuntu Linux                        4             4.82%
 unRAID                              4             4.82%
-Windows Server 2008 R2              3             3.61%
+Windows Home Server 2011            4             4.82%
+Synology OS                         4             4.82%
+Ubuntu Linux                        4             4.82%
 Arch Linux                          3             3.61%
 Windows 8                           3             3.61%
-Gentoo Linux                        2             2.41%
+Windows Server 2008 R2              3             3.61%
 Linux Mint                          2             2.41%
-OpenIndiana                         1             1.20%
-Windows (unspecified)               1             1.20%
+Gentoo Linux                        2             2.41%
 ZFSGuru                             1             1.20%
-NAS4Free                            1             1.20%
 Drobo OS                            1             1.20%
 Xubuntu Linux                       1             1.20%
+OpenIndiana                         1             1.20%
+Windows (unspecified)               1             1.20%
 CentOS                              1             1.20%
 OpenMediaVault                      1             1.20%
+NAS4Free                            1             1.20%
 
 
 [size=5]Noteworthy Builds w/ <10 TB storage,[/size] unranked, unsorted[hr]
+[post=3148440]kichilron[/post]         [b]   6.0 TB[/b] Lian Li PC-7FN                      WS 2008R2, JBOD     
 [post=277922]MG2R[/post]              [b]   8.0 TB[/b] K'nex Custom Case                   Debian, mdadm         [b]K'Nex[/b] Build, BotW
 [post=3148440]kichilron[/post]         [b]   8.0 TB[/b] NZXT H630                           Win 8.1, JBOD, SWRD 
-[post=303666]cushy91[/post]           [b]   2.0 TB[/b] HP Proliant MicroServer N40L        unRAID, unRAID        HP Proliant Microserver
 [post=595065]dzintars[/post]          [b]   1.0 TB[/b] Open Air                            Ubuntu Srv, JBOD      Open air, no case
+[post=303666]cushy91[/post]           [b]   2.0 TB[/b] HP Proliant MicroServer N40L        unRAID, unRAID        HP Proliant Microserver
 [post=2195738]2sysel2[/post]           [b]   9.0 TB[/b] Bitfenix Prodigy mITX               Win 8, JBOD         
-[post=3148440]kichilron[/post]         [b]   6.0 TB[/b] Lian Li PC-7FN                      WS 2008R2, JBOD     
 
 [size=5]Abbreviations Key[/size][hr]
 [b]WS[/b]         Windows Server
@@ -204,12 +204,12 @@ OpenMediaVault                      1             1.20%
 [b]SwRD[/b]       Software RAID
 [b]FlRD[/b]       FlexRAID
 
-[img=http://www.alpenwasser.net/ltt/2015-02-03--11-26-03--ltt_storage_rankings.png]
-[img=http://www.alpenwasser.net/ltt/2015-02-03--11-26-03--ltt_plot_grouped_by_count.png]
-[img=http://www.alpenwasser.net/ltt/2015-02-03--11-26-03--ltt_plot_grouped_by_contrib.png]
-[img=http://www.alpenwasser.net/ltt/2015-02-03--11-26-03--os_family_stats.png]
-[img=http://www.alpenwasser.net/ltt/2015-02-03--11-26-03--os_stats.png]
-[img=http://www.alpenwasser.net/ltt/2015-02-03--11-26-03--hdd_count_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2015-02-03--11-26-03--hdd_cap_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2015-02-03--11-26-03--hdd_count_by_vendor.png]
-[img=http://www.alpenwasser.net/ltt/2015-02-03--11-26-03--hdd_cap_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2015-02-03--11-34-02--ltt_storage_rankings.png]
+[img=http://www.alpenwasser.net/ltt/2015-02-03--11-34-02--ltt_plot_grouped_by_count.png]
+[img=http://www.alpenwasser.net/ltt/2015-02-03--11-34-02--ltt_plot_grouped_by_contrib.png]
+[img=http://www.alpenwasser.net/ltt/2015-02-03--11-34-02--os_family_stats.png]
+[img=http://www.alpenwasser.net/ltt/2015-02-03--11-34-02--os_stats.png]
+[img=http://www.alpenwasser.net/ltt/2015-02-03--11-34-02--hdd_count_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2015-02-03--11-34-02--hdd_cap_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2015-02-03--11-34-02--hdd_count_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2015-02-03--11-34-02--hdd_cap_by_vendor.png]

@@ -1079,9 +1079,10 @@
       "case" : "Rosewill Blackbone",
       "hdds" : {
          "WD0300" : "4",
-         "WD0100" : "7"
+         "WD0100" : "6",
+         "WD0050" : "1"
       },
-      "notes" : null,
+      "notes" : "[post=4039044]Upd[/post]",
       "os" : "CentOS",
       "post" : "3691169",
       "storage_sys" : "mdadm",
