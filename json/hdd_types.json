@@ -1,4 +1,8 @@
 {
+   "DM0000" : {
+      "size" : "0.0001",
+      "vendor" : "Dummy Drive"
+   },
    "TS0100" : {
       "size" : "1.0",
       "vendor" : "Toshiba"

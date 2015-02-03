@@ -131,12 +131,11 @@
       "username" : "Hellboy"
    },
    "system_010" : {
-      "capacity" : "48.0",
+      "capacity" : "32.0",
       "case" : "Norcotek RPC4220",
       "hdds" : {
          "HT0200" : "5",
-         "SG0200" : "11",
-         "SG0400" : "4"
+         "SG0200" : "11"
       },
       "notes" : "[post=2655227]Upd 1[/post]",
       "os" : "WS 2012",
@@ -1080,7 +1079,7 @@
       "case" : "Rosewill Blackbone",
       "hdds" : {
          "WD0300" : "4",
-         "WD0050" : "7"
+         "WD0100" : "7"
       },
       "notes" : null,
       "os" : "CentOS",
@@ -1189,5 +1188,17 @@
       "post" : "3876450",
       "storage_sys" : "HwRD",
       "username" : "jmannik"
+   },
+   "system_089" : {
+      "capacity" : "148.0",
+      "case" : "Supermicro SuperServer 6027TR-DTRF",
+      "hdds" : {
+         "SG0400" : "37"
+      },
+      "notes" : "",
+      "os" : "WS 2012R2",
+      "post" : "4119828",
+      "storage_sys" : "HwRD",
+      "username" : "looney"
    }
 }
