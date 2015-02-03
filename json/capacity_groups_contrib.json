@@ -8,5 +8,9 @@
         " 70 TB ≤ capacity <  80 TB" : "80",
         " 80 TB ≤ capacity <  90 TB" : "90",
         " 90 TB ≤ capacity < 100 TB" : "100",
-        "100 TB ≤ capacity < 110 TB" : "110"
+        "100 TB ≤ capacity < 110 TB" : "110",
+        "110 TB ≤ capacity < 120 TB" : "120",
+        "120 TB ≤ capacity < 130 TB" : "130",
+        "130 TB ≤ capacity < 140 TB" : "140",
+        "140 TB ≤ capacity < 150 TB" : "150"
 }
