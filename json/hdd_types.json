@@ -31,9 +31,17 @@
       "size" : "3.0",
       "vendor" : "Samsung"
    },
+   "SS0101" : {
+      "size" : "1.0",
+      "vendor" : "Samsung"
+   },
    "WD0025" : {
       "vendor" : "WD",
       "size" : "0.25"
+   },
+   "WD0016" : {
+      "vendor" : "WD",
+      "size" : "0.16"
    },
    "HT0100" : {
       "vendor" : "HGST",
@@ -82,6 +90,10 @@
    "HT0012" : {
       "vendor" : "HGST",
       "size" : "0.12"
+   },
+   "HT0025" : {
+      "vendor" : "HGST",
+      "size" : "0.25"
    },
    "US0300" : {
       "vendor" : "unspecified",
@@ -202,5 +214,21 @@
    "SG0075" : {
       "vendor" : "Seagate",
       "size" : "0.75"
+   },
+   "SG0016" : {
+      "vendor" : "Seagate",
+      "size" : "0.16"
+   },
+   "CR0013" : {
+      "vendor" : "Crucial",
+      "size" : "0.13"
+   },
+   "OZ0013" : {
+      "vendor" : "OCZ",
+      "size" : "0.13"
+   },
+   "AD0006" : {
+      "vendor" : "Adata",
+      "size" : "0.06"
    }
 }

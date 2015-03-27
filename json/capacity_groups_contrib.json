@@ -12,5 +12,6 @@
         "110 TB ≤ capacity < 120 TB" : "120",
         "120 TB ≤ capacity < 130 TB" : "130",
         "130 TB ≤ capacity < 140 TB" : "140",
-        "140 TB ≤ capacity < 150 TB" : "150"
+        "140 TB ≤ capacity < 150 TB" : "150",
+        "150 TB ≤ capacity < 160 TB" : "160"
 }

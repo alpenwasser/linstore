@@ -11,6 +11,10 @@
                 "os" : "Windows Server 2012",
                 "family" : "Windows"
         },
+        "Linux" : {
+                "os" : "Linux (other)",
+                "family" : "GNU/Linux"
+        },
         "Ubuntu" : {
                 "os" : "Ubuntu Linux",
                 "family" : "GNU/Linux"
@@ -53,6 +57,10 @@
         },
         "Drobo" : {
                 "os" : "Drobo OS",
+                "family" : "GNU/Linux"
+        },
+        "ReadyNAS" : {
+                "os" : "Netgear ReadyNAS",
                 "family" : "GNU/Linux"
         },
         "WS 2012R2" : {

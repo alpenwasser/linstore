@@ -90,8 +90,8 @@
          "WD0200" : "14",
          "WD0400" : "7"
       },
-      "notes" : "[post=1694520]Upd 1[/post], [post=3419235]Upd 2[/post]",
-      "os" : "Win 7",
+      "notes" : "[post=1694520]Upd 1[/post], [post=3419235]Upd 2[/post], [post=4434277]Upd 3[/post]",
+      "os" : "WS 2012",
       "post" : "821520",
       "storage_sys" : "HwRD, JBOD",
       "username" : "Alexdaman"
@@ -226,12 +226,14 @@
       "capacity" : "29.4",
       "case" : "Norco RPC-4224",
       "hdds" : {
-         "SG0300" : "9",
-         "WD0200" : "1",
+         "OZ0013" : "1",
+         "CR0013" : "1",
          "WD0032" : "1",
-         "HT0012" : "1"
+         "HT0025" : "1",
+         "HT0300" : "1",
+         "HT0400" : "8"
       },
-      "notes" : "[post=3875801]Upd 1[/post]",
+      "notes" : "[post=3875801]Upd 1[/post], [post=4199884]Upd 2[/post]",
       "os" : "Ubuntu",
       "post" : "1839515",
       "storage_sys" : "HwRD",
@@ -1191,15 +1193,242 @@
       "username" : "jmannik"
    },
    "system_089" : {
-      "capacity" : "148.0",
+      "capacity" : "152.0",
       "case" : "Supermicro SuperServer 6027TR-DTRF",
       "hdds" : {
-         "SG0400" : "37"
+         "SG0400" : "37",
+         "SS0101" : "4"
       },
       "notes" : "",
       "os" : "WS 2012R2",
       "post" : "4119828",
       "storage_sys" : "HwRD",
       "username" : "looney"
+   },
+   "system_090" : {
+      "capacity" : "10.0",
+      "case" : "Zalman Z1",
+      "hdds" : {
+         "WD0300" : "3",
+         "WD0100" : "1"
+      },
+      "notes" : "",
+      "os" : "FreeNAS",
+      "post" : "4310059",
+      "storage_sys" : "ZFS",
+      "username" : "AidanJMessenger"
+   },
+   "system_091" : {
+      "capacity" : "73.0",
+      "case" : "Norco RPC-4224",
+      "hdds" : {
+         "WD0600" : "12",
+         "WD0300" : "1"
+      },
+      "notes" : "",
+      "os" : "FreeNAS",
+      "post" : "4390658",
+      "storage_sys" : "ZFS",
+      "username" : "Hobobo"
+   },
+   "system_092" : {
+      "capacity" : "17.0",
+      "case" : "Micron Cube Server",
+      "hdds" : {
+         "SG0200" : "1",
+         "SG0200" : "1",
+         "SG0300" : "2",
+         "WD0300" : "1",
+         "WD0400" : "1"
+      },
+      "notes" : "",
+      "os" : "Win 7",
+      "post" : "4423578",
+      "storage_sys" : "JBOD",
+      "username" : "Jeepman"
+   },
+   "system_093" : {
+      "capacity" : "12.0",
+      "case" : "Netgear ReadyNAS 104",
+      "hdds" : {
+         "WD0300" : "4"
+      },
+      "notes" : "",
+      "os" : "ReadyNAS",
+      "post" : "4441260",
+      "storage_sys" : "SwRD",
+      "username" : "Sousuke"
+   },
+   "system_094" : {
+      "capacity" : "15.0",
+      "case" : "SGI Rackable Omnistore 3016",
+      "hdds" : {
+         "HT0400" : "1",
+         "SG0300" : "2",
+         "SG0400" : "1",
+         "SS0100" : "1"
+      },
+      "notes" : "",
+      "os" : "WS 2012R2",
+      "post" : "4464000",
+      "storage_sys" : "Stablebit",
+      "username" : "Pancake"
+   },
+   "system_095" : {
+      "capacity" : "28.0",
+      "case" : "Synology DS1813+",
+      "hdds" : {
+         "WD0400" : "4",
+         "WD0300" : "4"
+      },
+      "notes" : "",
+      "os" : "Synology",
+      "post" : "4508051",
+      "storage_sys" : "SHR",
+      "username" : "Robbo600"
+   },
+   "system_096" : {
+      "capacity" : "40.0",
+      "case" : "Norco 4220",
+      "hdds" : {
+         "SS0200" : "20"
+      },
+      "notes" : "",
+      "os" : "FreeNAS",
+      "post" : "4514027",
+      "storage_sys" : "ZFS",
+      "username" : "gcs8"
+   },
+   "system_097" : {
+      "capacity" : "19.0",
+      "case" : "Silverstone DS380",
+      "hdds" : {
+         "WD0300" : "5",
+         "WD0200" : "2"
+      },
+      "notes" : "",
+      "os" : "FreeNAS",
+      "post" : "4514516",
+      "storage_sys" : "ZFS",
+      "username" : "mr_pants66"
+   },
+   "system_098" : {
+      "capacity" : "24.0",
+      "case" : "Rosewill RSV-R4000",
+      "hdds" : {
+         "TS0200" : "1",
+         "SG0200" : "3",
+         "SG0400" : "4"
+      },
+      "notes" : "",
+      "os" : "Linux",
+      "post" : "4520723",
+      "storage_sys" : "ZFS",
+      "username" : "SanMadJack"
+   },
+   "system_099" : {
+      "capacity" : "29.5",
+      "case" : "Synology DS1813+",
+      "hdds" : {
+         "SG0400" : "7",
+         "SG0150" : "1"
+      },
+      "notes" : "",
+      "os" : "Synology",
+      "post" : "4522425",
+      "storage_sys" : "SHR",
+      "username" : "pyromaniac"
+   },
+   "system_100" : {
+      "capacity" : "18.0",
+      "case" : "Fractal Design R5",
+      "hdds" : {
+         "SG0300" : "6"
+      },
+      "notes" : "",
+      "os" : "unRAID",
+      "post" : "4530523",
+      "storage_sys" : "unRAID",
+      "username" : "Stakacs"
+   },
+   "system_101" : {
+      "capacity" : "32.0",
+      "case" : "Rosewill RSV-L4500",
+      "hdds" : {
+         "SG0400" : "8"
+      },
+      "notes" : "",
+      "os" : "Win 7",
+      "post" : "4557808",
+      "storage_sys" : "HwRD",
+      "username" : "Prisoner627"
+   },
+   "system_102" : {
+      "capacity" : "12.0",
+      "case" : "unknown",
+      "hdds" : {
+         "SG0200" : "4",
+         "WD0200" : "2"
+      },
+      "notes" : "",
+      "os" : "FreeNAS",
+      "post" : "4577212",
+      "storage_sys" : "ZFS",
+      "username" : "username6465"
+   },
+   "system_103" : {
+      "capacity" : "15.0",
+      "case" : "unknown",
+      "hdds" : {
+         "SG0100" : "10",
+         "WD0100" : "4",
+         "TS0100" : "1"
+      },
+      "notes" : "",
+      "os" : "FreeNAS",
+      "post" : "4577212",
+      "storage_sys" : "ZFS",
+      "username" : "username6465"
+   },
+   "system_104" : {
+      "capacity" : "12.0",
+      "case" : "Lian Li PC-Q25B",
+      "hdds" : {
+         "SG0200" : "5",
+         "WD0200" : "2"
+      },
+      "notes" : "",
+      "os" : "OpenMediaVault",
+      "post" : "4581921",
+      "storage_sys" : "SwRD",
+      "username" : "Tomasu"
+   },
+   "system_105" : {
+      "capacity" : "19.0",
+      "case" : "Antec 900",
+      "hdds" : {
+         "SG0300" : "5",
+         "SG0100" : "3",
+         "SG0050" : "2"
+      },
+      "notes" : "",
+      "os" : "Debian",
+      "post" : "4581921",
+      "storage_sys" : "SwRD",
+      "username" : "Tomasu"
+   },
+   "system_106" : {
+      "capacity" : "18.3",
+      "case" : "Antec P183",
+      "hdds" : {
+         "WD0200" : "8",
+         "TS0200" : "1",
+         "WD0015" : "2"
+      },
+      "notes" : "",
+      "os" : "Win 7",
+      "post" : "4588958",
+      "storage_sys" : "HwRD",
+      "username" : "Helly"
    }
 }
