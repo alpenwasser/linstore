@@ -1430,5 +1430,17 @@
       "post" : "4588958",
       "storage_sys" : "HwRD",
       "username" : "Helly"
+   },
+   "system_107" : {
+      "capacity" : "24.0",
+      "case" : "Fractal Design Node 804",
+      "hdds" : {
+         "WD0300" : "8"
+      },
+      "notes" : "",
+      "os" : "FreeNAS",
+      "post" : "4591394",
+      "storage_sys" : "ZFS",
+      "username" : "RabidPancakes"
    }
 }
