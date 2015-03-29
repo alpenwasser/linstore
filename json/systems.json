@@ -513,10 +513,10 @@
       "case" : "Fractal Design Define Mini",
       "hdds" : {
          "SG0200" : "1",
-         "SG0300" : "1",
-         "WD0300" : "3"
+         "WD0300" : "3",
+         "WD0400" : "2"
       },
-      "notes" : "[post=1852990]Upd 1[/post]",
+      "notes" : "[post=1852990]Upd 1[/post], [post=4602136]Upd 2[/post]",
       "os" : "Win 8",
       "post" : "657061",
       "storage_sys" : "FlexRAID",
@@ -1442,5 +1442,18 @@
       "post" : "4591394",
       "storage_sys" : "ZFS",
       "username" : "RabidPancakes"
+   },
+   "system_108" : {
+      "capacity" : "10.0",
+      "case" : "Fractal Design R4",
+      "hdds" : {
+         "WD0100" : "7",
+         "WD0300" : "1"
+      },
+      "notes" : "",
+      "os" : "Win 8.1",
+      "post" : "4599600",
+      "storage_sys" : "FlexRAID",
+      "username" : "Whiskers"
    }
 }
