@@ -12,6 +12,20 @@ well as graph images for statistics. Uploads graph images to
 a server automatically if one is specified.
 
 
+DEPENDENCIES
+────────────────────────────────────────────────────────────
+
+JSON::XS
+File::Spec
+Time::Piece
+Digest::SHA1
+List::Util
+Data::Dumper
+Net::FTP
+GD
+GD::Text
+GD::Graph
+
 
 
 USAGE

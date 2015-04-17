@@ -29,7 +29,6 @@ my $HDD_TYPES_FILE
 my $CREDENTIALS_FILE	
 	= File::Spec->catfile($JSON_DIR,"credentials.json");
 
-
 sub main
 {
 	my $systems_file_path      = shift;

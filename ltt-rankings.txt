@@ -106,7 +106,7 @@
 [hr][b][size=5]Total Storage Capacity: 2744.7 TB[/size][/b]
 [hr]
 Sorting priority: First by capacity descending, then by post date, ascending.
-Last updated: 2015-MAR-29
+Last updated: 2015-APR-17
 
 
 [size=5][b]Statistics[/b][/size]
@@ -183,13 +183,13 @@ Solaris                            1             0.98%
 
 [b]Operating Systems Statistics[/b]
 Operating System                Count        Percentage
-Windows 7                          17            16.67%
 FreeNAS                            17            16.67%
+Windows 7                          17            16.67%
 Windows 8.1                         7             6.86%
+Synology OS                         6             5.88%
+Debian Linux                        6             5.88%
 Windows Server 2012                 6             5.88%
 Windows Server 2012 R2              6             5.88%
-Debian Linux                        6             5.88%
-Synology OS                         6             5.88%
 unRAID                              5             4.90%
 Windows Home Server 2011            4             3.92%
 Ubuntu Linux                        4             3.92%
@@ -197,25 +197,25 @@ Arch Linux                          3             2.94%
 Windows 8                           3             2.94%
 Windows Server 2008 R2              3             2.94%
 Linux Mint                          2             1.96%
-Gentoo Linux                        2             1.96%
 OpenMediaVault                      2             1.96%
-Netgear ReadyNAS                    1             0.98%
+Gentoo Linux                        2             1.96%
 Windows (unspecified)               1             0.98%
-Xubuntu Linux                       1             0.98%
-ZFSGuru                             1             0.98%
+NAS4Free                            1             0.98%
 Drobo OS                            1             0.98%
 CentOS                              1             0.98%
-NAS4Free                            1             0.98%
-Linux (other)                       1             0.98%
 OpenIndiana                         1             0.98%
+ZFSGuru                             1             0.98%
+Netgear ReadyNAS                    1             0.98%
+Xubuntu Linux                       1             0.98%
+Linux (other)                       1             0.98%
 
 
 [size=5]Noteworthy Builds w/ <10 TB storage,[/size] unranked, unsorted[hr]
-[post=303666]cushy91[/post]           [b]   2.0 TB[/b] HP Proliant MicroServer N40L        unRAID, unRAID        HP Proliant Microserver
+[post=595065]dzintars[/post]          [b]   1.0 TB[/b] Open Air                            Ubuntu Srv, JBOD      Open air, no case
 [post=277922]MG2R[/post]              [b]   8.0 TB[/b] K'nex Custom Case                   Debian, mdadm         [b]K'Nex[/b] Build, BotW
 [post=3148440]kichilron[/post]         [b]   8.0 TB[/b] NZXT H630                           Win 8.1, JBOD, SWRD 
+[post=303666]cushy91[/post]           [b]   2.0 TB[/b] HP Proliant MicroServer N40L        unRAID, unRAID        HP Proliant Microserver
 [post=3148440]kichilron[/post]         [b]   6.0 TB[/b] Lian Li PC-7FN                      WS 2008R2, JBOD     
-[post=595065]dzintars[/post]          [b]   1.0 TB[/b] Open Air                            Ubuntu Srv, JBOD      Open air, no case
 [post=2195738]2sysel2[/post]           [b]   9.0 TB[/b] Bitfenix Prodigy mITX               Win 8, JBOD         
 
 [size=5]Abbreviations Key[/size][hr]
@@ -228,12 +228,12 @@ OpenIndiana                         1             0.98%
 [b]SwRD[/b]       Software RAID
 [b]FlRD[/b]       FlexRAID
 
-[img=http://www.alpenwasser.net/ltt/2015-03-29--15-39-38--ltt_storage_rankings.png]
-[img=http://www.alpenwasser.net/ltt/2015-03-29--15-39-38--ltt_plot_grouped_by_count.png]
-[img=http://www.alpenwasser.net/ltt/2015-03-29--15-39-38--ltt_plot_grouped_by_contrib.png]
-[img=http://www.alpenwasser.net/ltt/2015-03-29--15-39-38--os_family_stats.png]
-[img=http://www.alpenwasser.net/ltt/2015-03-29--15-39-38--os_stats.png]
-[img=http://www.alpenwasser.net/ltt/2015-03-29--15-39-38--hdd_count_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2015-03-29--15-39-38--hdd_cap_by_size.png]
-[img=http://www.alpenwasser.net/ltt/2015-03-29--15-39-38--hdd_count_by_vendor.png]
-[img=http://www.alpenwasser.net/ltt/2015-03-29--15-39-38--hdd_cap_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2015-04-17--13-34-01--ltt_storage_rankings.png]
+[img=http://www.alpenwasser.net/ltt/2015-04-17--13-34-01--ltt_plot_grouped_by_count.png]
+[img=http://www.alpenwasser.net/ltt/2015-04-17--13-34-01--ltt_plot_grouped_by_contrib.png]
+[img=http://www.alpenwasser.net/ltt/2015-04-17--13-34-01--os_family_stats.png]
+[img=http://www.alpenwasser.net/ltt/2015-04-17--13-34-01--os_stats.png]
+[img=http://www.alpenwasser.net/ltt/2015-04-17--13-34-01--hdd_count_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2015-04-17--13-34-01--hdd_cap_by_size.png]
+[img=http://www.alpenwasser.net/ltt/2015-04-17--13-34-01--hdd_count_by_vendor.png]
+[img=http://www.alpenwasser.net/ltt/2015-04-17--13-34-01--hdd_cap_by_vendor.png]
