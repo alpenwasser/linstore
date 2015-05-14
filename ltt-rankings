@@ -1,8 +1,13 @@
-#!/usr/bin/perl -CS
+#!/usr/bin/perl
 
 use warnings;
 use strict;
 use 5.10.0;
+
+# This is the substitute for -CS switch
+# see http://www.fi.muni.cz/~kas/blog/index.cgi/computers/too-late-for-cs-howto.html
+use open ':std', ':utf8';
+use open IO => ':bytes';
 
 use JSON::XS;
 use File::Spec;
@@ -151,7 +156,7 @@ sub main
 	# json/credentials.json.
 	# Third  flag is  no-upload  flag: if  set to  true,
 	# script will not upload files to FTP server.
-	upload_images($constants_ref, $credentials_ref,0)
+	upload_images($constants_ref, $credentials_ref,1)
 		if($credentials_ref);
 
 
