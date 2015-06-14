@@ -23,6 +23,10 @@
                 "os" : "Xubuntu Linux",
                 "family" : "GNU/Linux"
         },
+        "Lubuntu" : {
+                "os" : "Lubuntu Linux",
+                "family" : "GNU/Linux"
+        },
         "unRAID" : {
                 "os" : "unRAID",
                 "family" : "GNU/Linux"

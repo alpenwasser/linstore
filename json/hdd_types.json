@@ -87,6 +87,10 @@
       "vendor" : "HGST",
       "size" : "0.5"
    },
+   "HT0025" : {
+      "vendor" : "HGST",
+      "size" : "0.25"
+   },
    "HT0012" : {
       "vendor" : "HGST",
       "size" : "0.12"
@@ -150,6 +154,10 @@
    "TS0050" : {
       "vendor" : "Toshiba",
       "size" : "0.5"
+   },
+   "TS0025" : {
+      "vendor" : "Toshiba",
+      "size" : "0.25"
    },
    "WD0600" : {
       "vendor" : "WD",

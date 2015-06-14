@@ -757,15 +757,14 @@
       "username" : "kev507"
    },
    "system_056" : {
-      "capacity" : "26.0",
+      "capacity" : "38.0",
       "case" : "Logic Case SC-4324",
       "hdds" : {
          "SG0200" : "1",
-         "TS0300" : "3",
          "WD0200" : "1",
-         "WD0300" : "3",
-         "US0300" : "1",
-         "US0100" : "1"
+         "TS0300" : "5",
+         "WD0300" : "6",
+         "US0100" : "1" 
       },
       "notes" : "[post=3395532]Upd 1[/post]",
       "os" : "Win 7",
@@ -1407,7 +1406,8 @@
       "capacity" : "19.0",
       "case" : "Antec 900",
       "hdds" : {
-         "SG0300" : "5",
+         "SG0300" : "4",
+         "WD0300" : "1",
          "SG0100" : "3",
          "SG0050" : "2"
       },
@@ -1455,5 +1455,58 @@
       "post" : "4599600",
       "storage_sys" : "FlexRAID",
       "username" : "Whiskers"
+   },
+   "system_109" : {
+      "capacity" : "12.0",
+      "case" : "IBM x3400 Server Chassis",
+      "hdds" : {
+         "SG0400" : "3"
+      },
+      "notes" : "",
+      "os" : "Lubuntu",
+      "post" : "4658944",
+      "storage_sys" : "mdadm",
+      "username" : "sidiox"
+   },
+   "system_110" : {
+      "capacity" : "24.0",
+      "case" : "Silverstone DS380B",
+      "hdds" : {
+         "US0300" : "3",
+         "TS0300" : "5"
+      },
+      "notes" : "",
+      "os" : "FreeNAS",
+      "post" : "4749094",
+      "storage_sys" : "ZFS",
+      "username" : "kkpatel87"
+   },
+   "system_111" : {
+      "capacity" : "13.0",
+      "case" : "MS-Tech CA-0210 Midi Tower",
+      "hdds" : {
+         "SG0200" : "5",
+         "HT0200" : "1",
+         "HT0050" : "2",
+         "TS0025" : "1",
+         "HT0025" : "1"
+      },
+      "notes" : "",
+      "os" : "Debian",
+      "post" : "4774714",
+      "storage_sys" : "HwRD",
+      "username" : "darkey1991"
+   },
+   "system_112" : {
+      "capacity" : "24.0",
+      "case" : "Fractal Design R5 Black",
+      "hdds" : {
+         "TS0300" : "8"
+      },
+      "notes" : "",
+      "os" : "FreeNAS",
+      "post" : "5192397",
+      "storage_sys" : "ZFS",
+      "username" : "cheatdeath"
    }
 }
