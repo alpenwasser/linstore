@@ -1499,7 +1499,7 @@
    },
    "system_112" : {
       "capacity" : "24.0",
-      "case" : "Fractal Design R5 Black",
+      "case" : "Fractal Design R5",
       "hdds" : {
          "TS0300" : "8"
       },
@@ -1508,5 +1508,17 @@
       "post" : "5192397",
       "storage_sys" : "ZFS",
       "username" : "cheatdeath"
+   },
+   "system_113" : {
+      "capacity" : "32.0",
+      "case" : "Fractal Design R5",
+      "hdds" : {
+         "WD0400" : "8"
+      },
+      "notes" : "",
+      "os" : "FreeNAS",
+      "post" : "5228792",
+      "storage_sys" : "ZFS",
+      "username" : "Captain Chaos"
    }
 }

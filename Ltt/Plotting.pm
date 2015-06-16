@@ -574,7 +574,7 @@ sub print_ranking_list_plot
 	);
 
 
-	my $ranking_chart = GD::Graph::hbars->new(800, 2000);
+	my $ranking_chart = GD::Graph::hbars->new(800, 2600);
 
 	my %ranking_chart_configs
 		= %{ $constants_ref->{hbar_graph_configs} };
@@ -912,7 +912,7 @@ sub print_os_plots
 
 
 	my $os_family_stats_plot = GD::Graph::hbars->new(800, 600);
-	my $os_stats_plot        = GD::Graph::hbars->new(800, 600);
+	my $os_stats_plot        = GD::Graph::hbars->new(800, 800);
 
 
 	my %os_family_stats_plot_configs
