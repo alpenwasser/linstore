@@ -231,6 +231,10 @@
       "vendor" : "Crucial",
       "size" : "0.13"
    },
+   "CR0025" : {
+      "vendor" : "Crucial",
+      "size" : "0.25"
+   },
    "OZ0013" : {
       "vendor" : "OCZ",
       "size" : "0.13"

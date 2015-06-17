@@ -1513,7 +1513,8 @@
       "capacity" : "32.0",
       "case" : "Fractal Design R5",
       "hdds" : {
-         "WD0400" : "8"
+         "WD0400" : "8",
+         "CR0025" : "2"
       },
       "notes" : "",
       "os" : "FreeNAS",
