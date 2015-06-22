@@ -95,6 +95,10 @@
       "vendor" : "HGST",
       "size" : "0.12"
    },
+   "HT0064" : {
+      "vendor" : "HGST",
+      "size" : "0.64"
+   },
    "HT0025" : {
       "vendor" : "HGST",
       "size" : "0.25"

@@ -1198,7 +1198,7 @@
          "SG0400" : "37",
          "SS0101" : "4"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "WS 2012R2",
       "post" : "4119828",
       "storage_sys" : "HwRD",
@@ -1211,7 +1211,7 @@
          "WD0300" : "3",
          "WD0100" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4310059",
       "storage_sys" : "ZFS",
@@ -1224,7 +1224,7 @@
          "WD0600" : "12",
          "WD0300" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4390658",
       "storage_sys" : "ZFS",
@@ -1240,7 +1240,7 @@
          "WD0300" : "1",
          "WD0400" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Win 7",
       "post" : "4423578",
       "storage_sys" : "JBOD",
@@ -1252,7 +1252,7 @@
       "hdds" : {
          "WD0300" : "4"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "ReadyNAS",
       "post" : "4441260",
       "storage_sys" : "SwRD",
@@ -1267,7 +1267,7 @@
          "SG0400" : "1",
          "SS0100" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "WS 2012R2",
       "post" : "4464000",
       "storage_sys" : "Stablebit",
@@ -1280,7 +1280,7 @@
          "WD0400" : "4",
          "WD0300" : "4"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Synology",
       "post" : "4508051",
       "storage_sys" : "SHR",
@@ -1292,7 +1292,7 @@
       "hdds" : {
          "SS0200" : "20"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4514027",
       "storage_sys" : "ZFS",
@@ -1305,7 +1305,7 @@
          "WD0300" : "5",
          "WD0200" : "2"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4514516",
       "storage_sys" : "ZFS",
@@ -1319,7 +1319,7 @@
          "SG0200" : "3",
          "SG0400" : "4"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Linux",
       "post" : "4520723",
       "storage_sys" : "ZFS",
@@ -1332,7 +1332,7 @@
          "SG0400" : "7",
          "SG0150" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Synology",
       "post" : "4522425",
       "storage_sys" : "SHR",
@@ -1344,7 +1344,7 @@
       "hdds" : {
          "SG0300" : "6"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "unRAID",
       "post" : "4530523",
       "storage_sys" : "unRAID",
@@ -1356,7 +1356,7 @@
       "hdds" : {
          "SG0400" : "8"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Win 7",
       "post" : "4557808",
       "storage_sys" : "HwRD",
@@ -1369,7 +1369,7 @@
          "SG0200" : "4",
          "WD0200" : "2"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4577212",
       "storage_sys" : "ZFS",
@@ -1383,7 +1383,7 @@
          "WD0100" : "4",
          "TS0100" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4577212",
       "storage_sys" : "ZFS",
@@ -1396,7 +1396,7 @@
          "SG0200" : "5",
          "WD0200" : "2"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "OpenMediaVault",
       "post" : "4581921",
       "storage_sys" : "SwRD",
@@ -1411,7 +1411,7 @@
          "SG0100" : "3",
          "SG0050" : "2"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Debian",
       "post" : "4581921",
       "storage_sys" : "SwRD",
@@ -1425,7 +1425,7 @@
          "TS0200" : "1",
          "WD0015" : "2"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Win 7",
       "post" : "4588958",
       "storage_sys" : "HwRD",
@@ -1437,7 +1437,7 @@
       "hdds" : {
          "WD0300" : "8"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4591394",
       "storage_sys" : "ZFS",
@@ -1450,7 +1450,7 @@
          "WD0100" : "7",
          "WD0300" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Win 8.1",
       "post" : "4599600",
       "storage_sys" : "FlexRAID",
@@ -1462,7 +1462,7 @@
       "hdds" : {
          "SG0400" : "3"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Lubuntu",
       "post" : "4658944",
       "storage_sys" : "mdadm",
@@ -1475,7 +1475,7 @@
          "US0300" : "3",
          "TS0300" : "5"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4749094",
       "storage_sys" : "ZFS",
@@ -1491,7 +1491,7 @@
          "TS0025" : "1",
          "HT0025" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Debian",
       "post" : "4774714",
       "storage_sys" : "HwRD",
@@ -1503,7 +1503,7 @@
       "hdds" : {
          "TS0300" : "8"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "5192397",
       "storage_sys" : "ZFS",
@@ -1516,10 +1516,27 @@
          "WD0400" : "8",
          "CR0025" : "2"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "5228792",
       "storage_sys" : "ZFS",
       "username" : "Captain Chaos"
+   },
+   "system_114" : {
+      "capacity" : "15.6",
+      "case" : "NZXT Source 210",
+      "hdds" : {
+         "WD0400" : "3",
+         "WD0100" : "1",
+         "SG0100" : "1",
+         "SG0075" : "1",
+         "HT0064" : "1",
+         "WD0025" : "1"
+      },
+      "notes" : null,
+      "os" : "FreeNAS",
+      "post" : "5285516",
+      "storage_sys" : "ZFS",
+      "username" : "djdwosk97"
    }
 }
