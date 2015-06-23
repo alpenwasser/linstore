@@ -1538,5 +1538,22 @@
       "post" : "5285516",
       "storage_sys" : "ZFS",
       "username" : "djdwosk97"
+   },
+   "system_115" : {
+      "capacity" : "38.0",
+      "case" : "Supermicro SuperChassis 846BA-R920B",
+      "hdds" : {
+         "SG0200" : "6",
+         "SG0300" : "1",
+         "SG0150" : "2",
+         "WD0400" : "4",
+         "WD0300" : "1",
+         "WD0100" : "1"
+      },
+      "notes" : null,
+      "os" : "WS 2012",
+      "post" : "5297163",
+      "storage_sys" : "SwRD",
+      "username" : "mGrytbak"
    }
 }
