@@ -1555,5 +1555,22 @@
       "post" : "5297163",
       "storage_sys" : "SwRD",
       "username" : "mGrytbak"
+   },
+   "system_116" : {
+      "capacity" : "12.1",
+      "case" : "Fractal Design R4",
+      "hdds" : {
+         "SG0300" : "1",
+         "SG0400" : "1",
+         "SS0200" : "1",
+         "SS0050" : "1",
+         "WD0200" : "1",
+         "WD0060" : "1"
+      },
+      "notes" : "ESXI Hypervisor",
+      "os" : "WS 2012R2",
+      "post" : "5371693",
+      "storage_sys" : "JBOD",
+      "username" : "Mkvarner"
    }
 }
