@@ -1498,16 +1498,16 @@
       "username" : "darkey1991"
    },
    "system_112" : {
-      "capacity" : "24.0",
+      "capacity" : "30.0",
       "case" : "Fractal Design R5",
       "hdds" : {
-         "TS0300" : "8"
+         "TS0300" : "10"
       },
-      "notes" : null,
+      "notes" : "[post=5381521]Upd[/post]",
       "os" : "FreeNAS",
       "post" : "5192397",
       "storage_sys" : "ZFS",
-      "username" : "cheatdeath"
+      "username" : "Cheatdeath"
    },
    "system_113" : {
       "capacity" : "32.0",
