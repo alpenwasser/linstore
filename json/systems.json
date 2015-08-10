@@ -172,13 +172,14 @@
       "username" : "MrSmoke"
    },
    "system_013" : {
-      "capacity" : "47.0",
+      "capacity" : "67.0",
       "case" : "Lian Li 343B",
       "hdds" : {
          "WD0200" : "22",
-         "WD0300" : "1"
+         "WD0300" : "1",
+         "WD0600" : "3"
       },
-      "notes" : "[post=1883660]Upd 1[/post], [post=2418935]2[/post], [post=3437797]Upd 3[/post]",
+      "notes" : "[post=1883660]Upd 1[/post], [post=2418935]2[/post], [post=3437797]Upd 3[/post], [post=5419102]Upd 4[/post]",
       "os" : "Win 8.1",
       "post" : "414401",
       "storage_sys" : "HwRD",
@@ -386,9 +387,7 @@
       "case" : "Fractal Design R4 (custom)",
       "hdds" : {
          "SS0025" : "1",
-         "SS0075" : "1",
-         "WD0025" : "1",
-         "WD0300" : "3"
+         "SS0075" : "1"
       },
       "notes" : "BotW",
       "os" : "Arch Linux",
@@ -624,12 +623,12 @@
       "username" : "Galxy"
    },
    "system_046" : {
-      "capacity" : "29.0",
+      "capacity" : "43.2",
       "case" : "InWin PP689 (Custom HDD Rack)",
       "hdds" : {
          "SS0100" : "3",
-         "WD0200" : "4",
-         "WD0300" : "6",
+         "WD0200" : "2",
+         "WD0300" : "12",
          "WD0015" : "1"
       },
       "notes" : null,
@@ -886,7 +885,7 @@
 	   "capacity" : "16.0",
 	   "case" : "Lian Li Q25B",
 	   "hdds" : {
-			"SG0400" : "4"
+			"SG0400" : "5"
 	   },
 	   "notes" : null,
 	   "post" : "2814310",
@@ -1572,5 +1571,41 @@
       "post" : "5371693",
       "storage_sys" : "JBOD",
       "username" : "Mkvarner"
+   },
+   "system_117" : {
+      "capacity" : "16.0",
+      "case" : "Fractal Design R4",
+      "hdds" : {
+         "WD0400" : "4"
+      },
+      "notes" : null,
+      "os" : "Ubuntu",
+      "post" : "5525650",
+      "storage_sys" : "JBOD",
+      "username" : "Eric The Tech Guru"
+   },
+   "system_118" : {
+      "capacity" : "72.0",
+      "case" : "Fractal Node 804",
+      "hdds" : {
+         "SG0300" : "24"
+      },
+      "notes" : null,
+      "os" : "Win 7", 
+      "post" : "5526073",
+      "storage_sys" : "HwRD",
+      "username" : "AnonymousGuy"
+   },
+   "system_119" : {
+      "capacity" : "16.0",
+      "case" : "Silverstone Milo ML04B",
+      "hdds" : {
+         "WD0400" : "4"
+      },
+      "notes" : null,
+      "os" : "WS 2008R2",
+      "post" : "5699276",
+      "storage_sys" : "JBOD",
+      "username" : "weeandykidd"
    }
 }
