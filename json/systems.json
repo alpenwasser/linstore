@@ -1420,11 +1420,11 @@
       "capacity" : "18.3",
       "case" : "Antec P183",
       "hdds" : {
-         "WD0200" : "8",
-         "TS0200" : "1",
-         "WD0015" : "2"
+         "WD0500" : "8",
+         "WD0015" : "2",
+         "TS0200" : "1"
       },
-      "notes" : null,
+      "notes" : "[post=5906039]Upd 1[/post]",
       "os" : "Win 7",
       "post" : "4588958",
       "storage_sys" : "HwRD",
@@ -1607,5 +1607,34 @@
       "post" : "5699276",
       "storage_sys" : "JBOD",
       "username" : "weeandykidd"
+   },
+   "system_120" : {
+      "capacity" : "11.0",
+      "case" : "Antec 300",
+      "hdds" : {
+         "WD0300" : "1",
+         "HT0200" : "4"
+      },
+      "notes" : null,
+      "os" : "WS 2012R2",
+      "post" : "5822740",
+      "storage_sys" : "SwRD",
+      "username" : "Doowstados"
+   },
+   "system_121" : {
+      "capacity" : "40.8",
+      "case" : "Norco RPC-4220",
+      "hdds" : {
+         "WD0300" : "8",
+         "SG0200" : "7",
+         "SG0100" : "1",
+         "SG0030" : "4",
+         "KT0024" : "2"
+      },
+      "notes" : null,
+      "os" : "WS 2012R2",
+      "post" : "5881339",
+      "storage_sys" : "SwRD",
+      "username" : "arsonik007"
    }
 }

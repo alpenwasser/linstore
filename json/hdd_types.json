@@ -111,6 +111,14 @@
       "vendor" : "Seagate",
       "size" : "0.5"
    },
+   "SG0030" : {
+      "vendor" : "Seagate",
+      "size" : "0.3"
+   },
+   "KT0024" : {
+      "vendor" : "Kingston",
+      "size" : "0.24"
+   },
    "SS0075" : {
       "vendor" : "Samsung",
       "size" : "0.75"
@@ -222,6 +230,10 @@
    "WD0064" : {
       "vendor" : "WD",
       "size" : "0.64"
+   },
+   "WD0015" : {
+      "vendor" : "WD",
+      "size" : "0.15"
    },
    "TS0200" : {
       "vendor" : "Toshiba",
