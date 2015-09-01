@@ -1636,5 +1636,17 @@
       "post" : "5881339",
       "storage_sys" : "SwRD",
       "username" : "arsonik007"
+   },
+   "system_122" : {
+      "capacity" : "24.0",
+      "case" : "Fractal Node 304",
+      "hdds" : {
+         "HT0400" : "6"
+      },
+      "notes" : null,
+      "os" : "FreeNAS",
+      "post" : "5920443",
+      "storage_sys" : "ZFS",
+      "username" : "Brandonberg"
    }
 }
