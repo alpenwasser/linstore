@@ -1648,5 +1648,19 @@
       "post" : "5920443",
       "storage_sys" : "ZFS",
       "username" : "Brandonberg"
+   },
+   "system_123" : {
+      "capacity" : "19.3",
+      "case" : "HP Z800 Workstation",
+      "hdds" : {
+         "WD0200" : "9",
+         "CR0025.6" : "3",
+         "SS0050" : "1"
+      },
+      "notes" : null,
+      "os" : "Win 10",
+      "post" : "5956922",
+      "storage_sys" : "SwRD",
+      "username" : "b348xyz"
    }
 }

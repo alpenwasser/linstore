@@ -3,6 +3,10 @@
                 "os" : "Windows 7",
                 "family" : "Windows" 
         },
+        "Win 10" : { 
+                "os" : "Windows 10",
+                "family" : "Windows" 
+        },
         "FreeNAS" : {
                 "os" : "FreeNAS",
                 "family" : "*BSD"
