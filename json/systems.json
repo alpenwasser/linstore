@@ -177,9 +177,9 @@
       "hdds" : {
          "WD0200" : "22",
          "WD0300" : "1",
-         "WD0600" : "3"
+         "WD0600" : "4"
       },
-      "notes" : "[post=1883660]Upd 1[/post], [post=2418935]2[/post], [post=3437797]Upd 3[/post], [post=5419102]Upd 4[/post]",
+      "notes" : "[post=1883660]Upd 1[/post], [post=2418935]2[/post], [post=3437797]Upd 3[/post], [post=5419102]Upd 4[/post], [post=5966919]Upd 6[/post]",
       "os" : "Win 8.1",
       "post" : "414401",
       "storage_sys" : "HwRD",
@@ -1662,5 +1662,17 @@
       "post" : "5956922",
       "storage_sys" : "SwRD",
       "username" : "b348xyz"
+   },
+   "system_124" : {
+      "capacity" : "32.0",
+      "case" : "Supermicro 846E1-R900B",
+      "hdds" : {
+         "WD0400" : "8"
+      },
+      "notes" : null,
+      "os" : "WS 2012R2",
+      "post" : "6029350",
+      "storage_sys" : "HwRD",
+      "username" : "scottyseng"
    }
 }
