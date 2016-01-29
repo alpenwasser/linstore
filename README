@@ -3,7 +3,6 @@ LINUS TECH TIPS STORAGE RANKING SCRIPT
 
 
 
-
 DESCRIPTION
 ────────────────────────────────────────────────────────────
 
@@ -11,6 +10,8 @@ Generates a text file with the BB code for the forum post as
 well as graph images for statistics. Uploads graph images to
 a server automatically if one is specified.
 
+This is the  old Perl implementation, which is  no longer in
+use as of Q1 2016.
 
 DEPENDENCIES
 ────────────────────────────────────────────────────────────
