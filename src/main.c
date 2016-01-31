@@ -1,8 +1,10 @@
-#include "mythings.h"
 #include <stdlib.h>
 
-int main()
+#include "my_menu.h"
+
+int main(void)
 {
-	do_the_things();
-	exit(0);
+	init_ncurses();
+	init_syslist();
+	exit(EXIT_SUCCESS);
 }

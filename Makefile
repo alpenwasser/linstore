@@ -1,6 +1,7 @@
 CSS = gcc
 IDIR=./include
-CFLAGS = -I$(IDIR)
+CFLAGS = -I$(IDIR) 
+CURSES = -lform -lncurses
 
 # Final binary
 BIN = linstore
@@ -20,15 +21,21 @@ DEP = $(OBJ:%.o=%.d)
 # Default target named after the binary.
 $(BIN) : $(BUILD_DIR)/$(BIN)
 
+
+debug : CFLAGS += -g
+debug : $(BUILD_DIR)/$(BIN)
+
+
 # Actual target of the binary - depends on all .o files.
 $(BUILD_DIR)/$(BIN) : $(OBJ)
 	# Create build directories - same structure as sources.
 	mkdir -p $(@D)
 	# Just link all the object files.
-	$(CSS) $(CFLAGS) $^ -o $@
+	$(CSS) $(CFLAGS) $^ -o $@ $(CURSES)
 
 # Include all .d files
 -include $(DEP)
+
 
 # Build target for every single object file.
 # The potential dependency on header files is covered
@@ -37,7 +44,7 @@ $(BUILD_DIR)/%.o : %.c
 	mkdir -p $(@D)
 	# The -MMD flags additionaly creates a .d file with
 	# the same name as the .o file.
-	$(CSS) $(CFLAGS) -MMD -c $< -o $@
+	$(CSS) $(CFLAGS) -MMD -c $< -o $@ $(CURSES)
 
 .PHONY : clean
 
