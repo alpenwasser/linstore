@@ -87,9 +87,17 @@
       "vendor" : "HGST",
       "size" : "0.5"
    },
+   "HT0025" : {
+      "vendor" : "HGST",
+      "size" : "0.25"
+   },
    "HT0012" : {
       "vendor" : "HGST",
       "size" : "0.12"
+   },
+   "HT0064" : {
+      "vendor" : "HGST",
+      "size" : "0.64"
    },
    "HT0025" : {
       "vendor" : "HGST",
@@ -102,6 +110,14 @@
    "SG0050" : {
       "vendor" : "Seagate",
       "size" : "0.5"
+   },
+   "SG0030" : {
+      "vendor" : "Seagate",
+      "size" : "0.3"
+   },
+   "KT0024" : {
+      "vendor" : "Kingston",
+      "size" : "0.24"
    },
    "SS0075" : {
       "vendor" : "Samsung",
@@ -151,6 +167,10 @@
       "vendor" : "Toshiba",
       "size" : "0.5"
    },
+   "TS0025" : {
+      "vendor" : "Toshiba",
+      "size" : "0.25"
+   },
    "WD0600" : {
       "vendor" : "WD",
       "size" : "6.0"
@@ -199,6 +219,10 @@
       "size" : "0.5",
       "vendor" : "WD"
    },
+   "WD0060" : {
+      "size" : "0.6",
+      "vendor" : "WD"
+   },
    "US0050" : {
       "size" : "0.5",
       "vendor" : "unspecified"
@@ -206,6 +230,10 @@
    "WD0064" : {
       "vendor" : "WD",
       "size" : "0.64"
+   },
+   "WD0015" : {
+      "vendor" : "WD",
+      "size" : "0.15"
    },
    "TS0200" : {
       "vendor" : "Toshiba",
@@ -222,6 +250,14 @@
    "CR0013" : {
       "vendor" : "Crucial",
       "size" : "0.13"
+   },
+   "CR0025" : {
+      "vendor" : "Crucial",
+      "size" : "0.25"
+   },
+   "CR0025.6" : {
+      "vendor" : "Crucial",
+      "size" : "0.26"
    },
    "OZ0013" : {
       "vendor" : "OCZ",

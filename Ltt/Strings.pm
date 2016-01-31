@@ -352,6 +352,16 @@ sub format_hdd_capacity
 	my $number = shift;
 
 	# Pad with trailing zeroes until two decimal places.
+	#
+        # NOTE: When specifying more than two decimal places
+        # for a drive's capacity,  hickups will be had here!
+        # Or  rather, the  function `get_hdd_counts_by_size`
+        # from  the Ltt::Statistics  module  will get  stuck
+        # in  an infinite  loop because  this function  will
+        # get  stuck in  an  infinite loop. Therefore,  make
+        # sure the  capacities in hdd_types.json  are alread
+        # rounded to two decimal places.
+
 	$number .= "0" until ($number =~ /^[+-]?\d+\.\d\d\z/);
 
 	return $number;

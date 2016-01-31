@@ -172,13 +172,14 @@
       "username" : "MrSmoke"
    },
    "system_013" : {
-      "capacity" : "47.0",
+      "capacity" : "67.0",
       "case" : "Lian Li 343B",
       "hdds" : {
          "WD0200" : "22",
-         "WD0300" : "1"
+         "WD0300" : "1",
+         "WD0600" : "4"
       },
-      "notes" : "[post=1883660]Upd 1[/post], [post=2418935]2[/post], [post=3437797]Upd 3[/post]",
+      "notes" : "[post=1883660]Upd 1[/post], [post=2418935]2[/post], [post=3437797]Upd 3[/post], [post=5419102]Upd 4[/post], [post=5966919]Upd 6[/post]",
       "os" : "Win 8.1",
       "post" : "414401",
       "storage_sys" : "HwRD",
@@ -386,9 +387,7 @@
       "case" : "Fractal Design R4 (custom)",
       "hdds" : {
          "SS0025" : "1",
-         "SS0075" : "1",
-         "WD0025" : "1",
-         "WD0300" : "3"
+         "SS0075" : "1"
       },
       "notes" : "BotW",
       "os" : "Arch Linux",
@@ -624,12 +623,12 @@
       "username" : "Galxy"
    },
    "system_046" : {
-      "capacity" : "29.0",
+      "capacity" : "43.2",
       "case" : "InWin PP689 (Custom HDD Rack)",
       "hdds" : {
          "SS0100" : "3",
-         "WD0200" : "4",
-         "WD0300" : "6",
+         "WD0200" : "2",
+         "WD0300" : "12",
          "WD0015" : "1"
       },
       "notes" : null,
@@ -757,15 +756,14 @@
       "username" : "kev507"
    },
    "system_056" : {
-      "capacity" : "26.0",
+      "capacity" : "38.0",
       "case" : "Logic Case SC-4324",
       "hdds" : {
          "SG0200" : "1",
-         "TS0300" : "3",
          "WD0200" : "1",
-         "WD0300" : "3",
-         "US0300" : "1",
-         "US0100" : "1"
+         "TS0300" : "5",
+         "WD0300" : "6",
+         "US0100" : "1" 
       },
       "notes" : "[post=3395532]Upd 1[/post]",
       "os" : "Win 7",
@@ -887,7 +885,7 @@
 	   "capacity" : "16.0",
 	   "case" : "Lian Li Q25B",
 	   "hdds" : {
-			"SG0400" : "4"
+			"SG0400" : "5"
 	   },
 	   "notes" : null,
 	   "post" : "2814310",
@@ -1068,9 +1066,9 @@
       "capacity" : "32.0",
       "case" : "Rosewill RSV-L4411",
       "hdds" : {
-         "HT0400" : "8"
+         "HT0400" : "12"
       },
-      "notes" : null,
+      "notes" : "[post=5256925]Update[/post]",
       "os" : "Xubuntu",
       "post" : "3575499",
       "storage_sys" : "ZFS",
@@ -1199,7 +1197,7 @@
          "SG0400" : "37",
          "SS0101" : "4"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "WS 2012R2",
       "post" : "4119828",
       "storage_sys" : "HwRD",
@@ -1212,7 +1210,7 @@
          "WD0300" : "3",
          "WD0100" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4310059",
       "storage_sys" : "ZFS",
@@ -1225,7 +1223,7 @@
          "WD0600" : "12",
          "WD0300" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4390658",
       "storage_sys" : "ZFS",
@@ -1241,7 +1239,7 @@
          "WD0300" : "1",
          "WD0400" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Win 7",
       "post" : "4423578",
       "storage_sys" : "JBOD",
@@ -1253,7 +1251,7 @@
       "hdds" : {
          "WD0300" : "4"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "ReadyNAS",
       "post" : "4441260",
       "storage_sys" : "SwRD",
@@ -1268,7 +1266,7 @@
          "SG0400" : "1",
          "SS0100" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "WS 2012R2",
       "post" : "4464000",
       "storage_sys" : "Stablebit",
@@ -1281,7 +1279,7 @@
          "WD0400" : "4",
          "WD0300" : "4"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Synology",
       "post" : "4508051",
       "storage_sys" : "SHR",
@@ -1293,7 +1291,7 @@
       "hdds" : {
          "SS0200" : "20"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4514027",
       "storage_sys" : "ZFS",
@@ -1306,7 +1304,7 @@
          "WD0300" : "5",
          "WD0200" : "2"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4514516",
       "storage_sys" : "ZFS",
@@ -1320,7 +1318,7 @@
          "SG0200" : "3",
          "SG0400" : "4"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Linux",
       "post" : "4520723",
       "storage_sys" : "ZFS",
@@ -1333,7 +1331,7 @@
          "SG0400" : "7",
          "SG0150" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Synology",
       "post" : "4522425",
       "storage_sys" : "SHR",
@@ -1345,7 +1343,7 @@
       "hdds" : {
          "SG0300" : "6"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "unRAID",
       "post" : "4530523",
       "storage_sys" : "unRAID",
@@ -1357,7 +1355,7 @@
       "hdds" : {
          "SG0400" : "8"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Win 7",
       "post" : "4557808",
       "storage_sys" : "HwRD",
@@ -1370,7 +1368,7 @@
          "SG0200" : "4",
          "WD0200" : "2"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4577212",
       "storage_sys" : "ZFS",
@@ -1384,7 +1382,7 @@
          "WD0100" : "4",
          "TS0100" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4577212",
       "storage_sys" : "ZFS",
@@ -1397,7 +1395,7 @@
          "SG0200" : "5",
          "WD0200" : "2"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "OpenMediaVault",
       "post" : "4581921",
       "storage_sys" : "SwRD",
@@ -1407,11 +1405,12 @@
       "capacity" : "19.0",
       "case" : "Antec 900",
       "hdds" : {
-         "SG0300" : "5",
+         "SG0300" : "4",
+         "WD0300" : "1",
          "SG0100" : "3",
          "SG0050" : "2"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Debian",
       "post" : "4581921",
       "storage_sys" : "SwRD",
@@ -1421,11 +1420,11 @@
       "capacity" : "18.3",
       "case" : "Antec P183",
       "hdds" : {
-         "WD0200" : "8",
-         "TS0200" : "1",
-         "WD0015" : "2"
+         "WD0500" : "8",
+         "WD0015" : "2",
+         "TS0200" : "1"
       },
-      "notes" : "",
+      "notes" : "[post=5906039]Upd 1[/post]",
       "os" : "Win 7",
       "post" : "4588958",
       "storage_sys" : "HwRD",
@@ -1437,7 +1436,7 @@
       "hdds" : {
          "WD0300" : "8"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "FreeNAS",
       "post" : "4591394",
       "storage_sys" : "ZFS",
@@ -1450,10 +1449,230 @@
          "WD0100" : "7",
          "WD0300" : "1"
       },
-      "notes" : "",
+      "notes" : null,
       "os" : "Win 8.1",
       "post" : "4599600",
       "storage_sys" : "FlexRAID",
       "username" : "Whiskers"
+   },
+   "system_109" : {
+      "capacity" : "12.0",
+      "case" : "IBM x3400 Server Chassis",
+      "hdds" : {
+         "SG0400" : "3"
+      },
+      "notes" : null,
+      "os" : "Lubuntu",
+      "post" : "4658944",
+      "storage_sys" : "mdadm",
+      "username" : "sidiox"
+   },
+   "system_110" : {
+      "capacity" : "24.0",
+      "case" : "Silverstone DS380B",
+      "hdds" : {
+         "US0300" : "3",
+         "TS0300" : "5"
+      },
+      "notes" : null,
+      "os" : "FreeNAS",
+      "post" : "4749094",
+      "storage_sys" : "ZFS",
+      "username" : "kkpatel87"
+   },
+   "system_111" : {
+      "capacity" : "13.0",
+      "case" : "MS-Tech CA-0210 Midi Tower",
+      "hdds" : {
+         "SG0200" : "5",
+         "HT0200" : "1",
+         "HT0050" : "2",
+         "TS0025" : "1",
+         "HT0025" : "1"
+      },
+      "notes" : null,
+      "os" : "Debian",
+      "post" : "4774714",
+      "storage_sys" : "HwRD",
+      "username" : "darkey1991"
+   },
+   "system_112" : {
+      "capacity" : "30.0",
+      "case" : "Fractal Design R5",
+      "hdds" : {
+         "TS0300" : "10"
+      },
+      "notes" : "[post=5381521]Upd[/post]",
+      "os" : "FreeNAS",
+      "post" : "5192397",
+      "storage_sys" : "ZFS",
+      "username" : "Cheatdeath"
+   },
+   "system_113" : {
+      "capacity" : "32.0",
+      "case" : "Fractal Design R5",
+      "hdds" : {
+         "WD0400" : "8",
+         "CR0025" : "2"
+      },
+      "notes" : null,
+      "os" : "FreeNAS",
+      "post" : "5228792",
+      "storage_sys" : "ZFS",
+      "username" : "Captain Chaos"
+   },
+   "system_114" : {
+      "capacity" : "15.6",
+      "case" : "NZXT Source 210",
+      "hdds" : {
+         "WD0400" : "3",
+         "WD0100" : "1",
+         "SG0100" : "1",
+         "SG0075" : "1",
+         "HT0064" : "1",
+         "WD0025" : "1"
+      },
+      "notes" : null,
+      "os" : "FreeNAS",
+      "post" : "5285516",
+      "storage_sys" : "ZFS",
+      "username" : "djdwosk97"
+   },
+   "system_115" : {
+      "capacity" : "38.0",
+      "case" : "Supermicro SuperChassis 846BA-R920B",
+      "hdds" : {
+         "SG0200" : "6",
+         "SG0300" : "1",
+         "SG0150" : "2",
+         "WD0400" : "4",
+         "WD0300" : "1",
+         "WD0100" : "1"
+      },
+      "notes" : null,
+      "os" : "WS 2012",
+      "post" : "5297163",
+      "storage_sys" : "SwRD",
+      "username" : "mGrytbak"
+   },
+   "system_116" : {
+      "capacity" : "12.1",
+      "case" : "Fractal Design R4",
+      "hdds" : {
+         "SG0300" : "1",
+         "SG0400" : "1",
+         "SS0200" : "1",
+         "SS0050" : "1",
+         "WD0200" : "1",
+         "WD0060" : "1"
+      },
+      "notes" : "ESXI Hypervisor",
+      "os" : "WS 2012R2",
+      "post" : "5371693",
+      "storage_sys" : "JBOD",
+      "username" : "Mkvarner"
+   },
+   "system_117" : {
+      "capacity" : "16.0",
+      "case" : "Fractal Design R4",
+      "hdds" : {
+         "WD0400" : "4"
+      },
+      "notes" : null,
+      "os" : "Ubuntu",
+      "post" : "5525650",
+      "storage_sys" : "JBOD",
+      "username" : "Eric The Tech Guru"
+   },
+   "system_118" : {
+      "capacity" : "72.0",
+      "case" : "Fractal Node 804",
+      "hdds" : {
+         "SG0300" : "24"
+      },
+      "notes" : null,
+      "os" : "Win 7", 
+      "post" : "5526073",
+      "storage_sys" : "HwRD",
+      "username" : "AnonymousGuy"
+   },
+   "system_119" : {
+      "capacity" : "16.0",
+      "case" : "Silverstone Milo ML04B",
+      "hdds" : {
+         "WD0400" : "4"
+      },
+      "notes" : null,
+      "os" : "WS 2008R2",
+      "post" : "5699276",
+      "storage_sys" : "JBOD",
+      "username" : "weeandykidd"
+   },
+   "system_120" : {
+      "capacity" : "11.0",
+      "case" : "Antec 300",
+      "hdds" : {
+         "WD0300" : "1",
+         "HT0200" : "4"
+      },
+      "notes" : null,
+      "os" : "WS 2012R2",
+      "post" : "5822740",
+      "storage_sys" : "SwRD",
+      "username" : "Doowstados"
+   },
+   "system_121" : {
+      "capacity" : "40.8",
+      "case" : "Norco RPC-4220",
+      "hdds" : {
+         "WD0300" : "8",
+         "SG0200" : "7",
+         "SG0100" : "1",
+         "SG0030" : "4",
+         "KT0024" : "2"
+      },
+      "notes" : null,
+      "os" : "WS 2012R2",
+      "post" : "5881339",
+      "storage_sys" : "SwRD",
+      "username" : "arsonik007"
+   },
+   "system_122" : {
+      "capacity" : "24.0",
+      "case" : "Fractal Node 304",
+      "hdds" : {
+         "HT0400" : "6"
+      },
+      "notes" : null,
+      "os" : "FreeNAS",
+      "post" : "5920443",
+      "storage_sys" : "ZFS",
+      "username" : "Brandonberg"
+   },
+   "system_123" : {
+      "capacity" : "19.3",
+      "case" : "HP Z800 Workstation",
+      "hdds" : {
+         "WD0200" : "9",
+         "CR0025.6" : "3",
+         "SS0050" : "1"
+      },
+      "notes" : null,
+      "os" : "Win 10",
+      "post" : "5956922",
+      "storage_sys" : "SwRD",
+      "username" : "b348xyz"
+   },
+   "system_124" : {
+      "capacity" : "32.0",
+      "case" : "Supermicro 846E1-R900B",
+      "hdds" : {
+         "WD0400" : "8"
+      },
+      "notes" : null,
+      "os" : "WS 2012R2",
+      "post" : "6029350",
+      "storage_sys" : "HwRD",
+      "username" : "scottyseng"
    }
 }
