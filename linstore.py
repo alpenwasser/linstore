@@ -56,6 +56,9 @@ js.dump(ranking_db,ranking_data,indent=1,sort_keys=True)
 ranking_data.close()
 
 
+# ---------------------------------------------------------------------------- #
+# GENERATE HTML                                                                #
+# ---------------------------------------------------------------------------- #
 
 # ---------------------------------------------------------------------------- #
 # GENERATE PLOT                                                                #
@@ -65,7 +68,11 @@ ranking_data.close()
 plot_data_ranks = np.array([])
 plot_data_ranking_points = np.array([])
 #pp.pprint(ranking_db)
+plot_data_usernames = []
 for rank in ranking_db.keys():
+    if ranking_db[rank]['drive_count'] < 5 or ranking_db[rank]['capacity'] < 10:
+        continue
+    plot_data_usernames.append(ranking_db[rank]['username'] + ' ' + str(rank))
     plot_data_ranks = np.append(plot_data_ranks,[rank])
     plot_data_ranking_points = np.append(plot_data_ranking_points, [ranking_db[rank]['ranking_points']])
     #plot_data[ranked_system] = js.loads('{}')
@@ -87,20 +94,67 @@ for rank in ranking_db.keys():
 sns.set(color_codes=True)
 #sns.set_palette(sns.color_palette("coolwarm", 7))
 #sns.set_palette("Reds")
-df = pd.DataFrame()
-df['x'] = plot_data_ranks
-df['y'] = plot_data_ranking_points
+#df = pd.DataFrame()
+#df['x'] = plot_data_ranks
+#df['y'] = plot_data_ranking_points
 
 #sns.jointplot(x='x', y='y', data=df)
 #grid = sns.JointGrid(plot_data_ranks,plot_data_ranking_points,space=0,size=6,ratio=50)
 #grid = sns.JointGrid(plot_data_ranks,plot_data_ranking_points,space=10,size=6)
 #grid = sns.jointplot(x=df['x'],y=df['y'])
-grid = sns.JointGrid(plot_data_ranks,plot_data_ranking_points,space=.1)
-grid.plot_joint(plt.scatter,color='#db4105',s=50)
-grid.plot_marginals(sns.distplot, kde=False, color=".5")
-axes = grid.ax_joint
-axes.set_yscale('log',nonposy='clip')
-axes.set_ylim(ymin=20)
-axes.set_xlim(xmin=-10,xmax=130)
-plt.show()
+#grid = sns.JointGrid(plot_data_ranks,plot_data_ranking_points,space=.1)
+#grid.plot_joint(plt.scatter,color='#db4105',s=50)
+#grid.plot_marginals(sns.distplot, kde=False, color=".5")
+#axes = grid.ax_joint
+#axes.set_yscale('log',nonposy='clip')
+#axes.set_ylim(ymin=20)
+#axes.set_xlim(xmin=-10,xmax=130)
+#plt.show()
 #plt.savefig('test.png')
+
+# Simple scatter plot
+#df = pd.DataFrame()
+#df['Rank'] = plot_data_ranks
+#df['Ranking Points'] = plot_data_ranking_points
+#grid = sns.FacetGrid(df)
+#grid.map(plt.scatter,'Rank','Ranking Points')
+#axes = grid.ax
+#axes.set_yscale('log')
+#axes.set_ylim(ymin=20)
+#axes.set_xlim(xmin=-10,xmax=130)
+#plt.show()
+
+#df = pd.DataFrame()
+#df['username'] = plot_data_usernames
+#df['Ranking Points'] = plot_data_ranking_points
+#grid = sns.FacetGrid(df)
+#grid.map(sns.barplot,'Ranking Points','username',palette='Blues_d')
+#axes = grid.ax
+#axes.set_yscale('log')
+#axes.set_ylim(ymin=20)
+#axes.set_xlim(xmin=-10,xmax=130)
+#plt.show()
+
+#df = pd.DataFrame()
+##df['Rank'] = plot_data_ranks
+#df['Rank'] = plot_data_usernames
+#df['Ranking Points'] = plot_data_ranking_points
+#grid = sns.FacetGrid(df)
+##grid.map(plt.scatter,'Rank','Ranking Points')
+#grid.map(sns.swarmplot,'Ranking Points','Rank')
+#grid.set_xticklabels(rotation=90)
+#axes = grid.ax
+#axes.set_xscale('log')
+#plt.show()
+
+df = pd.DataFrame()
+#df['Rank'] = plot_data_ranks
+df['Rank'] = plot_data_usernames
+df['Ranking Points'] = plot_data_ranking_points
+grid = sns.FacetGrid(df)
+#grid.map(plt.scatter,'Rank','Ranking Points')
+grid.map(sns.barplot,'Ranking Points','Rank',palette='Blues_r')
+grid.set_xticklabels(rotation=90)
+axes = grid.ax
+axes.set_xscale('log')
+plt.show()
