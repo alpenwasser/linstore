@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+import re as re
 
 # ---------------------------------------------------------------------------- #
 # LOAD JSON AND GENERATE RANKING                                               #
@@ -44,9 +45,17 @@ ranked_systems = sorted(system_db, key=lambda system: system_db[system]['ranking
 
 # Create empty json object
 ranking_file='json/ranking.json'
+notew_file='json/notew.json'
 ranking_db = js.loads('{}')
+notew_db = js.loads('{}')
 rank = 0
 for ranked_system in ranked_systems:
+    if (system_db[ranked_system]['drive_count'] < 5
+        or system_db[ranked_system]['capacity'] < 10
+        or system_db[ranked_system]['ditch'] == 1):
+        # TODO: add to noteworthy
+        notew_db[ranked_system] = system_db[ranked_system]
+        continue
     rank += 1
     ranking_db[rank] = system_db[ranked_system]
     #del ranking_db[ranked_system]
@@ -55,13 +64,74 @@ ranking_data=open(ranking_file, 'w')
 js.dump(ranking_db,ranking_data,indent=1,sort_keys=True)
 ranking_data.close()
 
+notew_data=open(notew_file, 'w')
+js.dump(notew_db,notew_data,indent=1,sort_keys=True)
+notew_data.close()
+
 
 # ---------------------------------------------------------------------------- #
 # GENERATE HTML                                                                #
 # ---------------------------------------------------------------------------- #
 
+html_template_file = 'template.html'
+html_template = open(html_template_file, 'r')
+template_header=''
+template_row = ''
+template_footer=''
+opening_tag=re.compile('%%%<template_row>%%%')
+closing_tag=re.compile(r'%%%</template_row>%%%')
+result=''
+tag_open = False # indicates whether tag is currently open
+tag_has_been_opened = False # indicates whether tag has ever been opened: used for footer/header
+
+# First, grab header, footer and the template row which will be used to assemble
+# the system entries.
+for html_tpl_str in html_template:
+    if not tag_open:
+        #print('closed')
+        if opening_tag.search(html_tpl_str):
+            tag_open = True
+            tag_has_been_opened = True
+            #print('opening')
+            continue
+        elif closing_tag.search(html_tpl_str):
+            tag_open = False
+            #print('closing')
+            continue
+
+        if not tag_has_been_opened:
+            template_header += html_tpl_str
+        else:
+            template_footer += html_tpl_str
+    else:
+        #print('open')
+        if tag_has_been_opened:
+            if closing_tag.search(html_tpl_str):
+                tag_open = False
+                #print('closing')
+                continue
+
+        template_row += html_tpl_str
+
+
+# Generate rows:
+# Regex search and replace patterns
+rank_sub = '%r%'
+username_sub = '%u%'
+rankingpoints_sub = '%rp%'
+capacity_sub = '%cap%'
+nodrives_sub = '%ndr%'
+case_sub = '%cs%'
+
+
+
+
+
+
+exit()
+
 # ---------------------------------------------------------------------------- #
-# GENERATE PLOT                                                                #
+# GENERATE PLOTS                                                               #
 # ---------------------------------------------------------------------------- #
 #plot_data = js.loads('{}')
 #plot_data_usernames = np.array()
@@ -70,8 +140,6 @@ plot_data_ranking_points = np.array([])
 #pp.pprint(ranking_db)
 plot_data_usernames = []
 for rank in ranking_db.keys():
-    if ranking_db[rank]['drive_count'] < 5 or ranking_db[rank]['capacity'] < 10:
-        continue
     plot_data_usernames.append(ranking_db[rank]['username'] + ' ' + str(rank))
     plot_data_ranks = np.append(plot_data_ranks,[rank])
     plot_data_ranking_points = np.append(plot_data_ranking_points, [ranking_db[rank]['ranking_points']])

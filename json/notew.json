@@ -1,0 +1,329 @@
+{
+ "system_028": {
+  "capacity": 0,
+  "case": "Fractal Design R4 (custom)",
+  "ditch": 0,
+  "drive_count": 2,
+  "drives": {
+   "SS0025": 1,
+   "SS0075": 1
+  },
+  "notes": "BotW",
+  "os": "Arch Linux",
+  "post": "368180",
+  "ranking_points": 0,
+  "storage_sys": "ZFS",
+  "username": "alpenwasser"
+ },
+ "system_029": {
+  "capacity": 16,
+  "case": "Bitfenix Phenom M",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0400": 4
+  },
+  "notes": null,
+  "os": "FreeNAS",
+  "post": "1561286",
+  "ranking_points": 64,
+  "storage_sys": "ZFS?",
+  "username": "Hoppa"
+ },
+ "system_043": {
+  "capacity": 8,
+  "case": "K'nex Custom Case",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "SG0200": 1,
+   "WD0200": 3
+  },
+  "notes": "[b]K'Nex[/b] Build, BotW",
+  "os": "Debian",
+  "post": "277922",
+  "ranking_points": 32,
+  "storage_sys": "mdadm",
+  "username": "MG2R"
+ },
+ "system_044": {
+  "capacity": 1,
+  "case": "HP Proliant MicroServer N40L",
+  "ditch": 0,
+  "drive_count": 3,
+  "drives": {
+   "SG0050": 1,
+   "SG0100": 1,
+   "WD0050": 1
+  },
+  "notes": "HP Proliant Microserver",
+  "os": "unRAID",
+  "post": "303666",
+  "ranking_points": 3,
+  "storage_sys": "unRAID",
+  "username": "cushy91"
+ },
+ "system_049": {
+  "capacity": 9,
+  "case": "Bitfenix Prodigy mITX",
+  "ditch": 0,
+  "drive_count": 3,
+  "drives": {
+   "WD0300": 3
+  },
+  "notes": null,
+  "os": "Win 8",
+  "post": "2195738",
+  "ranking_points": 27,
+  "storage_sys": "JBOD",
+  "username": "2sysel2"
+ },
+ "system_052": {
+  "capacity": 16,
+  "case": "Lian Li PC-Q35",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0400": 4
+  },
+  "notes": null,
+  "os": "WS 2012",
+  "post": "2261402",
+  "ranking_points": 64,
+  "storage_sys": "HwRD",
+  "username": "Graveworm"
+ },
+ "system_053": {
+  "capacity": 11,
+  "case": "K'nex Custom Case",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0150": 1,
+   "WD0200": 1,
+   "WD0400": 2
+  },
+  "notes": "K'nex",
+  "os": "Win 8.1",
+  "post": "2298428",
+  "ranking_points": 44,
+  "storage_sys": "JBOD",
+  "username": "Zerreth"
+ },
+ "system_054": {
+  "capacity": 13,
+  "case": "Synology DS412+",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "SG0300": 1,
+   "SG0400": 1,
+   "WD0300": 2
+  },
+  "notes": null,
+  "os": "Synology",
+  "post": "2304876",
+  "ranking_points": 52,
+  "storage_sys": "SHR",
+  "username": "Dr_Frankenstein"
+ },
+ "system_058": {
+  "capacity": 16,
+  "case": "Fractal Design Arc Midi R2",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "SG0400": 4
+  },
+  "notes": null,
+  "os": "FreeNAS",
+  "post": "2635265",
+  "ranking_points": 64,
+  "storage_sys": "ZFS",
+  "username": "lekro"
+ },
+ "system_061": {
+  "capacity": 1,
+  "case": "Open Air",
+  "ditch": 0,
+  "drive_count": 1,
+  "drives": {
+   "SS0100": 1
+  },
+  "notes": "Open air, no case",
+  "os": "Ubuntu Srv",
+  "post": "595065",
+  "ranking_points": 1,
+  "storage_sys": "JBOD",
+  "username": "dzintars"
+ },
+ "system_070": {
+  "capacity": 12,
+  "case": "Fractal Node 804",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0300": 4
+  },
+  "notes": null,
+  "os": "WS 2012R2",
+  "post": "3068247",
+  "ranking_points": 48,
+  "storage_sys": "HWRD",
+  "username": "EmeraldFlame"
+ },
+ "system_073": {
+  "capacity": 6,
+  "case": "Lian Li PC-7FN",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "SS0100": 2,
+   "SS0200": 2
+  },
+  "notes": null,
+  "os": "WS 2008R2",
+  "post": "3148440",
+  "ranking_points": 24,
+  "storage_sys": "JBOD",
+  "username": "kichilron"
+ },
+ "system_074": {
+  "capacity": 8,
+  "case": "NZXT H630",
+  "ditch": 0,
+  "drive_count": 3,
+  "drives": {
+   "SG0400": 1,
+   "SS0200": 2
+  },
+  "notes": null,
+  "os": "Win 8.1",
+  "post": "3148440",
+  "ranking_points": 24,
+  "storage_sys": "JBOD, SWRD",
+  "username": "kichilron"
+ },
+ "system_083": {
+  "capacity": 16,
+  "case": "Fractal Node 304",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0400": 4
+  },
+  "notes": null,
+  "os": "WHS 2011",
+  "post": "3835678",
+  "ranking_points": 64,
+  "storage_sys": "HwRD",
+  "username": "Green_man_5"
+ },
+ "system_084": {
+  "capacity": 24,
+  "case": "Supermicro 846E1-R900B",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0600": 4
+  },
+  "notes": null,
+  "os": "Debian",
+  "post": "3852866",
+  "ranking_points": 96,
+  "storage_sys": "HwRD",
+  "username": "Saku"
+ },
+ "system_086": {
+  "capacity": 10,
+  "case": "Antec 900",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0100": 1,
+   "WD0300": 3
+  },
+  "notes": null,
+  "os": "Win 7",
+  "post": "3860943",
+  "ranking_points": 40,
+  "storage_sys": "JBOD",
+  "username": "NWArkGuy"
+ },
+ "system_090": {
+  "capacity": 10,
+  "case": "Zalman Z1",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0100": 1,
+   "WD0300": 3
+  },
+  "notes": null,
+  "os": "FreeNAS",
+  "post": "4310059",
+  "ranking_points": 40,
+  "storage_sys": "ZFS",
+  "username": "AidanJMessenger"
+ },
+ "system_093": {
+  "capacity": 12,
+  "case": "Netgear ReadyNAS 104",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0300": 4
+  },
+  "notes": null,
+  "os": "ReadyNAS",
+  "post": "4441260",
+  "ranking_points": 48,
+  "storage_sys": "SwRD",
+  "username": "Sousuke"
+ },
+ "system_109": {
+  "capacity": 12,
+  "case": "IBM x3400 Server Chassis",
+  "ditch": 0,
+  "drive_count": 3,
+  "drives": {
+   "SG0400": 3
+  },
+  "notes": null,
+  "os": "Lubuntu",
+  "post": "4658944",
+  "ranking_points": 36,
+  "storage_sys": "mdadm",
+  "username": "sidiox"
+ },
+ "system_117": {
+  "capacity": 16,
+  "case": "Fractal Design R4",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0400": 4
+  },
+  "notes": null,
+  "os": "Ubuntu",
+  "post": "5525650",
+  "ranking_points": 64,
+  "storage_sys": "JBOD",
+  "username": "Eric The Tech Guru"
+ },
+ "system_119": {
+  "capacity": 16,
+  "case": "Silverstone Milo ML04B",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0400": 4
+  },
+  "notes": null,
+  "os": "WS 2008R2",
+  "post": "5699276",
+  "ranking_points": 64,
+  "storage_sys": "JBOD",
+  "username": "weeandykidd"
+ }
+}
