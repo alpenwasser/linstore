@@ -3,8 +3,14 @@
 import pprint as pp
 import json as js
 #import sympy as sp
+import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
 
+# ---------------------------------------------------------------------------- #
+# LOAD JSON AND GENERATE RANKING                                               #
+# ---------------------------------------------------------------------------- #
 systems_file='json/systems.json'
 system_data=open(systems_file)
 system_db = js.load(system_data)
@@ -17,7 +23,6 @@ drive_data=open(drives_file)
 drive_db = js.load(drive_data)
 drive_data.close()
 #pp.pprint(drive_db)
-
 
 # Iterate over all systems:
 for system in system_db.keys():
@@ -52,4 +57,50 @@ ranking_data.close()
 
 
 
+# ---------------------------------------------------------------------------- #
+# GENERATE PLOT                                                                #
+# ---------------------------------------------------------------------------- #
+#plot_data = js.loads('{}')
+#plot_data_usernames = np.array()
+plot_data_ranks = np.array([])
+plot_data_ranking_points = np.array([])
+#pp.pprint(ranking_db)
+for rank in ranking_db.keys():
+    plot_data_ranks = np.append(plot_data_ranks,[rank])
+    plot_data_ranking_points = np.append(plot_data_ranking_points, [ranking_db[rank]['ranking_points']])
+    #plot_data[ranked_system] = js.loads('{}')
+    #plot_data[ranked_system]['username'] = ranking_db[ranked_system]['username']
+    #plot_data[ranked_system]['ranking_points'] = ranking_db[ranked_system]['ranking_points']
 
+#pp.pprint(plot_data_ranks)
+
+#fig = plt.figure(1)
+#axes = fig.add_subplot(111)
+#axes.scatter(plot_data_ranks,plot_data_ranking_points)
+#axes.set_yscale('log',nonposy='clip')
+#axes.set_ylim(ymin=20)
+#axes.set_xlim(xmin=-10)
+#fig.savefig('test.pdf')
+#pp.pprint(plot_data)
+#print(js.dumps(ranking_db,sort_keys=True))
+
+sns.set(color_codes=True)
+#sns.set_palette(sns.color_palette("coolwarm", 7))
+#sns.set_palette("Reds")
+df = pd.DataFrame()
+df['x'] = plot_data_ranks
+df['y'] = plot_data_ranking_points
+
+#sns.jointplot(x='x', y='y', data=df)
+#grid = sns.JointGrid(plot_data_ranks,plot_data_ranking_points,space=0,size=6,ratio=50)
+#grid = sns.JointGrid(plot_data_ranks,plot_data_ranking_points,space=10,size=6)
+#grid = sns.jointplot(x=df['x'],y=df['y'])
+grid = sns.JointGrid(plot_data_ranks,plot_data_ranking_points,space=.1)
+grid.plot_joint(plt.scatter,color='#db4105',s=50)
+grid.plot_marginals(sns.distplot, kde=False, color=".5")
+axes = grid.ax_joint
+axes.set_yscale('log',nonposy='clip')
+axes.set_ylim(ymin=20)
+axes.set_xlim(xmin=-10,xmax=130)
+plt.show()
+#plt.savefig('test.png')
