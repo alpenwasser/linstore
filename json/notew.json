@@ -13,6 +13,7 @@
   "post": "368180",
   "ranking_points": 0.0,
   "storage_sys": "ZFS",
+  "timestamp": "1372000995",
   "username": "alpenwasser"
  },
  "system_029": {
@@ -28,6 +29,7 @@
   "post": "1561286",
   "ranking_points": 22.18070977791825,
   "storage_sys": "ZFS?",
+  "timestamp": "1392666414",
   "username": "Hoppa"
  },
  "system_043": {
@@ -44,6 +46,7 @@
   "post": "277922",
   "ranking_points": 11.090354888959125,
   "storage_sys": "mdadm",
+  "timestamp": "1370132388",
   "username": "MG2R"
  },
  "system_044": {
@@ -61,6 +64,7 @@
   "post": "303666",
   "ranking_points": 1.0986122886681098,
   "storage_sys": "unRAID",
+  "timestamp": "1370542254",
   "username": "cushy91"
  },
  "system_049": {
@@ -76,6 +80,7 @@
   "post": "2195738",
   "ranking_points": 9.887510598012987,
   "storage_sys": "JBOD",
+  "timestamp": "1402515303",
   "username": "2sysel2"
  },
  "system_052": {
@@ -91,6 +96,7 @@
   "post": "2261402",
   "ranking_points": 22.18070977791825,
   "storage_sys": "HwRD",
+  "timestamp": "1403458443",
   "username": "Graveworm"
  },
  "system_053": {
@@ -108,6 +114,7 @@
   "post": "2298428",
   "ranking_points": 15.249237972318797,
   "storage_sys": "JBOD",
+  "timestamp": "1403974370",
   "username": "Zerreth"
  },
  "system_054": {
@@ -125,6 +132,7 @@
   "post": "2304876",
   "ranking_points": 18.021826694558577,
   "storage_sys": "SHR",
+  "timestamp": "1404076473",
   "username": "Dr_Frankenstein"
  },
  "system_058": {
@@ -140,6 +148,7 @@
   "post": "2635265",
   "ranking_points": 22.18070977791825,
   "storage_sys": "ZFS",
+  "timestamp": "1407532365",
   "username": "lekro"
  },
  "system_061": {
@@ -155,6 +164,7 @@
   "post": "595065",
   "ranking_points": 0.0,
   "storage_sys": "JBOD",
+  "timestamp": "1376334838",
   "username": "dzintars"
  },
  "system_070": {
@@ -170,6 +180,7 @@
   "post": "3068247",
   "ranking_points": 16.635532333438686,
   "storage_sys": "HWRD",
+  "timestamp": "1411922097",
   "username": "EmeraldFlame"
  },
  "system_073": {
@@ -186,6 +197,7 @@
   "post": "3148440",
   "ranking_points": 8.317766166719343,
   "storage_sys": "JBOD",
+  "timestamp": "1412847933",
   "username": "kichilron"
  },
  "system_074": {
@@ -202,6 +214,7 @@
   "post": "3148440",
   "ranking_points": 8.788898309344878,
   "storage_sys": "JBOD, SWRD",
+  "timestamp": "1412847933",
   "username": "kichilron"
  },
  "system_083": {
@@ -217,6 +230,7 @@
   "post": "3835678",
   "ranking_points": 22.18070977791825,
   "storage_sys": "HwRD",
+  "timestamp": "1420180211",
   "username": "Green_man_5"
  },
  "system_084": {
@@ -232,6 +246,7 @@
   "post": "3852866",
   "ranking_points": 33.27106466687737,
   "storage_sys": "HwRD",
+  "timestamp": "1420332698",
   "username": "Saku"
  },
  "system_086": {
@@ -248,6 +263,7 @@
   "post": "3860943",
   "ranking_points": 13.862943611198906,
   "storage_sys": "JBOD",
+  "timestamp": "1420406122",
   "username": "NWArkGuy"
  },
  "system_090": {
@@ -264,6 +280,7 @@
   "post": "4310059",
   "ranking_points": 13.862943611198906,
   "storage_sys": "ZFS",
+  "timestamp": "1424854825",
   "username": "AidanJMessenger"
  },
  "system_093": {
@@ -279,6 +296,7 @@
   "post": "4441260",
   "ranking_points": 16.635532333438686,
   "storage_sys": "SwRD",
+  "timestamp": "1426193058",
   "username": "Sousuke"
  },
  "system_109": {
@@ -294,6 +312,7 @@
   "post": "4658944",
   "ranking_points": 13.183347464017316,
   "storage_sys": "mdadm",
+  "timestamp": "1428242015",
   "username": "sidiox"
  },
  "system_117": {
@@ -309,6 +328,7 @@
   "post": "5525650",
   "ranking_points": 22.18070977791825,
   "storage_sys": "JBOD",
+  "timestamp": "1437260810",
   "username": "Eric The Tech Guru"
  },
  "system_119": {
@@ -324,6 +344,7 @@
   "post": "5699276",
   "ranking_points": 22.18070977791825,
   "storage_sys": "JBOD",
+  "timestamp": "1438870869",
   "username": "weeandykidd"
  }
 }

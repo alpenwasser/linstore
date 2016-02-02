@@ -1,3 +1,5 @@
 images/
 json/credentials.json
 upload.sh
+plots
+scratchdir

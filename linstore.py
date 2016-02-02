@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import re as re
+import datetime as dt
 
 # ---------------------------------------------------------------------------- #
 # LOAD JSON AND GENERATE RANKING                                               #
@@ -144,121 +145,37 @@ html_file.close()
 # ---------------------------------------------------------------------------- #
 # GENERATE PLOTS                                                               #
 # ---------------------------------------------------------------------------- #
-#plot_data = js.loads('{}')
-#plot_data_usernames = np.array()
-plot_data_ranks = np.array([])
 plot_data_ranking_points = np.array([])
-#pp.pprint(ranking_db)
 plot_data_usernames = []
+rank_length = len(str(max(ranking_db.keys())))
+ranking_points_lengths = []
+username_lengths = []
 for rank in ranking_db.keys():
-    plot_data_usernames.append(ranking_db[rank]['username'] + ' ' + str(rank))
-    #plot_data_usernames.append('username ' + str(rank))
-    plot_data_ranks = np.append(plot_data_ranks,[rank])
+    ranking_points_lengths.append(len('{:.2f}'.format(ranking_db[rank]['ranking_points'])))
+    username_lengths.append(len(ranking_db[rank]['username']))
+ranking_point_length = max(ranking_points_lengths)
+username_length = max(username_lengths)
+
+for rank in ranking_db.keys():
+    #plot_data_usernames.append(ranking_db[rank]['username'] + "{0: >{pad}}".format(str(rank), pad = rank_length + 1))
+    plot_data_usernames.append(str(rank) + '{0: >{pad}}'.format(ranking_db[rank]['username'], pad = username_length + 1 ) + '{0: >{pad}.2f}'.format(ranking_db[rank]['ranking_points'], pad = ranking_point_length + 1))
     plot_data_ranking_points = np.append(plot_data_ranking_points, [ranking_db[rank]['ranking_points']])
-    #plot_data[ranked_system] = js.loads('{}')
-    #plot_data[ranked_system]['username'] = ranking_db[ranked_system]['username']
-    #plot_data[ranked_system]['ranking_points'] = ranking_db[ranked_system]['ranking_points']
 
-#pp.pprint(plot_data_ranks)
-
-#fig = plt.figure(1)
-#axes = fig.add_subplot(111)
-#axes.scatter(plot_data_ranks,plot_data_ranking_points)
-#axes.set_yscale('log',nonposy='clip')
-#axes.set_ylim(ymin=20)
-#axes.set_xlim(xmin=-10)
-#fig.savefig('test.pdf')
-#pp.pprint(plot_data)
-#print(js.dumps(ranking_db,sort_keys=True))
-
-#sns.set(color_codes=True)
-#sns.set_palette(sns.color_palette("coolwarm", 7))
-#sns.set_palette("Reds")
-#df = pd.DataFrame()
-#df['x'] = plot_data_ranks
-#df['y'] = plot_data_ranking_points
-
-#sns.jointplot(x='x', y='y', data=df)
-#grid = sns.JointGrid(plot_data_ranks,plot_data_ranking_points,space=0,size=6,ratio=50)
-#grid = sns.JointGrid(plot_data_ranks,plot_data_ranking_points,space=10,size=6)
-#grid = sns.jointplot(x=df['x'],y=df['y'])
-#grid = sns.JointGrid(plot_data_ranks,plot_data_ranking_points,space=.1)
-#grid.plot_joint(plt.scatter,color='#db4105',s=50)
-#grid.plot_marginals(sns.distplot, kde=False, color=".5")
-#axes = grid.ax_joint
-#axes.set_yscale('log',nonposy='clip')
-#axes.set_ylim(ymin=20)
-#axes.set_xlim(xmin=-10,xmax=130)
-#plt.show()
-#plt.savefig('test.png')
-
-# Simple scatter plot
-#df = pd.DataFrame()
-#df['Rank'] = plot_data_ranks
-#df['Ranking Points'] = plot_data_ranking_points
-#grid = sns.FacetGrid(df)
-#grid.map(plt.scatter,'Rank','Ranking Points')
-#axes = grid.ax
-#axes.set_yscale('log')
-#axes.set_ylim(ymin=20)
-#axes.set_xlim(xmin=-10,xmax=130)
-#plt.show()
-
-#df = pd.DataFrame()
-#df['username'] = plot_data_usernames
-#df['Ranking Points'] = plot_data_ranking_points
-#grid = sns.FacetGrid(df)
-#grid.map(sns.barplot,'Ranking Points','username',palette='Blues_d')
-#axes = grid.ax
-#axes.set_yscale('log')
-#axes.set_ylim(ymin=20)
-#axes.set_xlim(xmin=-10,xmax=130)
-#plt.show()
-
-#df = pd.DataFrame()
-##df['Rank'] = plot_data_ranks
-#df['Rank'] = plot_data_usernames
-#df['Ranking Points'] = plot_data_ranking_points
-#grid = sns.FacetGrid(df)
-##grid.map(plt.scatter,'Rank','Ranking Points')
-#grid.map(sns.swarmplot,'Ranking Points','Rank')
-#grid.set_xticklabels(rotation=90)
-#axes = grid.ax
-#axes.set_xscale('log')
-#plt.show()
-
-#sns.set(color_codes=True,font_scale=0.5)
-#df = pd.DataFrame()
-#df['Rank'] = plot_data_ranks
-#df['Rank'] = plot_data_usernames
-#df['Ranking Points'] = plot_data_ranking_points
-#grid = sns.FacetGrid(df)
-#grid.map(plt.scatter,'Rank','Ranking Points')
-#grid.map(sns.barplot,'Ranking Points','Rank',palette='Blues_r')
-#grid.set_xticklabels(rotation=90)
-#axes = grid.ax
-#axes.set_xscale('log')
-#plt.show()
-#plt.savefig('test.png')
-
-
-#plt.rc('text', usetex=True)
-font = {
-        'family' : 'serif',
-        'color' : 'black',
-        'weight' : 'normal',
-        'size' : '10',
-        }
-plt.rc('figure',figsize=(16,40))
-plt.rc('font',family='sans-serif')
 df = pd.DataFrame()
 df['Username'] = plot_data_usernames
 df['Ranking Points'] = plot_data_ranking_points
+
+#plt.rc('text', usetex=True)
+plt.rc('figure',figsize=(16,40))
+plt.rc('font',family='monospace')
 fig, ax1 = plt.subplots(1)
 sns.barplot(df['Ranking Points'],df['Username'],ax=ax1,palette='Blues_r')
-#plt.show()
-fig.subplots_adjust(bottom=0.03,left=0.3,right=0.95,top=0.95)
-ax1.tick_params(labelsize=24)
+fig.subplots_adjust(bottom=0.03,left=0.325,right=0.98,top=0.99)
+ax1.set_xlabel('Ranking Points',fontsize=20)
+ax1.set_ylabel('Rank, User, Points',fontsize=20)
+ax1.tick_params(labelsize=20)
 ax1.set_xscale('log')
-plt.savefig('test_log.png')
+
+timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
+plt.savefig(timestamp + '--rankings.png')
 #plt.show()
