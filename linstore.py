@@ -9,6 +9,7 @@ import seaborn as sns
 import pandas as pd
 import re as re
 import datetime as dt
+import operator as op
 
 # ---------------------------------------------------------------------------- #
 # LOAD JSON AND GENERATE RANKING                                               #
@@ -42,24 +43,26 @@ for system in system_db.keys():
         system_db[system]['ranking_points'] = system_db[system]['capacity'] * np.log(system_db[system]['drive_count'])
 
 
-ranked_systems = sorted(system_db, key=lambda system: system_db[system]['ranking_points'], reverse=True)
+# Rank systems
+ranked_systems = sorted(system_db, key=lambda system: (system_db[system]['ranking_points'],-system_db[system]['post']), reverse=True)
 
-# Create empty json object
+# Create empty json objects
 ranking_file='json/ranking.json'
 notew_file='json/notew.json'
 ranking_db = js.loads('{}')
 notew_db = js.loads('{}')
+
+
+# Populate databases
 rank = 0
 for ranked_system in ranked_systems:
     if (system_db[ranked_system]['drive_count'] < 5
         or system_db[ranked_system]['capacity'] < 10
         or system_db[ranked_system]['ditch'] == 1):
-        # TODO: add to noteworthy
         notew_db[ranked_system] = system_db[ranked_system]
         continue
     rank += 1
     ranking_db[rank] = system_db[ranked_system]
-    #del ranking_db[ranked_system]
 
 ranking_data=open(ranking_file, 'w')
 js.dump(ranking_db,ranking_data,indent=1,sort_keys=True)
@@ -157,7 +160,6 @@ ranking_point_length = max(ranking_points_lengths)
 username_length = max(username_lengths)
 
 for rank in ranking_db.keys():
-    #plot_data_usernames.append(ranking_db[rank]['username'] + "{0: >{pad}}".format(str(rank), pad = rank_length + 1))
     plot_data_usernames.append(str(rank) + '{0: >{pad}}'.format(ranking_db[rank]['username'], pad = username_length + 1 ) + '{0: >{pad}.2f}'.format(ranking_db[rank]['ranking_points'], pad = ranking_point_length + 1))
     plot_data_ranking_points = np.append(plot_data_ranking_points, [ranking_db[rank]['ranking_points']])
 
@@ -170,12 +172,12 @@ plt.rc('figure',figsize=(16,40))
 plt.rc('font',family='monospace')
 fig, ax1 = plt.subplots(1)
 sns.barplot(df['Ranking Points'],df['Username'],ax=ax1,palette='Blues_r')
-fig.subplots_adjust(bottom=0.03,left=0.325,right=0.98,top=0.99)
+fig.subplots_adjust(bottom=0.01,left=0.33,right=0.98,top=0.99)
 ax1.set_xlabel('Ranking Points',fontsize=20)
 ax1.set_ylabel('Rank, User, Points',fontsize=20)
 ax1.tick_params(labelsize=20)
 ax1.set_xscale('log')
 
 timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
-plt.savefig(timestamp + '--rankings.png')
+plt.savefig('plots/' + timestamp + '--rankings.png')
 #plt.show()
