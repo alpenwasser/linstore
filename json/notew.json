@@ -11,7 +11,7 @@
   "notes": "BotW",
   "os": "Arch Linux",
   "post": "368180",
-  "ranking_points": 0,
+  "ranking_points": 0.0,
   "storage_sys": "ZFS",
   "username": "alpenwasser"
  },
@@ -26,7 +26,7 @@
   "notes": null,
   "os": "FreeNAS",
   "post": "1561286",
-  "ranking_points": 64,
+  "ranking_points": 22.18070977791825,
   "storage_sys": "ZFS?",
   "username": "Hoppa"
  },
@@ -42,7 +42,7 @@
   "notes": "[b]K'Nex[/b] Build, BotW",
   "os": "Debian",
   "post": "277922",
-  "ranking_points": 32,
+  "ranking_points": 11.090354888959125,
   "storage_sys": "mdadm",
   "username": "MG2R"
  },
@@ -59,7 +59,7 @@
   "notes": "HP Proliant Microserver",
   "os": "unRAID",
   "post": "303666",
-  "ranking_points": 3,
+  "ranking_points": 1.0986122886681098,
   "storage_sys": "unRAID",
   "username": "cushy91"
  },
@@ -74,7 +74,7 @@
   "notes": null,
   "os": "Win 8",
   "post": "2195738",
-  "ranking_points": 27,
+  "ranking_points": 9.887510598012987,
   "storage_sys": "JBOD",
   "username": "2sysel2"
  },
@@ -89,7 +89,7 @@
   "notes": null,
   "os": "WS 2012",
   "post": "2261402",
-  "ranking_points": 64,
+  "ranking_points": 22.18070977791825,
   "storage_sys": "HwRD",
   "username": "Graveworm"
  },
@@ -106,7 +106,7 @@
   "notes": "K'nex",
   "os": "Win 8.1",
   "post": "2298428",
-  "ranking_points": 44,
+  "ranking_points": 15.249237972318797,
   "storage_sys": "JBOD",
   "username": "Zerreth"
  },
@@ -123,7 +123,7 @@
   "notes": null,
   "os": "Synology",
   "post": "2304876",
-  "ranking_points": 52,
+  "ranking_points": 18.021826694558577,
   "storage_sys": "SHR",
   "username": "Dr_Frankenstein"
  },
@@ -138,7 +138,7 @@
   "notes": null,
   "os": "FreeNAS",
   "post": "2635265",
-  "ranking_points": 64,
+  "ranking_points": 22.18070977791825,
   "storage_sys": "ZFS",
   "username": "lekro"
  },
@@ -153,7 +153,7 @@
   "notes": "Open air, no case",
   "os": "Ubuntu Srv",
   "post": "595065",
-  "ranking_points": 1,
+  "ranking_points": 0.0,
   "storage_sys": "JBOD",
   "username": "dzintars"
  },
@@ -168,7 +168,7 @@
   "notes": null,
   "os": "WS 2012R2",
   "post": "3068247",
-  "ranking_points": 48,
+  "ranking_points": 16.635532333438686,
   "storage_sys": "HWRD",
   "username": "EmeraldFlame"
  },
@@ -184,7 +184,7 @@
   "notes": null,
   "os": "WS 2008R2",
   "post": "3148440",
-  "ranking_points": 24,
+  "ranking_points": 8.317766166719343,
   "storage_sys": "JBOD",
   "username": "kichilron"
  },
@@ -200,7 +200,7 @@
   "notes": null,
   "os": "Win 8.1",
   "post": "3148440",
-  "ranking_points": 24,
+  "ranking_points": 8.788898309344878,
   "storage_sys": "JBOD, SWRD",
   "username": "kichilron"
  },
@@ -215,7 +215,7 @@
   "notes": null,
   "os": "WHS 2011",
   "post": "3835678",
-  "ranking_points": 64,
+  "ranking_points": 22.18070977791825,
   "storage_sys": "HwRD",
   "username": "Green_man_5"
  },
@@ -230,7 +230,7 @@
   "notes": null,
   "os": "Debian",
   "post": "3852866",
-  "ranking_points": 96,
+  "ranking_points": 33.27106466687737,
   "storage_sys": "HwRD",
   "username": "Saku"
  },
@@ -246,7 +246,7 @@
   "notes": null,
   "os": "Win 7",
   "post": "3860943",
-  "ranking_points": 40,
+  "ranking_points": 13.862943611198906,
   "storage_sys": "JBOD",
   "username": "NWArkGuy"
  },
@@ -262,7 +262,7 @@
   "notes": null,
   "os": "FreeNAS",
   "post": "4310059",
-  "ranking_points": 40,
+  "ranking_points": 13.862943611198906,
   "storage_sys": "ZFS",
   "username": "AidanJMessenger"
  },
@@ -277,7 +277,7 @@
   "notes": null,
   "os": "ReadyNAS",
   "post": "4441260",
-  "ranking_points": 48,
+  "ranking_points": 16.635532333438686,
   "storage_sys": "SwRD",
   "username": "Sousuke"
  },
@@ -292,7 +292,7 @@
   "notes": null,
   "os": "Lubuntu",
   "post": "4658944",
-  "ranking_points": 36,
+  "ranking_points": 13.183347464017316,
   "storage_sys": "mdadm",
   "username": "sidiox"
  },
@@ -307,7 +307,7 @@
   "notes": null,
   "os": "Ubuntu",
   "post": "5525650",
-  "ranking_points": 64,
+  "ranking_points": 22.18070977791825,
   "storage_sys": "JBOD",
   "username": "Eric The Tech Guru"
  },
@@ -322,7 +322,7 @@
   "notes": null,
   "os": "WS 2008R2",
   "post": "5699276",
-  "ranking_points": 64,
+  "ranking_points": 22.18070977791825,
   "storage_sys": "JBOD",
   "username": "weeandykidd"
  }

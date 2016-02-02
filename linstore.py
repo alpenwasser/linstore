@@ -38,7 +38,7 @@ for system in system_db.keys():
             system_db[system]['drive_count'] += int(system_db[system]['drives'][drive_type])
             #system_db[system]['ranking_points'] = drive_type
 
-        system_db[system]['ranking_points'] = system_db[system]['capacity'] * system_db[system]['drive_count']
+        system_db[system]['ranking_points'] = system_db[system]['capacity'] * np.log(system_db[system]['drive_count'])
 
 
 ranked_systems = sorted(system_db, key=lambda system: system_db[system]['ranking_points'], reverse=True)
@@ -123,12 +123,23 @@ capacity_sub = '%cap%'
 nodrives_sub = '%ndr%'
 case_sub = '%cs%'
 
+# Assemble ranking table
+rows = ''
+for rank in ranking_db.keys():
+    row = re.sub(rank_sub,str(rank),template_row)
+    row = re.sub(username_sub,ranking_db[rank]['username'],row)
+    row = re.sub(rankingpoints_sub,"{:.2f}".format(ranking_db[rank]['ranking_points']),row)
+    row = re.sub(capacity_sub,str(ranking_db[rank]['capacity']),row)
+    row = re.sub(nodrives_sub,str(ranking_db[rank]['drive_count']),row)
+    row = re.sub(case_sub,str(ranking_db[rank]['case']),row)
+    rows += row
 
+html_file = open('rankings.html','w')
+html_file.write(template_header)
+html_file.write(rows)
+html_file.write(template_footer)
+html_file.close()
 
-
-
-
-exit()
 
 # ---------------------------------------------------------------------------- #
 # GENERATE PLOTS                                                               #
@@ -141,6 +152,7 @@ plot_data_ranking_points = np.array([])
 plot_data_usernames = []
 for rank in ranking_db.keys():
     plot_data_usernames.append(ranking_db[rank]['username'] + ' ' + str(rank))
+    #plot_data_usernames.append('username ' + str(rank))
     plot_data_ranks = np.append(plot_data_ranks,[rank])
     plot_data_ranking_points = np.append(plot_data_ranking_points, [ranking_db[rank]['ranking_points']])
     #plot_data[ranked_system] = js.loads('{}')
@@ -159,7 +171,7 @@ for rank in ranking_db.keys():
 #pp.pprint(plot_data)
 #print(js.dumps(ranking_db,sort_keys=True))
 
-sns.set(color_codes=True)
+#sns.set(color_codes=True)
 #sns.set_palette(sns.color_palette("coolwarm", 7))
 #sns.set_palette("Reds")
 #df = pd.DataFrame()
@@ -215,14 +227,38 @@ sns.set(color_codes=True)
 #axes.set_xscale('log')
 #plt.show()
 
-df = pd.DataFrame()
+#sns.set(color_codes=True,font_scale=0.5)
+#df = pd.DataFrame()
 #df['Rank'] = plot_data_ranks
-df['Rank'] = plot_data_usernames
-df['Ranking Points'] = plot_data_ranking_points
-grid = sns.FacetGrid(df)
+#df['Rank'] = plot_data_usernames
+#df['Ranking Points'] = plot_data_ranking_points
+#grid = sns.FacetGrid(df)
 #grid.map(plt.scatter,'Rank','Ranking Points')
-grid.map(sns.barplot,'Ranking Points','Rank',palette='Blues_r')
-grid.set_xticklabels(rotation=90)
-axes = grid.ax
-axes.set_xscale('log')
-plt.show()
+#grid.map(sns.barplot,'Ranking Points','Rank',palette='Blues_r')
+#grid.set_xticklabels(rotation=90)
+#axes = grid.ax
+#axes.set_xscale('log')
+#plt.show()
+#plt.savefig('test.png')
+
+
+#plt.rc('text', usetex=True)
+font = {
+        'family' : 'serif',
+        'color' : 'black',
+        'weight' : 'normal',
+        'size' : '10',
+        }
+plt.rc('figure',figsize=(16,40))
+plt.rc('font',family='sans-serif')
+df = pd.DataFrame()
+df['Username'] = plot_data_usernames
+df['Ranking Points'] = plot_data_ranking_points
+fig, ax1 = plt.subplots(1)
+sns.barplot(df['Ranking Points'],df['Username'],ax=ax1,palette='Blues_r')
+#plt.show()
+fig.subplots_adjust(bottom=0.03,left=0.3,right=0.95,top=0.95)
+ax1.tick_params(labelsize=24)
+ax1.set_xscale('log')
+plt.savefig('test_log.png')
+#plt.show()
