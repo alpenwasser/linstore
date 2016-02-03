@@ -1,11 +1,10 @@
 <table style="width:100%;border-collapse:separate;border-spacing:5px">
     <colgroup>
         <col style="width:5%;">
-        <col style="width:20%;">
-        <col style="width:12%;">
-        <col style="width:11%;">
-        <col style="width:11%;">
-        <col style="width:41%;">
+        <col style="width:15%;">
+        <col style="width:13%;">
+        <col style="width:10%;">
+        <col style="width:57%;">
     </colgroup>
     <thead>
         <tr>
@@ -16,16 +15,13 @@
                 Username
             </th>
             <th style="text-align:right;">
-                Ranking Points
+                Attribute
             </th>
             <th style="text-align:right;">
-                Capacity
+                Value
             </th>
             <th style="text-align:right;">
-                Drives
-            </th>
-            <th style="text-align:left;">
-                Case
+                &nbsp;
             </th>
         </tr>
     </thead>
@@ -39,34 +35,65 @@
                 %u%
             </td>
             <td style="text-align:right;">
+                Ranking Points
+            </td>
+            <td style="text-align:right;">
                 %rp%
+            </td>
+			<td ><div style="background-color:#db4105;width:%rp_bar%%;">&nbsp;</div></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">
+                &nbsp;
+            </td>
+            <td style="text-align:right;">
+                &nbsp;
+            </td>
+            <td style="text-align:right;">
+                Capacity
             </td>
             <td style="text-align:right;">
                 %cap%
             </td>
+			<td ><div style="background-color:#3e7ac4;width:%cap_bar%%;">&nbsp;</div></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">
+                &nbsp;
+            </td>
+            <td style="text-align:right;">
+                &nbsp;
+            </td>
+            <td style="text-align:right;">
+                Drive Count
+            </td>
             <td style="text-align:right;">
                 %ndr%
+            </td>
+			<td ><div style="background-color:#038e58;width:%drvc_bar%%;">&nbsp;</div></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">
+                &nbsp;
+            </td>
+            <td style="text-align:right;">
+                &nbsp;
+            </td>
+            <td style="text-align:right;">
+                Case
+            </td>
+            <td>
+                &nbsp;
             </td>
             <td>
                 %cs%
             </td>
         </tr>
-		<tr style="line-height:0.33em;border-spacing:0;">
-			<td>&nbsp;</td>
-			<td colspan="5"><div style="background-color:#db4105;width:%rp_bar%%;">&nbsp;</div></td>
-		</tr>
-		<tr style="line-height:0.33em;border-spacing:0;">
-			<td>&nbsp;</td>
-			<td colspan="5"><div style="background-color:#3e7ac4;width:%cap_bar%%;">&nbsp;</div></td>
-		</tr>
-		<tr style="line-height:0.33em;border-spacing:0;">
-			<td>&nbsp;</td>
-			<td colspan="5"><div style="background-color:#038e58;width:%drvc_bar%%;">&nbsp;</div></td>
-		</tr>
         %%%</template_row>%%%
     </tbody>
 </table>
 
+<!--
 <p>
     Ranking List with Ranking Points, ordered by Ranking points descending, then post date ascending
     <img alt="%%%<rankings_plot>%%%" class="ipsImage" src="http://alpenwasser.net/images/w800/%%%<rankings_plot>%%%">
@@ -79,3 +106,4 @@
     Ranking List with Drive Count, ordered by Ranking points descending, then post date ascending
     <img alt="%%%<rankings_plot_drvc>%%%" class="ipsImage" src="http://alpenwasser.net/images/w800/%%%<rankings_plot_drvc>%%%">
 </p>
+-->
