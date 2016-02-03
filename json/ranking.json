@@ -2,7 +2,7 @@
  "1": {
   "cap_bar": 79.29261096130712,
   "capacity": 152,
-  "case": "Supermicro SuperServer 6027TR-DTRF",
+  "case": "Supermicro 6027TR-DTRF",
   "ditch": 0,
   "drive_count": 41,
   "drives": {
@@ -468,7 +468,7 @@
  "23": {
   "cap_bar": 57.41253260394667,
   "capacity": 38,
-  "case": "Supermicro SuperChassis 846BA-R920B",
+  "case": "Supermicro 846BA-R920B",
   "ditch": 0,
   "drive_count": 15,
   "drives": {

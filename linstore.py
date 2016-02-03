@@ -189,7 +189,7 @@ html_file.write(rows)
 html_file.write(template_footer)
 html_file.close()
 
-exit()
+#exit()
 
 # ---------------------------------------------------------------------------- #
 # GENERATE PLOTS                                                               #
