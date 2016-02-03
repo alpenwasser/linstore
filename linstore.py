@@ -11,6 +11,14 @@ import re as re
 import datetime as dt
 import operator as op
 
+
+timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
+plot_dir = 'plots/'
+rankings_plot = timestamp + '--rankings.png'
+rankings_plot_caps = timestamp + '--rankings-caps.png'
+rankings_plot_path = plot_dir + timestamp + '--rankings.png'
+rankings_plot_caps_path = plot_dir + timestamp + '--rankings-caps.png'
+
 # ---------------------------------------------------------------------------- #
 # LOAD JSON AND GENERATE RANKING                                               #
 # ---------------------------------------------------------------------------- #
@@ -44,6 +52,7 @@ for system in system_db.keys():
 
 
 # Rank systems
+# Sort by ranking points first, descending, then by post number, ascending
 ranked_systems = sorted(system_db, key=lambda system: (system_db[system]['ranking_points'],-system_db[system]['post']), reverse=True)
 
 # Create empty json objects
@@ -51,7 +60,6 @@ ranking_file='json/ranking.json'
 notew_file='json/notew.json'
 ranking_db = js.loads('{}')
 notew_db = js.loads('{}')
-
 
 # Populate databases
 rank = 0
@@ -104,8 +112,10 @@ for html_tpl_str in html_template:
             continue
 
         if not tag_has_been_opened:
+            # We're in the header
             template_header += html_tpl_str
         else:
+            # We're in the footer
             template_footer += html_tpl_str
     else:
         #print('open')
@@ -138,6 +148,12 @@ for rank in ranking_db.keys():
     row = re.sub(case_sub,str(ranking_db[rank]['case']),row)
     rows += row
 
+# Insert Images
+rankings_plot_pattern = '%%%<rankings_plot>%%%'
+template_footer = re.sub(rankings_plot_pattern,rankings_plot,template_footer)
+rankings_plot_pattern = '%%%<rankings_plot_caps>%%%'
+template_footer = re.sub(rankings_plot_pattern,rankings_plot_caps,template_footer)
+
 html_file = open('rankings.html','w')
 html_file.write(template_header)
 html_file.write(rows)
@@ -148,24 +164,39 @@ html_file.close()
 # ---------------------------------------------------------------------------- #
 # GENERATE PLOTS                                                               #
 # ---------------------------------------------------------------------------- #
-plot_data_ranking_points = np.array([])
-plot_data_usernames = []
+
+
 rank_length = len(str(max(ranking_db.keys())))
 ranking_points_lengths = []
 username_lengths = []
+capacity_lengths = []
 for rank in ranking_db.keys():
     ranking_points_lengths.append(len('{:.2f}'.format(ranking_db[rank]['ranking_points'])))
     username_lengths.append(len(ranking_db[rank]['username']))
+    capacity_lengths.append(len(str(ranking_db[rank]['capacity'])))
 ranking_point_length = max(ranking_points_lengths)
 username_length = max(username_lengths)
+capacity_length = max(capacity_lengths)
 
+
+plot_data_ranking_points = np.array([])
+plot_data_usernames = []
+plot_data_capacities = []
+plot_data_drivecount = []
+plot_data_usernames_caps = []
 for rank in ranking_db.keys():
     plot_data_usernames.append(str(rank) + '{0: >{pad}}'.format(ranking_db[rank]['username'], pad = username_length + 1 ) + '{0: >{pad}.2f}'.format(ranking_db[rank]['ranking_points'], pad = ranking_point_length + 1))
+    plot_data_usernames_caps.append(str(rank) + '{0: >{pad}}'.format(ranking_db[rank]['username'], pad = username_length + 1 ) + '{0: >{pad}}'.format(ranking_db[rank]['capacity'], pad = capacity_length + 1))
     plot_data_ranking_points = np.append(plot_data_ranking_points, [ranking_db[rank]['ranking_points']])
+    plot_data_capacities = np.append(plot_data_capacities, [ranking_db[rank]['capacity']])
+    plot_data_drivecount = np.append(plot_data_drivecount, [ranking_db[rank]['drive_count']])
 
 df = pd.DataFrame()
 df['Username'] = plot_data_usernames
+df['Username Caps'] = plot_data_usernames_caps
 df['Ranking Points'] = plot_data_ranking_points
+df['Capacity'] = plot_data_capacities
+df['Drive Count'] = plot_data_capacities
 
 #plt.rc('text', usetex=True)
 plt.rc('figure',figsize=(16,40))
@@ -174,10 +205,21 @@ fig, ax1 = plt.subplots(1)
 sns.barplot(df['Ranking Points'],df['Username'],ax=ax1,palette='Blues_r')
 fig.subplots_adjust(bottom=0.01,left=0.33,right=0.98,top=0.99)
 ax1.set_xlabel('Ranking Points',fontsize=20)
-ax1.set_ylabel('Rank, User, Points',fontsize=20)
+ax1.set_ylabel('User',fontsize=20)
 ax1.tick_params(labelsize=20)
 ax1.set_xscale('log')
 
-timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
-plt.savefig('plots/' + timestamp + '--rankings.png')
+#plt.savefig('test.png')
+plt.savefig(rankings_plot_path)
 #plt.show()
+
+fig2, ax2 = plt.subplots(1)
+sns.barplot(df['Capacity'],df['Username Caps'],ax=ax2,palette='Blues_r')
+fig2.subplots_adjust(bottom=0.01,left=0.33,right=0.98,top=0.99)
+ax2.set_xlabel('Capacity',fontsize=20)
+ax2.set_ylabel('User',fontsize=20)
+ax2.tick_params(labelsize=20)
+ax2.set_xscale('log')
+
+plt.savefig(rankings_plot_caps_path)
+#plt.savefig('test2.png')
