@@ -1,5 +1,6 @@
 {
  "system_028": {
+  "cap_bar": -Infinity,
   "capacity": 0,
   "case": "Fractal Design R4 (custom)",
   "ditch": 0,
@@ -8,15 +9,18 @@
    "SS0025": 1,
    "SS0075": 1
   },
+  "drvc_bar": 10.940039178680218,
   "notes": "BotW",
   "os": "Arch Linux",
   "post": 368180,
   "ranking_points": 0.0,
+  "rp_bar": -Infinity,
   "storage_sys": "ZFS",
   "timestamp": 1372000995,
   "username": "alpenwasser"
  },
  "system_029": {
+  "cap_bar": 43.76015671472087,
   "capacity": 16,
   "case": "Bitfenix Phenom M",
   "ditch": 0,
@@ -24,15 +28,18 @@
   "drives": {
    "WD0400": 4
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "FreeNAS",
   "post": 1561286,
   "ranking_points": 22.18070977791825,
+  "rp_bar": 48.915471057015274,
   "storage_sys": "ZFS?",
   "timestamp": 1392666414,
   "username": "Hoppa"
  },
  "system_043": {
+  "cap_bar": 32.82011753604065,
   "capacity": 8,
   "case": "K'nex Custom Case",
   "ditch": 0,
@@ -41,15 +48,18 @@
    "SG0200": 1,
    "WD0200": 3
   },
+  "drvc_bar": 21.880078357360436,
   "notes": "[b]K'Nex[/b] Build, BotW",
   "os": "Debian",
   "post": 277922,
   "ranking_points": 11.090354888959125,
+  "rp_bar": 37.97543187833505,
   "storage_sys": "mdadm",
   "timestamp": 1370132388,
   "username": "MG2R"
  },
  "system_044": {
+  "cap_bar": 0.0,
   "capacity": 1,
   "case": "HP Proliant MicroServer N40L",
   "ditch": 0,
@@ -59,15 +69,18 @@
    "SG0100": 1,
    "WD0050": 1
   },
+  "drvc_bar": 17.339551854628425,
   "notes": "HP Proliant Microserver",
   "os": "unRAID",
   "post": 303666,
   "ranking_points": 1.0986122886681098,
+  "rp_bar": 1.484370055383166,
   "storage_sys": "unRAID",
   "timestamp": 1370542254,
   "username": "cushy91"
  },
  "system_049": {
+  "cap_bar": 34.67910370925685,
   "capacity": 9,
   "case": "Bitfenix Prodigy mITX",
   "ditch": 0,
@@ -75,15 +88,18 @@
   "drives": {
    "WD0300": 3
   },
+  "drvc_bar": 17.339551854628425,
   "notes": null,
   "os": "Win 8",
   "post": 2195738,
   "ranking_points": 9.887510598012987,
+  "rp_bar": 36.16347376464001,
   "storage_sys": "JBOD",
   "timestamp": 1402515303,
   "username": "2sysel2"
  },
  "system_052": {
+  "cap_bar": 43.76015671472087,
   "capacity": 16,
   "case": "Lian Li PC-Q35",
   "ditch": 0,
@@ -91,15 +107,18 @@
   "drives": {
    "WD0400": 4
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "WS 2012",
   "post": 2261402,
   "ranking_points": 22.18070977791825,
+  "rp_bar": 48.915471057015274,
   "storage_sys": "HwRD",
   "timestamp": 1403458443,
   "username": "Graveworm"
  },
  "system_053": {
+  "cap_bar": 37.84631744385716,
   "capacity": 11,
   "case": "K'nex Custom Case",
   "ditch": 0,
@@ -109,15 +128,18 @@
    "WD0200": 1,
    "WD0400": 2
   },
+  "drvc_bar": 21.880078357360436,
   "notes": "K'nex",
   "os": "Win 8.1",
   "post": 2298428,
   "ranking_points": 15.249237972318797,
+  "rp_bar": 43.001631786151556,
   "storage_sys": "JBOD",
   "timestamp": 1403974370,
   "username": "Zerreth"
  },
  "system_054": {
+  "cap_bar": 40.48295549480793,
   "capacity": 13,
   "case": "Synology DS412+",
   "ditch": 0,
@@ -127,15 +149,18 @@
    "SG0400": 1,
    "WD0300": 2
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "Synology",
   "post": 2304876,
   "ranking_points": 18.021826694558577,
+  "rp_bar": 45.638269837102335,
   "storage_sys": "SHR",
   "timestamp": 1404076473,
   "username": "Dr_Frankenstein"
  },
  "system_058": {
+  "cap_bar": 43.76015671472087,
   "capacity": 16,
   "case": "Fractal Design Arc Midi R2",
   "ditch": 0,
@@ -143,15 +168,18 @@
   "drives": {
    "SG0400": 4
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "FreeNAS",
   "post": 2635265,
   "ranking_points": 22.18070977791825,
+  "rp_bar": 48.915471057015274,
   "storage_sys": "ZFS",
   "timestamp": 1407532365,
   "username": "lekro"
  },
  "system_061": {
+  "cap_bar": 0.0,
   "capacity": 1,
   "case": "Open Air",
   "ditch": 0,
@@ -159,15 +187,18 @@
   "drives": {
    "SS0100": 1
   },
+  "drvc_bar": 0.0,
   "notes": "Open air, no case",
   "os": "Ubuntu Srv",
   "post": 595065,
   "ranking_points": 0.0,
+  "rp_bar": -Infinity,
   "storage_sys": "JBOD",
   "timestamp": 1376334838,
   "username": "dzintars"
  },
  "system_070": {
+  "cap_bar": 39.21963021198886,
   "capacity": 12,
   "case": "Fractal Node 804",
   "ditch": 0,
@@ -175,15 +206,18 @@
   "drives": {
    "WD0300": 4
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "WS 2012R2",
   "post": 3068247,
   "ranking_points": 16.635532333438686,
+  "rp_bar": 44.37494455428326,
   "storage_sys": "HWRD",
   "timestamp": 1411922097,
   "username": "EmeraldFlame"
  },
  "system_073": {
+  "cap_bar": 28.279591033308638,
   "capacity": 6,
   "case": "Lian Li PC-7FN",
   "ditch": 0,
@@ -192,15 +226,18 @@
    "SS0100": 2,
    "SS0200": 2
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "WS 2008R2",
   "post": 3148440,
   "ranking_points": 8.317766166719343,
+  "rp_bar": 33.434905375603044,
   "storage_sys": "JBOD",
   "timestamp": 1412847933,
   "username": "kichilron"
  },
  "system_074": {
+  "cap_bar": 32.82011753604065,
   "capacity": 8,
   "case": "NZXT H630",
   "ditch": 0,
@@ -209,15 +246,18 @@
    "SG0400": 1,
    "SS0200": 2
   },
+  "drvc_bar": 17.339551854628425,
   "notes": null,
   "os": "Win 8.1",
   "post": 3148440,
   "ranking_points": 8.788898309344878,
+  "rp_bar": 34.30448759142382,
   "storage_sys": "JBOD, SWRD",
   "timestamp": 1412847933,
   "username": "kichilron"
  },
  "system_083": {
+  "cap_bar": 43.76015671472087,
   "capacity": 16,
   "case": "Fractal Node 304",
   "ditch": 0,
@@ -225,15 +265,18 @@
   "drives": {
    "WD0400": 4
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "WHS 2011",
   "post": 3835678,
   "ranking_points": 22.18070977791825,
+  "rp_bar": 48.915471057015274,
   "storage_sys": "HwRD",
   "timestamp": 1420180211,
   "username": "Green_man_5"
  },
  "system_084": {
+  "cap_bar": 50.15966939066908,
   "capacity": 24,
   "case": "Supermicro 846E1-R900B",
   "ditch": 0,
@@ -241,15 +284,18 @@
   "drives": {
    "WD0600": 4
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "Debian",
   "post": 3852866,
   "ranking_points": 33.27106466687737,
+  "rp_bar": 55.314983732963476,
   "storage_sys": "HwRD",
   "timestamp": 1420332698,
   "username": "Saku"
  },
  "system_086": {
+  "cap_bar": 36.34202350682628,
   "capacity": 10,
   "case": "Antec 900",
   "ditch": 0,
@@ -258,15 +304,18 @@
    "WD0100": 1,
    "WD0300": 3
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "Win 7",
   "post": 3860943,
   "ranking_points": 13.862943611198906,
+  "rp_bar": 41.49733784912068,
   "storage_sys": "JBOD",
   "timestamp": 1420406122,
   "username": "NWArkGuy"
  },
  "system_090": {
+  "cap_bar": 36.34202350682628,
   "capacity": 10,
   "case": "Zalman Z1",
   "ditch": 0,
@@ -275,15 +324,18 @@
    "WD0100": 1,
    "WD0300": 3
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "FreeNAS",
   "post": 4310059,
   "ranking_points": 13.862943611198906,
+  "rp_bar": 41.49733784912068,
   "storage_sys": "ZFS",
   "timestamp": 1424854825,
   "username": "AidanJMessenger"
  },
  "system_093": {
+  "cap_bar": 39.21963021198886,
   "capacity": 12,
   "case": "Netgear ReadyNAS 104",
   "ditch": 0,
@@ -291,15 +343,18 @@
   "drives": {
    "WD0300": 4
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "ReadyNAS",
   "post": 4441260,
   "ranking_points": 16.635532333438686,
+  "rp_bar": 44.37494455428326,
   "storage_sys": "SwRD",
   "timestamp": 1426193058,
   "username": "Sousuke"
  },
  "system_109": {
+  "cap_bar": 39.21963021198886,
   "capacity": 12,
   "case": "IBM x3400 Server Chassis",
   "ditch": 0,
@@ -307,15 +362,18 @@
   "drives": {
    "SG0400": 3
   },
+  "drvc_bar": 17.339551854628425,
   "notes": null,
   "os": "Lubuntu",
   "post": 4658944,
   "ranking_points": 13.183347464017316,
+  "rp_bar": 40.704000267372024,
   "storage_sys": "mdadm",
   "timestamp": 1428242015,
   "username": "sidiox"
  },
  "system_117": {
+  "cap_bar": 43.76015671472087,
   "capacity": 16,
   "case": "Fractal Design R4",
   "ditch": 0,
@@ -323,15 +381,18 @@
   "drives": {
    "WD0400": 4
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "Ubuntu",
   "post": 5525650,
   "ranking_points": 22.18070977791825,
+  "rp_bar": 48.915471057015274,
   "storage_sys": "JBOD",
   "timestamp": 1437260810,
   "username": "Eric The Tech Guru"
  },
  "system_119": {
+  "cap_bar": 43.76015671472087,
   "capacity": 16,
   "case": "Silverstone Milo ML04B",
   "ditch": 0,
@@ -339,10 +400,12 @@
   "drives": {
    "WD0400": 4
   },
+  "drvc_bar": 21.880078357360436,
   "notes": null,
   "os": "WS 2008R2",
   "post": 5699276,
   "ranking_points": 22.18070977791825,
+  "rp_bar": 48.915471057015274,
   "storage_sys": "JBOD",
   "timestamp": 1438870869,
   "username": "weeandykidd"
