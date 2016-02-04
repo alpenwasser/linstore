@@ -104,7 +104,6 @@ for ranked_system in ranked_systems:
     rank += 1
     ranking_db[rank] = system_db[ranked_system]
     for drive_type in system_db[ranked_system]['drives'].keys():
-        #print(drive_db[drive_type]['vendor'])
         if drive_db[drive_type]['vendor'] in drive_stats_db:
             if drive_db[drive_type]['size'] in drive_stats_db[drive_db[drive_type]['vendor']]:
                 # Add number of drives
@@ -117,7 +116,8 @@ for ranked_system in ranked_systems:
         else:
             # Add number of drives
             drive_stats_db[drive_db[drive_type]['vendor']] = {}
-            drive_stats_db[drive_db[drive_type]['vendor']][drive_db[drive_type]['size']] = 1
+            # Set to number of drives of that size
+            drive_stats_db[drive_db[drive_type]['vendor']][drive_db[drive_type]['size']] = system_db[ranked_system]['drives'][drive_type]
             total_drives += system_db[ranked_system]['drives'][drive_type]
 
 
@@ -320,16 +320,49 @@ df['Vendor'] = plot_data_drive_vendors
 df['Capacity (TB)'] = plot_data_drive_caps
 df['Count'] = plot_data_drive_counts
 df = df.sort_values(by=['Capacity (TB)'], ascending=[True])
-df = df.pivot('Vendor','Capacity (TB)','Count')
+#df = df.pivot('Vendor','Capacity (TB)','Count')
+
+
+# We  need to  pivot  differently for  the  heatmap and  top
+# histogram,  and for  the vertical  histogram on  the right
+# side.
+df_heatmap = pd.DataFrame()
+df_heatmap = df.pivot('Vendor','Capacity (TB)','Count')
+df_verthist = pd.DataFrame()
+df_verthist = df.pivot('Capacity (TB)','Vendor','Count')
+
+df_sums_ven = pd.DataFrame()
+df_sums_ven['Count'] = df_heatmap.sum(axis=1)
+df_sums_cap = pd.DataFrame()
+df_sums_cap['Count'] = df_verthist.sum(axis=1)
 
 plt.rc('figure',figsize=(16,10))
 plt.rc('font',family='monospace')
-fig4, ax4 = plt.subplots(1)
-fig4.subplots_adjust(bottom=0.08,left=0.05,right=1.05,top=0.97)
-ax4.set_xlabel('Capacity (TB)',fontsize=16)
-ax4.set_ylabel('Vendor',fontsize=16)
-ax4.tick_params(labelsize=14)
-sns.heatmap(df, linewidths=.5, ax=ax4, annot=True, fmt='g')
+fig4 = plt.figure()
+fig4.subplots_adjust(bottom=0.10,left=0.125,right=0.975,top=0.97)
+ax4 = plt.subplot2grid((22, 30), ( 0, 0), colspan=26, rowspan=4)  # top histogram
+ax5 = plt.subplot2grid((22, 30), ( 4, 0), colspan=26, rowspan=15) # heatmap
+ax6 = plt.subplot2grid((22, 30), ( 4,26), colspan=4,  rowspan=15) # right histogram
+ax7 = plt.subplot2grid((22, 30), (21, 0), colspan=26)             # color bar
+sns.barplot(df_sums_cap.index.tolist(),df_sums_cap['Count'], ax=ax4,palette=sns.cubehelix_palette(9))
+sns.barplot(df_sums_ven['Count'],        df_sums_ven.index.tolist(),ax=ax6,palette=sns.cubehelix_palette(9),orient='h')
+ax4.set_xlabel('')
+ax4.set_ylabel('Total Drives (log)', fontsize=12)
+ax6.set_ylabel('')
+ax6.set_xlabel('Total Drives (log)', fontsize=12)
+ax4.set(xticks=[])
+ax6.set(yticks=[])
+ax4.tick_params(labelsize=12)
+ax6.tick_params(labelsize=12)
+ax4.set_yscale('log')
+ax6.set_xscale('log')
+
+ax5.set_xlabel('Capacity (TB)',fontsize=16)
+ax5.set_ylabel('Vendor',fontsize=16)
+ax5.tick_params(labelsize=14)
+sns.heatmap(df_heatmap, linewidths=.5, ax=ax5, annot=True, fmt='g', cbar_ax = ax7, cbar_kws={"orientation": "horizontal"})
+plt.setp(ax5.yaxis.get_majorticklabels(), rotation=0)
 cax = plt.gcf().axes[-1]
-cax.tick_params(labelsize=14)
+cax.tick_params(labelsize=12)
 plt.savefig(drive_heatmap_path)
+#plt.show()
