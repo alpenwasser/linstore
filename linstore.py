@@ -185,6 +185,7 @@ for html_tpl_str in html_template:
 # Regex search and replace patterns
 rank_sub = '%r%'
 username_sub = '%u%'
+postNo_sub = '%postNo%'
 rankingpoints_sub = '%rp%'
 capacity_sub = '%cap%'
 nodrives_sub = '%ndr%'
@@ -198,6 +199,7 @@ rows = ''
 for rank in ranking_db.keys():
     row = re.sub(rank_sub,str(rank),template_row)
     row = re.sub(username_sub,ranking_db[rank]['username'],row)
+    row = re.sub(postNo_sub,str(ranking_db[rank]['post']),row)
     row = re.sub(rankingpoints_sub,"{:.2f}".format(ranking_db[rank]['ranking_points']),row)
     row = re.sub(capacity_sub,str(ranking_db[rank]['capacity']),row)
     row = re.sub(nodrives_sub,str(ranking_db[rank]['drive_count']),row)
