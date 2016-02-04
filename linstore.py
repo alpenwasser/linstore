@@ -12,8 +12,7 @@ import datetime as dt
 import operator as op
 
 
-#timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
-timestamp = '2016-02-04--11-41-39'
+timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
 plot_dir = 'plots/'
 rankings_plot = timestamp + '--rankings.png'
 rankings_plot_caps = timestamp + '--rankings-caps.png'
@@ -229,7 +228,6 @@ html_file.close()
 # GENERATE PLOTS                                                               #
 # ---------------------------------------------------------------------------- #
 
-exit()
 
 rank_length = len(str(max(ranking_db.keys())))
 ranking_points_lengths = []
