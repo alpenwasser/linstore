@@ -12,14 +12,17 @@ import datetime as dt
 import operator as op
 
 
-timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
+#timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
+timestamp = '2016-02-04--11-41-39'
 plot_dir = 'plots/'
 rankings_plot = timestamp + '--rankings.png'
 rankings_plot_caps = timestamp + '--rankings-caps.png'
 rankings_plot_drvc = timestamp + '--rankings-drvc.png'
+drive_heatmap      = timestamp + '--drive-heatmap.png'
 rankings_plot_path = plot_dir + timestamp + '--rankings.png'
 rankings_plot_caps_path = plot_dir + timestamp + '--rankings-caps.png'
 rankings_plot_drvc_path = plot_dir + timestamp + '--rankings-drvc.png'
+drive_heatmap_path      = plot_dir + timestamp + '--drive-heatmap.png'
 
 drive_not_in_db_error = 5
 
@@ -212,6 +215,8 @@ rankings_plot_pattern = '%%%<rankings_plot_caps>%%%'
 template_footer = re.sub(rankings_plot_pattern,rankings_plot_caps,template_footer)
 rankings_plot_pattern = '%%%<rankings_plot_drvc>%%%'
 template_footer = re.sub(rankings_plot_pattern,rankings_plot_drvc,template_footer)
+drive_heatmap_pattern = '%%%<drive_heatmap>%%%'
+template_footer = re.sub(drive_heatmap_pattern,drive_heatmap,template_footer)
 
 html_file = open('rankings.html','w')
 html_file.write(template_header)
@@ -224,6 +229,7 @@ html_file.close()
 # GENERATE PLOTS                                                               #
 # ---------------------------------------------------------------------------- #
 
+exit()
 
 rank_length = len(str(max(ranking_db.keys())))
 ranking_points_lengths = []
@@ -300,4 +306,27 @@ ax3.set_xlim([0.8*np.amin(plot_data_drivecount),1.5*np.amax(plot_data_drivecount
 ax3.set_xscale('log')
 
 plt.savefig(rankings_plot_drvc_path)
-#plt.show()
+
+# Drive Heatmap
+df = pd.DataFrame()
+plot_data_drive_vendors = []
+plot_data_drive_caps = []
+plot_data_drive_counts = []
+for vendor in drive_stats_db.keys():
+    for capacity in drive_stats_db[vendor].keys():
+        plot_data_drive_vendors.append(vendor)
+        plot_data_drive_caps.append(capacity)
+        plot_data_drive_counts.append(drive_stats_db[vendor][capacity])
+
+df['Vendor'] = plot_data_drive_vendors
+df['Capacity (TB)'] = plot_data_drive_caps
+df['Count'] = plot_data_drive_counts
+df = df.sort_values(by=['Capacity (TB)'], ascending=[True])
+df = df.pivot('Vendor','Capacity (TB)','Count')
+
+plt.rc('figure',figsize=(16,10))
+plt.rc('font',family='monospace')
+fig4, ax4 = plt.subplots(1)
+fig4.subplots_adjust(bottom=0.08,left=0.05,right=1.05,top=0.97)
+sns.heatmap(df, linewidths=.5, ax=ax4)
+plt.savefig(drive_heatmap_path)
