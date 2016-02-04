@@ -21,6 +21,8 @@ rankings_plot_path = plot_dir + timestamp + '--rankings.png'
 rankings_plot_caps_path = plot_dir + timestamp + '--rankings-caps.png'
 rankings_plot_drvc_path = plot_dir + timestamp + '--rankings-drvc.png'
 
+drive_not_in_db_error = 5
+
 # ---------------------------------------------------------------------------- #
 # LOAD JSON AND GENERATE RANKING                                               #
 # ---------------------------------------------------------------------------- #
@@ -49,6 +51,9 @@ for system in system_db.keys():
             system_db[system]['capacity'] += int(float(system_db[system]['drives'][drive_type]) * float(drive_db[drive_type]['size']))
             system_db[system]['drive_count'] += int(system_db[system]['drives'][drive_type])
             #system_db[system]['ranking_points'] = drive_type
+        else:
+            print("Drive not in Drive Database: " + drive_type)
+            exit(drive_not_in_db_error)
 
         system_db[system]['ranking_points'] = system_db[system]['capacity'] * np.log(system_db[system]['drive_count'])
 
@@ -65,6 +70,7 @@ for system in system_db.keys():
     if system_db[system]['drive_count'] > max_drvc:
         max_drvc = system_db[system]['drive_count']
 
+# Calcualte widths for bar lengths in HTML table
 # max_points is defined as 100% width, everything is relative to that, logarithmically
 for system in system_db.keys():
     system_db[system]['rp_bar'] = np.log(system_db[system]['ranking_points']) / np.log(max_points) * 100
@@ -79,11 +85,14 @@ ranked_systems = sorted(system_db, key=lambda system: (system_db[system]['rankin
 # Create empty json objects
 ranking_file='json/ranking.json'
 notew_file='json/notew.json'
+drive_stats_file='json/drive_stats.json'
 ranking_db = js.loads('{}')
 notew_db = js.loads('{}')
+drive_stats_db = js.loads('{}')
 
 # Populate databases
 rank = 0
+total_drives = 0
 for ranked_system in ranked_systems:
     if (system_db[ranked_system]['drive_count'] < 5
         or system_db[ranked_system]['capacity'] < 10
@@ -92,6 +101,23 @@ for ranked_system in ranked_systems:
         continue
     rank += 1
     ranking_db[rank] = system_db[ranked_system]
+    for drive_type in system_db[ranked_system]['drives'].keys():
+        #print(drive_db[drive_type]['vendor'])
+        if drive_db[drive_type]['vendor'] in drive_stats_db:
+            if drive_db[drive_type]['size'] in drive_stats_db[drive_db[drive_type]['vendor']]:
+                # Add number of drives
+                drive_stats_db[drive_db[drive_type]['vendor']][drive_db[drive_type]['size']] +=  system_db[ranked_system]['drives'][drive_type]
+                total_drives += system_db[ranked_system]['drives'][drive_type]
+            else:
+                # Add number of drives
+                drive_stats_db[drive_db[drive_type]['vendor']][drive_db[drive_type]['size']] = system_db[ranked_system]['drives'][drive_type]
+                total_drives += system_db[ranked_system]['drives'][drive_type]
+        else:
+            # Add number of drives
+            drive_stats_db[drive_db[drive_type]['vendor']] = {}
+            drive_stats_db[drive_db[drive_type]['vendor']][drive_db[drive_type]['size']] = 1
+            total_drives += system_db[ranked_system]['drives'][drive_type]
+
 
 ranking_data=open(ranking_file, 'w')
 js.dump(ranking_db,ranking_data,indent=1,sort_keys=True)
@@ -100,6 +126,10 @@ ranking_data.close()
 notew_data=open(notew_file, 'w')
 js.dump(notew_db,notew_data,indent=1,sort_keys=True)
 notew_data.close()
+
+drive_stats_data=open(drive_stats_file, 'w')
+js.dump(drive_stats_db,drive_stats_data,indent=1)
+drive_stats_data.close()
 
 
 # ---------------------------------------------------------------------------- #
@@ -189,7 +219,6 @@ html_file.write(rows)
 html_file.write(template_footer)
 html_file.close()
 
-#exit()
 
 # ---------------------------------------------------------------------------- #
 # GENERATE PLOTS                                                               #
@@ -214,10 +243,10 @@ drivecount_length = max(drivecount_lengths)
 
 plot_data_ranking_points = np.array([])
 plot_data_usernames = []
+plot_data_usernames_caps = [] # for username string
+plot_data_usernames_drvc = [] # for username string
 plot_data_capacities = []
 plot_data_drivecount = []
-plot_data_usernames_caps = []
-plot_data_usernames_drvc = []
 for rank in ranking_db.keys():
     plot_data_usernames.append(str(rank) + '{0: >{pad}}'.format(ranking_db[rank]['username'], pad = username_length + 1 ) + '{0: >{pad}.2f}'.format(ranking_db[rank]['ranking_points'], pad = ranking_point_length + 1))
     plot_data_usernames_caps.append(str(rank) + '{0: >{pad}}'.format(ranking_db[rank]['username'], pad = username_length + 1 ) + '{0: >{pad}}'.format(ranking_db[rank]['capacity'], pad = capacity_length + 1))

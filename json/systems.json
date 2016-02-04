@@ -54,8 +54,8 @@
   "case": "Norco RPC-4224 4U",
   "ditch": 0,
   "drives": {
-   "SG0200": "12",
-   "SG0300": "12"
+   "SG0200": 12,
+   "SG0300": 12
   },
   "notes": null,
   "os": "Win 7",
@@ -265,8 +265,7 @@
    "HT0300": 1,
    "HT0400": 8,
    "OZ0013": 1,
-   "WD0032": 1,
-   "ditch": 0
+   "WD0032": 1
   },
   "notes": "[post=3875801]Upd 1[/post], [post=4199884]Upd 2[/post]",
   "os": "Ubuntu",
