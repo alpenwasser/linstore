@@ -1,0 +1,177 @@
+{
+ "NAS4Free": {
+  "family": "*BSD",
+  "drive_count": 22,
+  "count": 1,
+  "os": "NAS4Free",
+  "capacity": 28
+ },
+ "Win 8": {
+  "family": "Windows",
+  "drive_count": 16,
+  "count": 3,
+  "os": "Windows 8",
+  "capacity": 44
+ },
+ "unRAID": {
+  "family": "GNU/Linux",
+  "drive_count": 74,
+  "count": 5,
+  "os": "unRAID",
+  "capacity": 136
+ },
+ "Ubuntu": {
+  "family": "GNU/Linux",
+  "drive_count": 54,
+  "count": 4,
+  "os": "Ubuntu Linux",
+  "capacity": 123
+ },
+ "WS 2012": {
+  "family": "Windows",
+  "drive_count": 87,
+  "count": 6,
+  "os": "Windows Server 2012",
+  "capacity": 201
+ },
+ "Win 8.1": {
+  "family": "Windows",
+  "drive_count": 63,
+  "count": 6,
+  "os": "Windows 8.1",
+  "capacity": 156
+ },
+ "Win 10": {
+  "family": "Windows",
+  "drive_count": 13,
+  "count": 1,
+  "os": "Windows 10",
+  "capacity": 18
+ },
+ "ZFSGuru": {
+  "family": "*BSD",
+  "drive_count": 8,
+  "count": 1,
+  "os": "ZFSGuru",
+  "capacity": 19
+ },
+ "Linux Mint": {
+  "family": "GNU/Linux",
+  "drive_count": 14,
+  "count": 2,
+  "os": "Linux Mint",
+  "capacity": 42
+ },
+ "Synology": {
+  "family": "GNU/Linux",
+  "drive_count": 43,
+  "count": 5,
+  "os": "Synology OS",
+  "capacity": 140
+ },
+ "Gentoo": {
+  "family": "GNU/Linux",
+  "drive_count": 34,
+  "count": 2,
+  "os": "Gentoo Linux",
+  "capacity": 126
+ },
+ "Xubuntu": {
+  "family": "GNU/Linux",
+  "drive_count": 12,
+  "count": 1,
+  "os": "Xubuntu Linux",
+  "capacity": 48
+ },
+ "Win": {
+  "family": "Windows",
+  "drive_count": 42,
+  "count": 1,
+  "os": "Windows (unspecified)",
+  "capacity": 83
+ },
+ "WS 2012R2": {
+  "family": "Windows",
+  "drive_count": 114,
+  "count": 9,
+  "os": "Windows Server 2012 R2",
+  "capacity": 350
+ },
+ "OpenIndiana": {
+  "family": "Solaris",
+  "drive_count": 12,
+  "count": 1,
+  "os": "OpenIndiana",
+  "capacity": 24
+ },
+ "Arch Linux": {
+  "family": "GNU/Linux",
+  "drive_count": 23,
+  "count": 2,
+  "os": "Arch Linux",
+  "capacity": 53
+ },
+ "FreeNAS": {
+  "family": "*BSD",
+  "drive_count": 172,
+  "count": 19,
+  "os": "FreeNAS",
+  "capacity": 475
+ },
+ "Linux": {
+  "family": "GNU/Linux",
+  "drive_count": 8,
+  "count": 1,
+  "os": "Linux (other)",
+  "capacity": 24
+ },
+ "Drobo": {
+  "family": "GNU/Linux",
+  "drive_count": 5,
+  "count": 1,
+  "os": "Drobo OS",
+  "capacity": 10
+ },
+ "CentOS": {
+  "family": "GNU/Linux",
+  "drive_count": 11,
+  "count": 1,
+  "os": "CentOS",
+  "capacity": 18
+ },
+ "WS 2008R2": {
+  "family": "Windows",
+  "drive_count": 30,
+  "count": 3,
+  "os": "Windows Server 2008 R2",
+  "capacity": 98
+ },
+ "Win 7": {
+  "family": "Windows",
+  "drive_count": 193,
+  "count": 17,
+  "os": "Windows 7",
+  "capacity": 562
+ },
+ "Debian": {
+  "family": "GNU/Linux",
+  "drive_count": 59,
+  "count": 6,
+  "os": "Debian Linux",
+  "capacity": 166
+ },
+ "WHS 2011": {
+  "family": "Windows",
+  "drive_count": 22,
+  "count": 3,
+  "os": "Windows Home Server 2011",
+  "capacity": 42
+ },
+ "OpenMediaVault": {
+  "family": "GNU/Linux",
+  "drive_count": 15,
+  "count": 2,
+  "os": "OpenMediaVault",
+  "capacity": 38
+ }
+}
