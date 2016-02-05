@@ -23,11 +23,13 @@ os_heatmap              = timestamp + '--os-heatmap.svg'
 os_heatmap_caps         = timestamp + '--os-heatmap-caps.svg'
 os_heatmap_drvc         = timestamp + '--os-heatmap-drvc.svg'
 drive_heatmap_contribs  = timestamp + '--drive-heatmap-contribs.svg'
+drive_heatmap_systems  = timestamp + '--drive-heatmap-systems.svg'
 rankings_plot_path          = plot_dir + timestamp + '--rankings.svg'
 rankings_plot_caps_path     = plot_dir + timestamp + '--rankings-caps.svg'
 rankings_plot_drvc_path     = plot_dir + timestamp + '--rankings-drvc.svg'
 drive_heatmap_path          = plot_dir + timestamp + '--drive-heatmap.svg'
 drive_heatmap_contribs_path = plot_dir + timestamp + '--drive-heatmap-contribs.svg'
+drive_heatmap_systems_path = plot_dir + timestamp + '--drive-heatmap-systems.svg'
 os_heatmap_path             = plot_dir + timestamp + '--os-heatmap.svg'
 os_heatmap_caps_path        = plot_dir + timestamp + '--os-heatmap-caps.svg'
 os_heatmap_drvc_path        = plot_dir + timestamp + '--os-heatmap-drvc.svg'
@@ -129,17 +131,22 @@ for ranked_system in ranked_systems:
     # Drive Statistics
     for drive_type in system_db[ranked_system]['drives'].keys():
         if drive_db[drive_type]['vendor'] in drive_stats_db:
-            if drive_db[drive_type]['size'] in drive_stats_db[drive_db[drive_type]['vendor']]:
+            if drive_db[drive_type]['size'] in drive_stats_db[ drive_db[drive_type]['vendor'] ]:
                 # Add number of drives
-                drive_stats_db[drive_db[drive_type]['vendor']][drive_db[drive_type]['size']] +=  system_db[ranked_system]['drives'][drive_type]
+                drive_stats_db[ drive_db[drive_type]['vendor'] ][ drive_db[drive_type]['size'] ]['count'] += system_db[ranked_system]['drives'][drive_type]
+                drive_stats_db[ drive_db[drive_type]['vendor'] ][ drive_db[drive_type]['size'] ]['system_usage'] += 1
             else:
                 # Add number of drives
-                drive_stats_db[drive_db[drive_type]['vendor']][drive_db[drive_type]['size']] = system_db[ranked_system]['drives'][drive_type]
+                drive_stats_db[ drive_db[drive_type]['vendor'] ][ drive_db[drive_type]['size'] ] = {}
+                drive_stats_db[ drive_db[drive_type]['vendor'] ][ drive_db[drive_type]['size'] ]['count'] = system_db[ranked_system]['drives'][drive_type]
+                drive_stats_db[ drive_db[drive_type]['vendor'] ][ drive_db[drive_type]['size'] ]['system_usage'] = 1
         else:
             # Add number of drives
-            drive_stats_db[drive_db[drive_type]['vendor']] = {}
+            drive_stats_db[ drive_db[drive_type]['vendor'] ] = {}
+            drive_stats_db[ drive_db[drive_type]['vendor'] ][ drive_db[drive_type]['size'] ] = {}
             # Set to number of drives of that size
-            drive_stats_db[drive_db[drive_type]['vendor']][drive_db[drive_type]['size']] = system_db[ranked_system]['drives'][drive_type]
+            drive_stats_db[ drive_db[drive_type]['vendor'] ][ drive_db[drive_type]['size'] ]['count'] = system_db[ranked_system]['drives'][drive_type]
+            drive_stats_db[ drive_db[drive_type]['vendor'] ][ drive_db[drive_type]['size'] ]['system_usage'] = 1
 
     if system_db[ranked_system]['os'] not in os_db:
         print("OS not found in " + os_file + ": " + system_db[ranked_system]['os'])
@@ -264,6 +271,8 @@ drive_heatmap_pattern = '%%%<drive_heatmap>%%%'
 template_footer = re.sub(drive_heatmap_pattern,drive_heatmap,template_footer)
 drive_heatmap_contribs_pattern = '%%%<drive_heatmap_contribs>%%%'
 template_footer = re.sub(drive_heatmap_contribs_pattern,drive_heatmap_contribs,template_footer)
+drive_heatmap_systems_pattern = '%%%<drive_heatmap_systems>%%%'
+template_footer = re.sub(drive_heatmap_systems_pattern,drive_heatmap_systems,template_footer)
 os_heatmap_pattern = '%%%<os_heatmap>%%%'
 template_footer = re.sub(os_heatmap_pattern,os_heatmap,template_footer)
 os_heatmap_caps_pattern = '%%%<os_heatmap_caps>%%%'
@@ -365,19 +374,22 @@ plt.savefig(rankings_plot_drvc_path)
 df = pd.DataFrame()
 plot_data_drive_vendors = []  # list of vendors
 plot_data_drive_caps = []     # list of drive capacities
-plot_data_drive_counts = []   # list of drive count per vendor and capacity
-plot_data_drive_contribs = [] # list of contribution to total by vendor and capacity
+plot_data_drive_counts = []   # How many HDDs of this type are used?
+plot_data_drive_contribs = [] # How much does this type of HDD contribute to total capacity?
+plot_data_drive_systems = []  # how many systems use this type of HDD?
 for vendor in drive_stats_db.keys():
     for capacity in drive_stats_db[vendor].keys():
         plot_data_drive_vendors.append(vendor)
         plot_data_drive_caps.append(capacity)
-        plot_data_drive_counts.append(drive_stats_db[vendor][capacity])
-        plot_data_drive_contribs.append(drive_stats_db[vendor][capacity] * capacity)
+        plot_data_drive_counts.append(drive_stats_db[vendor][capacity]['count'])
+        plot_data_drive_contribs.append(drive_stats_db[vendor][capacity]['count'] * capacity)
+        plot_data_drive_systems.append(drive_stats_db[vendor][capacity]['system_usage'])
 
 df['Vendor'] = plot_data_drive_vendors
 df['Capacity (TB)'] = plot_data_drive_caps
 df['Count'] = plot_data_drive_counts
 df['Contribution'] = plot_data_drive_contribs
+df['Systems'] = plot_data_drive_systems
 df = df.sort_values(by=['Capacity (TB)'], ascending=[True])
 #df = df.pivot('Vendor','Capacity (TB)','Count')
 
@@ -471,6 +483,50 @@ plt.setp(ax10.xaxis.get_majorticklabels(), rotation=90)
 cax = plt.gcf().axes[-1]
 cax.tick_params(labelsize=12)
 plt.savefig(drive_heatmap_contribs_path)
+#plt.show()
+
+df_heatmap_systems = pd.DataFrame()
+df_heatmap_systems = df.pivot('Vendor','Capacity (TB)','Systems')
+df_verthist_systems = pd.DataFrame()
+df_verthist_systems = df.pivot('Capacity (TB)','Vendor','Systems')
+
+df_sums_ven_systems = pd.DataFrame()
+df_sums_ven_systems['Systems'] = df_heatmap_systems.sum(axis=1)
+df_sums_cap_systems = pd.DataFrame()
+df_sums_cap_systems['Systems'] = df_verthist_systems.sum(axis=1)
+
+plt.rc('figure',figsize=(16,10)) # 1600 x 1000 px at 100 dpi
+plt.rc('font',family='monospace')
+fig5 = plt.figure()
+fig5.subplots_adjust(bottom=0.10,left=0.125,right=0.975,top=0.97)
+ax8 = plt.subplot2grid((22, 30), ( 0, 0), colspan=26, rowspan=4)  # top histogram
+ax9 = plt.subplot2grid((22, 30), ( 4, 0), colspan=26, rowspan=15) # heatmap
+ax10 = plt.subplot2grid((22, 30), ( 4,26), colspan=4,  rowspan=15) # right histogram
+ax11 = plt.subplot2grid((22, 30), (21, 0), colspan=26)             # color bar
+sns.barplot(df_sums_cap_systems.index.tolist(), df_sums_cap_systems['Systems'],      ax=ax8,palette="Greys_r") # top histogram
+sns.barplot(df_sums_ven_systems['Systems'],       df_sums_ven_systems.index.tolist(),ax=ax10,palette="Greys_r") # right histogram
+ax8.set_xlabel('')
+ax8.set_ylabel('Systems (log)', fontsize=11)
+ax10.set_ylabel('')
+ax10.set_xlabel('Systems (log)', fontsize=11)
+ax8.set(xticks=[])
+ax10.set(yticks=[])
+ax8.tick_params(labelsize=11)
+ax10.tick_params(labelsize=11)
+ax8.set_yscale('log')
+ax10.set_xscale('log')
+ax8.yaxis.set_major_formatter(ScalarFormatter()) # Switch from '1e3' to '1000'
+ax10.xaxis.set_major_formatter(ScalarFormatter()) # Switch from '1e3' to '1000'
+
+ax9.set_xlabel('Capacity (TB)',fontsize=16)
+ax9.set_ylabel('Vendor',fontsize=16)
+ax9.tick_params(labelsize=14)
+sns.heatmap(df_heatmap_systems, linewidths=.5, ax=ax9, annot=True, fmt='g', cbar_ax = ax11, cbar_kws={"orientation": "horizontal"})
+plt.setp(ax9.yaxis.get_majorticklabels(), rotation=0)
+plt.setp(ax10.xaxis.get_majorticklabels(), rotation=90)
+cax = plt.gcf().axes[-1]
+cax.tick_params(labelsize=12)
+plt.savefig(drive_heatmap_systems_path)
 #plt.show()
 
 
