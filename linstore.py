@@ -15,7 +15,7 @@ from matplotlib.ticker import ScalarFormatter
 
 timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
 plot_dir = 'plots/'
-rankings_plot = timestamp + '--rankings.svg'
+rankings_plot           = timestamp + '--rankings.svg'
 rankings_plot_caps      = timestamp + '--rankings-caps.svg'
 rankings_plot_drvc      = timestamp + '--rankings-drvc.svg'
 drive_heatmap           = timestamp + '--drive-heatmap.svg'
@@ -335,7 +335,6 @@ ax1.set_ylabel('User',fontsize=20)
 ax1.set_xlim([0.8*np.amin(plot_data_ranking_points),1.5*np.amax(plot_data_ranking_points)])
 ax1.tick_params(labelsize=20)
 ax1.set_xscale('log')
-
 plt.savefig(rankings_plot_path)
 
 
@@ -424,6 +423,7 @@ ax5.set_ylabel('Vendor',fontsize=16)
 ax5.tick_params(labelsize=14)
 sns.heatmap(df_heatmap, linewidths=.5, ax=ax5, annot=True, fmt='g', cbar_ax = ax7, cbar_kws={"orientation": "horizontal"})
 plt.setp(ax5.yaxis.get_majorticklabels(), rotation=0)
+plt.setp(ax6.xaxis.get_majorticklabels(), rotation=90)
 cax = plt.gcf().axes[-1]
 cax.tick_params(labelsize=12)
 plt.savefig(drive_heatmap_path)
@@ -467,6 +467,7 @@ ax9.set_ylabel('Vendor',fontsize=16)
 ax9.tick_params(labelsize=14)
 sns.heatmap(df_heatmap_contribs, linewidths=.5, ax=ax9, annot=True, fmt='g', cbar_ax = ax11, cbar_kws={"orientation": "horizontal"})
 plt.setp(ax9.yaxis.get_majorticklabels(), rotation=0)
+plt.setp(ax10.xaxis.get_majorticklabels(), rotation=90)
 cax = plt.gcf().axes[-1]
 cax.tick_params(labelsize=12)
 plt.savefig(drive_heatmap_contribs_path)
@@ -547,6 +548,7 @@ ax13.tick_params(labelsize=14)
 sns.heatmap(df_os_heatmap, linewidths=.5, ax=ax13, annot=True, fmt='g', cbar_ax = ax15, cbar_kws={"orientation": "horizontal"})
 plt.setp(ax13.yaxis.get_majorticklabels(), rotation=0)
 plt.setp(ax13.xaxis.get_majorticklabels(), rotation=90)
+plt.setp(ax14.xaxis.get_majorticklabels(), rotation=90)
 cax = plt.gcf().axes[-1]
 cax.tick_params(labelsize=12)
 plt.savefig(os_heatmap_path)
