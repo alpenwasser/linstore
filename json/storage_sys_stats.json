@@ -1,0 +1,15 @@
+{
+ "mdadm": 8,
+ "unknown": 1,
+ "Windows Storage Spaces": 2,
+ "FlexRAID": 9,
+ "StableBit": 2,
+ "unRAID": 5,
+ "JBOD": 14,
+ "LVM2": 1,
+ "ZFS": 28,
+ "Software RAID (generic)": 10,
+ "Synology Hybrid RAID": 4,
+ "Drobo BeyondRAID": 1,
+ "Hardware RAID": 21
+}

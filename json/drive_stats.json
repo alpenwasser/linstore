@@ -1,28 +1,20 @@
 {
- "HGST": {
-  "0.25": {
-   "system_usage": 2,
-   "count": 2
-  },
-  "0.5": {
-   "system_usage": 2,
-   "count": 4
+ "unspecified": {
+  "1.5": {
+   "system_usage": 1,
+   "count": 11
   },
   "2.0": {
-   "system_usage": 9,
-   "count": 27
+   "system_usage": 3,
+   "count": 12
   },
   "3.0": {
    "system_usage": 4,
-   "count": 23
+   "count": 9
   },
-  "4.0": {
-   "system_usage": 5,
-   "count": 35
-  },
-  "0.64": {
-   "system_usage": 1,
-   "count": 1
+  "1.0": {
+   "system_usage": 2,
+   "count": 4
   }
  },
  "WD": {
@@ -79,6 +71,88 @@
    "count": 1
   }
  },
+ "HGST": {
+  "0.25": {
+   "system_usage": 2,
+   "count": 2
+  },
+  "0.5": {
+   "system_usage": 2,
+   "count": 4
+  },
+  "2.0": {
+   "system_usage": 9,
+   "count": 27
+  },
+  "3.0": {
+   "system_usage": 4,
+   "count": 23
+  },
+  "4.0": {
+   "system_usage": 5,
+   "count": 35
+  },
+  "0.64": {
+   "system_usage": 1,
+   "count": 1
+  }
+ },
+ "Crucial": {
+  "0.13": {
+   "system_usage": 1,
+   "count": 1
+  },
+  "0.25": {
+   "system_usage": 1,
+   "count": 2
+  },
+  "0.26": {
+   "system_usage": 1,
+   "count": 3
+  }
+ },
+ "Toshiba": {
+  "0.25": {
+   "system_usage": 1,
+   "count": 1
+  },
+  "1.0": {
+   "system_usage": 1,
+   "count": 1
+  },
+  "2.0": {
+   "system_usage": 2,
+   "count": 2
+  },
+  "3.0": {
+   "system_usage": 6,
+   "count": 40
+  }
+ },
+ "Samsung": {
+  "0.5": {
+   "system_usage": 5,
+   "count": 6
+  },
+  "1.0": {
+   "system_usage": 5,
+   "count": 10
+  },
+  "2.0": {
+   "system_usage": 10,
+   "count": 54
+  },
+  "3.0": {
+   "system_usage": 1,
+   "count": 5
+  }
+ },
+ "Kingston": {
+  "0.24": {
+   "system_usage": 1,
+   "count": 2
+  }
+ },
  "Seagate": {
   "0.5": {
    "system_usage": 3,
@@ -117,84 +191,10 @@
    "count": 4
   }
  },
- "Samsung": {
-  "0.5": {
-   "system_usage": 5,
-   "count": 6
-  },
-  "1.0": {
-   "system_usage": 5,
-   "count": 10
-  },
-  "2.0": {
-   "system_usage": 10,
-   "count": 54
-  },
-  "3.0": {
-   "system_usage": 1,
-   "count": 5
-  }
- },
- "unspecified": {
-  "1.5": {
-   "system_usage": 1,
-   "count": 11
-  },
-  "2.0": {
-   "system_usage": 3,
-   "count": 12
-  },
-  "3.0": {
-   "system_usage": 4,
-   "count": 9
-  },
-  "1.0": {
-   "system_usage": 2,
-   "count": 4
-  }
- },
  "OCZ": {
   "0.13": {
    "system_usage": 1,
    "count": 1
-  }
- },
- "Crucial": {
-  "0.13": {
-   "system_usage": 1,
-   "count": 1
-  },
-  "0.25": {
-   "system_usage": 1,
-   "count": 2
-  },
-  "0.26": {
-   "system_usage": 1,
-   "count": 3
-  }
- },
- "Kingston": {
-  "0.24": {
-   "system_usage": 1,
-   "count": 2
-  }
- },
- "Toshiba": {
-  "0.25": {
-   "system_usage": 1,
-   "count": 1
-  },
-  "1.0": {
-   "system_usage": 1,
-   "count": 1
-  },
-  "2.0": {
-   "system_usage": 2,
-   "count": 2
-  },
-  "3.0": {
-   "system_usage": 6,
-   "count": 40
   }
  }
 }

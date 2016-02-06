@@ -1,0 +1,15 @@
+{
+  "Drobo": "Drobo BeyondRAID",
+  "FlexRAID": "FlexRAID",
+  "HwRD": "Hardware RAID",
+  "JBOD": "JBOD",
+  "lvm2": "LVM2",
+  "mdadm": "mdadm",
+  "SHR": "Synology Hybrid RAID",
+  "StableBit": "StableBit",
+  "StSp": "Windows Storage Spaces",
+  "SwRD": "Software RAID (generic)",
+  "unknown": "unknown",
+  "unRAID": "unRAID",
+  "ZFS": "ZFS"
+}

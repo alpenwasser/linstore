@@ -23,19 +23,22 @@ os_heatmap              = timestamp + '--os-heatmap.svg'
 os_heatmap_caps         = timestamp + '--os-heatmap-caps.svg'
 os_heatmap_drvc         = timestamp + '--os-heatmap-drvc.svg'
 drive_heatmap_contribs  = timestamp + '--drive-heatmap-contribs.svg'
-drive_heatmap_systems  = timestamp + '--drive-heatmap-systems.svg'
+drive_heatmap_systems   = timestamp + '--drive-heatmap-systems.svg'
+storage_sys_plot        = timestamp + '--storage_sys.svg'
 rankings_plot_path          = plot_dir + timestamp + '--rankings.svg'
 rankings_plot_caps_path     = plot_dir + timestamp + '--rankings-caps.svg'
 rankings_plot_drvc_path     = plot_dir + timestamp + '--rankings-drvc.svg'
 drive_heatmap_path          = plot_dir + timestamp + '--drive-heatmap.svg'
 drive_heatmap_contribs_path = plot_dir + timestamp + '--drive-heatmap-contribs.svg'
-drive_heatmap_systems_path = plot_dir + timestamp + '--drive-heatmap-systems.svg'
+drive_heatmap_systems_path  = plot_dir + timestamp + '--drive-heatmap-systems.svg'
 os_heatmap_path             = plot_dir + timestamp + '--os-heatmap.svg'
 os_heatmap_caps_path        = plot_dir + timestamp + '--os-heatmap-caps.svg'
 os_heatmap_drvc_path        = plot_dir + timestamp + '--os-heatmap-drvc.svg'
+storage_sys_plot_path       = plot_dir + timestamp + '--storage_sys.svg'
 
 drive_existence_failure = 5
 os_existence_failure = 6
+storage_sys_failure = 7
 
 # ---------------------------------------------------------------------------- #
 # LOAD JSON AND GENERATE RANKING                                               #
@@ -52,6 +55,11 @@ drive_data=open(drives_file)
 drive_db = js.load(drive_data)
 drive_data.close()
 #pp.pprint(drive_db)
+
+storage_sys_file='json/storage_sys.json'
+storage_sys_data = open(storage_sys_file)
+storage_sys_db = js.load(storage_sys_data)
+storage_sys_data.close()
 
 os_file='json/os_abbr_key.json'
 os_data=open(os_file)
@@ -102,14 +110,11 @@ for system in system_db.keys():
 ranked_systems = sorted(system_db, key=lambda system: (system_db[system]['ranking_points'],-system_db[system]['post']), reverse=True)
 
 # Create empty json objects
-ranking_file='json/ranking.json'
-notew_file='json/notew.json'
-drive_stats_file='json/drive_stats.json'
-os_stats_file='json/os_stats.json'
 ranking_db = js.loads('{}')
 notew_db = js.loads('{}')
 drive_stats_db = js.loads('{}')
 os_stats_db = js.loads('{}')
+stor_sys_stats_db = js.loads('{}')
 
 
 
@@ -148,6 +153,16 @@ for ranked_system in ranked_systems:
             drive_stats_db[ drive_db[drive_type]['vendor'] ][ drive_db[drive_type]['size'] ]['count'] = system_db[ranked_system]['drives'][drive_type]
             drive_stats_db[ drive_db[drive_type]['vendor'] ][ drive_db[drive_type]['size'] ]['system_usage'] = 1
 
+    for storage_sys in system_db[ranked_system]['storage_sys'].keys():
+        if storage_sys not in storage_sys_db:
+            print("Storage System not found in " + storage_sys_file + ": " + storage_sys)
+            exit(storage_sys_failure)
+        if storage_sys_db[storage_sys] in stor_sys_stats_db:
+            stor_sys_stats_db[storage_sys_db[storage_sys]] += system_db[ranked_system]['storage_sys'][storage_sys]
+        else:
+            stor_sys_stats_db[storage_sys_db[storage_sys]] = system_db[ranked_system]['storage_sys'][storage_sys]
+
+
     if system_db[ranked_system]['os'] not in os_db:
         print("OS not found in " + os_file + ": " + system_db[ranked_system]['os'])
         exit(os_existence_failure)
@@ -163,22 +178,30 @@ for ranked_system in ranked_systems:
         os_stats_db[system_db[ranked_system]['os']]['capacity'] = system_db[ranked_system]['capacity']
 
 
+ranking_file='json/ranking.json'
 ranking_data=open(ranking_file, 'w')
 js.dump(ranking_db,ranking_data,indent=1,sort_keys=True)
 ranking_data.close()
 
+notew_file='json/notew.json'
 notew_data=open(notew_file, 'w')
 js.dump(notew_db,notew_data,indent=1,sort_keys=True)
 notew_data.close()
 
+drive_stats_file='json/drive_stats.json'
 drive_stats_data=open(drive_stats_file, 'w')
 js.dump(drive_stats_db,drive_stats_data,indent=1)
 drive_stats_data.close()
 
+os_stats_file='json/os_stats.json'
 os_stats_data=open(os_stats_file, 'w')
 js.dump(os_stats_db,os_stats_data,indent=1)
 os_stats_data.close()
 
+stor_sys_stats_file='json/storage_sys_stats.json'
+stor_sys_stats_data=open(stor_sys_stats_file, 'w')
+js.dump(stor_sys_stats_db,stor_sys_stats_data,indent=1)
+stor_sys_stats_data.close()
 
 # ---------------------------------------------------------------------------- #
 # GENERATE HTML                                                                #
@@ -303,6 +326,8 @@ drvc_bar_sub = '%drvc_bar%'
 # Assemble ranking table
 ranked_rows = ''
 for rank in ranking_db.keys():
+    storage_sys_str = ''
+    first_stor_sys = True
     ranked_row = re.sub(rank_sub,str(rank),template_ranked_row)
     ranked_row = re.sub(username_sub,ranking_db[rank]['username'],ranked_row)
     ranked_row = re.sub(postNo_sub,str(ranking_db[rank]['post']),ranked_row)
@@ -311,7 +336,13 @@ for rank in ranking_db.keys():
     ranked_row = re.sub(nodrives_sub,str(ranking_db[rank]['drive_count']),ranked_row)
     ranked_row = re.sub(case_sub,str(ranking_db[rank]['case']),ranked_row)
     ranked_row = re.sub(os_sub,str(ranking_db[rank]['os']),ranked_row)
-    ranked_row = re.sub(stsys_sub,str(ranking_db[rank]['storage_sys']),ranked_row)
+    for storage_sys in ranking_db[rank]['storage_sys']:
+        if first_stor_sys:
+            storage_sys_str += storage_sys
+            first_stor_sys = False
+        else:
+            storage_sys_str += ', ' + storage_sys
+    ranked_row = re.sub(stsys_sub,storage_sys_str,ranked_row)
     ranked_row = re.sub(rp_bar_sub,str(ranking_db[rank]['rp_bar']),ranked_row)
     ranked_row = re.sub(cap_bar_sub,str(ranking_db[rank]['cap_bar']),ranked_row)
     ranked_row = re.sub(drvc_bar_sub,str(ranking_db[rank]['drvc_bar']),ranked_row)
@@ -328,6 +359,7 @@ drive_heatmap_systems_pattern = '%%%<drive_heatmap_systems>%%%'
 os_heatmap_pattern = '%%%<os_heatmap>%%%'
 os_heatmap_caps_pattern = '%%%<os_heatmap_caps>%%%'
 os_heatmap_drvc_pattern = '%%%<os_heatmap_drvc>%%%'
+storage_sys_pattern = '%%%<storage_sys_plot>%%%'
 total_dr_sub = '%tdr%'
 total_cp_sub = '%tc%'
 template_plots = re.sub(rankings_plot_pattern,rankings_plot,template_plots)
@@ -341,11 +373,14 @@ template_plots = re.sub(os_heatmap_caps_pattern,os_heatmap_caps,template_plots)
 template_plots = re.sub(os_heatmap_drvc_pattern,os_heatmap_drvc,template_plots)
 template_plots = re.sub(total_dr_sub,str(total_drives),template_plots)
 template_plots = re.sub(total_cp_sub,str(total_capacity),template_plots)
+template_plots = re.sub(storage_sys_pattern,storage_sys_plot,template_plots)
 
 #print(template_notew_row)
 #print(template_footer)
 notew_rows = ''
 for rank in notew_db.keys():
+    storage_sys_str = ''
+    first_stor_sys = True
     notew_row = re.sub(rank_sub,str(rank),template_notew_row)
     notew_row = re.sub(username_sub,notew_db[rank]['username'],notew_row)
     notew_row = re.sub(postNo_sub,str(notew_db[rank]['post']),notew_row)
@@ -354,6 +389,13 @@ for rank in notew_db.keys():
     notew_row = re.sub(nodrives_sub,str(notew_db[rank]['drive_count']),notew_row)
     notew_row = re.sub(case_sub,str(notew_db[rank]['case']),notew_row)
     notew_row = re.sub(os_sub,str(notew_db[rank]['os']),notew_row)
+    for storage_sys in notew_db[rank]['storage_sys']:
+        if first_stor_sys:
+            storage_sys_str += storage_sys
+            first_stor_sys = False
+        else:
+            storage_sys_str += ', ' + storage_sys
+    notew_row = re.sub(stsys_sub,storage_sys_str,notew_row)
     notew_row = re.sub(stsys_sub,str(notew_db[rank]['storage_sys']),notew_row)
     notew_row = re.sub(rp_bar_sub,str(notew_db[rank]['rp_bar']),notew_row)
     notew_row = re.sub(cap_bar_sub,str(notew_db[rank]['cap_bar']),notew_row)
@@ -375,6 +417,8 @@ html_file.close()
 # ---------------------------------------------------------------------------- #
 # GENERATE PLOTS                                                               #
 # ---------------------------------------------------------------------------- #
+
+exit()
 
 rank_length = len(str(max(ranking_db.keys())))
 ranking_points_lengths = []
@@ -739,3 +783,24 @@ plt.setp(ax20.xaxis.get_majorticklabels(), rotation=90)
 cax = plt.gcf().axes[-1]
 cax.tick_params(labelsize=12)
 plt.savefig(os_heatmap_drvc_path)
+
+
+plot_data_stor_sys = []
+plot_data_stor_sys_count = []
+for storage_sys in stor_sys_stats_db.keys():
+    plot_data_stor_sys.append(storage_sys)
+    plot_data_stor_sys_count.append(stor_sys_stats_db[storage_sys])
+df_stor_sys = pd.DataFrame()
+df_stor_sys['Storage System'] = plot_data_stor_sys
+df_stor_sys['Usage'] = plot_data_stor_sys_count
+plt.rc('figure',figsize=(16,12))
+plt.rc('font',family='monospace')
+fig9, ax22 = plt.subplots(1)
+sns.barplot(df_stor_sys['Storage System'],df_stor_sys['Usage'],ax=ax22,palette=sns.color_palette("husl", df_stor_sys.shape[0]))
+plt.setp(ax22.xaxis.get_majorticklabels(), rotation=90)
+fig9.subplots_adjust(bottom=0.4,left=0.1,right=0.9,top=0.95)
+ax22.set_xlabel('Storage System',fontsize=20)
+ax22.set_ylabel('Number of Systems',fontsize=20)
+ax22.tick_params(labelsize=20)
+plt.savefig('test.png')
+plt.savefig(storage_sys_plot_path)
