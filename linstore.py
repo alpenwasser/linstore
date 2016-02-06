@@ -14,7 +14,7 @@ from matplotlib.ticker import ScalarFormatter
 
 
 #timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
-timestamp = '2016-02-06--14-19-19'
+timestamp = '2016-02-06--17-09-22'
 plot_dir = 'plots/'
 rankings_plot           = timestamp + '--rankings.svg'
 rankings_plot_caps      = timestamp + '--rankings-caps.svg'
@@ -26,6 +26,9 @@ os_heatmap_drvc         = timestamp + '--os-heatmap-drvc.svg'
 drive_heatmap_contribs  = timestamp + '--drive-heatmap-contribs.svg'
 drive_heatmap_systems   = timestamp + '--drive-heatmap-systems.svg'
 storage_sys_plot        = timestamp + '--storage_sys.svg'
+timeline_sys_plot       = timestamp + '--timeline_sys.svg'
+timeline_caps_plot      = timestamp + '--timeline_caps.svg'
+timeline_drvc_plot      = timestamp + '--timeline_drvc.svg'
 rankings_plot_path          = plot_dir + timestamp + '--rankings.svg'
 rankings_plot_caps_path     = plot_dir + timestamp + '--rankings-caps.svg'
 rankings_plot_drvc_path     = plot_dir + timestamp + '--rankings-drvc.svg'
@@ -36,6 +39,9 @@ os_heatmap_path             = plot_dir + timestamp + '--os-heatmap.svg'
 os_heatmap_caps_path        = plot_dir + timestamp + '--os-heatmap-caps.svg'
 os_heatmap_drvc_path        = plot_dir + timestamp + '--os-heatmap-drvc.svg'
 storage_sys_plot_path       = plot_dir + timestamp + '--storage_sys.svg'
+timeline_sys_plot_path      = plot_dir + timestamp + '--timeline_sys.svg'
+timeline_caps_plot_path     = plot_dir + timestamp + '--timeline_caps.svg'
+timeline_drvc_plot_path     = plot_dir + timestamp + '--timeline_drvc.svg'
 
 drive_existence_failure = 5
 os_existence_failure = 6
@@ -109,14 +115,28 @@ for system in system_db.keys():
 # Rank systems
 # Sort by ranking points first, descending, then by post number, ascending
 ranked_systems = sorted(system_db, key=lambda system: (system_db[system]['ranking_points'],-system_db[system]['post']), reverse=True)
+ranked_systems_timeline = sorted(system_db, key=lambda system: (system_db[system]['timestamp']), reverse=False)
 
 # Create empty json objects
 ranking_db = js.loads('{}')
+timeline_db = js.loads('{}')
 notew_db = js.loads('{}')
 drive_stats_db = js.loads('{}')
 os_stats_db = js.loads('{}')
 stor_sys_stats_db = js.loads('{}')
 
+timeline_capacity = 0
+timeline_drive_count = 0
+timeline_system_count = 0
+for ranked_system_timeline in ranked_systems_timeline:
+    if (system_db[ranked_system_timeline]['drive_count'] < 5
+        or system_db[ranked_system_timeline]['capacity'] < 10
+        or system_db[ranked_system_timeline]['ditch'] == 1):
+        continue
+    timeline_capacity     += system_db[ranked_system_timeline]['capacity']
+    timeline_drive_count  += system_db[ranked_system_timeline]['drive_count']
+    timeline_system_count += 1
+    timeline_db[ system_db[ranked_system_timeline]['timestamp'] ] = {'capacity': timeline_capacity, 'drive_count': timeline_drive_count, 'system_count': timeline_system_count}
 
 
 # Populate databases
@@ -382,6 +402,9 @@ drive_heatmap_systems_pattern = '%%%<drive_heatmap_systems>%%%'
 os_heatmap_pattern = '%%%<os_heatmap>%%%'
 os_heatmap_caps_pattern = '%%%<os_heatmap_caps>%%%'
 os_heatmap_drvc_pattern = '%%%<os_heatmap_drvc>%%%'
+timeline_sys_pattern = '%%%<timeline_sys>%%%'
+timeline_caps_pattern = '%%%<timeline_caps>%%%'
+timeline_drvc_pattern = '%%%<timeline_drvc>%%%'
 storage_sys_pattern = '%%%<storage_sys_plot>%%%'
 total_dr_sub = '%tdr%'
 total_cp_sub = '%tc%'
@@ -397,6 +420,9 @@ template_plots = re.sub(os_heatmap_drvc_pattern,os_heatmap_drvc,template_plots)
 template_plots = re.sub(total_dr_sub,str(total_drives),template_plots)
 template_plots = re.sub(total_cp_sub,str(total_capacity),template_plots)
 template_plots = re.sub(storage_sys_pattern,storage_sys_plot,template_plots)
+template_plots = re.sub(timeline_sys_pattern, timeline_sys_plot, template_plots)
+template_plots = re.sub(timeline_caps_pattern, timeline_caps_plot, template_plots)
+template_plots = re.sub(timeline_drvc_pattern, timeline_drvc_plot, template_plots)
 
 #print(template_notew_row)
 #print(template_footer)
@@ -433,13 +459,12 @@ html_file.write(notew_rows)
 html_file.write(template_footer)
 html_file.close()
 
-
 exit()
+
 # ---------------------------------------------------------------------------- #
 # GENERATE PLOTS                                                               #
 # ---------------------------------------------------------------------------- #
 
-exit()
 
 rank_length = len(str(max(ranking_db.keys())))
 ranking_points_lengths = []
@@ -825,3 +850,51 @@ ax22.set_ylabel('Number of Systems',fontsize=20)
 ax22.tick_params(labelsize=20)
 plt.savefig('test.png')
 plt.savefig(storage_sys_plot_path)
+
+
+plt.rc('figure',figsize=(16,9)) # 1600 x 900 px at 100 dpi
+plot_data_timeline_dates = []
+plot_data_timeline_caps  = []
+plot_data_timeline_drvc  = []
+plot_data_timeline_timestamps = []
+plot_data_timeline_sys = []
+for timestamp in timeline_db.keys():
+    plot_data_timeline_dates.append(dt.datetime.fromtimestamp(timestamp).strftime("%Y-%b-%d"))
+    plot_data_timeline_timestamps.append(timestamp)
+    plot_data_timeline_caps.append(timeline_db[timestamp]['capacity'])
+    plot_data_timeline_drvc.append(timeline_db[timestamp]['drive_count'])
+    plot_data_timeline_sys.append(timeline_db[timestamp]['system_count'])
+df_timeline = pd.DataFrame()
+df_timeline['Timestamp'] = plot_data_timeline_timestamps
+df_timeline['Date'] = plot_data_timeline_dates
+df_timeline['Capacity (TB)'] = plot_data_timeline_caps
+df_timeline['Drive Count'] = plot_data_timeline_drvc
+df_timeline['System Count'] = plot_data_timeline_sys
+df_timeline = df_timeline.sort_values(by=['Timestamp'], ascending=[True])
+#ax = sns.swarmplot(x='Timestamp', y="Capacity", data=df_timeline)
+fig10, ax23 = plt.subplots(1)
+sns.stripplot(x='Date', y="Capacity (TB)", data=df_timeline, ax=ax23, palette = sns.dark_palette("purple"),size=10)
+fig10.subplots_adjust(bottom=0.2,left=0.1,right=0.9,top=0.95)
+plt.setp(ax23.xaxis.get_majorticklabels(), rotation=90)
+plt.setp(ax23.get_xticklabels()[::], visible=False)
+plt.setp(ax23.get_xticklabels()[::5], visible=True)
+ax23.set_ylim(bottom=0)
+fig10.savefig(timeline_caps_plot_path)
+
+fig11, ax24 = plt.subplots(1)
+sns.stripplot(x='Date', y="Drive Count", data=df_timeline, ax=ax24, palette = sns.dark_palette("purple"),size=10)
+fig11.subplots_adjust(bottom=0.2,left=0.1,right=0.9,top=0.95)
+plt.setp(ax24.xaxis.get_majorticklabels(), rotation=90)
+plt.setp(ax24.get_xticklabels()[::], visible=False)
+plt.setp(ax24.get_xticklabels()[::5], visible=True)
+ax24.set_ylim(bottom=0)
+fig11.savefig(timeline_drvc_plot_path)
+
+fig12, ax25 = plt.subplots(1)
+sns.stripplot(x='Date', y="System Count", data=df_timeline, ax=ax25, palette = sns.dark_palette("purple"),size=10)
+fig12.subplots_adjust(bottom=0.2,left=0.1,right=0.9,top=0.95)
+plt.setp(ax25.xaxis.get_majorticklabels(), rotation=90)
+plt.setp(ax25.get_xticklabels()[::], visible=False)
+plt.setp(ax25.get_xticklabels()[::5], visible=True)
+ax25.set_ylim(bottom=0)
+fig12.savefig(timeline_sys_plot_path)

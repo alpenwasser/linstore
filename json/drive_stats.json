@@ -1,200 +1,200 @@
 {
- "Toshiba": {
-  "0.25": {
-   "system_usage": 1,
-   "count": 1
-  },
-  "1.0": {
-   "system_usage": 1,
-   "count": 1
-  },
-  "2.0": {
-   "system_usage": 2,
-   "count": 2
-  },
-  "3.0": {
-   "system_usage": 6,
-   "count": 40
-  }
- },
- "OCZ": {
-  "0.13": {
-   "system_usage": 1,
-   "count": 1
-  }
- },
- "Crucial": {
-  "0.13": {
-   "system_usage": 1,
-   "count": 1
-  },
-  "0.25": {
-   "system_usage": 1,
-   "count": 2
-  },
-  "0.26": {
-   "system_usage": 1,
-   "count": 3
-  }
- },
  "Kingston": {
   "0.24": {
-   "system_usage": 1,
-   "count": 2
-  }
- },
- "unspecified": {
-  "1.5": {
-   "system_usage": 1,
-   "count": 11
-  },
-  "2.0": {
-   "system_usage": 3,
-   "count": 12
-  },
-  "3.0": {
-   "system_usage": 4,
-   "count": 9
-  },
-  "1.0": {
-   "system_usage": 2,
-   "count": 4
-  }
- },
- "WD": {
-  "0.5": {
-   "system_usage": 3,
-   "count": 6
-  },
-  "1.0": {
-   "system_usage": 15,
-   "count": 48
-  },
-  "2.0": {
-   "system_usage": 36,
-   "count": 180
-  },
-  "3.0": {
-   "system_usage": 37,
-   "count": 147
-  },
-  "4.0": {
-   "system_usage": 15,
-   "count": 73
-  },
-  "5.0": {
-   "system_usage": 1,
-   "count": 8
-  },
-  "6.0": {
-   "system_usage": 4,
-   "count": 25
-  },
-  "1.5": {
-   "system_usage": 1,
-   "count": 2
-  },
-  "0.15": {
-   "system_usage": 2,
-   "count": 3
-  },
-  "0.32": {
-   "system_usage": 1,
-   "count": 1
-  },
-  "0.6": {
-   "system_usage": 1,
-   "count": 1
-  },
-  "0.64": {
-   "system_usage": 1,
-   "count": 1
-  },
-  "0.25": {
-   "system_usage": 1,
-   "count": 1
+   "count": 2,
+   "system_usage": 1
   }
  },
  "Seagate": {
   "0.5": {
-   "system_usage": 3,
-   "count": 8
+   "count": 8,
+   "system_usage": 3
   },
   "1.5": {
-   "system_usage": 6,
-   "count": 16
+   "count": 16,
+   "system_usage": 6
   },
   "2.0": {
-   "system_usage": 28,
-   "count": 99
+   "count": 99,
+   "system_usage": 28
   },
   "3.0": {
-   "system_usage": 23,
-   "count": 104
+   "count": 104,
+   "system_usage": 23
   },
   "4.0": {
-   "system_usage": 19,
-   "count": 129
+   "count": 129,
+   "system_usage": 19
   },
   "5.0": {
-   "system_usage": 1,
-   "count": 2
+   "count": 2,
+   "system_usage": 1
   },
   "0.75": {
-   "system_usage": 2,
-   "count": 3
+   "count": 3,
+   "system_usage": 2
   },
   "1.0": {
-   "system_usage": 8,
-   "count": 29
+   "count": 29,
+   "system_usage": 8
   },
   "0.3": {
-   "system_usage": 1,
-   "count": 4
+   "count": 4,
+   "system_usage": 1
   }
  },
- "Samsung": {
-  "0.5": {
-   "system_usage": 5,
-   "count": 6
-  },
-  "1.0": {
-   "system_usage": 5,
-   "count": 10
+ "unspecified": {
+  "1.5": {
+   "count": 11,
+   "system_usage": 1
   },
   "2.0": {
-   "system_usage": 10,
-   "count": 54
+   "count": 12,
+   "system_usage": 3
   },
   "3.0": {
-   "system_usage": 1,
-   "count": 5
+   "count": 9,
+   "system_usage": 4
+  },
+  "1.0": {
+   "count": 4,
+   "system_usage": 2
+  }
+ },
+ "Crucial": {
+  "0.13": {
+   "count": 1,
+   "system_usage": 1
+  },
+  "0.25": {
+   "count": 2,
+   "system_usage": 1
+  },
+  "0.26": {
+   "count": 3,
+   "system_usage": 1
   }
  },
  "HGST": {
   "0.25": {
-   "system_usage": 2,
-   "count": 2
+   "count": 2,
+   "system_usage": 2
   },
   "0.5": {
-   "system_usage": 2,
-   "count": 4
+   "count": 4,
+   "system_usage": 2
   },
   "2.0": {
-   "system_usage": 9,
-   "count": 27
+   "count": 27,
+   "system_usage": 9
   },
   "3.0": {
-   "system_usage": 4,
-   "count": 23
+   "count": 23,
+   "system_usage": 4
   },
   "4.0": {
-   "system_usage": 5,
-   "count": 35
+   "count": 35,
+   "system_usage": 5
   },
   "0.64": {
-   "system_usage": 1,
-   "count": 1
+   "count": 1,
+   "system_usage": 1
+  }
+ },
+ "Toshiba": {
+  "0.25": {
+   "count": 1,
+   "system_usage": 1
+  },
+  "1.0": {
+   "count": 1,
+   "system_usage": 1
+  },
+  "2.0": {
+   "count": 2,
+   "system_usage": 2
+  },
+  "3.0": {
+   "count": 40,
+   "system_usage": 6
+  }
+ },
+ "Samsung": {
+  "0.5": {
+   "count": 6,
+   "system_usage": 5
+  },
+  "1.0": {
+   "count": 10,
+   "system_usage": 5
+  },
+  "2.0": {
+   "count": 54,
+   "system_usage": 10
+  },
+  "3.0": {
+   "count": 5,
+   "system_usage": 1
+  }
+ },
+ "WD": {
+  "0.5": {
+   "count": 6,
+   "system_usage": 3
+  },
+  "1.0": {
+   "count": 48,
+   "system_usage": 15
+  },
+  "2.0": {
+   "count": 180,
+   "system_usage": 36
+  },
+  "3.0": {
+   "count": 147,
+   "system_usage": 37
+  },
+  "4.0": {
+   "count": 73,
+   "system_usage": 15
+  },
+  "5.0": {
+   "count": 8,
+   "system_usage": 1
+  },
+  "6.0": {
+   "count": 25,
+   "system_usage": 4
+  },
+  "1.5": {
+   "count": 2,
+   "system_usage": 1
+  },
+  "0.15": {
+   "count": 3,
+   "system_usage": 2
+  },
+  "0.32": {
+   "count": 1,
+   "system_usage": 1
+  },
+  "0.6": {
+   "count": 1,
+   "system_usage": 1
+  },
+  "0.64": {
+   "count": 1,
+   "system_usage": 1
+  },
+  "0.25": {
+   "count": 1,
+   "system_usage": 1
+  }
+ },
+ "OCZ": {
+  "0.13": {
+   "count": 1,
+   "system_usage": 1
   }
  }
 }

@@ -1,177 +1,177 @@
 {
- "Drobo": {
-  "family": "GNU/Linux",
-  "os": "Drobo OS",
-  "count": 1,
-  "drive_count": 5,
-  "capacity": 10
- },
- "Debian": {
-  "family": "GNU/Linux",
-  "os": "Debian Linux",
-  "count": 6,
-  "drive_count": 59,
-  "capacity": 166
- },
- "WHS 2011": {
-  "family": "Windows",
-  "os": "Windows Home Server 2011",
-  "count": 3,
-  "drive_count": 22,
-  "capacity": 42
- },
- "WS 2008R2": {
-  "family": "Windows",
-  "os": "Windows Server 2008 R2",
-  "count": 3,
-  "drive_count": 30,
-  "capacity": 98
- },
- "Xubuntu": {
-  "family": "GNU/Linux",
-  "os": "Xubuntu Linux",
-  "count": 1,
-  "drive_count": 12,
-  "capacity": 48
- },
  "WS 2012R2": {
-  "family": "Windows",
-  "os": "Windows Server 2012 R2",
   "count": 9,
-  "drive_count": 114,
-  "capacity": 350
- },
- "Win 8": {
+  "capacity": 350,
+  "os": "Windows Server 2012 R2",
   "family": "Windows",
-  "os": "Windows 8",
-  "count": 3,
-  "drive_count": 16,
-  "capacity": 44
- },
- "CentOS": {
-  "family": "GNU/Linux",
-  "os": "CentOS",
-  "count": 1,
-  "drive_count": 11,
-  "capacity": 18
- },
- "unRAID": {
-  "family": "GNU/Linux",
-  "os": "unRAID",
-  "count": 5,
-  "drive_count": 74,
-  "capacity": 136
- },
- "FreeNAS": {
-  "family": "*BSD",
-  "os": "FreeNAS",
-  "count": 19,
-  "drive_count": 172,
-  "capacity": 475
- },
- "NAS4Free": {
-  "family": "*BSD",
-  "os": "NAS4Free",
-  "count": 1,
-  "drive_count": 22,
-  "capacity": 28
- },
- "Win 7": {
-  "family": "Windows",
-  "os": "Windows 7",
-  "count": 17,
-  "drive_count": 193,
-  "capacity": 562
- },
- "Ubuntu": {
-  "family": "GNU/Linux",
-  "os": "Ubuntu Linux",
-  "count": 4,
-  "drive_count": 54,
-  "capacity": 123
- },
- "OpenIndiana": {
-  "family": "Solaris",
-  "os": "OpenIndiana",
-  "count": 1,
-  "drive_count": 12,
-  "capacity": 24
- },
- "Synology": {
-  "family": "GNU/Linux",
-  "os": "Synology OS",
-  "count": 5,
-  "drive_count": 43,
-  "capacity": 140
- },
- "Arch Linux": {
-  "family": "GNU/Linux",
-  "os": "Arch Linux",
-  "count": 2,
-  "drive_count": 23,
-  "capacity": 53
- },
- "Win": {
-  "family": "Windows",
-  "os": "Windows (unspecified)",
-  "count": 1,
-  "drive_count": 42,
-  "capacity": 83
- },
- "Win 10": {
-  "family": "Windows",
-  "os": "Windows 10",
-  "count": 1,
-  "drive_count": 13,
-  "capacity": 18
- },
- "Linux": {
-  "family": "GNU/Linux",
-  "os": "Linux (other)",
-  "count": 1,
-  "drive_count": 8,
-  "capacity": 24
- },
- "Gentoo": {
-  "family": "GNU/Linux",
-  "os": "Gentoo Linux",
-  "count": 2,
-  "drive_count": 34,
-  "capacity": 126
- },
- "WS 2012": {
-  "family": "Windows",
-  "os": "Windows Server 2012",
-  "count": 6,
-  "drive_count": 87,
-  "capacity": 201
- },
- "ZFSGuru": {
-  "family": "*BSD",
-  "os": "ZFSGuru",
-  "count": 1,
-  "drive_count": 8,
-  "capacity": 19
+  "drive_count": 114
  },
  "Win 8.1": {
-  "family": "Windows",
-  "os": "Windows 8.1",
   "count": 6,
-  "drive_count": 63,
-  "capacity": 156
+  "capacity": 156,
+  "os": "Windows 8.1",
+  "family": "Windows",
+  "drive_count": 63
  },
- "Linux Mint": {
-  "family": "GNU/Linux",
-  "os": "Linux Mint",
+ "Arch Linux": {
   "count": 2,
-  "drive_count": 14,
-  "capacity": 42
+  "capacity": 53,
+  "os": "Arch Linux",
+  "family": "GNU/Linux",
+  "drive_count": 23
+ },
+ "Linux": {
+  "count": 1,
+  "capacity": 24,
+  "os": "Linux (other)",
+  "family": "GNU/Linux",
+  "drive_count": 8
+ },
+ "unRAID": {
+  "count": 5,
+  "capacity": 136,
+  "os": "unRAID",
+  "family": "GNU/Linux",
+  "drive_count": 74
+ },
+ "Gentoo": {
+  "count": 2,
+  "capacity": 126,
+  "os": "Gentoo Linux",
+  "family": "GNU/Linux",
+  "drive_count": 34
+ },
+ "Synology": {
+  "count": 5,
+  "capacity": 140,
+  "os": "Synology OS",
+  "family": "GNU/Linux",
+  "drive_count": 43
+ },
+ "ZFSGuru": {
+  "count": 1,
+  "capacity": 19,
+  "os": "ZFSGuru",
+  "family": "*BSD",
+  "drive_count": 8
+ },
+ "FreeNAS": {
+  "count": 19,
+  "capacity": 475,
+  "os": "FreeNAS",
+  "family": "*BSD",
+  "drive_count": 172
+ },
+ "Win 8": {
+  "count": 3,
+  "capacity": 44,
+  "os": "Windows 8",
+  "family": "Windows",
+  "drive_count": 16
+ },
+ "WHS 2011": {
+  "count": 3,
+  "capacity": 42,
+  "os": "Windows Home Server 2011",
+  "family": "Windows",
+  "drive_count": 22
+ },
+ "CentOS": {
+  "count": 1,
+  "capacity": 18,
+  "os": "CentOS",
+  "family": "GNU/Linux",
+  "drive_count": 11
+ },
+ "WS 2008R2": {
+  "count": 3,
+  "capacity": 98,
+  "os": "Windows Server 2008 R2",
+  "family": "Windows",
+  "drive_count": 30
+ },
+ "Ubuntu": {
+  "count": 4,
+  "capacity": 123,
+  "os": "Ubuntu Linux",
+  "family": "GNU/Linux",
+  "drive_count": 54
  },
  "OpenMediaVault": {
-  "family": "GNU/Linux",
-  "os": "OpenMediaVault",
   "count": 2,
-  "drive_count": 15,
-  "capacity": 38
+  "capacity": 38,
+  "os": "OpenMediaVault",
+  "family": "GNU/Linux",
+  "drive_count": 15
+ },
+ "Win": {
+  "count": 1,
+  "capacity": 83,
+  "os": "Windows (unspecified)",
+  "family": "Windows",
+  "drive_count": 42
+ },
+ "Win 10": {
+  "count": 1,
+  "capacity": 18,
+  "os": "Windows 10",
+  "family": "Windows",
+  "drive_count": 13
+ },
+ "Linux Mint": {
+  "count": 2,
+  "capacity": 42,
+  "os": "Linux Mint",
+  "family": "GNU/Linux",
+  "drive_count": 14
+ },
+ "Drobo": {
+  "count": 1,
+  "capacity": 10,
+  "os": "Drobo OS",
+  "family": "GNU/Linux",
+  "drive_count": 5
+ },
+ "WS 2012": {
+  "count": 6,
+  "capacity": 201,
+  "os": "Windows Server 2012",
+  "family": "Windows",
+  "drive_count": 87
+ },
+ "Debian": {
+  "count": 6,
+  "capacity": 166,
+  "os": "Debian Linux",
+  "family": "GNU/Linux",
+  "drive_count": 59
+ },
+ "NAS4Free": {
+  "count": 1,
+  "capacity": 28,
+  "os": "NAS4Free",
+  "family": "*BSD",
+  "drive_count": 22
+ },
+ "Win 7": {
+  "count": 17,
+  "capacity": 562,
+  "os": "Windows 7",
+  "family": "Windows",
+  "drive_count": 193
+ },
+ "OpenIndiana": {
+  "count": 1,
+  "capacity": 24,
+  "os": "OpenIndiana",
+  "family": "Solaris",
+  "drive_count": 12
+ },
+ "Xubuntu": {
+  "count": 1,
+  "capacity": 48,
+  "os": "Xubuntu Linux",
+  "family": "GNU/Linux",
+  "drive_count": 12
  }
 }
