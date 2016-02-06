@@ -1,0 +1,169 @@
+<h1 style="font-size:1.33em;background-color:#153461;color:#ffffff;padding:0.33em;padding-left:1em;margin-bottom:2em;margin-top:3em;"><strong>LTT Storage Rankings</strong></h1>
+<h2 style="font-size:1.1em;background-color:#486784;color:#ffffff;padding:0.33em;padding-left:1em;margin-bottom:2em;margin-top:3em;"><strong>Topic</strong></h2>
+<div>
+    Welcome to the <strong>LTT  Storage Rankings</strong>! The purpose of this
+    topic is to  show off cool storage  builds, to inspire with  what you show
+    and be  inspired by  what you  see. And of course,  also talk  about those
+    builds, ask their owners questions and all that good stuff.
+</div>
+<h2 style="font-size:1.1em;background-color:#486784;color:#ffffff;padding:0.33em;padding-left:1em;margin-bottom:2em;margin-top:3em;"><strong>Criteria</strong></h2>
+<div>
+    <ul>
+        <li>
+            System capacity of 10 TB or more
+        </li>
+        <li>
+            5 storage drives or more:
+            <ul>
+                <li>
+                    We don't count OS drives,
+                </li>
+                <li>
+                    we also do not count cache drives,
+                </li>
+                <li>
+                    nor external USB drives.
+                </li>
+                <li>
+                    External SAS enclosures connected via SFF-8088 count, however.
+                </li>
+                <li>
+                    Drobos, Thunderbolt enclosures etc.: If they have a management interface which makes them somewhat autonomous, they count.
+                </li>
+                <li>
+                    It does not matter whether your storage drives is an SSD or an HDD, as long as it is used for storage.
+                </li>
+                <li>
+                    Don't forget to indicate vendor and drive size for all your drives for our statistics (see also below).
+                </li>
+                <li>
+                    For cases not covered here, we reserve the right to adjust the rules as needed to protect the spirit of the thread.
+                </li>
+            </ul>
+        </li>
+        <li>
+            It has to be a single system (everything running off of a single motherboard).
+        </li>
+        <li>
+            Do not post your company server (except the ones from Linus Media Group ;)), this is for private systems.
+        </li>
+        <li>
+            Pictures of the hardware required. That's the primary point of this thread, after all.
+        </li>
+        <li>
+            Use <a href="https://linustechtips.com/main/topic/21948-ltt-10tb-storage-show-off-topic/?do=findComment&comment=273427">looney's post</a> as a template. 
+            Write a nice post about your system, give us some details on the nitty gritty inner workings of your beast.
+        </li>
+        <li>
+             Make sure to give all the needed info for the statistics (Operating system, storage system, HDD vendors and sizes etc.)
+        </li>
+    </ul>
+</div>
+<h2 style="font-size:1.1em;background-color:#486784;color:#ffffff;padding:0.33em;padding-left:1em;margin-bottom:2em;margin-top:3em;"><strong>Ranking System</strong></h2>
+<div>
+    <p>
+    The rankings are based on ranking points, which are calculated as follows:
+    <div style="font-family:Courier New, Courier, Monospace;color:#db4105;margin-top:1em;margin-bottom:0.9em;">ranking_points = system_capacity &#x2a2f; ln(system_drive_count)</div>
+    with <span style="font-family:Courier New, Courier, Monospace;color:#db4105;">ln(system_drive_count)</span> being the natural logarithm of the number of drives in the system.
+    </p>
+
+    <h3>Rationales</h3>
+    <h4>Minimum Requirements</h4>
+    <p>
+    Having both the 10  TB and the 5 drive minimum rules  allows us to prevent
+    being spammed by systems with a single  or two huge HDDs (10 terabyte HDDs
+    are a reality now, after all), while still allowing systems which were put
+    together with smaller drives (or SSDs) to get into the list.
+    </p>
+
+    <h4>Ranking Points</h4>
+    <p>
+    Basically, this thread is about awesome storage systems, and we think that
+    capacity isn't the only thing which  determines how cool a storage machine
+    is. Chances are  that a system  with a bit less  capacity but quite  a few
+    more drives might be more interesting to look at. Therefore, the number of
+    drives also counts.
+    </p>
+    <p>
+    However, we  don't want  somebody buying  a ton of  small cheap  drives to
+    outrank somebody  who's bought  a hugely expensive  system with  fewer big
+    drives, which  is why towards  the upper end of  the scale, the  number of
+    drives starts to no longer matter as much (see examples below).
+    </p>
+
+    <h5>Example for Large Systems</h5>
+    <ul>
+        <li>
+            <strong>System 1:</strong> 100 TB capacity, 50 &#x2a2f; 2 TB drives: 391.2 ranking points
+        </li>
+        <li>
+            <strong>System 2:</strong> 150 TB capacity, 30 &#x2a2f; 5 TB drives: 510.2 ranking points
+        </li>
+        <li>
+            <strong>Amount of drives required for system 1 to surpass system 2, assuming capacities for both systems and drive count for system 2 stay the same:</strong> 
+            165  drives, resulting  in 510.6  ranking points. Capacity  weighs
+            much heavier  than drive count as  it grows, the influence  of the
+            number of  drives on the ranking  points falls prey to  the law of
+            diminishing returns.
+        </li>
+    </ul>
+    <h5>Example for Smaller Systems</h5>
+    <ul>
+        <li>
+            <strong>System 3:</strong> 14 TB capacity, 7 &#x2a2f; 2 TB drives: 27.2 ranking points
+        </li>
+        <li>
+            <strong>System 4:</strong> 15 TB capacity, 5 &#x2a2f; 3 TB drives: 24.1 ranking points
+        </li>
+        <li>
+            Drive count has  a higher weight for such systems,  system 3 ranks
+            ahead of system 4 despite having less total capacity.
+        </li>
+    </ul>
+
+    <h5>Identical Ranking Points</h5>
+    <p>
+    For systems with identical ranking points, post date is the ranking factor
+    (more  specifically: post  number).   Since  no posts  can  have the  same
+    number, no more ranking criteria are needed.
+    </p>
+
+    <h5>Script</h5>
+    <p>
+    The rankings and plots are generated by a Python script, which can be found on
+    <a href="https://github.com/alpenwasser/linstore">alpenwasser's github here</a>.
+
+    <h4>Capacity Calculation</h4>
+    <p>
+    We count raw storage as advertised on  the drives. So, if you have 10 1 TB
+    drives, that counts towards 10 TB of storage.
+    </p>
+
+</div>
+<div style="font-size:1.1em;background-color:#486784;color:#ffffff;padding:0.33em;padding-left:1em;margin-bottom:2em;margin-top:3em;"><strong>Smaller Systems</strong></div>
+<div>
+    <p>
+    Not everybody needs a big server, and even smaller systems can be cool and
+    interesting (or <em>noteworthy</em>, as we put it below). For such systems
+    we have  a secondary list, so  feel free to  post your machine even  if it
+    doesn't quite meet  the ranking criteria outlined  above. Please still use
+    the template post for  your system, and stick to the  rest of the criteria
+    as applicable to your machine.
+    </p>
+</div>
+<div style="font-size:1.1em;background-color:#486784;color:#ffffff;padding:0.33em;padding-left:1em;margin-bottom:2em;margin-top:3em;"><strong>External Sites</strong></div>
+<div>
+    <ul>
+        <li>
+            This thread is inspired by 
+            <a href="http://hardforum.com/showthread.php?t=1393939">the one on the [H]ard Forum</a>, 
+            where you can find many huge systems as well.
+        </li>
+        <li>
+            The Dutch thread on <a href="http://gathering.tweakers.net/forum/list_messages/1457031/0">Gathering of Tweakers</a> is also worth a look, although it is in Dutch, obvisouly.
+        </li>
+        <li>
+            <a href="https://forums.servethehome.com/index.php?forums/diy-server-and-workstation-builds.12">Serve the Home</a> is also a great place for all things storage.
+        </li>
+    </ul>
+</div>
