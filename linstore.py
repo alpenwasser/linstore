@@ -13,7 +13,8 @@ import operator as op
 from matplotlib.ticker import ScalarFormatter
 
 
-timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
+#timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
+timestamp = '2016-02-06--14-19-19'
 plot_dir = 'plots/'
 rankings_plot           = timestamp + '--rankings.svg'
 rankings_plot_caps      = timestamp + '--rankings-caps.svg'
@@ -317,11 +318,15 @@ capacity_sub = '%cap%'
 nodrives_sub = '%ndr%'
 case_sub = '%cs%'
 os_sub = '%os%'
+updPost_sub = '%updPost%'
+updNo_sub = '%updNo%'
+upd_line_sub = '%upd_line%'
 stsys_sub = '%stsys%'
 rp_bar_sub = '%rp_bar%'
 cap_bar_sub = '%cap_bar%'
 drvc_bar_sub = '%drvc_bar%'
 drvc_bar_sub = '%drvc_bar%'
+upd_template = '<a style="color:#aaaaaa;" href="https://linustechtips.com/main/topic/21948-ltt-10tb-storage-show-off-topic/?do=findComment&comment=%updPost%">%updNo%</a>'
 
 # Assemble ranking table
 ranked_rows = ''
@@ -336,6 +341,9 @@ for rank in ranking_db.keys():
     ranked_row = re.sub(nodrives_sub,str(ranking_db[rank]['drive_count']),ranked_row)
     ranked_row = re.sub(case_sub,str(ranking_db[rank]['case']),ranked_row)
     ranked_row = re.sub(os_sub,str(ranking_db[rank]['os']),ranked_row)
+    ranked_row = re.sub(rp_bar_sub,str(ranking_db[rank]['rp_bar']),ranked_row)
+    ranked_row = re.sub(cap_bar_sub,str(ranking_db[rank]['cap_bar']),ranked_row)
+    ranked_row = re.sub(drvc_bar_sub,str(ranking_db[rank]['drvc_bar']),ranked_row)
     for storage_sys in ranking_db[rank]['storage_sys']:
         if first_stor_sys:
             storage_sys_str += storage_sys
@@ -343,9 +351,24 @@ for rank in ranking_db.keys():
         else:
             storage_sys_str += ', ' + storage_sys
     ranked_row = re.sub(stsys_sub,storage_sys_str,ranked_row)
-    ranked_row = re.sub(rp_bar_sub,str(ranking_db[rank]['rp_bar']),ranked_row)
-    ranked_row = re.sub(cap_bar_sub,str(ranking_db[rank]['cap_bar']),ranked_row)
-    ranked_row = re.sub(drvc_bar_sub,str(ranking_db[rank]['drvc_bar']),ranked_row)
+    if ranking_db[rank]['updates']:
+        updNo = 1
+        update_str = ''
+        first_upd = True
+        for updPost in ranking_db[rank]['updates']:
+            upd_line = upd_template
+            upd_line = re.sub(updPost_sub, str(updPost), upd_line)
+            upd_line = re.sub(updNo_sub, str(updNo), upd_line)
+            if first_upd:
+                update_str += upd_line
+                updNo += 1
+                first_upd = False
+            else:
+                update_str += ', ' + upd_line
+                updNo += 1
+    else:
+        update_str = '&nbsp;'
+    ranked_row = re.sub(upd_line_sub, update_str, ranked_row)
     ranked_rows += ranked_row
 
 
@@ -397,9 +420,6 @@ for rank in notew_db.keys():
             storage_sys_str += ', ' + storage_sys
     notew_row = re.sub(stsys_sub,storage_sys_str,notew_row)
     notew_row = re.sub(stsys_sub,str(notew_db[rank]['storage_sys']),notew_row)
-    notew_row = re.sub(rp_bar_sub,str(notew_db[rank]['rp_bar']),notew_row)
-    notew_row = re.sub(cap_bar_sub,str(notew_db[rank]['cap_bar']),notew_row)
-    notew_row = re.sub(drvc_bar_sub,str(notew_db[rank]['drvc_bar']),notew_row)
     notew_rows += notew_row
 
 
@@ -414,6 +434,7 @@ html_file.write(template_footer)
 html_file.close()
 
 
+exit()
 # ---------------------------------------------------------------------------- #
 # GENERATE PLOTS                                                               #
 # ---------------------------------------------------------------------------- #

@@ -19,6 +19,7 @@
    "HwRD": 1
   },
   "timestamp": 1422908075,
+  "updates": null,
   "username": "looney"
  },
  "2": {
@@ -39,7 +40,7 @@
    "WD0600": 1
   },
   "drvc_bar": 55.18586929848558,
-  "notes": "[post=3749961]Upd[/post]",
+  "notes": null,
   "os": "Win 7",
   "post": 1230802,
   "ranking_points": 360.14027883104745,
@@ -48,6 +49,9 @@
    "JBOD": 1
   },
   "timestamp": 1387588846,
+  "updates": [
+   3749961
+  ],
   "username": "dangerous1"
  },
  "3": {
@@ -75,6 +79,7 @@
    "unknown": 1
   },
   "timestamp": 1380473196,
+  "updates": null,
   "username": "STUdog"
  },
  "4": {
@@ -89,7 +94,7 @@
    "WD0600": 4
   },
   "drvc_bar": 52.01865556388526,
-  "notes": "[post=1883660]Upd 1[/post], [post=2418935]2[/post], [post=3437797]Upd 3[/post], [post=5419102]Upd 4[/post], [post=5966919]Upd 6[/post]",
+  "notes": null,
   "os": "Win 8.1",
   "post": 414401,
   "ranking_points": 234.00441748630737,
@@ -98,6 +103,13 @@
    "HwRD": 1
   },
   "timestamp": 1372897548,
+  "updates": [
+   1883660,
+   2418935,
+   3437797,
+   5419102,
+   5966919
+  ],
   "username": "Ramaddil"
  },
  "5": {
@@ -119,6 +131,7 @@
    "HwRD": 1
   },
   "timestamp": 1437265273,
+  "updates": null,
   "username": "AnonymousGuy"
  },
  "6": {
@@ -134,7 +147,7 @@
    "WD0400": 7
   },
   "drvc_bar": 52.01865556388526,
-  "notes": "[post=1694520]Upd 1[/post], [post=3419235]Upd 2[/post], [post=4434277]Upd 3[/post]",
+  "notes": null,
   "os": "WS 2012",
   "post": 821520,
   "ranking_points": 227.4127437542987,
@@ -144,6 +157,11 @@
    "JBOD": 1
   },
   "timestamp": 1380323506,
+  "updates": [
+   1694520,
+   3419235,
+   4434277
+  ],
   "username": "Alexdaman"
  },
  "7": {
@@ -166,6 +184,7 @@
    "ZFS": 1
   },
   "timestamp": 1425653762,
+  "updates": null,
   "username": "Hobobo"
  },
  "8": {
@@ -189,6 +208,7 @@
    "JBOD": 1
   },
   "timestamp": 1371486924,
+  "updates": null,
   "username": "raphaex"
  },
  "9": {
@@ -211,6 +231,7 @@
    "ZFS": 1
   },
   "timestamp": 1409638382,
+  "updates": null,
   "username": "madcow"
  },
  "10": {
@@ -232,6 +253,7 @@
    "ZFS": 1
   },
   "timestamp": 1383896123,
+  "updates": null,
   "username": "madcow"
  },
  "11": {
@@ -253,6 +275,7 @@
    "HwRD": 1
   },
   "timestamp": 1394136646,
+  "updates": null,
   "username": "Ssoele"
  },
  "12": {
@@ -283,6 +306,7 @@
    "unRAID": 1
   },
   "timestamp": 1370475177,
+  "updates": null,
   "username": "Whaler_99"
  },
  "13": {
@@ -304,6 +328,7 @@
    "mdadm": 1
   },
   "timestamp": 1370100594,
+  "updates": null,
   "username": "RandomNOOB"
  },
  "14": {
@@ -326,6 +351,7 @@
    "mdadm": 1
   },
   "timestamp": 1370128177,
+  "updates": null,
   "username": "Rudde"
  },
  "15": {
@@ -350,6 +376,7 @@
    "ZFS": 1
   },
   "timestamp": 1399747475,
+  "updates": null,
   "username": "alpenwasser"
  },
  "16": {
@@ -375,6 +402,7 @@
    "SwRD": 1
   },
   "timestamp": 1440696062,
+  "updates": null,
   "username": "arsonik007"
  },
  "17": {
@@ -396,6 +424,7 @@
    "ZFS": 1
   },
   "timestamp": 1426995060,
+  "updates": null,
   "username": "gcs8"
  },
  "18": {
@@ -408,7 +437,7 @@
    "HT0400": 12
   },
   "drvc_bar": 39.21963021198886,
-  "notes": "[post=5256925]Update[/post]",
+  "notes": null,
   "os": "Xubuntu",
   "post": 3575499,
   "ranking_points": 119.27551918982402,
@@ -417,6 +446,9 @@
    "ZFS": 1
   },
   "timestamp": 1417575719,
+  "updates": [
+   5256925
+  ],
   "username": "handruin"
  },
  "19": {
@@ -439,6 +471,7 @@
    "HwRD": 1
   },
   "timestamp": 1420521326,
+  "updates": null,
   "username": "aznmonk"
  },
  "20": {
@@ -452,7 +485,7 @@
    "TS0300": 12
   },
   "drvc_bar": 41.65261201445115,
-  "notes": "[post=3157644]Upd 1[/post]",
+  "notes": null,
   "os": "WS 2008R2",
   "post": 3091775,
   "ranking_points": 110.84040784384085,
@@ -461,6 +494,9 @@
    "HwRD": 1
   },
   "timestamp": 1412178736,
+  "updates": [
+   3157644
+  ],
   "username": "zyk"
  },
  "21": {
@@ -485,6 +521,7 @@
    "SwRD": 1
   },
   "timestamp": 1412190202,
+  "updates": null,
   "username": "redlukas"
  },
  "22": {
@@ -509,6 +546,7 @@
    "unRAID": 1
   },
   "timestamp": 1419438237,
+  "updates": null,
   "username": "Jonathan Yonke"
  },
  "23": {
@@ -535,6 +573,7 @@
    "SwRD": 1
   },
   "timestamp": 1435088617,
+  "updates": null,
   "username": "mGrytbak"
  },
  "24": {
@@ -549,7 +588,7 @@
    "WD0500": 8
   },
   "drvc_bar": 37.84631744385716,
-  "notes": "[post=5906039]Upd 1[/post]",
+  "notes": null,
   "os": "Win 7",
   "post": 4588958,
   "ranking_points": 100.71160145753157,
@@ -558,6 +597,9 @@
    "HwRD": 1
   },
   "timestamp": 1427467425,
+  "updates": [
+   5906039
+  ],
   "username": "Helly"
  },
  "25": {
@@ -574,7 +616,7 @@
    "WD0300": 6
   },
   "drvc_bar": 41.65261201445115,
-  "notes": "[post=3395532]Upd 1[/post]",
+  "notes": null,
   "os": "Win 7",
   "post": 2392499,
   "ranking_points": 100.28417852537982,
@@ -583,6 +625,9 @@
    "FlexRAID": 1
   },
   "timestamp": 1404839950,
+  "updates": [
+   3395532
+  ],
   "username": "Danny91"
  },
  "26": {
@@ -600,7 +645,7 @@
    "WD0032": 1
   },
   "drvc_bar": 40.48295549480793,
-  "notes": "[post=3875801]Upd 1[/post], [post=4199884]Upd 2[/post]",
+  "notes": null,
   "os": "Ubuntu",
   "post": 1839515,
   "ranking_points": 89.77322751115379,
@@ -609,6 +654,10 @@
    "HwRD": 1
   },
   "timestamp": 1397207638,
+  "updates": [
+   3875801,
+   4199884
+  ],
   "username": "MrBucket101"
  },
  "27": {
@@ -622,7 +671,7 @@
    "SG0200": 11
   },
   "drvc_bar": 43.76015671472087,
-  "notes": "[post=2655227]Upd 1[/post]",
+  "notes": null,
   "os": "WS 2012",
   "post": 273427,
   "ranking_points": 88.722839111673,
@@ -631,6 +680,9 @@
    "FlexRAID": 1
   },
   "timestamp": 1370097875,
+  "updates": [
+   2655227
+  ],
   "username": "looney"
  },
  "28": {
@@ -653,6 +705,7 @@
    "JBOD": 1
   },
   "timestamp": 1390089426,
+  "updates": null,
   "username": "Hellboy"
  },
  "29": {
@@ -678,6 +731,7 @@
    "ZFS": 1
   },
   "timestamp": 1407763084,
+  "updates": null,
   "username": "PhantomWarz"
  },
  "30": {
@@ -700,6 +754,7 @@
    "ZFS": 1
   },
   "timestamp": 1434411665,
+  "updates": null,
   "username": "Captain Chaos"
  },
  "31": {
@@ -723,6 +778,7 @@
    "mdadm": 1
   },
   "timestamp": 1374502638,
+  "updates": null,
   "username": "MrSmoke"
  },
  "32": {
@@ -735,7 +791,7 @@
    "TS0300": 10
   },
   "drvc_bar": 36.34202350682628,
-  "notes": "[post=5381521]Upd[/post]",
+  "notes": null,
   "os": "FreeNAS",
   "post": 5192397,
   "ranking_points": 69.07755278982138,
@@ -744,6 +800,9 @@
    "ZFS": 1
   },
   "timestamp": 1433999965,
+  "updates": [
+   5381521
+  ],
   "username": "Cheatdeath"
  },
  "33": {
@@ -767,6 +826,7 @@
    "ZFS": 1
   },
   "timestamp": 1381785232,
+  "updates": null,
   "username": "Benjamin"
  },
  "34": {
@@ -788,6 +848,7 @@
    "HwRD": 1
   },
   "timestamp": 1404773996,
+  "updates": null,
   "username": "kev507"
  },
  "35": {
@@ -809,6 +870,7 @@
    "HwRD": 1
   },
   "timestamp": 1427237434,
+  "updates": null,
   "username": "Prisoner627"
  },
  "36": {
@@ -830,6 +892,7 @@
    "HwRD": 1
   },
   "timestamp": 1442226951,
+  "updates": null,
   "username": "scottyseng"
  },
  "37": {
@@ -852,6 +915,7 @@
    "SHR": 1
   },
   "timestamp": 1427086903,
+  "updates": null,
   "username": "pyromaniac"
  },
  "38": {
@@ -875,6 +939,7 @@
    "SHR": 1
   },
   "timestamp": 1371769294,
+  "updates": null,
   "username": "d33g33"
  },
  "39": {
@@ -897,6 +962,7 @@
    "ZFS": 1
   },
   "timestamp": 1419973798,
+  "updates": null,
   "username": "TJStamp"
  },
  "40": {
@@ -910,7 +976,7 @@
    "WD0200": 2
   },
   "drvc_bar": 32.82011753604065,
-  "notes": "[post=2688726]Upd 1[/post]",
+  "notes": null,
   "os": "Win 7",
   "post": 2126468,
   "ranking_points": 58.2243631670354,
@@ -919,6 +985,9 @@
    "FlexRAID": 1
   },
   "timestamp": 1401492225,
+  "updates": [
+   2688726
+  ],
   "username": "Gronnie"
  },
  "41": {
@@ -941,6 +1010,7 @@
    "SHR": 1
   },
   "timestamp": 1426934768,
+  "updates": null,
   "username": "Robbo600"
  },
  "42": {
@@ -964,6 +1034,7 @@
    "SwRD": 1
   },
   "timestamp": 1378344057,
+  "updates": null,
   "username": "Jarsky"
  },
  "43": {
@@ -987,6 +1058,7 @@
    "ZFS": 1
   },
   "timestamp": 1402724521,
+  "updates": null,
   "username": "electrostatic"
  },
  "44": {
@@ -1011,6 +1083,7 @@
    "mdadm": 1
   },
   "timestamp": 1402722762,
+  "updates": null,
   "username": "overflowsc"
  },
  "45": {
@@ -1032,6 +1105,7 @@
    "SwRD": 1
   },
   "timestamp": 1409074359,
+  "updates": null,
   "username": "{EAC} Shoot em UP"
  },
  "46": {
@@ -1055,6 +1129,7 @@
    "ZFS": 1
   },
   "timestamp": 1427069130,
+  "updates": null,
   "username": "SanMadJack"
  },
  "47": {
@@ -1076,6 +1151,7 @@
    "ZFS": 1
   },
   "timestamp": 1427487972,
+  "updates": null,
   "username": "RabidPancakes"
  },
  "48": {
@@ -1098,6 +1174,7 @@
    "ZFS": 1
   },
   "timestamp": 1429149806,
+  "updates": null,
   "username": "kkpatel87"
  },
  "49": {
@@ -1123,6 +1200,7 @@
    "JBOD": 1
   },
   "timestamp": 1383952477,
+  "updates": null,
   "username": "atv127"
  },
  "50": {
@@ -1147,6 +1225,7 @@
    "FlexRAID": 1
   },
   "timestamp": 1398553112,
+  "updates": null,
   "username": "Galxy"
  },
  "51": {
@@ -1169,6 +1248,7 @@
    "FlexRAID": 1
   },
   "timestamp": 1414238644,
+  "updates": null,
   "username": "algoat"
  },
  "52": {
@@ -1192,6 +1272,7 @@
    "SwRD": 1
   },
   "timestamp": 1441466867,
+  "updates": null,
   "username": "b348xyz"
  },
  "53": {
@@ -1215,6 +1296,7 @@
    "StSp": 1
   },
   "timestamp": 1386636227,
+  "updates": null,
   "username": "unknownkwita"
  },
  "54": {
@@ -1240,6 +1322,7 @@
    "JBOD": 1
   },
   "timestamp": 1386004049,
+  "updates": null,
   "username": "falsedell"
  },
  "55": {
@@ -1264,6 +1347,7 @@
    "SwRD": 1
   },
   "timestamp": 1427400746,
+  "updates": null,
   "username": "Tomasu"
  },
  "56": {
@@ -1278,7 +1362,7 @@
    "WD0300": 4
   },
   "drvc_bar": 37.84631744385716,
-  "notes": "[post=4039044]Upd[/post]",
+  "notes": null,
   "os": "CentOS",
   "post": 3691169,
   "ranking_points": 43.162114910370676,
@@ -1287,6 +1371,9 @@
    "mdadm": 1
   },
   "timestamp": 1418852490,
+  "updates": [
+   4039044
+  ],
   "username": "unijab"
  },
  "57": {
@@ -1308,6 +1395,7 @@
    "ZFS": 1
   },
   "timestamp": 1377039357,
+  "updates": null,
   "username": "Hobobo"
  },
  "58": {
@@ -1320,7 +1408,7 @@
    "WD0400": 6
   },
   "drvc_bar": 28.279591033308638,
-  "notes": "[post=1829858]Upd 1[/post]",
+  "notes": null,
   "os": "Win 7",
   "post": 1004232,
   "ranking_points": 43.00222726147332,
@@ -1329,6 +1417,9 @@
    "HwRD": 1
   },
   "timestamp": 1383814841,
+  "updates": [
+   1829858
+  ],
   "username": "stevv"
  },
  "59": {
@@ -1350,6 +1441,7 @@
    "ZFS": 1
   },
   "timestamp": 1411844483,
+  "updates": null,
   "username": "untamed"
  },
  "60": {
@@ -1371,6 +1463,7 @@
    "ZFS": 1
   },
   "timestamp": 1441077214,
+  "updates": null,
   "username": "Brandonberg"
  },
  "61": {
@@ -1396,6 +1489,7 @@
    "ZFS": 1
   },
   "timestamp": 1410480717,
+  "updates": null,
   "username": "bigross123"
  },
  "62": {
@@ -1422,6 +1516,7 @@
    "unRAID": 1
   },
   "timestamp": 1370519246,
+  "updates": null,
   "username": "cushy91"
  },
  "63": {
@@ -1447,6 +1542,7 @@
    "JBOD": 1
   },
   "timestamp": 1375891575,
+  "updates": null,
   "username": "mb2k"
  },
  "64": {
@@ -1469,6 +1565,7 @@
    "FlexRAID": 1
   },
   "timestamp": 1380166951,
+  "updates": null,
   "username": "bobert"
  },
  "65": {
@@ -1492,6 +1589,7 @@
    "ZFS": 1
   },
   "timestamp": 1427364211,
+  "updates": null,
   "username": "username6465"
  },
  "66": {
@@ -1514,6 +1612,7 @@
    "ZFS": 1
   },
   "timestamp": 1370210085,
+  "updates": null,
   "username": "VictorB"
  },
  "67": {
@@ -1536,6 +1635,7 @@
    "ZFS": 1
   },
   "timestamp": 1427000768,
+  "updates": null,
   "username": "mr_pants66"
  },
  "68": {
@@ -1558,6 +1658,7 @@
    "HwRD": 1
   },
   "timestamp": 1384120397,
+  "updates": null,
   "username": "Appleby"
  },
  "69": {
@@ -1572,7 +1673,7 @@
    "WD0400": 2
   },
   "drvc_bar": 28.279591033308638,
-  "notes": "[post=1852990]Upd 1[/post], [post=4602136]Upd 2[/post]",
+  "notes": null,
   "os": "Win 8",
   "post": 657061,
   "ranking_points": 34.04342991533304,
@@ -1581,6 +1682,10 @@
    "FlexRAID": 1
   },
   "timestamp": 1377318873,
+  "updates": [
+   1852990,
+   4602136
+  ],
   "username": "tycheleto"
  },
  "70": {
@@ -1603,6 +1708,7 @@
    "unRAID": 1
   },
   "timestamp": 1371366438,
+  "updates": null,
   "username": "swizzle90"
  },
  "71": {
@@ -1624,6 +1730,7 @@
    "ZFS": 1
   },
   "timestamp": 1393681304,
+  "updates": null,
   "username": "Chris230291"
  },
  "72": {
@@ -1646,6 +1753,7 @@
    "JBOD": 1
   },
   "timestamp": 1372203061,
+  "updates": null,
   "username": "AntarticCrash"
  },
  "73": {
@@ -1667,6 +1775,7 @@
    "ZFS": 1
   },
   "timestamp": 1373069206,
+  "updates": null,
   "username": "Eric1024"
  },
  "74": {
@@ -1688,6 +1797,7 @@
    "HwRD": 1
   },
   "timestamp": 1376036790,
+  "updates": null,
   "username": "andi1455"
  },
  "75": {
@@ -1709,6 +1819,7 @@
    "ZFS": 1
   },
   "timestamp": 1413834108,
+  "updates": null,
   "username": "siaran"
  },
  "76": {
@@ -1730,6 +1841,7 @@
    "HwRD": 1
   },
   "timestamp": 1420332698,
+  "updates": null,
   "username": "Saku"
  },
  "77": {
@@ -1751,6 +1863,7 @@
    "unRAID": 1
   },
   "timestamp": 1427174431,
+  "updates": null,
   "username": "Stakacs"
  },
  "78": {
@@ -1772,6 +1885,7 @@
    "mdadm": 1
   },
   "timestamp": 1409486224,
+  "updates": null,
   "username": "Shaqalac"
  },
  "79": {
@@ -1797,6 +1911,7 @@
    "HwRD": 1
   },
   "timestamp": 1429466524,
+  "updates": null,
   "username": "darkey1991"
  },
  "80": {
@@ -1823,6 +1938,7 @@
    "ZFS": 1
   },
   "timestamp": 1434979143,
+  "updates": null,
   "username": "djdwosk97"
  },
  "81": {
@@ -1845,6 +1961,7 @@
    "SwRD": 1
   },
   "timestamp": 1427400746,
+  "updates": null,
   "username": "Tomasu"
  },
  "82": {
@@ -1867,6 +1984,7 @@
    "JBOD": 1
   },
   "timestamp": 1370126354,
+  "updates": null,
   "username": "Hellboy"
  },
  "83": {
@@ -1889,6 +2007,7 @@
    "SwRD": 1
   },
   "timestamp": 1410627010,
+  "updates": null,
   "username": "MariusJS"
  },
  "84": {
@@ -1910,6 +2029,7 @@
    "ZFS": 1
   },
   "timestamp": 1370159125,
+  "updates": null,
   "username": "algoat"
  },
  "85": {
@@ -1931,6 +2051,7 @@
    "HwRD": 1
   },
   "timestamp": 1376452525,
+  "updates": null,
   "username": "Jimstah87"
  },
  "86": {
@@ -1952,6 +2073,7 @@
    "SHR": 1
   },
   "timestamp": 1397202796,
+  "updates": null,
   "username": "X1XNobleX1X"
  },
  "87": {
@@ -1973,6 +2095,7 @@
    "HwRD": 1
   },
   "timestamp": 1416818444,
+  "updates": null,
   "username": "Night_Rider0"
  },
  "88": {
@@ -1997,6 +2120,7 @@
    "JBOD": 1
   },
   "timestamp": 1426013168,
+  "updates": null,
   "username": "Jeepman"
  },
  "89": {
@@ -2021,6 +2145,7 @@
    "StableBit": 1
   },
   "timestamp": 1426461087,
+  "updates": null,
   "username": "Pancake"
  },
  "90": {
@@ -2045,6 +2170,7 @@
    "FlexRAID": 1
   },
   "timestamp": 1384708060,
+  "updates": null,
   "username": "dalekphalm"
  },
  "91": {
@@ -2066,6 +2192,7 @@
    "JBOD": 1
   },
   "timestamp": 1414034604,
+  "updates": null,
   "username": "draxer03"
  },
  "92": {
@@ -2088,6 +2215,7 @@
    "ZFS": 1
   },
   "timestamp": 1427364211,
+  "updates": null,
   "username": "username6465"
  },
  "93": {
@@ -2101,7 +2229,7 @@
    "WD0100": 1
   },
   "drvc_bar": 25.40198432814606,
-  "notes": "[post=3216353]Upd 1[/post]",
+  "notes": null,
   "os": "Debian",
   "post": 2736033,
   "ranking_points": 20.922692861643302,
@@ -2110,6 +2238,9 @@
    "mdadm": 1
   },
   "timestamp": 1408669342,
+  "updates": [
+   3216353
+  ],
   "username": "Blade of Grass"
  },
  "94": {
@@ -2132,6 +2263,7 @@
    "FlexRAID": 1
   },
   "timestamp": 1427581098,
+  "updates": null,
   "username": "Whiskers"
  },
  "95": {
@@ -2158,6 +2290,7 @@
    "JBOD": 1
   },
   "timestamp": 1435796039,
+  "updates": null,
   "username": "Mkvarner"
  },
  "96": {
@@ -2180,6 +2313,7 @@
    "JBOD": 1
   },
   "timestamp": 1370126354,
+  "updates": null,
   "username": "Hellboy"
  },
  "97": {
@@ -2205,6 +2339,7 @@
    "lvm2": 1
   },
   "timestamp": 1390287233,
+  "updates": null,
   "username": "Patrick3D"
  },
  "98": {
@@ -2227,6 +2362,7 @@
    "SwRD": 1
   },
   "timestamp": 1440123138,
+  "updates": null,
   "username": "Doowstados"
  },
  "99": {
@@ -2251,6 +2387,7 @@
    "StSp": 1
   },
   "timestamp": 1375665173,
+  "updates": null,
   "username": "5lay3r"
  },
  "100": {
@@ -2272,6 +2409,7 @@
    "Drobo": 1
   },
   "timestamp": 1400725224,
+  "updates": null,
   "username": "MoonSpot"
  },
  "101": {
@@ -2296,6 +2434,7 @@
    "StableBit": 1
   },
   "timestamp": 1406641973,
+  "updates": null,
   "username": "Woodypc"
  },
  "102": {
@@ -2317,6 +2456,7 @@
    "mdadm": 1
   },
   "timestamp": 1409270009,
+  "updates": null,
   "username": "Pidagad"
  },
  "103": {
@@ -2338,6 +2478,7 @@
    "HwRD": 1
   },
   "timestamp": 1420543762,
+  "updates": null,
   "username": "jmannik"
  }
 }
