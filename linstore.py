@@ -186,45 +186,102 @@ os_stats_data.close()
 
 html_template_file = 'template.html'
 html_template = open(html_template_file, 'r')
-template_header=''
-template_row = ''
-template_footer=''
+header_tago = re.compile('%%%<ranked_header>%%%')
+header_tagc = re.compile('%%%</ranked_header>%%%')
+header_open = False
+ranked_row_tago = re.compile('%%%<ranked_row>%%%')
+ranked_row_tagc = re.compile('%%%</ranked_row>%%%')
+ranked_row_open = False
+abbr_tago = re.compile('%%%<abbr_key>%%%')
+abbr_tagc = re.compile('%%%</abbr_key>%%%')
+abbr_open = False
+plots_tago = re.compile('%%%<plots>%%%')
+plots_tagc = re.compile('%%%</plots>%%%')
+plots_open = False
+notew_header_tago = re.compile('%%%<notew_header>%%%')
+notew_header_tagc = re.compile('%%%</notew_header>%%%')
+notew_header_open = False
+notew_row_tago = re.compile('%%%<notew_row>%%%')
+notew_row_tagc = re.compile('%%%</notew_row>%%%')
+notew_row_open = False
+footer_tago = re.compile('%%%<footer>%%%')
+footer_tagc = re.compile('%%%</footer>%%%')
+footer_open = False
+
+
 opening_tag=re.compile('%%%<template_row>%%%')
 closing_tag=re.compile(r'%%%</template_row>%%%')
+opening_tag_notew=re.compile('%%%<template_row>%%%')
+closing_tag_notew=re.compile(r'%%%</template_row>%%%')
+
 result=''
+
 tag_open = False # indicates whether tag is currently open
+tag_open_notew = False # indicates whether tag is currently open
 tag_has_been_opened = False # indicates whether tag has ever been opened: used for footer/header
+tag_has_been_opened_notew = False # indicates whether tag has ever been opened: used for footer/header
 
 # First, grab header, footer and the template row which will be used to assemble
 # the system entries.
-for html_tpl_str in html_template:
-    if not tag_open:
-        #print('closed')
-        if opening_tag.search(html_tpl_str):
-            tag_open = True
-            tag_has_been_opened = True
-            #print('opening')
-            continue
-        elif closing_tag.search(html_tpl_str):
-            tag_open = False
-            #print('closing')
-            continue
+template_ranked_header = ''
+template_ranked_row = ''
+template_abbr_key = ''
+template_plots = ''
+template_notew_header = ''
+template_notew_row = ''
+template_footer = ''
 
-        if not tag_has_been_opened:
-            # We're in the header
-            template_header += html_tpl_str
-        else:
-            # We're in the footer
-            template_footer += html_tpl_str
-    else:
-        #print('open')
-        if tag_has_been_opened:
-            if closing_tag.search(html_tpl_str):
-                tag_open = False
-                #print('closing')
-                continue
+for line in html_template:
+    if header_tago.search(line):
+        header_open = True
+    elif header_open:
+        if header_tagc.search(line):
+            header_open = False
+            continue
+        template_ranked_header += line
+    elif ranked_row_tago.search(line):
+        ranked_row_open = True
+    elif ranked_row_open:
+        if ranked_row_tagc.search(line):
+            ranked_row_open = False
+            continue
+        template_ranked_row += line
+    elif abbr_tago.search(line):
+        abbr_open = True
+    elif abbr_open:
+        if abbr_tagc.search(line):
+            abbr_open = False
+            continue
+        template_abbr_key += line
+    elif plots_tago.search(line):
+        plots_open = True
+    elif plots_open:
+        if plots_tagc.search(line):
+            plots_open = False
+            continue
+        template_plots += line
+    elif notew_header_tago.search(line):
+        notew_header_open = True
+    elif notew_header_open:
+        if notew_header_tagc.search(line):
+            notew_header_open = False
+            continue
+        template_notew_header += line
+    elif notew_row_tago.search(line):
+        notew_row_open = True
+    elif notew_row_open:
+        if notew_row_tagc.search(line):
+            notew_row_open = False
+            continue
+        template_notew_row += line
+    elif footer_tago.search(line):
+        footer_open = True
+    elif footer_open:
+        if footer_tagc.search(line):
+            footer_open = False
+            continue
+        template_footer += line
 
-        template_row += html_tpl_str
 
 
 # Generate rows:
@@ -244,49 +301,73 @@ drvc_bar_sub = '%drvc_bar%'
 drvc_bar_sub = '%drvc_bar%'
 
 # Assemble ranking table
-rows = ''
+ranked_rows = ''
 for rank in ranking_db.keys():
-    row = re.sub(rank_sub,str(rank),template_row)
-    row = re.sub(username_sub,ranking_db[rank]['username'],row)
-    row = re.sub(postNo_sub,str(ranking_db[rank]['post']),row)
-    row = re.sub(rankingpoints_sub,"{:.2f}".format(ranking_db[rank]['ranking_points']),row)
-    row = re.sub(capacity_sub,str(ranking_db[rank]['capacity']),row)
-    row = re.sub(nodrives_sub,str(ranking_db[rank]['drive_count']),row)
-    row = re.sub(case_sub,str(ranking_db[rank]['case']),row)
-    row = re.sub(os_sub,str(ranking_db[rank]['os']),row)
-    row = re.sub(stsys_sub,str(ranking_db[rank]['storage_sys']),row)
-    row = re.sub(rp_bar_sub,str(ranking_db[rank]['rp_bar']),row)
-    row = re.sub(cap_bar_sub,str(ranking_db[rank]['cap_bar']),row)
-    row = re.sub(drvc_bar_sub,str(ranking_db[rank]['drvc_bar']),row)
-    rows += row
+    ranked_row = re.sub(rank_sub,str(rank),template_ranked_row)
+    ranked_row = re.sub(username_sub,ranking_db[rank]['username'],ranked_row)
+    ranked_row = re.sub(postNo_sub,str(ranking_db[rank]['post']),ranked_row)
+    ranked_row = re.sub(rankingpoints_sub,"{:.2f}".format(ranking_db[rank]['ranking_points']),ranked_row)
+    ranked_row = re.sub(capacity_sub,str(ranking_db[rank]['capacity']),ranked_row)
+    ranked_row = re.sub(nodrives_sub,str(ranking_db[rank]['drive_count']),ranked_row)
+    ranked_row = re.sub(case_sub,str(ranking_db[rank]['case']),ranked_row)
+    ranked_row = re.sub(os_sub,str(ranking_db[rank]['os']),ranked_row)
+    ranked_row = re.sub(stsys_sub,str(ranking_db[rank]['storage_sys']),ranked_row)
+    ranked_row = re.sub(rp_bar_sub,str(ranking_db[rank]['rp_bar']),ranked_row)
+    ranked_row = re.sub(cap_bar_sub,str(ranking_db[rank]['cap_bar']),ranked_row)
+    ranked_row = re.sub(drvc_bar_sub,str(ranking_db[rank]['drvc_bar']),ranked_row)
+    ranked_rows += ranked_row
+
 
 # Insert Images
 rankings_plot_pattern = '%%%<rankings_plot>%%%'
-template_footer = re.sub(rankings_plot_pattern,rankings_plot,template_footer)
-rankings_plot_pattern = '%%%<rankings_plot_caps>%%%'
-template_footer = re.sub(rankings_plot_pattern,rankings_plot_caps,template_footer)
-rankings_plot_pattern = '%%%<rankings_plot_drvc>%%%'
-template_footer = re.sub(rankings_plot_pattern,rankings_plot_drvc,template_footer)
+rankings_plot_caps_pattern = '%%%<rankings_plot_caps>%%%'
+rankings_plot_drvc_pattern = '%%%<rankings_plot_drvc>%%%'
 drive_heatmap_pattern = '%%%<drive_heatmap>%%%'
-template_footer = re.sub(drive_heatmap_pattern,drive_heatmap,template_footer)
 drive_heatmap_contribs_pattern = '%%%<drive_heatmap_contribs>%%%'
-template_footer = re.sub(drive_heatmap_contribs_pattern,drive_heatmap_contribs,template_footer)
 drive_heatmap_systems_pattern = '%%%<drive_heatmap_systems>%%%'
-template_footer = re.sub(drive_heatmap_systems_pattern,drive_heatmap_systems,template_footer)
 os_heatmap_pattern = '%%%<os_heatmap>%%%'
-template_footer = re.sub(os_heatmap_pattern,os_heatmap,template_footer)
 os_heatmap_caps_pattern = '%%%<os_heatmap_caps>%%%'
-template_footer = re.sub(os_heatmap_caps_pattern,os_heatmap_caps,template_footer)
 os_heatmap_drvc_pattern = '%%%<os_heatmap_drvc>%%%'
-template_footer = re.sub(os_heatmap_drvc_pattern,os_heatmap_drvc,template_footer)
 total_dr_sub = '%tdr%'
 total_cp_sub = '%tc%'
-template_footer = re.sub(total_dr_sub,str(total_drives),template_footer)
-template_footer = re.sub(total_cp_sub,str(total_capacity),template_footer)
+template_plots = re.sub(rankings_plot_pattern,rankings_plot,template_plots)
+template_plots = re.sub(rankings_plot_caps_pattern,rankings_plot_caps,template_plots)
+template_plots = re.sub(rankings_plot_drvc_pattern,rankings_plot_drvc,template_plots)
+template_plots = re.sub(drive_heatmap_pattern,drive_heatmap,template_plots)
+template_plots = re.sub(drive_heatmap_contribs_pattern,drive_heatmap_contribs,template_plots)
+template_plots = re.sub(drive_heatmap_systems_pattern,drive_heatmap_systems,template_plots)
+template_plots = re.sub(os_heatmap_pattern,os_heatmap,template_plots)
+template_plots = re.sub(os_heatmap_caps_pattern,os_heatmap_caps,template_plots)
+template_plots = re.sub(os_heatmap_drvc_pattern,os_heatmap_drvc,template_plots)
+template_plots = re.sub(total_dr_sub,str(total_drives),template_plots)
+template_plots = re.sub(total_cp_sub,str(total_capacity),template_plots)
+
+#print(template_notew_row)
+#print(template_footer)
+notew_rows = ''
+for rank in notew_db.keys():
+    notew_row = re.sub(rank_sub,str(rank),template_notew_row)
+    notew_row = re.sub(username_sub,notew_db[rank]['username'],notew_row)
+    notew_row = re.sub(postNo_sub,str(notew_db[rank]['post']),notew_row)
+    notew_row = re.sub(rankingpoints_sub,"{:.2f}".format(notew_db[rank]['ranking_points']),notew_row)
+    notew_row = re.sub(capacity_sub,str(notew_db[rank]['capacity']),notew_row)
+    notew_row = re.sub(nodrives_sub,str(notew_db[rank]['drive_count']),notew_row)
+    notew_row = re.sub(case_sub,str(notew_db[rank]['case']),notew_row)
+    notew_row = re.sub(os_sub,str(notew_db[rank]['os']),notew_row)
+    notew_row = re.sub(stsys_sub,str(notew_db[rank]['storage_sys']),notew_row)
+    notew_row = re.sub(rp_bar_sub,str(notew_db[rank]['rp_bar']),notew_row)
+    notew_row = re.sub(cap_bar_sub,str(notew_db[rank]['cap_bar']),notew_row)
+    notew_row = re.sub(drvc_bar_sub,str(notew_db[rank]['drvc_bar']),notew_row)
+    notew_rows += notew_row
+
 
 html_file = open('rankings.html','w')
-html_file.write(template_header)
-html_file.write(rows)
+html_file.write(template_ranked_header)
+html_file.write(ranked_rows)
+html_file.write(template_abbr_key)
+html_file.write(template_plots)
+html_file.write(template_notew_header)
+html_file.write(notew_rows)
 html_file.write(template_footer)
 html_file.close()
 

@@ -1,3 +1,5 @@
+%%%<ranked_header>%%%
+<div style="font-size:1.33em;background-color:#153461;color:#ffffff;padding:0.33em;padding-left:1em;margin-bottom:1.33em;margin-top:2em;"><strong>Main Rankings</strong></div>
 <table style="width:100%;border-collapse:separate;border-spacing:2px">
     <colgroup>
         <col style="width:3%;">
@@ -26,7 +28,8 @@
         </tr>
     </thead>
     <tbody>
-        %%%<template_row>%%%
+%%%</ranked_header>%%%
+%%%<ranked_row>%%%
         <tr>
             <td style="text-align:right;">
                 <strong>%r%</strong>
@@ -75,13 +78,29 @@
             </td>
 			<td><div style="background-color:#a6cee3;width:%drvc_bar%%;">&nbsp;</div></td>
         </tr>
-        %%%</template_row>%%%
+%%%</ranked_row>%%%
+%%%<abbr_key>%%%
     </tbody>
 </table>
 
-<p>&nbsp;</p>
-
 <p>
+<strong>Abbreviations Key</strong>
+<ul>
+    <li><strong>WS:</strong> Windows Server</li>
+    <li><strong>WHS:</strong> Windows Home Server</li>
+    <li><strong>SHR:</strong> Synology Hybrid RAID</li>
+    <li><strong>StSp:</strong> Storage Spaces</li>
+    <li><strong>RD:</strong> RAID (unspecified if hardware or software)</li>
+    <li><strong>HwRD:</strong> Hardware RAID</li>
+    <li><strong>SwRD:</strong> Software RAID</li>
+    <li><strong>FlRD:</strong> FlexRAID"</li>
+</ul>
+</p>
+
+%%%</abbr_key>%%%
+%%%<plots>%%%
+<p>
+<div style="font-size:1.33em;background-color:#153461;color:#ffffff;padding:0.33em;padding-left:1em;margin-bottom:1.33em;margin-top:2em;"><strong>Plots</strong></div>
 <strong>Ranking List with Ranking Points, Ordered by Ranking Points Descending, then Post Date Ascending</strong>
 <div class="ipsSpoiler" data-ipsspoiler="">
     <div class="ipsSpoiler_header">
@@ -224,3 +243,58 @@
 	</div>
 </div>
 </p>
+%%%</plots>%%%
+%%%<notew_header>%%%
+<div style="font-size:1.33em;background-color:#153461;color:#ffffff;padding:0.33em;padding-left:1em;margin-bottom:1.33em;margin-top:2em;"><strong>Noteworthy Builds, Less Than 10 TB and/or Fewer Than 5 Drives</strong></div>
+<div class="ipsSpoiler" data-ipsspoiler="">
+	<div class="ipsSpoiler_header">
+        <span>Drive Count by OS</span>
+	</div>
+
+	<div class="ipsSpoiler_contents">
+        <table style="width:100%;border-collapse:separate;border-spacing:2px">
+            <colgroup>
+                <col style="width:25%;">
+                <col style="width:25%;">
+                <col style="width:25%;">
+                <col style="width:25%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th style="text-align:left;">
+                        Username
+                    </th>
+                    <th style="text-align:left;">
+                        Case
+                    </th>
+                    <th style="text-align:left;">
+                        OS
+                    </th>
+                    <th style="text-align:left;">
+                        Storage System
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+%%%</notew_header>%%%
+%%%<notew_row>%%%
+                <tr>
+                    <td style="text-align:left;">
+                        <a href="https://linustechtips.com/main/topic/21948-ltt-10tb-storage-show-off-topic/?do=findComment&comment=%postNo%"><strong>%u%</strong></a>
+                    </td>
+                    <td style="text-align:left;vertical-align:top;color:#aaaaaa;font-size:0.75em;">
+                        %cs%
+                    </td>
+                    <td style="text-align:left;vertical-align:top;color:#aaaaaa;font-size:0.75em;">
+                        %os%
+                    </td>
+                    <td style="text-align:left;vertical-align:top;color:#aaaaaa;font-size:0.75em;">
+                        %stsys%
+                    </td>
+%%%</notew_row>%%%
+%%%<footer>%%%
+            </tbody>
+        </table>
+	</div>
+</div>
+%%%</footer>%%%
