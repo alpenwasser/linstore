@@ -13,8 +13,7 @@ import operator as op
 from matplotlib.ticker import ScalarFormatter
 
 
-#timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
-timestamp = '2016-02-06--17-09-22'
+timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
 plot_dir = 'plots/'
 rankings_plot           = timestamp + '--rankings.svg'
 rankings_plot_caps      = timestamp + '--rankings-caps.svg'
@@ -143,6 +142,7 @@ for ranked_system_timeline in ranked_systems_timeline:
 rank = 0
 total_drives = 0
 total_capacity = 0
+total_systems = 0
 for ranked_system in ranked_systems:
     if (system_db[ranked_system]['drive_count'] < 5
         or system_db[ranked_system]['capacity'] < 10
@@ -153,6 +153,7 @@ for ranked_system in ranked_systems:
     ranking_db[rank] = system_db[ranked_system]
     total_capacity += ranking_db[rank]['capacity']
     total_drives   += ranking_db[rank]['drive_count']
+    total_systems  += 1
 
     # Drive Statistics
     for drive_type in system_db[ranked_system]['drives'].keys():
@@ -408,6 +409,8 @@ timeline_drvc_pattern = '%%%<timeline_drvc>%%%'
 storage_sys_pattern = '%%%<storage_sys_plot>%%%'
 total_dr_sub = '%tdr%'
 total_cp_sub = '%tc%'
+avg_sys_cap_pattern = '%avg_syscap%'
+avg_drsize_pattern = '%avg_drsize%'
 template_plots = re.sub(rankings_plot_pattern,rankings_plot,template_plots)
 template_plots = re.sub(rankings_plot_caps_pattern,rankings_plot_caps,template_plots)
 template_plots = re.sub(rankings_plot_drvc_pattern,rankings_plot_drvc,template_plots)
@@ -423,6 +426,8 @@ template_plots = re.sub(storage_sys_pattern,storage_sys_plot,template_plots)
 template_plots = re.sub(timeline_sys_pattern, timeline_sys_plot, template_plots)
 template_plots = re.sub(timeline_caps_pattern, timeline_caps_plot, template_plots)
 template_plots = re.sub(timeline_drvc_pattern, timeline_drvc_plot, template_plots)
+template_plots = re.sub(avg_sys_cap_pattern, "{:.1f}".format(total_capacity / total_systems), template_plots)
+template_plots = re.sub(avg_drsize_pattern, "{:.1f}".format(total_capacity / total_drives), template_plots)
 
 #print(template_notew_row)
 #print(template_footer)
@@ -459,7 +464,7 @@ html_file.write(notew_rows)
 html_file.write(template_footer)
 html_file.close()
 
-exit()
+
 
 # ---------------------------------------------------------------------------- #
 # GENERATE PLOTS                                                               #
