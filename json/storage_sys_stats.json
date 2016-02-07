@@ -1,14 +1,14 @@
 {
+ "JBOD": 15,
  "StableBit": 2,
- "unRAID": 5,
- "unknown": 1,
- "Hardware RAID": 24,
- "mdadm": 8,
- "Synology Hybrid RAID": 4,
- "Drobo BeyondRAID": 1,
- "ZFS": 30,
- "Software RAID (generic)": 11,
- "Windows Storage Spaces": 2,
  "FlexRAID": 9,
- "JBOD": 15
+ "Drobo BeyondRAID": 1,
+ "unknown": 1,
+ "ZFS": 30,
+ "Synology Hybrid RAID": 4,
+ "Windows Storage Spaces": 2,
+ "unRAID": 5,
+ "mdadm": 8,
+ "Hardware RAID": 24,
+ "Software RAID (generic)": 11
 }

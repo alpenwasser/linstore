@@ -13,8 +13,7 @@ import operator as op
 from matplotlib.ticker import ScalarFormatter
 
 
-#timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
-timestamp = '2016-02-07--00-27-56'
+timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
 plot_dir = 'plots/'
 rankings_plot           = timestamp + '--rankings.svg'
 rankings_plot_caps      = timestamp + '--rankings-caps.svg'
@@ -230,7 +229,7 @@ stor_sys_stats_data.close()
 # GENERATE HTML                                                                #
 # ---------------------------------------------------------------------------- #
 
-html_template_file = 'template.html'
+html_template_file = 'html/template.html'
 html_template = open(html_template_file, 'r')
 header_tago = re.compile('%%%<ranked_header>%%%')
 header_tagc = re.compile('%%%</ranked_header>%%%')
@@ -455,7 +454,7 @@ for rank in notew_db.keys():
     notew_rows += notew_row
 
 
-html_file = open('rankings.html','w')
+html_file = open('html/rankings.html','w')
 html_file.write(template_ranked_header)
 html_file.write(ranked_rows)
 html_file.write(template_abbr_key)
@@ -854,7 +853,6 @@ fig9.subplots_adjust(bottom=0.4,left=0.1,right=0.9,top=0.95)
 ax22.set_xlabel('Storage System',fontsize=20)
 ax22.set_ylabel('Number of Systems',fontsize=20)
 ax22.tick_params(labelsize=20)
-plt.savefig('test.png')
 plt.savefig(storage_sys_plot_path)
 
 
