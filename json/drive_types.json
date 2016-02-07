@@ -123,6 +123,10 @@
       "vendor" : "Samsung",
       "size" : 0.75
    },
+   "SS0012.8" : {
+      "vendor" : "Samsung",
+      "size" : 0.13
+   },
    "WD0400" : {
       "size" : 4.0,
       "vendor" : "WD"
@@ -177,6 +181,10 @@
    },
    "SG0600" : {
       "size" : 6.0,
+      "vendor" : "Seagate"
+   },
+   "SG0800" : {
+      "size" : 8.0,
       "vendor" : "Seagate"
    },
    "SG0200" : {
@@ -266,5 +274,9 @@
    "AD0006" : {
       "vendor" : "Adata",
       "size" : 0.06
+   },
+   "SD0025" : {
+       "vendor" : "Sandisk",
+       "size" : 0.25
    }
 }

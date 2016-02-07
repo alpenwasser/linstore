@@ -205,6 +205,32 @@
   "updates": null,
   "username": "lekro"
  },
+ "system_059": {
+  "cap_bar": 52.59265119313137,
+  "capacity": 28,
+  "case": "Acer R380F2 + Chembro 24 Bay",
+  "ditch": 1,
+  "drive_count": 22,
+  "drives": {
+   "HT0200": 2,
+   "SG0100": 6,
+   "SG0200": 1,
+   "WD0100": 10,
+   "WD0200": 3
+  },
+  "drvc_bar": 48.786356622537376,
+  "notes": null,
+  "os": "NAS4Free",
+  "post": 2654107,
+  "ranking_points": 86.54918869403285,
+  "rp_bar": 70.40405752796167,
+  "storage_sys": {
+   "ZFS": 1
+  },
+  "timestamp": 1407763084,
+  "updates": null,
+  "username": "PhantomWarz"
+ },
  "system_061": {
   "cap_bar": 0.0,
   "capacity": 1,
@@ -452,26 +478,70 @@
   "updates": null,
   "username": "Eric The Tech Guru"
  },
- "system_119": {
-  "cap_bar": 43.76015671472087,
-  "capacity": 16,
-  "case": "Silverstone Milo ML04B",
+ "system_125": {
+  "cap_bar": 39.21963021198886,
+  "capacity": 12,
+  "case": "Phanteks Enthoo Pro",
   "ditch": 0,
   "drive_count": 4,
   "drives": {
-   "WD0400": 4
+   "SG0300": 4
   },
   "drvc_bar": 21.880078357360436,
   "notes": null,
-  "os": "WS 2008R2",
-  "post": 5699276,
-  "ranking_points": 22.18070977791825,
-  "rp_bar": 48.915471057015274,
+  "os": "Win 10",
+  "post": 6186689,
+  "ranking_points": 16.635532333438686,
+  "rp_bar": 44.37494455428326,
   "storage_sys": {
-   "JBOD": 1
+   "HwRD": 1
   },
-  "timestamp": 1438870869,
+  "timestamp": 1443920501,
   "updates": null,
-  "username": "weeandykidd"
+  "username": "thebennyboy"
+ },
+ "system_126": {
+  "cap_bar": 42.74153618277449,
+  "capacity": 15,
+  "case": "unknown",
+  "ditch": 1,
+  "drive_count": 5,
+  "drives": {
+   "WD0300": 5
+  },
+  "drvc_bar": 25.40198432814606,
+  "notes": null,
+  "os": "FreeNAS",
+  "post": 6384179,
+  "ranking_points": 24.141568686511505,
+  "rp_bar": 50.25249581651189,
+  "storage_sys": {
+   "ZFS": 1
+  },
+  "timestamp": 1446237666,
+  "updates": null,
+  "username": "ElfFriend"
+ },
+ "system_132": {
+  "cap_bar": 39.21963021198886,
+  "capacity": 12,
+  "case": "HP Microserver",
+  "ditch": 0,
+  "drive_count": 4,
+  "drives": {
+   "WD0300": 4
+  },
+  "drvc_bar": 21.880078357360436,
+  "notes": null,
+  "os": "FreeNAS",
+  "post": 6986494,
+  "ranking_points": 16.635532333438686,
+  "rp_bar": 44.37494455428326,
+  "storage_sys": {
+   "ZFS": 1
+  },
+  "timestamp": 1452680074,
+  "updates": null,
+  "username": "adamsir2"
  }
 }

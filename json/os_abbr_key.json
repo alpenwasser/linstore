@@ -106,5 +106,9 @@
         "OpenIndiana" : {
                 "os" : "OpenIndiana",
                 "family" : "Solaris"
+        },
+        "ESXi" : {
+                "os" : "ESXi",
+                "family" : "ESXi"
         }
 }

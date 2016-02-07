@@ -13,7 +13,8 @@ import operator as op
 from matplotlib.ticker import ScalarFormatter
 
 
-timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
+#timestamp = dt.datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
+timestamp = '2016-02-07--00-27-56'
 plot_dir = 'plots/'
 rankings_plot           = timestamp + '--rankings.svg'
 rankings_plot_caps      = timestamp + '--rankings-caps.svg'
@@ -466,6 +467,7 @@ html_file.close()
 
 
 
+exit()
 # ---------------------------------------------------------------------------- #
 # GENERATE PLOTS                                                               #
 # ---------------------------------------------------------------------------- #

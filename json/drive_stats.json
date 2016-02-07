@@ -1,128 +1,8 @@
 {
- "Seagate": {
-  "0.5": {
-   "system_usage": 3,
-   "count": 8
-  },
-  "1.5": {
-   "system_usage": 6,
-   "count": 16
-  },
-  "2.0": {
-   "system_usage": 28,
-   "count": 99
-  },
-  "3.0": {
-   "system_usage": 23,
-   "count": 104
-  },
-  "4.0": {
-   "system_usage": 19,
-   "count": 129
-  },
-  "5.0": {
-   "system_usage": 1,
-   "count": 2
-  },
-  "0.75": {
-   "system_usage": 2,
-   "count": 3
-  },
-  "1.0": {
-   "system_usage": 8,
-   "count": 29
-  },
-  "0.3": {
-   "system_usage": 1,
-   "count": 4
-  }
- },
- "unspecified": {
-  "1.5": {
-   "system_usage": 1,
-   "count": 11
-  },
-  "2.0": {
-   "system_usage": 3,
-   "count": 12
-  },
-  "3.0": {
-   "system_usage": 4,
-   "count": 9
-  },
-  "1.0": {
-   "system_usage": 2,
-   "count": 4
-  }
- },
- "OCZ": {
-  "0.13": {
-   "system_usage": 1,
-   "count": 1
-  }
- },
- "HGST": {
-  "0.25": {
-   "system_usage": 2,
-   "count": 2
-  },
-  "0.5": {
-   "system_usage": 2,
-   "count": 4
-  },
-  "2.0": {
-   "system_usage": 9,
-   "count": 27
-  },
-  "3.0": {
-   "system_usage": 4,
-   "count": 23
-  },
-  "4.0": {
-   "system_usage": 5,
-   "count": 35
-  },
-  "0.64": {
-   "system_usage": 1,
-   "count": 1
-  }
- },
- "Kingston": {
-  "0.24": {
-   "system_usage": 1,
-   "count": 2
-  }
- },
- "Toshiba": {
+ "Sandisk": {
   "0.25": {
    "system_usage": 1,
-   "count": 1
-  },
-  "1.0": {
-   "system_usage": 1,
-   "count": 1
-  },
-  "2.0": {
-   "system_usage": 2,
-   "count": 2
-  },
-  "3.0": {
-   "system_usage": 6,
-   "count": 40
-  }
- },
- "Crucial": {
-  "0.13": {
-   "system_usage": 1,
-   "count": 1
-  },
-  "0.25": {
-   "system_usage": 1,
-   "count": 2
-  },
-  "0.26": {
-   "system_usage": 1,
-   "count": 3
+   "count": 4
   }
  },
  "WD": {
@@ -132,19 +12,19 @@
   },
   "1.0": {
    "system_usage": 15,
-   "count": 48
+   "count": 41
   },
   "2.0": {
-   "system_usage": 36,
-   "count": 180
+   "system_usage": 37,
+   "count": 189
   },
   "3.0": {
-   "system_usage": 37,
-   "count": 147
+   "system_usage": 41,
+   "count": 170
   },
   "4.0": {
-   "system_usage": 15,
-   "count": 73
+   "system_usage": 17,
+   "count": 88
   },
   "5.0": {
    "system_usage": 1,
@@ -173,16 +53,106 @@
   "0.64": {
    "system_usage": 1,
    "count": 1
-  },
-  "0.25": {
+  }
+ },
+ "OCZ": {
+  "0.13": {
    "system_usage": 1,
    "count": 1
   }
  },
+ "unspecified": {
+  "1.5": {
+   "system_usage": 1,
+   "count": 11
+  },
+  "2.0": {
+   "system_usage": 3,
+   "count": 12
+  },
+  "3.0": {
+   "system_usage": 4,
+   "count": 9
+  },
+  "1.0": {
+   "system_usage": 2,
+   "count": 4
+  }
+ },
+ "Toshiba": {
+  "1.0": {
+   "system_usage": 1,
+   "count": 1
+  },
+  "2.0": {
+   "system_usage": 2,
+   "count": 2
+  },
+  "3.0": {
+   "system_usage": 6,
+   "count": 40
+  }
+ },
+ "Crucial": {
+  "0.13": {
+   "system_usage": 1,
+   "count": 1
+  },
+  "0.25": {
+   "system_usage": 1,
+   "count": 2
+  },
+  "0.26": {
+   "system_usage": 2,
+   "count": 5
+  }
+ },
+ "Seagate": {
+  "0.5": {
+   "system_usage": 3,
+   "count": 8
+  },
+  "1.5": {
+   "system_usage": 6,
+   "count": 16
+  },
+  "2.0": {
+   "system_usage": 27,
+   "count": 98
+  },
+  "3.0": {
+   "system_usage": 22,
+   "count": 89
+  },
+  "4.0": {
+   "system_usage": 19,
+   "count": 129
+  },
+  "5.0": {
+   "system_usage": 1,
+   "count": 2
+  },
+  "0.75": {
+   "system_usage": 1,
+   "count": 2
+  },
+  "1.0": {
+   "system_usage": 7,
+   "count": 23
+  },
+  "8.0": {
+   "system_usage": 1,
+   "count": 7
+  },
+  "0.3": {
+   "system_usage": 1,
+   "count": 4
+  }
+ },
  "Samsung": {
   "0.5": {
-   "system_usage": 5,
-   "count": 6
+   "system_usage": 6,
+   "count": 8
   },
   "1.0": {
    "system_usage": 5,
@@ -195,6 +165,38 @@
   "3.0": {
    "system_usage": 1,
    "count": 5
+  },
+  "0.13": {
+   "system_usage": 1,
+   "count": 1
+  }
+ },
+ "Kingston": {
+  "0.24": {
+   "system_usage": 1,
+   "count": 2
+  }
+ },
+ "HGST": {
+  "0.25": {
+   "system_usage": 1,
+   "count": 1
+  },
+  "0.5": {
+   "system_usage": 2,
+   "count": 4
+  },
+  "2.0": {
+   "system_usage": 8,
+   "count": 25
+  },
+  "3.0": {
+   "system_usage": 6,
+   "count": 56
+  },
+  "4.0": {
+   "system_usage": 6,
+   "count": 43
   }
  }
 }
