@@ -23,6 +23,14 @@
       "size" : 1.5,
       "vendor" : "unspecified"
    },
+   "US00146" : {
+      "size" : 0.146,
+      "vendor" : "unspecified"
+   },
+   "US0030" : {
+      "size" : 0.3,
+      "vendor" : "unspecified"
+   },
    "TS0400" : {
       "vendor" : "Toshiba",
       "size" : 4.0

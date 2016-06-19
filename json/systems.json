@@ -661,9 +661,11 @@
    "HT0050": 2,
    "SG0200": 1,
    "SG0300": 2,
-   "WD0300": 1
+   "WD0300": 1,
+   "US00146": 2,
+   "US0030": 2
   },
-  "updates": null,
+  "updates": [7661586],
   "notes": null,
   "os": "WHS 2011",
   "post": 1059401,
@@ -1125,7 +1127,7 @@
  "system_068": {
   "capacity": 15.0,
   "case": "Custom Case",
-  "ditch": 0,
+  "ditch": 1,
   "drives": {
    "SG0200": 3,
    "WD0300": 3
@@ -1474,10 +1476,9 @@
   "case": "Zalman Z1",
   "ditch": 0,
   "drives": {
-   "WD0100": 1,
-   "WD0300": 3
+   "WD0300": 6
   },
-  "updates": null,
+  "updates": [7668555],
   "notes": null,
   "os": "FreeNAS",
   "post": 4310059,
@@ -1637,9 +1638,10 @@
   "case": "Fractal Design R5",
   "ditch": 0,
   "drives": {
-   "SG0300": 6
+   "SG0300": 6,
+   "HT0300": 2
   },
-  "updates": null,
+  "updates": [7766577],
   "notes": null,
   "os": "unRAID",
   "post": 4530523,
@@ -1877,7 +1879,7 @@
  "system_115": {
   "capacity": 38.0,
   "case": "Supermicro 846BA-R920B",
-  "ditch": 0,
+  "ditch": 1,
   "drives": {
    "SG0150": 2,
    "SG0200": 6,
@@ -1917,7 +1919,7 @@
  "system_117": {
   "capacity": 16.0,
   "case": "Fractal Design R4",
-  "ditch": 0,
+  "ditch": 1,
   "drives": {
    "WD0400": 4
   },
@@ -2033,9 +2035,9 @@
   "case": "Supermicro 846E1-R900B",
   "ditch": 0,
   "drives": {
-   "WD0400": 8
+   "WD0400": 10
   },
-  "updates": null,
+  "updates": [7501632],
   "notes": null,
   "os": "WS 2012R2",
   "post": 6029350,
@@ -2185,5 +2187,105 @@
   "storage_sys": {"ZFS": 1},
   "timestamp": 1454131132,
   "username": "Morgo_mpx"
+ },
+ "system_134": {
+  "capacity": 24.0,
+  "case": "Fractal R5",
+  "ditch": 0,
+  "drives": {
+   "WD0400": 6
+  },
+  "updates": null,
+  "notes": null,
+  "os": "Ubuntu",
+  "post": 7459983,
+  "storage_sys": {"mdadm": 1},
+  "timestamp": 1458410969,
+  "username": "Eric The Tech Guru"
+ },
+ "system_135": {
+  "capacity": 24.0,
+  "case": "Zalman",
+  "ditch": 0,
+  "drives": {
+   "WD0300": 6,
+   "WD0100": 2
+  },
+  "updates": null,
+  "notes": null,
+  "os": "CentOS",
+  "post": 7470132,
+  "storage_sys": {"ZFS": 1},
+  "timestamp": 1458570652,
+  "username": "Jonny"
+ },
+ "system_136": {
+  "capacity": 36.0,
+  "case": "HP Proliant",
+  "ditch": 0,
+  "drives": {
+   "SG0400": 9
+  },
+  "updates": null,
+  "notes": null,
+  "os": "WS 2012",
+  "post": 7508840,
+  "storage_sys": {"HwRD": 1},
+  "timestamp": 1459206073,
+  "username": "Kiades"
+ },
+ "system_137": {
+  "capacity": 38.0,
+  "case": "Supermicro 846BA-R920B",
+  "ditch": 0,
+  "drives": {
+   "WD0400": 8,
+   "SG0200": 6,
+   "SG0150": 2,
+   "SG0300": 1
+  },
+  "updates": null,
+  "notes": null,
+  "os": "WS 2012R2",
+  "post": 7510596,
+  "storage_sys": {"SwRD": 1},
+  "timestamp": 1459236704,
+  "username": "mGrytbak"
+ },
+ "system_138": {
+  "capacity": 38.0,
+  "case": "Supermicro 846E16-R1200B",
+  "ditch": 0,
+  "drives": {
+   "WD0400": 8,
+   "SG0200": 6,
+   "SG0150": 2,
+   "SG0300": 1
+  },
+  "updates": null,
+  "notes": null,
+  "os": "Debian",
+  "post": 7695224,
+  "storage_sys": {"SwRD": 1},
+  "timestamp": 1462383688,
+  "username": "raid0yolo"
+ },
+ "system_139": {
+  "capacity": 38.0,
+  "case": "Dell R510",
+  "ditch": 0,
+  "drives": {
+   "HT0400": 4,
+   "WD0400": 2,
+   "WD0300": 3,
+   "SG0800": 1
+  },
+  "updates": null,
+  "notes": null,
+  "os": "WS 2012R2",
+  "post": 7740105,
+  "storage_sys": {"HwRD": 1},
+  "timestamp": 1463168625,
+  "username": "MariusJS"
  }
 }

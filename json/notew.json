@@ -253,6 +253,29 @@
   "updates": null,
   "username": "dzintars"
  },
+ "system_068": {
+  "cap_bar": 42.74153618277449,
+  "capacity": 15,
+  "case": "Custom Case",
+  "ditch": 1,
+  "drive_count": 6,
+  "drives": {
+   "SG0200": 3,
+   "WD0300": 3
+  },
+  "drvc_bar": 28.279591033308638,
+  "notes": null,
+  "os": "WS 2012R2",
+  "post": 2938125,
+  "ranking_points": 26.876392038420825,
+  "rp_bar": 51.94623329708615,
+  "storage_sys": {
+   "SwRD": 1
+  },
+  "timestamp": 1410627010,
+  "updates": null,
+  "username": "MariusJS"
+ },
  "system_070": {
   "cap_bar": 39.21963021198886,
   "capacity": 12,
@@ -389,29 +412,6 @@
   "updates": null,
   "username": "NWArkGuy"
  },
- "system_090": {
-  "cap_bar": 36.34202350682628,
-  "capacity": 10,
-  "case": "Zalman Z1",
-  "ditch": 0,
-  "drive_count": 4,
-  "drives": {
-   "WD0100": 1,
-   "WD0300": 3
-  },
-  "drvc_bar": 21.880078357360436,
-  "notes": null,
-  "os": "FreeNAS",
-  "post": 4310059,
-  "ranking_points": 13.862943611198906,
-  "rp_bar": 41.49733784912068,
-  "storage_sys": {
-   "ZFS": 1
-  },
-  "timestamp": 1424854825,
-  "updates": null,
-  "username": "AidanJMessenger"
- },
  "system_093": {
   "cap_bar": 39.21963021198886,
   "capacity": 12,
@@ -456,11 +456,38 @@
   "updates": null,
   "username": "sidiox"
  },
+ "system_115": {
+  "cap_bar": 57.41253260394667,
+  "capacity": 38,
+  "case": "Supermicro 846BA-R920B",
+  "ditch": 1,
+  "drive_count": 15,
+  "drives": {
+   "SG0150": 2,
+   "SG0200": 6,
+   "SG0300": 1,
+   "WD0100": 1,
+   "WD0300": 1,
+   "WD0400": 4
+  },
+  "drvc_bar": 42.74153618277449,
+  "notes": null,
+  "os": "WS 2012",
+  "post": 5297163,
+  "ranking_points": 102.90590764188399,
+  "rp_bar": 73.13615296263748,
+  "storage_sys": {
+   "SwRD": 1
+  },
+  "timestamp": 1435088617,
+  "updates": null,
+  "username": "mGrytbak"
+ },
  "system_117": {
   "cap_bar": 43.76015671472087,
   "capacity": 16,
   "case": "Fractal Design R4",
-  "ditch": 0,
+  "ditch": 1,
   "drive_count": 4,
   "drives": {
    "WD0400": 4
