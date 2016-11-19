@@ -55,6 +55,14 @@
       "vendor" : "HGST",
       "size" : 1.0
    },
+   "HT0075" : {
+      "vendor" : "HGST",
+      "size" : 0.75
+   },
+   "HT0008" : {
+      "vendor" : "HGST",
+      "size" : 0.08
+   },
    "WD0100" : {
       "vendor" : "WD",
       "size" : 1.0
@@ -274,6 +282,10 @@
    "CR0025.6" : {
       "vendor" : "Crucial",
       "size" : 0.26
+   },
+   "CR0050" : {
+      "vendor" : "Crucial",
+      "size" : 0.50
    },
    "OZ0013" : {
       "vendor" : "OCZ",

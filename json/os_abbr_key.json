@@ -11,6 +11,10 @@
                 "os" : "FreeNAS",
                 "family" : "*BSD"
         },
+        "FreeBSD" : {
+                "os" : "FreeBSD",
+                "family" : "*BSD"
+        },
         "WS 2012" : {
                 "os" : "Windows Server 2012",
                 "family" : "Windows"

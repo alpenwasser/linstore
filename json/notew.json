@@ -1,7 +1,7 @@
 {
  "system_028": {
-  "cap_bar": -Infinity,
-  "capacity": 0,
+  "cap_bar": 0.0,
+  "capacity": 1.0,
   "case": "Fractal Design R4 (custom)",
   "ditch": 0,
   "drive_count": 2,
@@ -13,8 +13,8 @@
   "notes": "BotW",
   "os": "Arch Linux",
   "post": 368180,
-  "ranking_points": 0.0,
-  "rp_bar": -Infinity,
+  "ranking_points": 0.6931471805599453,
+  "rp_bar": -5.7847248363858155,
   "storage_sys": {
    "ZFS": 1
   },
@@ -24,7 +24,7 @@
  },
  "system_029": {
   "cap_bar": 43.76015671472087,
-  "capacity": 16,
+  "capacity": 16.0,
   "case": "Bitfenix Phenom M",
   "ditch": 0,
   "drive_count": 4,
@@ -46,7 +46,7 @@
  },
  "system_043": {
   "cap_bar": 32.82011753604065,
-  "capacity": 8,
+  "capacity": 8.0,
   "case": "K'nex Custom Case",
   "ditch": 0,
   "drive_count": 4,
@@ -68,8 +68,8 @@
   "username": "MG2R"
  },
  "system_044": {
-  "cap_bar": 0.0,
-  "capacity": 1,
+  "cap_bar": 10.940039178680218,
+  "capacity": 2.0,
   "case": "HP Proliant MicroServer N40L",
   "ditch": 0,
   "drive_count": 3,
@@ -82,8 +82,8 @@
   "notes": null,
   "os": "unRAID",
   "post": 303666,
-  "ranking_points": 1.0986122886681098,
-  "rp_bar": 1.484370055383166,
+  "ranking_points": 2.1972245773362196,
+  "rp_bar": 12.424409234063384,
   "storage_sys": {
    "unRAID": 1
   },
@@ -93,7 +93,7 @@
  },
  "system_049": {
   "cap_bar": 34.67910370925685,
-  "capacity": 9,
+  "capacity": 9.0,
   "case": "Bitfenix Prodigy mITX",
   "ditch": 0,
   "drive_count": 3,
@@ -115,7 +115,7 @@
  },
  "system_052": {
   "cap_bar": 43.76015671472087,
-  "capacity": 16,
+  "capacity": 16.0,
   "case": "Lian Li PC-Q35",
   "ditch": 0,
   "drive_count": 4,
@@ -136,8 +136,8 @@
   "username": "Graveworm"
  },
  "system_053": {
-  "cap_bar": 37.84631744385716,
-  "capacity": 11,
+  "cap_bar": 38.54790584777083,
+  "capacity": 11.5,
   "case": "K'nex Custom Case",
   "ditch": 0,
   "drive_count": 4,
@@ -150,8 +150,8 @@
   "notes": "<strong>K'nex</strong>",
   "os": "Win 8.1",
   "post": 2298428,
-  "ranking_points": 15.249237972318797,
-  "rp_bar": 43.001631786151556,
+  "ranking_points": 15.942385152878742,
+  "rp_bar": 43.70322019006523,
   "storage_sys": {
    "JBOD": 1
   },
@@ -161,7 +161,7 @@
  },
  "system_054": {
   "cap_bar": 40.48295549480793,
-  "capacity": 13,
+  "capacity": 13.0,
   "case": "Synology DS412+",
   "ditch": 0,
   "drive_count": 4,
@@ -185,7 +185,7 @@
  },
  "system_058": {
   "cap_bar": 43.76015671472087,
-  "capacity": 16,
+  "capacity": 16.0,
   "case": "Fractal Design Arc Midi R2",
   "ditch": 0,
   "drive_count": 4,
@@ -207,7 +207,7 @@
  },
  "system_059": {
   "cap_bar": 52.59265119313137,
-  "capacity": 28,
+  "capacity": 28.0,
   "case": "Acer R380F2 + Chembro 24 Bay",
   "ditch": 1,
   "drive_count": 22,
@@ -233,7 +233,7 @@
  },
  "system_061": {
   "cap_bar": 0.0,
-  "capacity": 1,
+  "capacity": 1.0,
   "case": "Open Air",
   "ditch": 0,
   "drive_count": 1,
@@ -253,9 +253,31 @@
   "updates": null,
   "username": "dzintars"
  },
+ "system_063": {
+  "cap_bar": 50.15966939066908,
+  "capacity": 24.0,
+  "case": "Custom Wood Case",
+  "ditch": 1,
+  "drive_count": 8,
+  "drives": {
+   "SG0300": 8
+  },
+  "drvc_bar": 32.82011753604065,
+  "notes": null,
+  "os": "OpenMediaVault",
+  "post": 2777040,
+  "ranking_points": 49.906597000316054,
+  "rp_bar": 61.71449640891168,
+  "storage_sys": {
+   "SwRD": 1
+  },
+  "timestamp": 1409074359,
+  "updates": null,
+  "username": "{EAC} Shoot em UP"
+ },
  "system_068": {
   "cap_bar": 42.74153618277449,
-  "capacity": 15,
+  "capacity": 15.0,
   "case": "Custom Case",
   "ditch": 1,
   "drive_count": 6,
@@ -278,7 +300,7 @@
  },
  "system_070": {
   "cap_bar": 39.21963021198886,
-  "capacity": 12,
+  "capacity": 12.0,
   "case": "Fractal Node 804",
   "ditch": 0,
   "drive_count": 4,
@@ -300,7 +322,7 @@
  },
  "system_073": {
   "cap_bar": 28.279591033308638,
-  "capacity": 6,
+  "capacity": 6.0,
   "case": "Lian Li PC-7FN",
   "ditch": 0,
   "drive_count": 4,
@@ -323,7 +345,7 @@
  },
  "system_074": {
   "cap_bar": 32.82011753604065,
-  "capacity": 8,
+  "capacity": 8.0,
   "case": "NZXT H630",
   "ditch": 0,
   "drive_count": 3,
@@ -345,9 +367,35 @@
   "updates": null,
   "username": "kichilron"
  },
+ "system_080": {
+  "cap_bar": 46.05158474080801,
+  "capacity": 18.5,
+  "case": "Rosewill Blackbone",
+  "ditch": 1,
+  "drive_count": 11,
+  "drives": {
+   "WD0050": 1,
+   "WD0100": 6,
+   "WD0300": 4
+  },
+  "drvc_bar": 37.84631744385716,
+  "notes": null,
+  "os": "CentOS",
+  "post": 3691169,
+  "ranking_points": 44.36106254676986,
+  "rp_bar": 59.855383216612104,
+  "storage_sys": {
+   "mdadm": 1
+  },
+  "timestamp": 1418852490,
+  "updates": [
+   4039044
+  ],
+  "username": "unijab"
+ },
  "system_083": {
   "cap_bar": 43.76015671472087,
-  "capacity": 16,
+  "capacity": 16.0,
   "case": "Fractal Node 304",
   "ditch": 0,
   "drive_count": 4,
@@ -369,7 +417,7 @@
  },
  "system_084": {
   "cap_bar": 50.15966939066908,
-  "capacity": 24,
+  "capacity": 24.0,
   "case": "Supermicro 846E1-R900B",
   "ditch": 0,
   "drive_count": 4,
@@ -391,7 +439,7 @@
  },
  "system_086": {
   "cap_bar": 36.34202350682628,
-  "capacity": 10,
+  "capacity": 10.0,
   "case": "Antec 900",
   "ditch": 0,
   "drive_count": 4,
@@ -414,7 +462,7 @@
  },
  "system_093": {
   "cap_bar": 39.21963021198886,
-  "capacity": 12,
+  "capacity": 12.0,
   "case": "Netgear ReadyNAS 104",
   "ditch": 0,
   "drive_count": 4,
@@ -436,7 +484,7 @@
  },
  "system_109": {
   "cap_bar": 39.21963021198886,
-  "capacity": 12,
+  "capacity": 12.0,
   "case": "IBM x3400 Server Chassis",
   "ditch": 0,
   "drive_count": 3,
@@ -458,7 +506,7 @@
  },
  "system_115": {
   "cap_bar": 57.41253260394667,
-  "capacity": 38,
+  "capacity": 38.0,
   "case": "Supermicro 846BA-R920B",
   "ditch": 1,
   "drive_count": 15,
@@ -485,7 +533,7 @@
  },
  "system_117": {
   "cap_bar": 43.76015671472087,
-  "capacity": 16,
+  "capacity": 16.0,
   "case": "Fractal Design R4",
   "ditch": 1,
   "drive_count": 4,
@@ -507,7 +555,7 @@
  },
  "system_125": {
   "cap_bar": 39.21963021198886,
-  "capacity": 12,
+  "capacity": 12.0,
   "case": "Phanteks Enthoo Pro",
   "ditch": 0,
   "drive_count": 4,
@@ -529,7 +577,7 @@
  },
  "system_126": {
   "cap_bar": 42.74153618277449,
-  "capacity": 15,
+  "capacity": 15.0,
   "case": "unknown",
   "ditch": 1,
   "drive_count": 5,
@@ -551,7 +599,7 @@
  },
  "system_132": {
   "cap_bar": 39.21963021198886,
-  "capacity": 12,
+  "capacity": 12.0,
   "case": "HP Microserver",
   "ditch": 0,
   "drive_count": 4,

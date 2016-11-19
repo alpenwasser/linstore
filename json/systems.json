@@ -213,9 +213,9 @@
   "drives": {
    "WD0200": 25,
    "WD0300": 1,
-   "WD0600": 4
+   "WD0600": 6
   },
-  "updates": [1883660, 2418935, 3437797, 5419102, 5966919, 6653226],
+  "updates": [1883660, 2418935, 3437797, 5419102, 5966919, 6653226, 7363872],
   "notes": null,
   "os": "Win 8.1",
   "post": 414401,
@@ -1047,7 +1047,7 @@
  "system_063": {
   "capacity": 24.0,
   "case": "Custom Wood Case",
-  "ditch": 0,
+  "ditch": 1,
   "drives": {
    "SG0300": 8
   },
@@ -1315,7 +1315,7 @@
  "system_080": {
   "capacity": 15.5,
   "case": "Rosewill Blackbone",
-  "ditch": 0,
+  "ditch": 1,
   "drives": {
    "WD0050": 1,
    "WD0100": 6,
@@ -1669,27 +1669,17 @@
   "case": "unknown",
   "ditch": 0,
   "drives": {
-   "SG0200": 4,
-   "WD0200": 2
+   "SG0200": 10,
+   "WD0200": 1,
+   "WD0100": 1,
+   "HT0100": 1,
+   "WD0016": 1,
+   "HT0075": 1,
+   "HT0025": 1,
+   "WD0032": 1,
+   "HT0008": 1
   },
-  "updates": null,
-  "notes": null,
-  "os": "FreeNAS",
-  "post": 4577212,
-  "storage_sys": {"ZFS": 1},
-  "timestamp": 1427364211,
-  "username": "username6465"
- },
- "system_103": {
-  "capacity": 15.0,
-  "case": "unknown",
-  "ditch": 0,
-  "drives": {
-   "SG0100": 10,
-   "TS0100": 1,
-   "WD0100": 4
-  },
-  "updates": null,
+  "updates": [8184975],
   "notes": null,
   "os": "FreeNAS",
   "post": 4577212,
@@ -1953,9 +1943,9 @@
   "case": "Silverstone Milo ML04B",
   "ditch": 0,
   "drives": {
-   "WD0400": 5
+   "WD0400": 6
   },
-  "updates": [6642791],
+  "updates": [6642791,7257904],
   "notes": null,
   "os": "WS 2008R2",
   "post": 5699276,
@@ -2035,9 +2025,9 @@
   "case": "Supermicro 846E1-R900B",
   "ditch": 0,
   "drives": {
-   "WD0400": 10
+   "WD0400": 15
   },
-  "updates": [7501632],
+  "updates": [7501632,7936512],
   "notes": null,
   "os": "WS 2012R2",
   "post": 6029350,
@@ -2131,9 +2121,9 @@
   "drives": {
    "WD0200": 6
   },
-  "updates": null,
+  "updates": [7988590],
   "notes": null,
-  "os": "Win 8",
+  "os": "Ubuntu",
   "post": 6918477,
   "storage_sys": {"HwRD": 1},
   "timestamp": 1452003011,
@@ -2145,12 +2135,12 @@
   "ditch": 0,
   "drives": {
    "SS0050": 2,
-   "SG0800": 7,
+   "SG0800": 8,
    "HT0300": 21,
-   "HT0400": 5,
+   "HT0400": 4,
    "WD0300": 3
   },
-  "updates": null,
+  "updates": [7926542],
   "notes": null,
   "os": "FreeNAS",
   "post": 6966225,
@@ -2211,9 +2201,9 @@
    "WD0300": 6,
    "WD0100": 2
   },
-  "updates": null,
+  "updates": [8129979],
   "notes": null,
-  "os": "CentOS",
+  "os": "Ubuntu",
   "post": 7470132,
   "storage_sys": {"ZFS": 1},
   "timestamp": 1458570652,
@@ -2287,5 +2277,146 @@
   "storage_sys": {"HwRD": 1},
   "timestamp": 1463168625,
   "username": "MariusJS"
+ },
+ "system_140": {
+  "capacity": 32.0,
+  "case": "Norco RPC4308",
+  "ditch": 0,
+  "drives": {
+   "WD0400": 8
+  },
+  "updates": null,
+  "notes": null,
+  "os": "ESXi",
+  "post": 8047839,
+  "storage_sys": {"ZFS": 1},
+  "timestamp": 1468153675,
+  "username": "b3nno"
+ },
+ "system_141": {
+  "capacity": 24.0,
+  "case": "Supermicro SC826TQ-R800LPB",
+  "ditch": 0,
+  "drives": {
+   "WD0400": 6
+  },
+  "updates": null,
+  "notes": null,
+  "os": "Ubuntu",
+  "post": 8149632,
+  "storage_sys": {"ZFS": 1},
+  "timestamp": 1469251673,
+  "username": "Ziggidy"
+ },
+ "system_142": {
+  "capacity": 26.0,
+  "case": "MS-Tech CA-0210 rev. b",
+  "ditch": 0,
+  "drives": {
+   "WD0400": 6,
+   "TS0100": 2
+  },
+  "updates": null,
+  "notes": null,
+  "os": "WS 2012R2",
+  "post": 8559933,
+  "storage_sys": {"SwRD": 1},
+  "timestamp": 1474139804,
+  "username": "FattyDave"
+ },
+ "system_143": {
+  "capacity": 56.0,
+  "case": "SUPERMICRO 4U 846E16",
+  "ditch": 0,
+  "drives": {
+   "WD0400": 8,
+   "SG0300": 8
+  },
+  "updates": null,
+  "notes": null,
+  "os": "FreeNAS",
+  "post": 8602188,
+  "storage_sys": {"ZFS": 1},
+  "timestamp": 1474783795,
+  "username": "{EAC} Shoot em UP"
+ },
+ "system_144": {
+  "capacity": 24.0,
+  "case": "Fractal Define R5",
+  "ditch": 0,
+  "drives": {
+   "WD0100": 12,
+   "WD0300": 4
+  },
+  "updates": null,
+  "notes": null,
+  "os": "CentOS",
+  "post": 8632384,
+  "storage_sys": {"mdadm": 1},
+  "timestamp": 1475274281,
+  "username": "unijab"
+ },
+ "system_145": {
+  "capacity": 48.0,
+  "case": "Fractal Design Node 804",
+  "ditch": 0,
+  "drives": {
+   "WD0600": 8
+  },
+  "updates": null,
+  "notes": null,
+  "os": "FreeBSD",
+  "post": 8828045,
+  "storage_sys": {"ZFS": 1},
+  "timestamp": 1478608406,
+  "username": "kerradeph"
+ },
+ "system_146": {
+  "capacity": 11.0,
+  "case": "Fractal Design Node 804",
+  "ditch": 0,
+  "drives": {
+   "HT0300": 1,
+   "SG0300": 2,
+   "CR0050": 2
+  },
+  "updates": null,
+  "notes": null,
+  "os": "WS 2012R2",
+  "post": 7208207,
+  "storage_sys": {"SwRD": 1},
+  "timestamp": 1455096179,
+  "username": "brwainer"
+ },
+ "system_147": {
+  "capacity": 30.0,
+  "case": "Fractal Design Node 804",
+  "ditch": 0,
+  "drives": {
+   "WD0600": 5
+  },
+  "updates": null,
+  "notes": null,
+  "os": "Synology",
+  "post": 7322862,
+  "storage_sys": {"SwRD": 1},
+  "timestamp": 1456553301,
+  "username": "paps511"
+ },
+ "system_148": {
+  "capacity": 15.0,
+  "case": "unknown",
+  "ditch": 0,
+  "drives": {
+   "WD0300": 4,
+   "HT0300": 1
+  },
+  "updates": null,
+  "notes": null,
+  "os": "Ubuntu",
+  "post": 7988590,
+  "storage_sys": {"HwRD": 1},
+  "timestamp": 1467312094,
+  "username": "maxtch"
  }
 }

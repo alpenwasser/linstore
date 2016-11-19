@@ -1,4 +1,162 @@
 {
+ "Kingston": {
+  "0.24": {
+   "count": 2,
+   "system_usage": 1
+  }
+ },
+ "Sandisk": {
+  "0.25": {
+   "count": 4,
+   "system_usage": 1
+  }
+ },
+ "WD": {
+  "0.5": {
+   "count": 5,
+   "system_usage": 2
+  },
+  "1.0": {
+   "count": 45,
+   "system_usage": 15
+  },
+  "2.0": {
+   "count": 188,
+   "system_usage": 37
+  },
+  "3.0": {
+   "count": 185,
+   "system_usage": 43
+  },
+  "4.0": {
+   "count": 144,
+   "system_usage": 24
+  },
+  "5.0": {
+   "count": 8,
+   "system_usage": 1
+  },
+  "6.0": {
+   "count": 40,
+   "system_usage": 6
+  },
+  "1.5": {
+   "count": 2,
+   "system_usage": 1
+  },
+  "0.15": {
+   "count": 3,
+   "system_usage": 2
+  },
+  "0.32": {
+   "count": 2,
+   "system_usage": 2
+  },
+  "0.6": {
+   "count": 1,
+   "system_usage": 1
+  },
+  "0.16": {
+   "count": 1,
+   "system_usage": 1
+  },
+  "0.64": {
+   "count": 1,
+   "system_usage": 1
+  }
+ },
+ "Toshiba": {
+  "1.0": {
+   "count": 2,
+   "system_usage": 1
+  },
+  "2.0": {
+   "count": 2,
+   "system_usage": 2
+  },
+  "3.0": {
+   "count": 40,
+   "system_usage": 6
+  }
+ },
+ "Crucial": {
+  "0.13": {
+   "count": 1,
+   "system_usage": 1
+  },
+  "0.25": {
+   "count": 2,
+   "system_usage": 1
+  },
+  "0.26": {
+   "count": 5,
+   "system_usage": 2
+  },
+  "0.5": {
+   "count": 2,
+   "system_usage": 1
+  }
+ },
+ "HGST": {
+  "0.25": {
+   "count": 2,
+   "system_usage": 2
+  },
+  "0.75": {
+   "count": 1,
+   "system_usage": 1
+  },
+  "2.0": {
+   "count": 25,
+   "system_usage": 8
+  },
+  "3.0": {
+   "count": 60,
+   "system_usage": 9
+  },
+  "4.0": {
+   "count": 46,
+   "system_usage": 7
+  },
+  "0.5": {
+   "count": 4,
+   "system_usage": 2
+  },
+  "1.0": {
+   "count": 1,
+   "system_usage": 1
+  },
+  "0.08": {
+   "count": 1,
+   "system_usage": 1
+  }
+ },
+ "unspecified": {
+  "0.146": {
+   "count": 2,
+   "system_usage": 1
+  },
+  "1.5": {
+   "count": 11,
+   "system_usage": 1
+  },
+  "2.0": {
+   "count": 12,
+   "system_usage": 3
+  },
+  "3.0": {
+   "count": 9,
+   "system_usage": 4
+  },
+  "1.0": {
+   "count": 4,
+   "system_usage": 2
+  },
+  "0.3": {
+   "count": 2,
+   "system_usage": 1
+  }
+ },
  "Samsung": {
   "0.5": {
    "count": 8,
@@ -21,94 +179,6 @@
    "system_usage": 1
   }
  },
- "unspecified": {
-  "0.3": {
-   "count": 2,
-   "system_usage": 1
-  },
-  "1.5": {
-   "count": 11,
-   "system_usage": 1
-  },
-  "2.0": {
-   "count": 12,
-   "system_usage": 3
-  },
-  "3.0": {
-   "count": 9,
-   "system_usage": 4
-  },
-  "1.0": {
-   "count": 4,
-   "system_usage": 2
-  },
-  "0.146": {
-   "count": 2,
-   "system_usage": 1
-  }
- },
- "Kingston": {
-  "0.24": {
-   "count": 2,
-   "system_usage": 1
-  }
- },
- "Toshiba": {
-  "1.0": {
-   "count": 1,
-   "system_usage": 1
-  },
-  "2.0": {
-   "count": 2,
-   "system_usage": 2
-  },
-  "3.0": {
-   "count": 40,
-   "system_usage": 6
-  }
- },
- "OCZ": {
-  "0.13": {
-   "count": 1,
-   "system_usage": 1
-  }
- },
- "Crucial": {
-  "0.13": {
-   "count": 1,
-   "system_usage": 1
-  },
-  "0.25": {
-   "count": 2,
-   "system_usage": 1
-  },
-  "0.26": {
-   "count": 5,
-   "system_usage": 2
-  }
- },
- "HGST": {
-  "0.25": {
-   "count": 1,
-   "system_usage": 1
-  },
-  "0.5": {
-   "count": 4,
-   "system_usage": 2
-  },
-  "2.0": {
-   "count": 25,
-   "system_usage": 8
-  },
-  "3.0": {
-   "count": 58,
-   "system_usage": 7
-  },
-  "4.0": {
-   "count": 47,
-   "system_usage": 7
-  }
- },
  "Seagate": {
   "0.5": {
    "count": 8,
@@ -119,12 +189,12 @@
    "system_usage": 7
   },
   "2.0": {
-   "count": 101,
+   "count": 107,
    "system_usage": 27
   },
   "3.0": {
-   "count": 90,
-   "system_usage": 23
+   "count": 92,
+   "system_usage": 24
   },
   "4.0": {
    "count": 138,
@@ -139,11 +209,11 @@
    "system_usage": 1
   },
   "1.0": {
-   "count": 23,
-   "system_usage": 7
+   "count": 13,
+   "system_usage": 6
   },
   "8.0": {
-   "count": 8,
+   "count": 9,
    "system_usage": 2
   },
   "0.3": {
@@ -151,60 +221,10 @@
    "system_usage": 1
   }
  },
- "Sandisk": {
-  "0.25": {
-   "count": 4,
-   "system_usage": 1
-  }
- },
- "WD": {
-  "0.64": {
+ "OCZ": {
+  "0.13": {
    "count": 1,
    "system_usage": 1
-  },
-  "1.0": {
-   "count": 42,
-   "system_usage": 15
-  },
-  "2.0": {
-   "count": 189,
-   "system_usage": 37
-  },
-  "3.0": {
-   "count": 181,
-   "system_usage": 42
-  },
-  "4.0": {
-   "count": 110,
-   "system_usage": 20
-  },
-  "5.0": {
-   "count": 8,
-   "system_usage": 1
-  },
-  "6.0": {
-   "count": 25,
-   "system_usage": 4
-  },
-  "1.5": {
-   "count": 2,
-   "system_usage": 1
-  },
-  "0.15": {
-   "count": 3,
-   "system_usage": 2
-  },
-  "0.32": {
-   "count": 1,
-   "system_usage": 1
-  },
-  "0.6": {
-   "count": 1,
-   "system_usage": 1
-  },
-  "0.5": {
-   "count": 6,
-   "system_usage": 3
   }
  }
 }

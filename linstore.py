@@ -81,14 +81,17 @@ for system in system_db.keys():
 
         # System ranking points: Total capacity * number of drives
         if drive_type in drive_db:
-            system_db[system]['capacity'] += int(float(system_db[system]['drives'][drive_type]) * float(drive_db[drive_type]['size']))
+            system_db[system]['capacity'] += float(system_db[system]['drives'][drive_type]) * float(drive_db[drive_type]['size'])
             system_db[system]['drive_count'] += int(system_db[system]['drives'][drive_type])
             #system_db[system]['ranking_points'] = drive_type
         else:
             print("Drive not found in " + drives_file + ": " + drive_type)
             exit(drive_existence_failure)
 
-        system_db[system]['ranking_points'] = system_db[system]['capacity'] * np.log(system_db[system]['drive_count'])
+        system_db[system]['ranking_points'] = system_db[system]['capacity'] * np.log(system_db[system]['drive_count'] + 0.1)
+
+    # For debugging
+    #print(system, ": ", system_db[system]['capacity'], ": ", system_db[system]['drive_count'] + 1, ": ", system_db[system]['ranking_points'])
 
 
 # Find highest points, capacity and drive counts:
@@ -105,7 +108,10 @@ for system in system_db.keys():
 
 # Calcualte widths for bar lengths in HTML table
 # max_points is defined as 100% width, everything is relative to that, logarithmically
+
 for system in system_db.keys():
+    #print(system)
+    #print(system_db[system]['ranking_points'])
     system_db[system]['rp_bar'] = np.log(system_db[system]['ranking_points']) / np.log(max_points) * 100
     system_db[system]['cap_bar'] = np.log(system_db[system]['capacity']) / np.log(max_points) * 100
     system_db[system]['drvc_bar'] = np.log(system_db[system]['drive_count']) / np.log(max_points) * 100
@@ -358,7 +364,7 @@ for rank in ranking_db.keys():
     ranked_row = re.sub(username_sub,ranking_db[rank]['username'],ranked_row)
     ranked_row = re.sub(postNo_sub,str(ranking_db[rank]['post']),ranked_row)
     ranked_row = re.sub(rankingpoints_sub,"{:.2f}".format(ranking_db[rank]['ranking_points']),ranked_row)
-    ranked_row = re.sub(capacity_sub,str(ranking_db[rank]['capacity']),ranked_row)
+    ranked_row = re.sub(capacity_sub,"{:.1f}".format(ranking_db[rank]['capacity']),ranked_row)
     ranked_row = re.sub(nodrives_sub,str(ranking_db[rank]['drive_count']),ranked_row)
     ranked_row = re.sub(case_sub,str(ranking_db[rank]['case']),ranked_row)
     ranked_row = re.sub(os_sub,str(ranking_db[rank]['os']),ranked_row)
@@ -495,7 +501,7 @@ plot_data_capacities = []
 plot_data_drivecount = []
 for rank in ranking_db.keys():
     plot_data_usernames.append(str(rank) + '{0: >{pad}}'.format(ranking_db[rank]['username'], pad = username_length + 1 ) + '{0: >{pad}.2f}'.format(ranking_db[rank]['ranking_points'], pad = ranking_point_length + 1))
-    plot_data_usernames_caps.append(str(rank) + '{0: >{pad}}'.format(ranking_db[rank]['username'], pad = username_length + 1 ) + '{0: >{pad}}'.format(ranking_db[rank]['capacity'], pad = capacity_length + 1))
+    plot_data_usernames_caps.append(str(rank) + '{0: >{pad}}'.format(ranking_db[rank]['username'], pad = username_length + 1 ) + '{0: >{pad}.1f}'.format(ranking_db[rank]['capacity'], pad = capacity_length + 1))
     plot_data_usernames_drvc.append(str(rank) + '{0: >{pad}}'.format(ranking_db[rank]['username'], pad = username_length + 1 ) + '{0: >{pad}}'.format(ranking_db[rank]['drive_count'], pad = drivecount_length + 1))
     plot_data_ranking_points = np.append(plot_data_ranking_points, [ranking_db[rank]['ranking_points']])
     plot_data_capacities = np.append(plot_data_capacities, [ranking_db[rank]['capacity']])
