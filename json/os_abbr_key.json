@@ -35,6 +35,10 @@
                 "os" : "Lubuntu Linux",
                 "family" : "GNU/Linux"
         },
+		"Fedora" : {
+				"os" : "Fedora Linux",
+				"family" : "GNU/Linux"
+		},
         "unRAID" : {
                 "os" : "unRAID",
                 "family" : "GNU/Linux"
@@ -114,5 +118,21 @@
         "ESXi" : {
                 "os" : "ESXi",
                 "family" : "ESXi"
+        },
+		"Proxmox" : {
+				"os" : "Proxmox",
+				"family" : "Proxmox"
+		},
+		"XPEnology" : {
+				"os" : "XPEnology",
+				"family" : "XPEnology"
+		},
+		"HyperV2016" : {
+				"os" : "Microsoft HyperV 2016",
+				"family" : "Windows"
+		},
+        "WS 2016" : {
+                "os" : "Windows Server 2016",
+                "family" : "Windows"
         }
 }

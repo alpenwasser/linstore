@@ -271,18 +271,18 @@
   "username": "stevv"
  },
  "system_017": {
-  "capacity": 29.4,
+  "capacity": 35.4,
   "case": "Norco RPC-4224",
   "ditch": 0,
   "drives": {
    "CR0013": 1,
    "HT0025": 1,
    "HT0300": 1,
-   "HT0400": 11,
+   "HT0400": 15,
    "OZ0013": 1,
    "WD0032": 1
   },
-  "updates": [3875801, 4199884, 6914516],
+  "updates": [3875801, 4199884, 6914516, 10499079],
   "notes": null,
   "os": "Ubuntu",
   "post": 1839515,
@@ -291,16 +291,16 @@
   "username": "MrBucket101"
  },
  "system_018": {
-  "capacity": 24.0,
-  "case": "Silverstone Lascala LC17B HTPC",
+  "capacity": 40.1,
+  "case": "Corsair Carbide 400R with IcyDock MB155SP-B",
   "ditch": 0,
   "drives": {
-   "WD0200": 9,
-   "WD0300": 2
+   "SG0800": 2,
+   "WD0300": 8
   },
-  "updates": null,
+  "updates": [9745020],
   "notes": null,
-  "os": "WS 2012",
+  "os": "WS 2012R2",
   "post": 715292,
   "storage_sys": {"SwRD": 1,"JBOD": 1},
   "timestamp": 1378344057,
@@ -655,21 +655,19 @@
  },
  "system_040": {
   "capacity": 12.0,
-  "case": "Lian Li + SAS Expander Case",
+  "case": "Dell T410 Tower Server",
   "ditch": 0,
   "drives": {
-   "HT0050": 2,
-   "SG0200": 1,
+   "TS0300": 4,
    "SG0300": 2,
-   "WD0300": 1,
    "US00146": 2,
    "US0030": 2
   },
   "updates": [7661586],
   "notes": null,
-  "os": "WHS 2011",
+  "os": "ESXi",
   "post": 1059401,
-  "storage_sys": {"FlexRAID": 1},
+  "storage_sys": {"unknown": 1},
   "timestamp": 1384708060,
   "username": "dalekphalm"
  },
@@ -894,11 +892,12 @@
   "case": "Synology DS412+",
   "ditch": 0,
   "drives": {
-   "SG0300": 1,
-   "SG0400": 1,
-   "WD0300": 2
+   "DR0025": 1,
+   "SG0400": 4,
+   "WD0400": 2,
+   "TS0300": 1
   },
-  "updates": null,
+  "updates": [10110363],
   "notes": null,
   "os": "Synology",
   "post": 2304876,
@@ -1287,13 +1286,14 @@
   "case": "Corsair 400R",
   "ditch": 0,
   "drives": {
-   "SS0300": 5
+   "SG0300": 3,
+   "HT0300": 2
   },
-  "updates": null,
+  "updates": [9336809,9479875,10841063],
   "notes": "ESXI Hypervisor",
-  "os": "Win 8.1",
+  "os": "FreeNAS",
   "post": 3508064,
-  "storage_sys": {"HwRD": 1},
+  "storage_sys": {"ZFS": 1},
   "timestamp": 1416818444,
   "username": "Night_Rider0"
  },
@@ -1313,19 +1313,17 @@
   "username": "handruin"
  },
  "system_080": {
-  "capacity": 15.5,
-  "case": "Rosewill Blackbone",
+  "capacity": 28,
+  "case": "Fractal Define R5",
   "ditch": 1,
   "drives": {
-   "WD0050": 1,
-   "WD0100": 6,
-   "WD0300": 4
+   "SG0400" : 7
   },
-  "updates": [4039044],
+  "updates": [4039044,11349560],
   "notes": null,
-  "os": "CentOS",
+  "os": "Fedora",
   "post": 3691169,
-  "storage_sys": {"mdadm": 1},
+  "storage_sys": {"ZFS": 1},
   "timestamp": 1418852490,
   "username": "unijab"
  },
@@ -1364,15 +1362,15 @@
   "username": "TJStamp"
  },
  "system_083": {
-  "capacity": 16.0,
-  "case": "Fractal Node 304",
+  "capacity": 48.0,
+  "case": "Norcotek RPC4224",
   "ditch": 0,
   "drives": {
-   "WD0400": 4
+   "WD0400": 12
   },
-  "updates": null,
+  "updates": [8971671],
   "notes": null,
-  "os": "WHS 2011",
+  "os": "WS 2016",
   "post": 3835678,
   "storage_sys": {"HwRD": 1},
   "timestamp": 1420180211,
@@ -1722,17 +1720,17 @@
   "username": "Tomasu"
  },
  "system_106": {
-  "capacity": 18.3,
+  "capacity": 44,
   "case": "Antec P183",
   "ditch": 0,
   "drives": {
-   "TS0200": 1,
-   "WD0015": 2,
-   "WD0500": 8
+   "WD0500": 8,
+   "SG0300": 1,
+   "SG0100": 1
   },
-  "updates": [5906039],
+  "updates": [5906039,11156584],
   "notes": null,
-  "os": "Win 7",
+  "os": "WS 2012R2",
   "post": 4588958,
   "storage_sys": {"HwRD": 1},
   "timestamp": 1427467425,
@@ -1834,14 +1832,15 @@
   "username": "Cheatdeath"
  },
  "system_113": {
-  "capacity": 32.0,
+  "capacity": 33.5,
   "case": "Fractal Design R5",
   "ditch": 0,
   "drives": {
    "CR0025": 2,
-   "WD0400": 8
+   "WD0400": 8,
+   "SS0025": 4
   },
-  "updates": null,
+  "updates": [9932565],
   "notes": null,
   "os": "FreeNAS",
   "post": 5228792,
@@ -1850,15 +1849,15 @@
   "username": "Captain Chaos"
  },
  "system_114": {
-  "capacity": 15.6,
+  "capacity": 18,
   "case": "NZXT Source 210",
   "ditch": 0,
   "drives": {
-   "SG0100": 1,
    "WD0100": 2,
-   "WD0400": 3
+   "WD0400": 3,
+   "HT0400": 1
   },
-  "updates": [7102735],
+  "updates": [7102735,10858299],
   "notes": null,
   "os": "FreeNAS",
   "post": 5285516,
@@ -1887,22 +1886,19 @@
   "username": "mGrytbak"
  },
  "system_116": {
-  "capacity": 12.1,
-  "case": "Fractal Design R4",
+  "capacity": 60,
+  "case": "Dell PowerEdge R515",
   "ditch": 0,
   "drives": {
-   "SG0300": 1,
-   "SG0400": 1,
-   "SS0050": 1,
-   "SS0200": 1,
-   "WD0060": 1,
-   "WD0200": 1
+   "SG0400": 4,
+   "SG0300": 4,
+   "SG0800": 4
   },
-  "updates": null,
+  "updates": [10910556],
   "notes": "ESXI Hypervisor",
-  "os": "WS 2012R2",
+  "os": "FreeNAS",
   "post": 5371693,
-  "storage_sys": {"JBOD": 1},
+  "storage_sys": {"ZFS": 1},
   "timestamp": 1435796039,
   "username": "Mkvarner"
  },
@@ -1926,11 +1922,9 @@
   "case": "Fractal Node 804",
   "ditch": 0,
   "drives": {
-   "SG0300": 10,
-   "HT0300": 12,
-   "WD0300": 4
+   "SG1000": 5
   },
-  "updates": [6143985],
+  "updates": [6143985,9821904],
   "notes": null,
   "os": "Win 7",
   "post": 5526073,
@@ -2004,19 +1998,19 @@
   "username": "Brandonberg"
  },
  "system_123": {
-  "capacity": 19.3,
+  "capacity": 29.76,
   "case": "HP Z800 Workstation",
   "ditch": 0,
   "drives": {
    "CR0025.6": 3,
    "SS0050": 1,
-   "WD0200": 9
+   "WD0200": 14
   },
-  "updates": null,
+  "updates": [9806708],
   "notes": null,
   "os": "Win 10",
   "post": 5956922,
-  "storage_sys": {"SwRD": 1},
+  "storage_sys": {"StSp": 1},
   "timestamp": 1441466867,
   "username": "b348xyz"
  },
@@ -2371,23 +2365,6 @@
   "timestamp": 1478608406,
   "username": "kerradeph"
  },
- "system_146": {
-  "capacity": 11.0,
-  "case": "Fractal Design Node 804",
-  "ditch": 0,
-  "drives": {
-   "HT0300": 1,
-   "SG0300": 2,
-   "CR0050": 2
-  },
-  "updates": null,
-  "notes": null,
-  "os": "WS 2012R2",
-  "post": 7208207,
-  "storage_sys": {"SwRD": 1},
-  "timestamp": 1455096179,
-  "username": "brwainer"
- },
  "system_147": {
   "capacity": 30.0,
   "case": "Fractal Design Node 804",
@@ -2404,19 +2381,416 @@
   "username": "paps511"
  },
  "system_148": {
-  "capacity": 15.0,
-  "case": "unknown",
+  "capacity": 16.0,
+  "case": "Macase R255-8 2U rack mount",
   "ditch": 0,
   "drives": {
-   "WD0300": 4,
-   "HT0300": 1
+   "WD0200": 4,
+   "WD0200": 4
   },
-  "updates": null,
-  "notes": null,
+  "updates": [9876861],
+  "notes": "NASter",
   "os": "Ubuntu",
   "post": 7988590,
   "storage_sys": {"HwRD": 1},
   "timestamp": 1467312094,
   "username": "maxtch"
+ },
+ "system_149": {
+  "capacity": 56.0,
+  "case": "Antec Fusion 430",
+  "ditch": 0,
+  "drives": {
+   "SG0800": 4,
+   "SG0400": 3,
+   "WD0300": 2,
+   "WD0400": 1,
+   "HT0200": 1
+  },
+  "updates": null,
+  "notes": null,
+  "os": "Win 8.1",
+  "post": 7988590,
+  "storage_sys": {"StSp": 3, "SwRD": 1},
+  "timestamp": 1532001600,
+  "username": "Tim Dine"
+ },
+ "system_150": {
+  "capacity": 174.0,
+  "case": "Supermicro Rackmount 4U",
+  "ditch": 0,
+  "drives": {
+   "HT0800": 24
+  },
+  "updates": null,
+  "notes": null,
+  "os": "FreeNAS",
+  "post": 11508161,
+  "storage_sys": {"ZFS": 1},
+  "timestamp": 1530878400,
+  "username": "gcs8"
+ },
+ "system_151": {
+  "capacity": 21.0,
+  "case": "Nanoxia Deep Silence 1 Rev. B",
+  "ditch": 0,
+  "drives": {
+	  "SG0100": 2,
+	  "WD0100": 1,
+	  "HT0200": 2,
+	  "SG0200": 1,
+	  "HT0300": 1,
+	  "TS0300": 3
+  },
+  "updates": null,
+  "notes": null,
+  "os": "Proxmox",
+  "post": 11446956,
+  "storage_sys": {"ZFS": 3},
+  "timestamp": 1529150400,
+  "username": "Thorn57"
+ },
+"system_152": {
+  "capacity": 96.0,
+  "case": "4U 24 bay AIC",
+  "ditch": 0,
+  "drives": {
+	  "WL0400": 24
+  },
+  "updates": null,
+  "notes": null,
+  "os": "Linux",
+  "post": 11398381,
+  "storage_sys": {"unknown":1},
+  "timestamp": 1527768000,
+  "username": "SakuraChan"
+ },
+"system_153": {
+  "capacity": 32.0,
+  "case": "Corsair 900D",
+  "ditch": 0,
+  "drives": {
+	  "SG0800": 3,
+	  "SG0400": 2
+  },
+  "updates": null,
+  "notes": null,
+  "os": "Fedora",
+  "post": 11320370,
+  "storage_sys": {"JBOD":1},
+  "timestamp": 1525694400,
+  "username": "kiddsupreme"
+ },
+"system_154": {
+  "capacity": 28.0,
+  "case": "8 bay Synology case",
+  "ditch": 0,
+  "drives": {
+	  "WD0400": 4,
+	  "SG0400": 2,
+	  "SG0200": 2
+  },
+  "updates": null,
+  "notes": null,
+  "os": "Synology",
+  "post": 11183289,
+  "storage_sys": {"SHR":2},
+  "timestamp": 1522238400,
+  "username": "LAwLz"
+ },
+"system_155": {
+  "capacity": 11,
+  "case": "an old case I own",
+  "ditch": 0,
+  "drives": {
+	  "SG0200": 2,
+	  "WD0200": 2,
+	  "SG0150": 1,
+	  "WD0150": 1
+  },
+  "updates": null,
+  "notes": null,
+  "os": "XPEnology",
+  "post": 10990326,
+  "storage_sys": {"SHR":1},
+  "timestamp": 1517227200,
+  "username": "grimreeper132"
+ },
+"system_156": {
+  "capacity": 40,
+  "case": "Unknown Rack Mount",
+  "ditch": 0,
+  "drives": {
+	  "WD0800" : 5
+  },
+  "updates": null,
+  "notes": null,
+  "os": "unRAID",
+  "post": 10648709,
+  "storage_sys": {"unRAID":1},
+  "timestamp": 1509710400,
+  "username": "dkuhn"
+ },
+"system_157": {
+  "capacity": 39,
+  "case": "U-NAS NSC-810A",
+  "ditch": 0,
+  "drives": {
+	  "HT0300" : 13
+  },
+  "updates": null,
+  "notes": null,
+  "os": "FreeNAS",
+  "post": 10580750,
+  "storage_sys": {"ZFS":1},
+  "timestamp": 1508414400,
+  "username": "H3llscr3am"
+ },
+"system_158": {
+  "capacity": 33.5,
+  "case": "Rosewill RSV-L4411",
+  "ditch": 0,
+  "drives": {
+	  "SG0400" : 5,
+	  "WD0300" : 4,
+	  "SS0050" : 3
+  },
+  "updates": null,
+  "notes": null,
+  "os": "FreeNAS",
+  "post": 10499758,
+  "storage_sys": {"ZFS":1},
+  "timestamp": 1506859200,
+  "username": "Mikensan"
+ },
+"system_159": {
+  "capacity": 48,
+  "case": "Unknown",
+  "ditch": 0,
+  "drives": {
+	  "US0400" : 12
+  },
+  "updates": null,
+  "notes": null,
+  "os": "FreeNAS",
+  "post": 10079053,
+  "storage_sys": {"unknown":1},
+  "timestamp": 1498910400,
+  "username": "deafboy"
+ },
+"system_160": {
+  "capacity": 288,
+  "case": "45Drives",
+  "ditch": 0,
+  "drives": {
+	  "WD0800" : 36
+  },
+  "updates": [10130675],
+  "notes": null,
+  "os": "FreeNAS",
+  "post": 9856345,
+  "storage_sys": {"ZFS":1},
+  "timestamp": 1495195200,
+  "username": "GreasyGaming"
+ },
+"system_161": {
+  "capacity": 71,
+  "case": "INTER-TECH IPC 4-HU-4424",
+  "ditch": 0,
+  "drives": {
+	  "WD0300" : 5,
+	  "WD0800" : 5,
+	  "WD0200" : 8
+  },
+  "updates": null,
+  "notes": null,
+  "os": "FreeNAS",
+  "post": 9541599,
+  "storage_sys": {"ZFS":1},
+  "timestamp": 1489492800,
+  "username": "Darkside447"
+ },
+"system_162": {
+  "capacity": 21,
+  "case": "Fractal Define R5",
+  "ditch": 0,
+  "drives": {
+	  "WD0300" : 3,
+	  "TS0300" : 4
+  },
+  "updates": null,
+  "notes": null,
+  "os": "unRAID",
+  "post": 9501313,
+  "storage_sys": {"unRAID":1},
+  "timestamp": 1489233600,
+  "username": "porina"
+ },
+"system_163": {
+  "capacity": 14,
+  "case": "Fractal Define R5",
+  "ditch": 0,
+  "drives": {
+	  "SG0100" : 14
+  },
+  "updates": null,
+  "notes": null,
+  "os": "ESXi",
+  "post": 9330823,
+  "storage_sys": {"ZFS":1},
+  "timestamp": 1486555200,
+  "username": "JK Vengeance"
+ },
+"system_164": {
+  "capacity": 126,
+  "case": "Supermicro SC846E16-R1200B",
+  "ditch": 0,
+  "drives": {
+	  "HT0600" : 20,
+	  "SS0150" : 4
+  },
+  "updates": null,
+  "notes": "BPN-SAS2-846EL SAS 2 backplane",
+  "os": "Ubuntu",
+  "post": 9198639,
+  "storage_sys": {"HwRD":1},
+  "timestamp": 1484395200,
+  "username": "handruin"
+ },
+"system_165": {
+  "capacity": 44,
+  "case": "Fractal Design Node 804",
+  "ditch": 0,
+  "drives": {
+	  "WD0400" : 8,
+	  "WD0300" : 4
+  },
+  "updates": null,
+  "notes": "Vanaheim",
+  "os": "FreeNAS",
+  "post": 9177024,
+  "storage_sys": {"ZFS":2},
+  "timestamp": 1484049600,
+  "username": "Nemockulous"
+ },
+"system_166": {
+  "capacity": 16,
+  "case": "A Cardboard Box",
+  "ditch": 0,
+  "drives": {
+	  "SG0200" : 4,
+	  "HI0200" : 4
+  },
+  "updates": null,
+  "notes": null,
+  "os": "FreeNAS",
+  "post": 9150578,
+  "storage_sys": {"ZFS":1},
+  "timestamp": 1483704000,
+  "username": "TopWargamer"
+ },
+"system_167": {
+  "capacity": 120,
+  "case": "SuperMicro 4RU",
+  "ditch": 0,
+  "drives": {
+	  "WD0500" : 24
+  },
+  "updates": null,
+  "notes": "Orion",
+  "os": "Ubuntu",
+  "post": 9150578,
+  "storage_sys": {"HwRD":1},
+  "timestamp": 1483099200,
+  "username": "Lurick"
+ },
+"system_168": {
+  "capacity": 28,
+  "case": "Rosewill Server rackmount 4U",
+  "ditch": 0,
+  "drives": {
+	  "HT0400" : 7
+  },
+  "updates": null,
+  "notes": null,
+  "os": "Win 10",
+  "post": 9013997,
+  "storage_sys": {"HwRD":1},
+  "timestamp": 1481457600,
+  "username": "Poohy14"
+ },
+"system_169": {
+  "capacity": 19.5,
+  "case": "Norcotek RPC2304 ",
+  "ditch": 0,
+  "drives": {
+	  "HT0400" : 4,
+	  "SS0025" : 6,
+	  "CR0050" : 2,
+	  "SS0012" : 2,
+	  "HI0040" : 2
+  },
+  "updates": null,
+  "notes": "RPC2304, plus ICY DOCK MB324SP-B 4x2.5 hotswap",
+  "os": "HyperV2016",
+  "post": 9074169,
+  "storage_sys": {"StSp":1},
+  "timestamp": 1482494400,
+  "username": "bwainer"
+ },
+"system_170": {
+  "capacity": 18,
+  "case": "Silverstone DS380",
+  "ditch": 0,
+  "drives": {
+	  "WD0300" : 2,
+	  "WD0200" : 1,
+	  "HT0300" : 2,
+	  "SG0300" : 1,
+	  "OZ0024" : 2,
+	  "CS0048" : 2
+  },
+  "updates": null,
+  "notes": "DS380",
+  "os": "HyperV2016",
+  "post": 9074169,
+  "storage_sys": {"StSp":1},
+  "timestamp": 1482494400,
+  "username": "bwainer"
+ },
+"system_171": {
+  "capacity": 12,
+  "case": "Supermicro 813MTQ-350CB",
+  "ditch": 0,
+  "drives": {
+	  "HT0500" : 2,
+	  "WD0100" : 2,
+	  "IT0012" : 2
+  },
+  "updates": null,
+  "notes": "813MTQ",
+  "os": "HyperV2016",
+  "post": 9074169,
+  "storage_sys": {"StSp":1},
+  "timestamp": 1482494400,
+  "username": "bwainer"
+ },
+"system_172": {
+  "capacity": 17,
+  "case": "Unknown",
+  "ditch": 0,
+  "drives": {
+	  "US0200" : 1,
+	  "US0300" : 2,
+	  "US0400" : 1,
+	  "US0500" : 1
+  },
+  "updates": null,
+  "notes": "Workstation Gaming computer",
+  "os": "Win",
+  "post": 10220282,
+  "storage_sys": {"JBOD":1},
+  "timestamp": 1501329600,
+  "username": "snortingfrogs"
  }
 }
