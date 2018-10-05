@@ -298,5 +298,58 @@
    "SD0025" : {
        "vendor" : "Sandisk",
        "size" : 0.25
-   }
+   },
+   "HT0800": {
+	   "vendor" : "HGST",
+	   "size" : 8.0
+   },
+	"WL0400": {
+		"vendor" : "White Label",
+		"size" : 4.0
+	},
+	"WD0800": {
+		"vendor" : "WD",
+		"size" : 8.0
+	},
+	"DR0025": {
+		"vendor" : "Drevo",
+		"size" : 0.25
+	},
+	"US0400": {
+		"vendor" : "Unspecified",
+		"size" : 4
+	},
+   "SG1000": {
+	   "vendor" : "Seagate",
+	   "size" : 10.0
+   },
+   "HI0200": {
+	   "vendor" : "Hitachi",
+	   "size" : 2.0
+   },
+   "OZ0024": {
+	   "vendor" : "OCZ",
+	   "size" : 0.24
+   },
+   "CS0048": {
+	   "vendor" : "Corsair",
+	   "size" : 0.48
+   },
+   "IT0012": {
+	   "vendor" : "Intel",
+	   "size" : 0.12
+   },
+   "SS0012": {
+	   "vendor" : "Samsung",
+	   "size" : 0.12
+   },
+   "HI0040": {
+	   "vendor" : "Hitachi",
+	   "size" : 0.4
+   },
+	"US0500": {
+		"vendor" : "Unspecified",
+		"size" : 5
+	}
+   
 }
